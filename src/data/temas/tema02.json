@@ -1,0 +1,269 @@
+{
+  "id": "tema02",
+  "number": 2,
+  "title": "Guerrear, orar o cultivar la tierra",
+  "subtitle": "La Europa feudal",
+  "category": "historia",
+  "color": "#b24bff",
+  "icon": "shield",
+  "description": "Conoce cómo se organizaba la sociedad medieval europea: señores feudales, caballeros, campesinos e Iglesia.",
+  "textbookPages": "pp. 42-73",
+  "keyDates": [
+    {
+      "year": "Siglo IX",
+      "event": "Consolidación del feudalismo",
+      "detail": "El sistema feudal se extiende por toda Europa occidental."
+    },
+    {
+      "year": "1066",
+      "event": "Conquista normanda de Inglaterra",
+      "detail": "Guillermo el Conquistador introduce el feudalismo en Inglaterra."
+    },
+    {
+      "year": "Siglo XI-XIII",
+      "event": "Las Cruzadas",
+      "detail": "Expediciones militares para recuperar los Santos Lugares."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Feudalismo",
+      "definition": "Sistema político, económico y social de la Europa medieval basado en relaciones de vasallaje."
+    },
+    {
+      "term": "Señor feudal",
+      "definition": "Noble que concedía tierras (feudos) a cambio de fidelidad y servicios militares."
+    },
+    {
+      "term": "Vasallo",
+      "definition": "Persona que recibía un feudo de un señor y se comprometia a servirle."
+    },
+    {
+      "term": "Siervo",
+      "definition": "Campesino ligado a la tierra del señor, sin libertad para abandonarla."
+    },
+    {
+      "term": "Feudo",
+      "definition": "Territorio concedido por un señor a un vasallo a cambio de fidelidad y servicios."
+    },
+    {
+      "term": "Estamentos",
+      "definition": "Los tres grupos sociales de la Edad Media: nobleza, clero y pueblo llano."
+    },
+    {
+      "term": "Clero",
+      "definition": "Conjunto de personas ordenadas (sacerdotes, obispos, monjes) dedicadas a la vida religiosa."
+    },
+    {
+      "term": "Villano",
+      "definition": "Campesino libre que vivía en una aldea y podía moverse con libertad."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema02-lesson01",
+      "order": 1,
+      "title": "La sociedad feudal",
+      "subtitle": "Señores, vasallos y campesinos",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es el feudalismo?",
+          "content": "El feudalismo fue el sistema que organizó la sociedad europea durante la Edad Media. Se basaba en relaciones de dependencia: los más poderosos ofrecían protección a los débiles a cambio de fidelidad y trabajo.",
+          "highlights": [
+            "Sistema de organización social medieval",
+            "Basado en relaciones de dependencia",
+            "Protección a cambio de fidelidad"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los tres estamentos",
+          "content": "La sociedad medieval se dividía en tres grupos o estamentos: los que guerreaban (nobleza), los que oraban (clero) y los que trabajaban (pueblo llano). Esta división se consideraba natural y establecida por Dios.",
+          "highlights": [
+            "Nobleza: los que guerreaban",
+            "Clero: los que oraban",
+            "Pueblo llano: los que trabajaban"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La pirámide feudal",
+          "content": "En la cima estaba el rey, que concedía tierras a los grandes nobles (duques, condes). Estos concedían parte de sus tierras a nobles menores (caballeros). En la base estaban los campesinos, que trabajaban la tierra.",
+          "highlights": [
+            "Rey: en la cima",
+            "Nobles: duques y condes",
+            "Caballeros: nobles menores",
+            "Campesinos: en la base"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema02-lesson02",
+      "order": 2,
+      "title": "La vida en el castillo y en el campo",
+      "subtitle": "El mundo medieval cotidiano",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El castillo: hogar del señor feudal",
+          "content": "El castillo era la residencia y fortaleza del señor feudal. Tenía murallas gruesas, torres de vigilancia, un foso y un puente levadizo. Dentro vivía el señor con su familia, caballeros y siervos.",
+          "highlights": [
+            "Residencia y fortaleza del señor",
+            "Murallas, torres, foso",
+            "Puente levadizo para defensa"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los campesinos: la base de la sociedad",
+          "content": "Los campesinos eran la mayoría de la población. Trabajaban la tierra del señor y pagaban impuestos. Los siervos estaban atados a la tierra y no podían abandonarla. Los villanos eran campesinos libres.",
+          "highlights": [
+            "Mayoría de la población",
+            "Siervos: atados a la tierra",
+            "Villanos: campesinos libres"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema02-quiz01",
+      "lessonId": "tema02-lesson01",
+      "type": "quiz",
+      "title": "La sociedad feudal",
+      "description": "¿Conoces cómo se organizaba la sociedad medieval?",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuáles eran los tres estamentos de la sociedad medieval?",
+          "options": [
+            "Reyes, nobles y esclavos",
+            "Nobleza (guerreros), clero (religiosos) y pueblo llano (trabajadores)",
+            "Romanos, germanos y árabes",
+            "Emperadores, reyes y príncipes"
+          ],
+          "correctIndex": 1,
+          "explanation": "La sociedad medieval se dividía en tres estamentos: nobleza (guerreaban), clero (oraban) y pueblo llano (trabajaban)."
+        },
+        {
+          "question": "¿Qué es un feudo?",
+          "options": [
+            "Un tipo de castillo medieval",
+            "Una guerra entre señores",
+            "Un territorio que el señor concedía a un vasallo a cambio de fidelidad",
+            "Una moneda medieval"
+          ],
+          "correctIndex": 2,
+          "explanation": "El feudo era el territorio que un señor concedía a un vasallo a cambio de fidelidad y servicios militares."
+        },
+        {
+          "question": "¿Cuál era la diferencia entre un siervo y un villano?",
+          "options": [
+            "No había ninguna diferencia",
+            "El siervo estaba atado a la tierra; el villano era un campesino libre",
+            "El villano era más rico que el siervo",
+            "El siervo trabajaba en el castillo y el villano en la ciudad"
+          ],
+          "correctIndex": 1,
+          "explanation": "El siervo estaba ligado a la tierra y no podía abandonarla. El villano era un campesino libre."
+        }
+      ]
+    },
+    {
+      "id": "tema02-fillblank01",
+      "lessonId": "tema02-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: La sociedad feudal",
+      "description": "Rellena los huecos sobre la organización medieval.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "La sociedad medieval se dividía en tres ___: los que ___ (nobleza), los que ___ (clero) y los que ___ (pueblo llano). En la cima estaba el ___, y en la base los ___.",
+        "blanks": [
+          "estamentos",
+          "guerreaban",
+          "oraban",
+          "trabajaban",
+          "rey",
+          "campesinos"
+        ],
+        "wordBank": [
+          "estamentos",
+          "reinos",
+          "guerreaban",
+          "oraban",
+          "trabajaban",
+          "dormían",
+          "rey",
+          "papa",
+          "campesinos",
+          "caballeros"
+        ]
+      }
+    },
+    {
+      "id": "tema02-writing01",
+      "lessonId": "tema02-lesson01",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La pirámide feudal",
+      "description": "Describe cómo se organizaba la sociedad feudal.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "Describe cómo se organizaba la sociedad en la Europa feudal. ¿Quiénes eran los grupos principales y cuál era su función?",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "La sociedad feudal se dividía en tres grupos llamados...",
+          "En primer lugar, la nobleza eran los que...",
+          "Por otro lado, el clero se encargaba de...",
+          "Finalmente, el pueblo llano tenía que...",
+          "Esta organización se consideraba..."
+        ],
+        "vocabularyHints": [
+          "estamentos",
+          "nobleza",
+          "clero",
+          "pueblo llano",
+          "feudalismo",
+          "señor feudal",
+          "vasallo",
+          "campesino"
+        ],
+        "connectors": [
+          "en primer lugar",
+          "en segundo lugar",
+          "por otro lado",
+          "finalmente",
+          "además",
+          "también"
+        ],
+        "keyPointsToAddress": [
+          "Los tres estamentos (nobleza, clero, pueblo llano)",
+          "La función de cada grupo",
+          "Las relaciones de dependencia"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": [
+          "estamentos",
+          "nobleza",
+          "clero",
+          "pueblo",
+          "feudal"
+        ],
+        "rubricConnectors": [
+          "en primer lugar",
+          "por otro lado",
+          "finalmente",
+          "además"
+        ]
+      }
+    }
+  ]
+}

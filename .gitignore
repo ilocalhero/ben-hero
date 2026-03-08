@@ -1,0 +1,4 @@
+﻿node_modules/
+dist/
+.claude/
+pdf_preview/

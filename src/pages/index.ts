@@ -1,0 +1,8 @@
+export { HomePage } from './HomePage'
+export { TemasPage } from './TemasPage'
+export { PerfilPage } from './PerfilPage'
+export { NotFoundPage } from './NotFoundPage'
+export { TemaPage } from './TemaPage'
+export { LessonPage } from './LessonPage'
+export { ActivityPage } from './ActivityPage'
+export { DailyMissionPage } from './DailyMissionPage'

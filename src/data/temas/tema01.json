@@ -1,0 +1,531 @@
+{
+  "id": "tema01",
+  "number": 1,
+  "title": "La huella andalusí",
+  "subtitle": "El inicio de la Edad Media",
+  "category": "historia",
+  "color": "#ff6b35",
+  "icon": "castle",
+  "description": "Descubre cómo los musulmanes llegaron a la Península Ibérica y crearon una de las civilizaciones más avanzadas de la Edad Media.",
+  "textbookPages": "pp. 8-41",
+  "keyDates": [
+    {
+      "year": "711",
+      "event": "Conquista musulmana",
+      "detail": "Tariq ibn Ziyad cruza el estrecho de Gibraltar y derrota al rey visigodo Rodrigo en la batalla de Guadalete."
+    },
+    {
+      "year": "756",
+      "event": "Emirato independiente",
+      "detail": "Abderramán I establece el Emirato independiente de Córdoba."
+    },
+    {
+      "year": "929",
+      "event": "Califato de Córdoba",
+      "detail": "Abderramán III se proclama califa, llevando Al-Ándalus a su máximo esplendor."
+    },
+    {
+      "year": "1031",
+      "event": "Reinos de taifas",
+      "detail": "El califato se fragmenta en pequeños reinos independientes llamados taifas."
+    },
+    {
+      "year": "1492",
+      "event": "Fin de la Reconquista",
+      "detail": "Los Reyes Católicos conquistan Granada, el último reino musulmán."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Al-Ándalus",
+      "definition": "Nombre que recibieron los territorios de la Península Ibérica bajo dominio musulmán (711-1492)."
+    },
+    {
+      "term": "Califato",
+      "definition": "Forma de gobierno islámico en que el califa es la máxima autoridad política y religiosa."
+    },
+    {
+      "term": "Emirato",
+      "definition": "Estado gobernado por un emir, con cierta independencia política."
+    },
+    {
+      "term": "Taifas",
+      "definition": "Pequeños reinos independientes en que se fragmentó el Califato de Córdoba a partir de 1031."
+    },
+    {
+      "term": "Reconquista",
+      "definition": "Proceso por el que los reinos cristianos fueron recuperando territorios de Al-Ándalus (s. VIII-XV)."
+    },
+    {
+      "term": "Mozárabes",
+      "definition": "Cristianos que vivían en territorio musulmán, conservando su religión."
+    },
+    {
+      "term": "Mudéjares",
+      "definition": "Musulmanes que vivían en territorios conquistados por los reinos cristianos."
+    },
+    {
+      "term": "Medina",
+      "definition": "Parte antigua de una ciudad musulmana, con mezquita, zoco y barrios diferenciados."
+    },
+    {
+      "term": "Zoco",
+      "definition": "Mercado o lugar de comercio en las ciudades musulmanas medievales."
+    },
+    {
+      "term": "Alcázar",
+      "definition": "Palacio o fortaleza árabe."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema01-lesson01",
+      "order": 1,
+      "title": "La conquista musulmana de la Península",
+      "subtitle": "711: el fin del reino visigodo",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Quiénes eran los musulmanes?",
+          "content": "En el siglo VII, el profeta Mahoma fundó una nueva religión en la Península Arábiga: el islam. Sus seguidores, los musulmanes, se expandieron rápidamente por Oriente Próximo, el norte de África y, finalmente, llegaron a Europa.",
+          "highlights": [
+            "Mahoma fundó el islam en el siglo VII",
+            "Los musulmanes se expandieron muy rápidamente",
+            "El islam llegó a Europa por la Península Ibérica"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La debilidad del reino visigodo",
+          "content": "El reino visigodo estaba muy debilitado en el año 711: había conflictos internos entre la nobleza, guerras civiles y una grave crisis económica. Esta situación facilitó la conquista musulmana.",
+          "highlights": [
+            "El reino visigodo estaba debilitado",
+            "Había guerras civiles entre la nobleza",
+            "La crisis facilitó la conquista"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "La conquista en cifras",
+          "content": "En tan solo 7 años (711-718), los musulmanes controlaron casi toda la Península Ibérica. Solo algunas zonas montañosas del norte resistieron la conquista."
+        },
+        {
+          "type": "text",
+          "title": "La batalla de Guadalete (711)",
+          "content": "En el año 711, el general Tariq ibn Ziyad cruzó el estrecho de Gibraltar con un ejército de unos 7.000 soldados. Derrotó al rey visigodo Rodrigo en la batalla de Guadalete. En pocos años, casi toda la Península cayó bajo dominio musulmán.",
+          "highlights": [
+            "711 - Tariq ibn Ziyad cruza Gibraltar",
+            "Derrota al rey Rodrigo en Guadalete",
+            "En 7 años controlan casi toda la Península"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema01-lesson02",
+      "order": 2,
+      "title": "Al-Ándalus: del emirato al califato",
+      "subtitle": "El esplendor de Córdoba",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El Emirato de Córdoba (756-929)",
+          "content": "En 756, Abderramán I estableció el Emirato independiente de Córdoba. Aunque seguía siendo musulmán, se separó políticamente del califato de Damasco. Córdoba se convirtió en la capital de Al-Ándalus.",
+          "highlights": [
+            "756 - Abderramán I funda el Emirato",
+            "Independencia política de Damasco",
+            "Córdoba: capital de Al-Ándalus"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El Califato de Córdoba (929-1031)",
+          "content": "En el año 929, Abderramán III se proclamó califa. Este período fue el de mayor esplendor de Al-Ándalus. Córdoba tenía más de 100.000 habitantes y era una de las ciudades más grandes y avanzadas de Europa.",
+          "highlights": [
+            "929 - Abderramán III se proclama califa",
+            "Máximo esplendor de Al-Ándalus",
+            "Córdoba: ciudad más avanzada de Europa"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Córdoba en el siglo X",
+          "content": "La ciudad de Córdoba en el siglo X contaba con 300 mezquitas, 50 hospitales, 70 bibliotecas y una de las primeras universidades del mundo."
+        },
+        {
+          "type": "text",
+          "title": "Los reinos de taifas (desde 1031)",
+          "content": "En 1031, el califato se fragmentó en más de 20 pequeños reinos independientes llamados taifas. Esta división debilitó Al-Ándalus frente al avance de los reinos cristianos del norte.",
+          "highlights": [
+            "1031 - El califato se fragmenta",
+            "Más de 20 reinos de taifas",
+            "La división debilita Al-Ándalus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema01-lesson03",
+      "order": 3,
+      "title": "La sociedad y la economía de Al-Ándalus",
+      "subtitle": "Una civilización avanzada",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Una sociedad diversa",
+          "content": "La sociedad de Al-Ándalus era muy diversa. Convivían árabes, bereberes, mozárabes (cristianos bajo dominio musulmán) y judíos. Esta diversidad enriqueció la cultura andalusí.",
+          "highlights": [
+            "Sociedad muy diversa",
+            "Mozárabes: cristianos en Al-Ándalus",
+            "La diversidad enriqueció la cultura"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Una economía próspera",
+          "content": "La economía de Al-Ándalus era muy avanzada. Los musulmanes introdujeron nuevos cultivos como el arroz, el algodón y la naranja. Desarrollaron técnicas de regadío sofisticadas y el comercio con Oriente era muy activo.",
+          "highlights": [
+            "Nuevos cultivos: arroz, algodón, naranja",
+            "Técnicas de regadío avanzadas",
+            "Comercio activo con Oriente"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las ciudades de Al-Ándalus",
+          "content": "Las ciudades de Al-Ándalus eran las más avanzadas de Europa. En el centro estaba la medina, con la mezquita principal y el zoco (mercado). Alrededor había barrios especializados para artesanos y comerciantes.",
+          "highlights": [
+            "Medina: centro de la ciudad",
+            "Zoco: mercado principal",
+            "Barrios especializados por oficios"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema01-lesson04",
+      "order": 4,
+      "title": "Arte y cultura en Al-Ándalus",
+      "subtitle": "La herencia que nos dejaron",
+      "sections": [
+        {
+          "type": "text",
+          "title": "La arquitectura andalusí",
+          "content": "Los musulmanes construyeron obras arquitectónicas impresionantes. La Mezquita de Córdoba, la Alhambra de Granada y la Giralda de Sevilla son ejemplos del arte andalusí que todavía podemos admirar hoy.",
+          "highlights": [
+            "Mezquita de Córdoba",
+            "Alhambra de Granada",
+            "Giralda de Sevilla"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La ciencia y el conocimiento",
+          "content": "Al-Ándalus fue un gran centro de conocimiento. Los sabios musulmanes conservaron y tradujeron textos griegos clásicos, avanzaron en matemáticas, medicina y astronomía. Sus conocimientos llegaron después a toda Europa.",
+          "highlights": [
+            "Conservaron textos griegos clásicos",
+            "Avances en medicina, matemáticas, astronomía",
+            "Su conocimiento enriqueció Europa"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Palabras de origen árabe",
+          "content": "Muchas palabras del español vienen del árabe: álgebra, algoritmo, alcohol, azúcar, algodón, aceite, alcalde, almohada, almacén... ¡Son más de 4.000 palabras\\!"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema01-quiz01",
+      "lessonId": "tema01-lesson01",
+      "type": "quiz",
+      "title": "La conquista: ¿Cuánto sabes?",
+      "description": "Pon a prueba tus conocimientos sobre la llegada de los musulmanes.",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿En qué año llegaron los musulmanes a la Península Ibérica?",
+          "options": [
+            "711",
+            "756",
+            "929",
+            "1031"
+          ],
+          "correctIndex": 0,
+          "explanation": "En el año 711, Tariq ibn Ziyad cruzó el estrecho de Gibraltar y derrotó al rey visigodo Rodrigo en la batalla de Guadalete."
+        },
+        {
+          "question": "¿Quién lideró la conquista musulmana de la Península?",
+          "options": [
+            "Abderramán I",
+            "Tariq ibn Ziyad",
+            "Mahoma",
+            "Abderramán III"
+          ],
+          "correctIndex": 1,
+          "explanation": "Tariq ibn Ziyad fue el general que cruzó el estrecho de Gibraltar y derrotó a los visigodos."
+        },
+        {
+          "question": "¿Cómo se llamaba el rey visigodo derrotado en Guadalete?",
+          "options": [
+            "Recaredo",
+            "Leovigildo",
+            "Rodrigo",
+            "Witiza"
+          ],
+          "correctIndex": 2,
+          "explanation": "El rey Rodrigo fue derrotado por Tariq ibn Ziyad en la batalla de Guadalete en el año 711."
+        },
+        {
+          "question": "¿Por qué fue fácil para los musulmanes conquistar el reino visigodo?",
+          "options": [
+            "Porque los visigodos querían ser musulmanes",
+            "Porque el reino visigodo estaba debilitado por guerras civiles y crisis interna",
+            "Porque los visigodos no tenían ejército",
+            "Porque el Papa les ordenó rendirse"
+          ],
+          "correctIndex": 1,
+          "explanation": "El reino visigodo estaba muy debilitado por conflictos internos y una grave crisis económica."
+        },
+        {
+          "question": "¿Cuántos años tardaron los musulmanes en conquistar casi toda la Península?",
+          "options": [
+            "1 año",
+            "50 años",
+            "7 años",
+            "100 años"
+          ],
+          "correctIndex": 2,
+          "explanation": "En tan solo 7 años (711-718), los musulmanes controlaron casi toda la Península Ibérica."
+        }
+      ]
+    },
+    {
+      "id": "tema01-quiz02",
+      "lessonId": "tema01-lesson02",
+      "type": "quiz",
+      "title": "El esplendor de Córdoba",
+      "description": "¿Conoces el emirato y el califato de Córdoba?",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Quién fundó el Emirato independiente de Córdoba?",
+          "options": [
+            "Tariq ibn Ziyad",
+            "Mahoma",
+            "Abderramán I",
+            "Abderramán III"
+          ],
+          "correctIndex": 2,
+          "explanation": "En 756, Abderramán I estableció el Emirato independiente de Córdoba."
+        },
+        {
+          "question": "¿En qué año Abderramán III se proclamó califa?",
+          "options": [
+            "711",
+            "756",
+            "929",
+            "1031"
+          ],
+          "correctIndex": 2,
+          "explanation": "En el año 929, Abderramán III se proclamó califa, iniciando el período de mayor esplendor de Al-Ándalus."
+        },
+        {
+          "question": "¿Qué son los reinos de taifas?",
+          "options": [
+            "Reinos cristianos del norte",
+            "Pequeños reinos independientes en que se fragmentó el Califato de Córdoba",
+            "Las provincias del Imperio Romano",
+            "Las ciudades más importantes de Al-Ándalus"
+          ],
+          "correctIndex": 1,
+          "explanation": "A partir de 1031, el califato se fragmentó en más de 20 pequeños reinos independientes llamados taifas."
+        }
+      ]
+    },
+    {
+      "id": "tema01-fillblank01",
+      "lessonId": "tema01-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: La conquista",
+      "description": "Rellena los huecos con las palabras correctas.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "En el año ___, el general ___ cruzó el estrecho de Gibraltar. Derrotó al rey visigodo ___ en la batalla de ___. En tan solo ___ años, los musulmanes controlaron casi toda la Península Ibérica.",
+        "blanks": [
+          "711",
+          "Tariq ibn Ziyad",
+          "Rodrigo",
+          "Guadalete",
+          "7"
+        ],
+        "wordBank": [
+          "711",
+          "929",
+          "Tariq ibn Ziyad",
+          "Abderramán I",
+          "Rodrigo",
+          "Recaredo",
+          "Guadalete",
+          "Toledo",
+          "7",
+          "50"
+        ]
+      }
+    },
+    {
+      "id": "tema01-fillblank02",
+      "lessonId": "tema01-lesson02",
+      "type": "fill_blank",
+      "title": "Completa: El califato",
+      "description": "Rellena los huecos sobre el esplendor de Córdoba.",
+      "difficulty": 2,
+      "xpReward": 35,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "En ___, Abderramán I estableció el ___ independiente de Córdoba. Más tarde, en el año ___, ___ se proclamó califa. En ___, el califato se fragmentó en los reinos de ___.",
+        "blanks": [
+          "756",
+          "Emirato",
+          "929",
+          "Abderramán III",
+          "1031",
+          "taifas"
+        ],
+        "wordBank": [
+          "711",
+          "756",
+          "929",
+          "1031",
+          "Emirato",
+          "Califato",
+          "Abderramán I",
+          "Abderramán III",
+          "taifas",
+          "visigodos"
+        ]
+      }
+    },
+    {
+      "id": "tema01-writing01",
+      "lessonId": "tema01-lesson01",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La conquista",
+      "description": "Explica por qué los musulmanes pudieron conquistar la Península tan rápidamente.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "Explica por qué los musulmanes pudieron conquistar la Península Ibérica tan rápidamente en el año 711.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "Los musulmanes pudieron conquistar la Península porque...",
+          "Un factor importante fue que el reino visigodo...",
+          "Además, hay que tener en cuenta que...",
+          "Por otro lado, el ejército musulmán...",
+          "En conclusión, la conquista fue rápida debido a..."
+        ],
+        "vocabularyHints": [
+          "reino visigodo",
+          "debilitado",
+          "guerras civiles",
+          "crisis económica",
+          "Tariq ibn Ziyad",
+          "batalla de Guadalete"
+        ],
+        "connectors": [
+          "porque",
+          "además",
+          "sin embargo",
+          "por lo tanto",
+          "en primer lugar",
+          "por otro lado",
+          "finalmente"
+        ],
+        "keyPointsToAddress": [
+          "La debilidad del reino visigodo",
+          "Los conflictos internos entre la nobleza",
+          "La fortaleza del ejército musulmán"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": [
+          "visigodo",
+          "debilitado",
+          "musulmán",
+          "conquista",
+          "711"
+        ],
+        "rubricConnectors": [
+          "porque",
+          "además",
+          "por lo tanto",
+          "sin embargo"
+        ]
+      }
+    },
+    {
+      "id": "tema01-writing02",
+      "lessonId": "tema01-lesson04",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La herencia andalusí",
+      "description": "Describe qué nos dejaron los musulmanes en España.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 12,
+      "data": {
+        "prompt": "¿Qué legado o herencia nos dejaron los musulmanes en la Península Ibérica? Menciona al menos tres aspectos.",
+        "scaffoldLevel": 3,
+        "sentenceStarters": [
+          "Los musulmanes nos dejaron una gran herencia en...",
+          "En el campo de la arquitectura, destaca...",
+          "En cuanto a la lengua, muchas palabras del español vienen del árabe, como...",
+          "En la agricultura y la ciencia, los musulmanes..."
+        ],
+        "vocabularyHints": [
+          "Alhambra",
+          "Mezquita de Córdoba",
+          "Giralda",
+          "palabras árabes",
+          "regadío",
+          "cultivos",
+          "medicina"
+        ],
+        "connectors": [
+          "además",
+          "por ejemplo",
+          "en primer lugar",
+          "en segundo lugar",
+          "finalmente",
+          "también"
+        ],
+        "keyPointsToAddress": [
+          "Arquitectura (Alhambra, Mezquita de Córdoba, Giralda)",
+          "Lengua (palabras de origen árabe)",
+          "Agricultura y ciencia"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": [
+          "arquitectura",
+          "árabe",
+          "agricultura",
+          "conocimiento",
+          "herencia"
+        ],
+        "rubricConnectors": [
+          "además",
+          "por ejemplo",
+          "en primer lugar",
+          "también"
+        ]
+      }
+    }
+  ]
+}
