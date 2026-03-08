@@ -16,6 +16,7 @@ import { getTema } from '../data'
 import { useProgressStore } from '../stores/useProgressStore'
 import { NeonText, Badge, ProgressBar } from '../components/ui'
 import type { ActivityType } from '../types/tema'
+import { getTemaEmoji } from '../lib/temaIcons'
 
 function activityIcon(type: ActivityType) {
   if (type === 'quiz') return <HelpCircle size={18} />
@@ -71,47 +72,63 @@ export function TemaPage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="max-w-3xl mx-auto px-4 py-6 space-y-6"
+      className="max-w-2xl mx-auto space-y-5"
     >
       {/* Back link */}
       <Link
         to="/temas"
-        className="inline-flex items-center gap-2 text-[#8b8fb0] hover:text-[#e8eaff] transition-colors text-sm"
+        className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors text-sm group"
       >
-        <ArrowLeft size={16} />
+        <ArrowLeft size={15} className="group-hover:-translate-x-0.5 transition-transform" />
         Volver a temas
       </Link>
 
       {/* Header card */}
-      <div className="bg-bg-card rounded-2xl p-6 border border-[#ffffff10] space-y-4">
+      <div
+        className="rounded-2xl p-5 space-y-4 relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
+          border: `1px solid ${tema.color}28`,
+          boxShadow: `0 4px 32px rgba(0,0,0,0.5), 0 0 40px ${tema.color}0c`,
+        }}
+      >
+        {/* Top accent */}
+        <div
+          className="absolute top-0 left-8 right-8 h-px"
+          style={{ background: `linear-gradient(90deg, transparent, ${tema.color}55, transparent)` }}
+        />
         <div className="flex items-start gap-4">
           <div
-            className="flex-shrink-0 w-16 h-16 rounded-xl flex items-center justify-center text-3xl"
-            style={{ backgroundColor: `${tema.color}20`, border: `2px solid ${tema.color}44` }}
+            className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-3xl"
+            style={{
+              background: `${tema.color}18`,
+              border: `1px solid ${tema.color}44`,
+              boxShadow: `0 0 20px ${tema.color}20`,
+            }}
           >
-            {tema.icon}
+            {getTemaEmoji(tema.icon)}
           </div>
           <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap items-center gap-2 mb-1">
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <Badge color={categoryColor} size="sm">{categoryLabel}</Badge>
-              <span className="text-[#8b8fb0] text-xs">Páginas {tema.textbookPages}</span>
+              <span className="text-text-muted text-xs">{tema.textbookPages}</span>
             </div>
-            <NeonText color="blue" as="h1" className="text-2xl font-bold leading-tight">
+            <NeonText color="blue" as="h1" className="text-xl lg:text-2xl font-black leading-tight tracking-tight">
               {tema.title}
             </NeonText>
-            <p className="text-[#8b8fb0] text-sm mt-1">{tema.subtitle}</p>
+            <p className="text-text-secondary text-sm mt-1">{tema.subtitle}</p>
           </div>
         </div>
 
-        <p className="text-[#c0c4e0] text-sm leading-relaxed">{tema.description}</p>
+        <p className="text-text-secondary text-sm leading-relaxed">{tema.description}</p>
 
-        <div className="space-y-1">
-          <div className="flex justify-between text-xs text-[#8b8fb0]">
-            <span>Progreso</span>
-            <span>{progress}%</span>
+        <div className="space-y-1.5">
+          <div className="flex justify-between text-xs">
+            <span className="text-text-muted font-medium">Progreso</span>
+            <span className="font-bold" style={{ color: tema.color }}>{progress}%</span>
           </div>
           <ProgressBar value={progress} color="blue" />
         </div>
@@ -119,45 +136,51 @@ export function TemaPage() {
 
       {/* Lessons section */}
       {tema.lessons.length > 0 && (
-        <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-[#e8eaff]">Lecciones</h2>
+        <div className="space-y-2.5">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted px-0.5">Lecciones</h2>
           <div className="space-y-2">
-            {tema.lessons.map((lesson) => {
+            {tema.lessons.map((lesson, i) => {
               const done = isLessonDone(lesson.id)
               return (
-                <motion.div key={lesson.id} whileHover={{ x: 4 }}>
+                <motion.div
+                  key={lesson.id}
+                  initial={{ opacity: 0, x: -6 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                >
                   <Link
                     to={`/temas/${tema.id}/lessons/${lesson.id}`}
-                    className={`
-                      flex items-center gap-4 p-4 rounded-xl border transition-colors
-                      bg-bg-card hover:bg-[#1e2248]
-                      ${done
-                        ? 'border-[#00ff8830]'
-                        : 'border-[#ffffff10] hover:border-[#00d4ff33]'
-                      }
-                    `}
+                    className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-150 group"
+                    style={{
+                      background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
+                      border: done ? '1px solid rgba(0,255,136,0.2)' : '1px solid rgba(255,255,255,0.07)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = done ? 'rgba(0,255,136,0.3)' : 'rgba(0,212,255,0.25)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = done ? 'rgba(0,255,136,0.2)' : 'rgba(255,255,255,0.07)'
+                    }}
                   >
                     <div
-                      className={`
-                        flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center
-                        text-sm font-bold
-                        ${done
-                          ? 'bg-[#00ff8820] text-[#00ff88]'
-                          : 'bg-[#00d4ff15] text-[#00d4ff]'
-                        }
-                      `}
+                      className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold"
+                      style={
+                        done
+                          ? { background: 'rgba(0,255,136,0.12)', color: '#00ff88', border: '1px solid rgba(0,255,136,0.25)' }
+                          : { background: 'rgba(0,212,255,0.1)', color: '#00d4ff', border: '1px solid rgba(0,212,255,0.2)' }
+                      }
                     >
-                      {done ? <Check size={14} /> : lesson.order}
+                      {done ? <Check size={13} /> : lesson.order}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-medium truncate ${done ? 'text-[#00ff88]' : 'text-[#e8eaff]'}`}>
+                      <p className={`font-semibold text-sm truncate ${done ? 'text-neon-green' : 'text-text-primary'}`}>
                         {lesson.title}
                       </p>
                       {lesson.subtitle && (
-                        <p className="text-[#8b8fb0] text-xs truncate mt-0.5">{lesson.subtitle}</p>
+                        <p className="text-text-secondary text-xs truncate mt-0.5">{lesson.subtitle}</p>
                       )}
                     </div>
-                    <ChevronRight size={16} className="text-[#8b8fb0] flex-shrink-0" />
+                    <ChevronRight size={14} className="text-text-muted group-hover:text-neon-blue transition-colors flex-shrink-0" />
                   </Link>
                 </motion.div>
               )
@@ -168,44 +191,48 @@ export function TemaPage() {
 
       {/* Activities section */}
       {tema.activities.length > 0 && (
-        <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-[#e8eaff]">Actividades</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {tema.activities.map((activity) => {
+        <div className="space-y-2.5">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            {tema.activities.map((activity, i) => {
               const done = isActivityDone(activity.id)
               return (
-                <motion.div key={activity.id} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <motion.div
+                  key={activity.id}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.04 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
                   <Link
                     to={`/temas/${tema.id}/activities/${activity.id}`}
-                    className={`
-                      block p-4 rounded-xl border transition-colors
-                      bg-bg-card hover:bg-[#1e2248]
-                      ${done
-                        ? 'border-[#00ff8830]'
-                        : 'border-[#ffffff10] hover:border-[#b24bff33]'
-                      }
-                    `}
+                    className="block p-3.5 rounded-xl transition-all duration-150"
+                    style={{
+                      background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
+                      border: done ? '1px solid rgba(0,255,136,0.2)' : '1px solid rgba(255,255,255,0.07)',
+                    }}
                   >
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div className="flex items-center gap-2">
-                        <span className={done ? 'text-[#00ff88]' : 'text-[#b24bff]'}>
-                          {done ? <Check size={18} /> : activityIcon(activity.type)}
+                        <span style={{ color: done ? '#00ff88' : '#b24bff' }}>
+                          {done ? <Check size={16} /> : activityIcon(activity.type)}
                         </span>
-                        <span className="text-[#8b8fb0] text-xs">{activityTypeLabel(activity.type)}</span>
+                        <span className="text-text-muted text-xs">{activityTypeLabel(activity.type)}</span>
                       </div>
                       <Badge color="yellow" size="sm">+{activity.xpReward} XP</Badge>
                     </div>
 
-                    <p className={`font-medium text-sm leading-snug mb-2 ${done ? 'text-[#00ff88]' : 'text-[#e8eaff]'}`}>
+                    <p className={`font-semibold text-sm leading-snug mb-2.5 ${done ? 'text-neon-green' : 'text-text-primary'}`}>
                       {activity.title}
                     </p>
 
                     <div className="flex items-center gap-0.5">
-                      {Array.from({ length: 3 }).map((_, i) => (
+                      {Array.from({ length: 3 }).map((_, j) => (
                         <Star
-                          key={i}
-                          size={12}
-                          className={i < activity.difficulty ? 'text-[#ffd700] fill-[#ffd700]' : 'text-[#3a3d5c]'}
+                          key={j}
+                          size={11}
+                          className={j < activity.difficulty ? 'text-neon-yellow fill-neon-yellow' : 'text-text-muted'}
                         />
                       ))}
                     </div>
@@ -219,15 +246,23 @@ export function TemaPage() {
 
       {/* Key Terms collapsible */}
       {tema.keyTerms.length > 0 && (
-        <div className="bg-bg-card rounded-2xl border border-[#ffffff10] overflow-hidden">
+        <div
+          className="rounded-2xl overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
+            border: '1px solid rgba(255,255,255,0.07)',
+          }}
+        >
           <button
             onClick={() => setTermsOpen((o) => !o)}
-            className="w-full flex items-center justify-between p-4 hover:bg-[#1e2248] transition-colors"
+            className="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/[0.03] transition-colors"
           >
-            <span className="font-semibold text-[#e8eaff]">Términos clave ({tema.keyTerms.length})</span>
-            <motion.span animate={{ rotate: termsOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-              <ChevronDown size={18} className="text-[#8b8fb0]" />
-            </motion.span>
+            <span className="font-bold text-sm text-text-primary">
+              Términos clave <span className="text-text-muted font-normal">({tema.keyTerms.length})</span>
+            </span>
+            <motion.div animate={{ rotate: termsOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+              <ChevronDown size={16} className="text-text-secondary" />
+            </motion.div>
           </button>
 
           <AnimatePresence initial={false}>
@@ -237,16 +272,16 @@ export function TemaPage() {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.22 }}
                 className="overflow-hidden"
               >
-                <div className="px-4 pb-4 space-y-3 border-t border-[#ffffff10] pt-3">
+                <div className="px-4 pb-4 space-y-3 pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   {tema.keyTerms.map((kt) => (
                     <div key={kt.term} className="space-y-0.5">
-                      <p className="font-semibold text-[#00d4ff] text-sm">{kt.term}</p>
-                      <p className="text-[#c0c4e0] text-sm">{kt.definition}</p>
+                      <p className="font-bold text-neon-blue text-sm">{kt.term}</p>
+                      <p className="text-text-secondary text-sm leading-relaxed">{kt.definition}</p>
                       {kt.example && (
-                        <p className="text-[#8b8fb0] text-xs italic">Ej: {kt.example}</p>
+                        <p className="text-text-muted text-xs italic">Ej: {kt.example}</p>
                       )}
                     </div>
                   ))}
@@ -259,23 +294,29 @@ export function TemaPage() {
 
       {/* Key Dates timeline */}
       {tema.keyDates && tema.keyDates.length > 0 && (
-        <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-[#e8eaff]">Fechas clave</h2>
-          <div className="relative space-y-3 pl-4">
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#ff6b3530] rounded-full" />
+        <div className="space-y-2.5">
+          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted px-0.5">Fechas clave</h2>
+          <div className="relative space-y-2 pl-5">
+            <div
+              className="absolute left-1.5 top-2 bottom-2 w-px rounded-full"
+              style={{ background: `linear-gradient(180deg, ${tema.color}60, ${tema.color}10)` }}
+            />
             {tema.keyDates.map((kd, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -8 }}
+                initial={{ opacity: 0, x: -6 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.07 }}
+                transition={{ delay: i * 0.06 }}
                 className="flex items-start gap-3 relative"
               >
-                <div className="absolute -left-4 top-1 w-2 h-2 rounded-full bg-[#ff6b35] flex-shrink-0" />
+                <div
+                  className="absolute -left-5 top-2 w-2.5 h-2.5 rounded-full"
+                  style={{ background: tema.color, boxShadow: `0 0 8px ${tema.color}` }}
+                />
                 <Badge color="orange" size="sm">{kd.year}</Badge>
                 <div>
-                  <p className="text-[#e8eaff] text-sm font-medium">{kd.event}</p>
-                  <p className="text-[#8b8fb0] text-xs mt-0.5">{kd.detail}</p>
+                  <p className="text-text-primary text-sm font-semibold">{kd.event}</p>
+                  <p className="text-text-secondary text-xs mt-0.5 leading-relaxed">{kd.detail}</p>
                 </div>
               </motion.div>
             ))}

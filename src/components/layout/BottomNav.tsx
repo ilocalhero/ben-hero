@@ -16,8 +16,15 @@ const NAV_ITEMS: NavItem[] = [
 
 export function BottomNav() {
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-bg-secondary border-t border-neon-blue/20">
-      <div className="flex items-center justify-around h-[60px] px-2">
+    <nav
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-50"
+      style={{
+        background: 'linear-gradient(180deg, #0c0f20 0%, #09091a 100%)',
+        borderTop: '1px solid rgba(0,212,255,0.1)',
+        boxShadow: '0 -4px 24px rgba(0,0,0,0.5)',
+      }}
+    >
+      <div className="flex items-center justify-around h-[58px] px-2">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon
           return (
@@ -29,19 +36,29 @@ export function BottomNav() {
             >
               {({ isActive }) => (
                 <motion.div
-                  className="flex flex-col items-center gap-0.5 py-2"
-                  whileTap={{ scale: 0.92 }}
+                  className="flex flex-col items-center gap-1 py-2"
+                  whileTap={{ scale: 0.9 }}
                 >
-                  <Icon
-                    size={22}
-                    className={isActive ? 'text-neon-blue' : 'text-[#4a4d6a]'}
-                    style={isActive ? { filter: 'drop-shadow(0 0 8px #00d4ff)' } : undefined}
-                  />
+                  <div
+                    className="flex items-center justify-center w-8 h-6 rounded-lg transition-all"
+                    style={isActive ? { background: 'rgba(0,212,255,0.12)' } : undefined}
+                  >
+                    <Icon
+                      size={18}
+                      style={
+                        isActive
+                          ? { color: '#00d4ff', filter: 'drop-shadow(0 0 6px #00d4ff)' }
+                          : { color: '#3a3e5c' }
+                      }
+                    />
+                  </div>
                   <span
-                    className={`text-[10px] font-semibold transition-colors ${
-                      isActive ? 'text-neon-blue' : 'text-[#4a4d6a]'
-                    }`}
-                    style={isActive ? { textShadow: '0 0 8px #00d4ff' } : undefined}
+                    className="text-[9px] font-bold tracking-wide uppercase"
+                    style={
+                      isActive
+                        ? { color: '#00d4ff', textShadow: '0 0 8px #00d4ff66' }
+                        : { color: '#3a3e5c' }
+                    }
                   >
                     {item.label}
                   </span>

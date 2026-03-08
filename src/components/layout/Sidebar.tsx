@@ -17,8 +17,14 @@ const NAV_ITEMS: NavItem[] = [
 
 export function Sidebar() {
   return (
-    <aside className="hidden lg:flex flex-col w-[240px] bg-bg-secondary border-r border-neon-blue/10 h-full">
-      <nav className="flex-1 py-6 px-3 space-y-1">
+    <aside
+      className="hidden lg:flex flex-col w-[220px] h-full flex-shrink-0"
+      style={{
+        background: 'linear-gradient(180deg, #0c0f20 0%, #090b18 100%)',
+        borderRight: '1px solid rgba(0, 212, 255, 0.08)',
+      }}
+    >
+      <nav className="flex-1 py-5 px-3 space-y-1">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon
           return (
@@ -26,31 +32,55 @@ export function Sidebar() {
               key={item.path}
               to={item.path}
               end={item.path === '/'}
-              className={({ isActive }) =>
-                `group flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 relative
-                ${isActive
-                  ? 'bg-neon-blue/10 text-neon-blue border-l-2 border-neon-blue pl-[10px]'
-                  : 'text-[#8b8fb0] hover:text-white hover:bg-white/5 border-l-2 border-transparent'
-                }`
-              }
+              className="block"
             >
               {({ isActive }) => (
                 <motion.div
-                  className="flex items-center gap-3 w-full"
-                  whileHover={{ x: isActive ? 0 : 3 }}
+                  className="relative flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-pointer transition-colors duration-150"
+                  style={
+                    isActive
+                      ? {
+                          background: 'linear-gradient(90deg, rgba(0,212,255,0.14) 0%, rgba(0,212,255,0.04) 100%)',
+                          border: '1px solid rgba(0,212,255,0.2)',
+                          boxShadow: 'inset 0 0 20px rgba(0,212,255,0.04)',
+                        }
+                      : {
+                          border: '1px solid transparent',
+                        }
+                  }
+                  whileHover={isActive ? {} : {
+                    backgroundColor: 'rgba(255,255,255,0.04)',
+                  }}
                   transition={{ duration: 0.15 }}
                 >
+                  {/* Active left accent */}
+                  {isActive && (
+                    <div
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 rounded-full"
+                      style={{ background: '#00d4ff', boxShadow: '0 0 8px #00d4ff' }}
+                    />
+                  )}
+
                   <Icon
-                    size={20}
-                    className={isActive ? 'text-neon-blue' : 'text-[#8b8fb0] group-hover:text-white transition-colors'}
-                    style={isActive ? { filter: 'drop-shadow(0 0 6px #00d4ff)' } : undefined}
+                    size={18}
+                    style={
+                      isActive
+                        ? { color: '#00d4ff', filter: 'drop-shadow(0 0 6px #00d4ff)' }
+                        : { color: '#5a5e80' }
+                    }
                   />
-                  <span className="font-semibold text-sm">{item.label}</span>
+                  <span
+                    className="text-sm font-semibold"
+                    style={{ color: isActive ? '#e8eaff' : '#5a5e80' }}
+                  >
+                    {item.label}
+                  </span>
+
                   {isActive && (
                     <motion.div
-                      layoutId="sidebar-indicator"
-                      className="ml-auto w-1.5 h-1.5 rounded-full bg-neon-blue"
-                      style={{ boxShadow: '0 0 6px #00d4ff' }}
+                      layoutId="sidebar-dot"
+                      className="ml-auto w-1.5 h-1.5 rounded-full"
+                      style={{ background: '#00d4ff', boxShadow: '0 0 6px #00d4ff' }}
                     />
                   )}
                 </motion.div>
@@ -61,8 +91,11 @@ export function Sidebar() {
       </nav>
 
       {/* Version info */}
-      <div className="px-4 py-4 border-t border-white/5">
-        <p className="text-xs text-[#4a4d6a] text-center">BenHero v0.1.0</p>
+      <div
+        className="px-4 py-3 mx-3 mb-4 rounded-xl text-center"
+        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
+      >
+        <p className="text-[11px] text-text-muted font-medium tracking-wider">BenHero v0.1.0</p>
       </div>
     </aside>
   )
