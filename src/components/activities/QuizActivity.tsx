@@ -110,11 +110,11 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
     <div className="space-y-4">
       {/* Progress header */}
       <div className="flex items-center justify-between">
-        <span className="text-[#00d4ff] text-sm font-semibold">
+        <span className="text-[#00d4ff] text-base font-semibold">
           Pregunta {currentIndex + 1} de {total}
         </span>
         <span
-          className="text-sm font-mono font-bold"
+          className="text-base font-mono font-bold"
           style={{ color: timeLeft <= 10 ? '#ff6b35' : '#8b8fb0' }}
         >
           {timeLeft}s
@@ -160,7 +160,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
           )}
 
           {/* Question text */}
-          <p className="text-white text-lg font-semibold leading-snug">
+          <p className="text-white text-2xl font-semibold leading-snug">
             {currentQuestion.question}
           </p>
 
@@ -178,7 +178,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                 className={`
                   w-full text-left px-4 py-3 rounded-xl border
                   border-[#ffffff15] bg-[#12152e]
-                  text-[#e8eaff] text-sm leading-snug
+                  text-[#e8eaff] text-base leading-snug
                   ${!answered
                     ? 'cursor-pointer hover:border-[#00d4ff50] hover:bg-[#1e2248]'
                     : 'cursor-default'
@@ -188,7 +188,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                 <span className="inline-flex items-start gap-3">
                   <span
                     className="shrink-0 w-6 h-6 rounded-full border flex items-center
-                      justify-center text-xs font-bold mt-0.5 transition-colors duration-200"
+                      justify-center text-sm font-bold mt-0.5 transition-colors duration-200"
                     style={{ color: getLabelColor(idx), borderColor: getLabelColor(idx) }}
                   >
                     {String.fromCharCode(65 + idx)}
@@ -206,14 +206,14 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
               animate={{ opacity: 1, y: 0 }}
               className="p-3 rounded-xl bg-[#ff6b3520] border border-[#ff6b3540]"
             >
-              <p className="text-[#ff6b35] text-sm font-semibold">¡Se acabó el tiempo!</p>
-              <p className="text-[#c0c4e0] text-sm mt-1">
+              <p className="text-[#ff6b35] text-base font-semibold">¡Se acabó el tiempo!</p>
+              <p className="text-[#c0c4e0] text-base mt-1">
                 La respuesta correcta era:{' '}
                 <span className="text-[#00ff88] font-semibold">
                   {currentQuestion.options[currentQuestion.correctIndex]}
                 </span>
               </p>
-              <p className="text-[#8b8fb0] text-xs mt-2 italic">
+              <p className="text-[#8b8fb0] text-sm mt-2 italic">
                 {currentQuestion.explanation}
               </p>
             </motion.div>
@@ -232,7 +232,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
               }`}
             >
               <p
-                className="text-sm font-semibold mb-1"
+                className="text-base font-semibold mb-1"
                 style={{
                   color:
                     selectedOption === currentQuestion.correctIndex
@@ -244,7 +244,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                   ? '¡Correcto!'
                   : 'Incorrecto'}
               </p>
-              <p className="text-[#c0c4e0] text-sm leading-relaxed">
+              <p className="text-[#c0c4e0] text-base leading-relaxed">
                 {currentQuestion.explanation}
               </p>
             </motion.div>
@@ -263,7 +263,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="px-6 py-2.5 rounded-xl bg-[#00d4ff] text-[#0a0b1a] font-bold
-                  text-sm hover:bg-[#00b8e6] transition-colors"
+                  text-base hover:bg-[#00b8e6] transition-colors"
               >
                 {currentIndex < total - 1 ? 'Continuar →' : 'Ver resultados'}
               </motion.button>

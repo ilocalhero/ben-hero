@@ -116,10 +116,10 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
 
         {/* Paragraph with blanks */}
         <div>
-          <p className="text-[#8b8fb0] text-xs font-semibold uppercase tracking-wider mb-3">
+          <p className="text-[#8b8fb0] text-sm font-semibold uppercase tracking-wider mb-3">
             Completa el texto
           </p>
-          <div className="text-[#e8eaff] text-base leading-8 select-none">
+          <div className="text-[#e8eaff] text-xl leading-10 select-none">
             {segments.map((segment, segIdx) => (
               <span key={segIdx}>
                 {segment}
@@ -140,7 +140,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
                     className={`
                       inline-flex items-center justify-center
                       mx-1 px-3 py-0.5 rounded-lg border-2 border-dashed
-                      min-w-[80px] text-sm font-semibold
+                      min-w-[80px] text-base font-semibold
                       transition-colors duration-200
                       ${placed[segIdx] !== null && checkState === 'unchecked'
                         ? 'cursor-pointer'
@@ -175,12 +175,12 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
               animate={{ opacity: 1, y: 0 }}
               className="p-3 rounded-xl bg-[#ff3ea510] border border-[#ff3ea530] space-y-1"
             >
-              <p className="text-[#ff3ea5] text-xs font-semibold uppercase tracking-wider mb-2">
+              <p className="text-[#ff3ea5] text-sm font-semibold uppercase tracking-wider mb-2">
                 Respuestas correctas
               </p>
               {results.map((correct, i) =>
                 !correct ? (
-                  <p key={i} className="text-[#c0c4e0] text-sm">
+                  <p key={i} className="text-[#c0c4e0] text-base">
                     Hueco {i + 1}:{' '}
                     <span className="line-through text-[#ff3ea5] mr-2">
                       {placed[i]}
@@ -197,7 +197,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
 
         {/* Word bank */}
         <div>
-          <p className="text-[#8b8fb0] text-xs font-semibold uppercase tracking-wider mb-3">
+          <p className="text-[#8b8fb0] text-sm font-semibold uppercase tracking-wider mb-3">
             Banco de palabras
           </p>
           <div className="flex flex-wrap gap-2">
@@ -212,7 +212,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
                   whileTap={!isUsed && checkState === 'unchecked' ? { scale: 0.95 } : {}}
                   layout
                   className={`
-                    px-4 py-1.5 rounded-full border text-sm font-medium
+                    px-4 py-1.5 rounded-full border text-base font-medium
                     transition-all duration-200
                     ${isUsed
                       ? 'border-[#b24bff30] text-[#4a4e6a] bg-[#b24bff08] cursor-default opacity-40'
@@ -238,7 +238,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
               whileHover={allFilled ? { scale: 1.03 } : {}}
               whileTap={allFilled ? { scale: 0.97 } : {}}
               className={`
-                px-6 py-2.5 rounded-xl font-bold text-sm transition-colors
+                px-6 py-2.5 rounded-xl font-bold text-base transition-colors
                 ${allFilled
                   ? 'bg-[#00d4ff] text-[#0a0b1a] hover:bg-[#00b8e6] cursor-pointer'
                   : 'bg-[#1e2248] text-[#4a4e6a] cursor-not-allowed'
@@ -254,7 +254,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
               className="flex items-center gap-3"
             >
               <span
-                className="text-sm font-semibold"
+                className="text-base font-semibold"
                 style={{
                   color:
                     results.every(Boolean)
@@ -271,7 +271,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="px-6 py-2.5 rounded-xl bg-[#00ff88] text-[#0a0b1a] font-bold
-                  text-sm hover:bg-[#00e67a] transition-colors cursor-pointer"
+                  text-base hover:bg-[#00e67a] transition-colors cursor-pointer"
               >
                 Completar →
               </motion.button>

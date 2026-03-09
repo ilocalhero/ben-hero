@@ -177,7 +177,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0b1a] text-white">
+    <div className="text-white">
       <AnimatePresence mode="wait">
         {/* ================================================================
             PHASE 1 — Writing phase
@@ -189,13 +189,13 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
             initial="initial"
             animate="animate"
             exit="exit"
-            className="max-w-3xl mx-auto px-4 py-6 space-y-5"
+            className="px-0 py-6 space-y-5"
           >
             {/* Top bar */}
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div className="flex items-center gap-2">
                 <FileText size={20} className="text-[#00d4ff]" />
-                <h1 className="text-lg font-bold text-white leading-tight">{activity.title}</h1>
+                <h1 className="text-2xl font-bold text-white leading-tight">{activity.title}</h1>
               </div>
               <div className="flex items-center gap-2">
                 <Badge color={canSubmit ? 'green' : 'blue'} size="md">
@@ -209,18 +209,18 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
               <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold mb-1">
                 Misión de escritura
               </p>
-              <p className="text-white text-base leading-relaxed">{data.prompt}</p>
+              <p className="text-white text-xl leading-relaxed">{data.prompt}</p>
             </div>
 
             {/* Key points (all scaffold levels) */}
             {data.keyPointsToAddress && data.keyPointsToAddress.length > 0 && (
               <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-2">
-                <p className="text-xs text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                   Puntos clave a desarrollar
                 </p>
                 <ul className="space-y-1">
                   {data.keyPointsToAddress.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#c8caeb]">
+                    <li key={i} className="flex items-start gap-2 text-base text-[#c8caeb]">
                       <span className="text-[#00d4ff] mt-0.5">•</span>
                       <span>{point}</span>
                     </li>
@@ -235,7 +235,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                 {/* Sentence starters */}
                 {data.sentenceStarters && data.sentenceStarters.length > 0 && (
                   <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-3">
-                    <p className="text-xs text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                    <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                       Iniciadores de frases
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -253,7 +253,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                 {/* Vocabulary hints */}
                 {data.vocabularyHints && data.vocabularyHints.length > 0 && (
                   <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-3">
-                    <p className="text-xs text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                    <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                       Vocabulario
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -271,7 +271,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                 {/* Connectors */}
                 {data.connectors && data.connectors.length > 0 && (
                   <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-3">
-                    <p className="text-xs text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                    <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                       Conectores
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -300,7 +300,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                   w-full bg-[#1a1d3a] border border-[#00d4ff30]
                   focus:border-[#00d4ff] focus:outline-none focus:ring-1 focus:ring-[#00d4ff40]
                   rounded-xl px-5 py-4 text-white placeholder-[#4a4e7a]
-                  text-base leading-relaxed resize-y
+                  text-lg leading-relaxed resize-y
                   transition-colors duration-200
                 "
               />
@@ -367,7 +367,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
             initial="initial"
             animate="animate"
             exit="exit"
-            className="max-w-2xl mx-auto px-4 py-8 space-y-6"
+            className="px-0 py-8 space-y-6"
           >
             {/* Title */}
             <div className="text-center">
@@ -415,12 +415,12 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                 transition={{ delay: 0.55 }}
                 className="bg-[#12152e] rounded-xl px-5 py-4 space-y-2"
               >
-                <p className="text-xs text-[#00ff88] uppercase tracking-wider font-semibold">
+                <p className="text-sm text-[#00ff88] uppercase tracking-wider font-semibold">
                   Puntos Fuertes
                 </p>
                 <ul className="space-y-2">
                   {result.strengths.map((s, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#c8caeb]">
+                    <li key={i} className="flex items-start gap-2 text-base text-[#c8caeb]">
                       <CheckCircle size={16} className="text-[#00ff88] mt-0.5 flex-shrink-0" />
                       <span>{s}</span>
                     </li>
@@ -437,12 +437,12 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                 transition={{ delay: 0.65 }}
                 className="bg-[#12152e] rounded-xl px-5 py-4 space-y-2"
               >
-                <p className="text-xs text-[#ff6b35] uppercase tracking-wider font-semibold">
+                <p className="text-sm text-[#ff6b35] uppercase tracking-wider font-semibold">
                   Áreas de Mejora
                 </p>
                 <ul className="space-y-2">
                   {result.improvements.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#c8caeb]">
+                    <li key={i} className="flex items-start gap-2 text-base text-[#c8caeb]">
                       <AlertCircle size={16} className="text-[#ff6b35] mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -458,7 +458,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
               transition={{ delay: 0.5 }}
               className="flex flex-col items-center gap-1 py-4"
             >
-              <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
+              <p className="text-base text-[#8b8fb0] uppercase tracking-wider font-semibold">
                 XP Ganados
               </p>
               <XPCountUp target={activity.xpReward + result.xpBonus} />

@@ -82,10 +82,10 @@ function renderSection(section: LessonSection, index: number) {
       return (
         <div key={index} className="space-y-2">
           {section.title && (
-            <h3 className="text-white font-bold text-base">{section.title}</h3>
+            <h3 className="text-white font-bold text-xl">{section.title}</h3>
           )}
           {section.content && (
-            <p className="text-[#c8caeb] leading-relaxed text-sm">{section.content}</p>
+            <p className="text-[#c8caeb] leading-relaxed text-base lg:text-lg">{section.content}</p>
           )}
         </div>
       )
@@ -98,17 +98,17 @@ function renderSection(section: LessonSection, index: number) {
           style={{ borderColor: '#00d4ff', background: '#00d4ff0d' }}
         >
           {section.title && (
-            <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: '#00d4ff' }}>
+            <p className="text-sm font-bold uppercase tracking-wider mb-1" style={{ color: '#00d4ff' }}>
               {section.title}
             </p>
           )}
           {section.content && (
-            <p className="text-[#c8caeb] text-sm leading-relaxed">{section.content}</p>
+            <p className="text-[#c8caeb] text-base lg:text-lg leading-relaxed">{section.content}</p>
           )}
           {section.highlights && section.highlights.length > 0 && (
             <ul className="mt-2 space-y-1">
               {section.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-[#c8caeb]">
+                <li key={i} className="flex items-start gap-2 text-base text-[#c8caeb]">
                   <span style={{ color: '#00d4ff' }}>•</span>
                   <span>{h}</span>
                 </li>
@@ -122,12 +122,12 @@ function renderSection(section: LessonSection, index: number) {
       return (
         <div key={index} className="space-y-2">
           {section.title && (
-            <h3 className="text-white font-bold text-base">{section.title}</h3>
+            <h3 className="text-white font-bold text-xl">{section.title}</h3>
           )}
           {section.highlights && section.highlights.length > 0 && (
             <ul className="space-y-2 pl-2">
               {section.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-[#c8caeb]">
+                <li key={i} className="flex items-start gap-3 text-base text-[#c8caeb]">
                   <span
                     className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
                     style={{ background: '#b24bff' }}
@@ -138,7 +138,7 @@ function renderSection(section: LessonSection, index: number) {
             </ul>
           )}
           {section.content && (
-            <p className="text-[#c8caeb] text-sm leading-relaxed">{section.content}</p>
+            <p className="text-[#c8caeb] text-base lg:text-lg leading-relaxed">{section.content}</p>
           )}
         </div>
       )
@@ -148,7 +148,7 @@ function renderSection(section: LessonSection, index: number) {
       return (
         <div key={index} className="space-y-2">
           {section.title && (
-            <h3 className="text-white font-bold text-base">{section.title}</h3>
+            <h3 className="text-white font-bold text-xl">{section.title}</h3>
           )}
           <div
             className="w-full h-40 rounded-xl flex items-center justify-center"
@@ -170,12 +170,12 @@ function renderSection(section: LessonSection, index: number) {
           style={{ background: '#ffd70008' }}
         >
           {section.title && (
-            <p className="text-xs font-semibold text-[#ffd700] uppercase tracking-wider mb-1">
+            <p className="text-sm font-semibold text-[#ffd700] uppercase tracking-wider mb-1">
               {section.title}
             </p>
           )}
           {section.content && (
-            <p className="text-[#c8caeb] text-sm leading-relaxed">{section.content}</p>
+            <p className="text-[#c8caeb] text-base lg:text-lg leading-relaxed">{section.content}</p>
           )}
         </blockquote>
       )
@@ -218,8 +218,8 @@ export function DailyMissionPage() {
   }, [step, victoryTriggered, incrementStreak, completeDailyMission, tema.id, lessonIndex])
 
   return (
-    <div className="min-h-screen" style={{ background: '#0a0b1a' }}>
-      <div className="max-w-2xl mx-auto px-6 py-8">
+    <div className="min-h-screen">
+      <div className="max-w-4xl mx-auto px-6 py-8">
 
         {/* Step dots (shown during active steps) */}
         <AnimatePresence>
@@ -259,14 +259,14 @@ export function DailyMissionPage() {
                     ],
                   }}
                   transition={{ repeat: Infinity, duration: 2.5 }}
-                  className="text-3xl font-black uppercase tracking-widest"
+                  className="text-5xl font-black uppercase tracking-widest"
                   style={{ color: '#b24bff' }}
                 >
                   MISIÓN DEL DÍA
                 </motion.div>
-                <p className="text-[#8b8fb0] text-sm">Tema {tema.number}: {tema.title}</p>
+                <p className="text-[#8b8fb0] text-base">Tema {tema.number}: {tema.title}</p>
                 <p
-                  className="font-bold text-white text-lg"
+                  className="font-bold text-white text-2xl"
                   style={{ textShadow: '0 0 8px #00d4ff55' }}
                 >
                   {lesson.title}
@@ -281,10 +281,10 @@ export function DailyMissionPage() {
                   className="rounded-2xl p-5 text-center space-y-3"
                   style={{ background: '#00ff8810', border: '1px solid #00ff8840' }}
                 >
-                  <p className="text-[#00ff88] font-bold text-lg">
+                  <p className="text-[#00ff88] font-bold text-xl">
                     ¡Ya completaste la misión de hoy!
                   </p>
-                  <p className="text-[#8b8fb0] text-sm">Vuelve mañana para tu próxima misión.</p>
+                  <p className="text-[#8b8fb0] text-base">Vuelve mañana para tu próxima misión.</p>
                   <Link
                     to="/temas"
                     className="inline-flex items-center gap-1 text-sm font-semibold"
@@ -303,7 +303,7 @@ export function DailyMissionPage() {
                   border: '1px solid #b24bff44',
                 }}
               >
-                <p className="text-xs font-bold uppercase tracking-wider" style={{ color: '#b24bff' }}>
+                <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#b24bff' }}>
                   Plan de misión
                 </p>
                 <div className="space-y-3">
@@ -327,8 +327,8 @@ export function DailyMissionPage() {
                         {item.icon}
                       </div>
                       <div>
-                        <p className="font-semibold text-white text-sm">{item.label}</p>
-                        <p className="text-xs text-[#8b8fb0]">{item.desc}</p>
+                        <p className="font-semibold text-white text-base">{item.label}</p>
+                        <p className="text-sm text-[#8b8fb0]">{item.desc}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -336,7 +336,7 @@ export function DailyMissionPage() {
 
                 <div className="pt-1 flex items-center gap-2">
                   <Zap size={14} style={{ color: '#ffd700' }} />
-                  <span className="text-xs text-[#8b8fb0]">Tiempo estimado: ~15-20 minutos</span>
+                  <span className="text-sm text-[#8b8fb0]">Tiempo estimado: ~15-20 minutos</span>
                 </div>
               </div>
 
@@ -386,10 +386,10 @@ export function DailyMissionPage() {
                   🔥
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider" style={{ color: '#ff6b35' }}>
+                  <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#ff6b35' }}>
                     Paso 1 — Calentamiento
                   </p>
-                  <p className="text-white font-semibold text-sm">{warmupActivity.title}</p>
+                  <p className="text-white font-semibold text-base">{warmupActivity.title}</p>
                 </div>
               </div>
 
@@ -426,15 +426,15 @@ export function DailyMissionPage() {
                   <BookOpen size={16} style={{ color: '#00d4ff' }} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider" style={{ color: '#00d4ff' }}>
+                  <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#00d4ff' }}>
                     Paso 2 — Aprender
                   </p>
-                  <p className="text-white font-semibold text-sm">{lesson.title}</p>
+                  <p className="text-white font-semibold text-base">{lesson.title}</p>
                 </div>
               </div>
 
               {lesson.subtitle && (
-                <p className="text-[#8b8fb0] text-sm">{lesson.subtitle}</p>
+                <p className="text-[#8b8fb0] text-base">{lesson.subtitle}</p>
               )}
 
               {/* Lesson sections */}
@@ -459,7 +459,7 @@ export function DailyMissionPage() {
                 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-2xl font-bold text-base flex items-center justify-center gap-2"
                 style={{
                   background: 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)',
                   color: '#0a0b1a',
@@ -492,10 +492,10 @@ export function DailyMissionPage() {
                   ✏️
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider" style={{ color: '#b24bff' }}>
+                  <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#b24bff' }}>
                     Paso 3 — Práctica
                   </p>
-                  <p className="text-white font-semibold text-sm">{practiceActivity.title}</p>
+                  <p className="text-white font-semibold text-base">{practiceActivity.title}</p>
                 </div>
               </div>
 
@@ -532,10 +532,10 @@ export function DailyMissionPage() {
                   <PenLine size={16} style={{ color: '#00ff88' }} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider" style={{ color: '#00ff88' }}>
+                  <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#00ff88' }}>
                     Paso 4 — Misión escrita
                   </p>
-                  <p className="text-white font-semibold text-sm">{writeActivity.title}</p>
+                  <p className="text-white font-semibold text-base">{writeActivity.title}</p>
                 </div>
               </div>
 
@@ -601,7 +601,7 @@ export function DailyMissionPage() {
                 >
                   ¡VICTORIA!
                 </motion.h1>
-                <p className="text-[#8b8fb0] text-sm uppercase tracking-widest font-semibold">
+                <p className="text-[#8b8fb0] text-base uppercase tracking-widest font-semibold">
                   Misión completada
                 </p>
               </motion.div>
@@ -636,7 +636,7 @@ export function DailyMissionPage() {
                 transition={{ delay: 0.7 }}
                 className="space-y-1"
               >
-                <p className="text-xs text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                   XP ganado hoy
                 </p>
                 <XPCountUp target={missionXP} />
@@ -680,8 +680,8 @@ export function DailyMissionPage() {
                     >
                       {stat.icon}
                     </div>
-                    <p className="font-black text-white text-base leading-tight">{stat.value}</p>
-                    <p className="text-[#8b8fb0] text-xs">{stat.label}</p>
+                    <p className="font-black text-white text-xl leading-tight">{stat.value}</p>
+                    <p className="text-[#8b8fb0] text-sm">{stat.label}</p>
                   </div>
                 ))}
               </motion.div>
@@ -694,8 +694,8 @@ export function DailyMissionPage() {
                 className="rounded-xl px-4 py-3 inline-block"
                 style={{ background: '#00d4ff15', border: '1px solid #00d4ff33' }}
               >
-                <p className="text-xs text-[#8b8fb0] uppercase tracking-wider mb-0.5">Tu rango</p>
-                <p className="font-bold text-sm" style={{ color: '#00d4ff' }}>
+                <p className="text-sm text-[#8b8fb0] uppercase tracking-wider mb-0.5">Tu rango</p>
+                <p className="font-bold text-base" style={{ color: '#00d4ff' }}>
                   {getLevelTitle(level)}
                 </p>
               </motion.div>
@@ -705,7 +705,7 @@ export function DailyMissionPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2 }}
-                className="text-[#8b8fb0] text-sm italic"
+                className="text-[#8b8fb0] text-base italic"
               >
                 Mañana te espera otra misión. ¡Sigue conquistando la historia!
               </motion.p>
@@ -719,7 +719,7 @@ export function DailyMissionPage() {
               >
                 <button
                   onClick={() => navigate('/temas')}
-                  className="w-full py-3.5 rounded-2xl font-bold text-sm"
+                  className="w-full py-3.5 rounded-2xl font-bold text-base"
                   style={{
                     background: 'linear-gradient(135deg, #b24bff 0%, #00d4ff 100%)',
                     color: '#fff',
@@ -729,7 +729,7 @@ export function DailyMissionPage() {
                 </button>
                 <button
                   onClick={() => navigate('/')}
-                  className="w-full py-3 rounded-2xl font-semibold text-sm"
+                  className="w-full py-3 rounded-2xl font-semibold text-base"
                   style={{
                     background: '#1a1d3a',
                     border: '1px solid #ffffff15',
