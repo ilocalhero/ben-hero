@@ -1,8 +1,18 @@
 const VERSION = '1.0.0'
 
+let _userPrefix = ''
+
+export function setUserPrefix(prefix: string): void {
+  _userPrefix = prefix
+}
+
+function storageKey(key: string): string {
+  return _userPrefix ? `benhero_${_userPrefix}_${key}` : `benhero_${key}`
+}
+
 export function saveToStorage<T>(key: string, data: T): void {
   try {
-    localStorage.setItem(`benhero_${key}`, JSON.stringify({ v: VERSION, data }))
+    localStorage.setItem(storageKey(key), JSON.stringify({ v: VERSION, data }))
   } catch (e) {
     console.warn('Storage save failed:', e)
   }
@@ -10,7 +20,7 @@ export function saveToStorage<T>(key: string, data: T): void {
 
 export function loadFromStorage<T>(key: string): T | null {
   try {
-    const raw = localStorage.getItem(`benhero_${key}`)
+    const raw = localStorage.getItem(storageKey(key))
     if (!raw) return null
     const parsed = JSON.parse(raw)
     return parsed.data as T

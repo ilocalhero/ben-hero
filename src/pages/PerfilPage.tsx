@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
-import { Flame, Star, Zap, Trophy } from 'lucide-react'
+import { Flame, Star, Zap, Trophy, LogOut } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { usePlayerStore } from '../stores/usePlayerStore'
+import { useAuthStore } from '../stores/useAuthStore'
 import { getXPProgress, getLevelTitle, LEVELS } from '../lib/xpCalculator'
 import { NeonText, ProgressBar, Card } from '../components/ui'
 
@@ -31,9 +33,16 @@ function StatCard({ icon, label, value, color, glowColor }: StatCardProps) {
 
 export function PerfilPage() {
   const { name, totalXP, level, streak } = usePlayerStore()
+  const logout = useAuthStore((s) => s.logout)
+  const navigate = useNavigate()
   const xpProgress = getXPProgress(totalXP)
   const levelTitle = getLevelTitle(level)
   const nextLevelXP = LEVELS[level]?.xpRequired ?? totalXP
+
+  function handleLogout() {
+    logout()
+    navigate('/login', { replace: true })
+  }
 
   return (
     <div className="space-y-8 max-w-2xl">
@@ -131,6 +140,34 @@ export function PerfilPage() {
           color="#b24bff"
           glowColor="#b24bff"
         />
+      </motion.div>
+
+      {/* Logout */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+      >
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
+          style={{
+            background: 'rgba(255,62,165,0.06)',
+            border: '1px solid rgba(255,62,165,0.2)',
+            color: '#ff3ea5',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(255,62,165,0.12)'
+            e.currentTarget.style.borderColor = 'rgba(255,62,165,0.4)'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'rgba(255,62,165,0.06)'
+            e.currentTarget.style.borderColor = 'rgba(255,62,165,0.2)'
+          }}
+        >
+          <LogOut size={16} />
+          Cerrar Sesión
+        </button>
       </motion.div>
     </div>
   )

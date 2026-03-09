@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { usePlayerStore } from '../../stores/usePlayerStore'
 import { useProgressStore } from '../../stores/useProgressStore'
+import { useAuthStore } from '../../stores/useAuthStore'
 import { TopBar } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { BottomNav } from './BottomNav'
@@ -9,12 +10,14 @@ import { BottomNav } from './BottomNav'
 export function AppShell() {
   const { load: loadPlayer, resetStreakIfNeeded } = usePlayerStore()
   const { load: loadProgress } = useProgressStore()
+  const { load: loadAuth } = useAuthStore()
 
   useEffect(() => {
+    loadAuth()
     loadPlayer()
     loadProgress()
     resetStreakIfNeeded()
-  }, [loadPlayer, loadProgress, resetStreakIfNeeded])
+  }, [loadAuth, loadPlayer, loadProgress, resetStreakIfNeeded])
 
   return (
     <div className="flex flex-col h-screen bg-bg-primary overflow-hidden">
