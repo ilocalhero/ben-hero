@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Flame, Star, Zap, Trophy, LogOut } from 'lucide-react'
+import { Flame, Star, Zap, Trophy, LogOut, Pencil, Check, X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { useAuthStore } from '../stores/useAuthStore'
@@ -32,16 +33,37 @@ function StatCard({ icon, label, value, color, glowColor }: StatCardProps) {
 }
 
 export function PerfilPage() {
-  const { name, totalXP, level, streak } = usePlayerStore()
+  const { name, handle, totalXP, level, streak, setName } = usePlayerStore()
   const logout = useAuthStore((s) => s.logout)
   const navigate = useNavigate()
   const xpProgress = getXPProgress(totalXP)
   const levelTitle = getLevelTitle(level)
   const nextLevelXP = LEVELS[level]?.xpRequired ?? totalXP
 
+  const [editing, setEditing] = useState(false)
+  const [draft, setDraft] = useState(name)
+
   function handleLogout() {
     logout()
     navigate('/login', { replace: true })
+  }
+
+  function startEdit() {
+    setDraft(name)
+    setEditing(true)
+  }
+
+  function confirmEdit() {
+    const trimmed = draft.trim()
+    if (trimmed.length >= 2) {
+      setName(trimmed)
+    }
+    setEditing(false)
+  }
+
+  function cancelEdit() {
+    setDraft(name)
+    setEditing(false)
   }
 
   return (
@@ -64,11 +86,62 @@ export function PerfilPage() {
         >
           {name.charAt(0).toUpperCase()}
         </div>
-        <div>
-          <NeonText as="h1" color="blue" className="text-3xl">
-            {name}
-          </NeonText>
-          <p className="text-[#8b8fb0] text-sm mt-0.5">{levelTitle} · Nivel {level}</p>
+        <div className="min-w-0">
+          {editing ? (
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') confirmEdit()
+                  if (e.key === 'Escape') cancelEdit()
+                }}
+                maxLength={30}
+                autoFocus
+                className="rounded-lg px-3 py-1.5 text-xl font-black text-white outline-none w-44"
+                style={{
+                  background: 'rgba(255,255,255,0.07)',
+                  border: '1px solid rgba(0,212,255,0.5)',
+                  boxShadow: '0 0 12px rgba(0,212,255,0.15)',
+                }}
+              />
+              <button
+                onClick={confirmEdit}
+                disabled={draft.trim().length < 2}
+                className="p-1.5 rounded-lg disabled:opacity-40"
+                style={{ color: '#00ff88' }}
+              >
+                <Check size={18} />
+              </button>
+              <button onClick={cancelEdit} className="p-1.5 rounded-lg" style={{ color: '#ff3ea5' }}>
+                <X size={18} />
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <NeonText as="h1" color="blue" className="text-3xl truncate">
+                {name}
+              </NeonText>
+              <button
+                onClick={startEdit}
+                className="p-1.5 rounded-lg opacity-50 hover:opacity-100 transition-opacity flex-shrink-0"
+                style={{ color: '#00d4ff' }}
+                title="Cambiar nombre"
+              >
+                <Pencil size={15} />
+              </button>
+            </div>
+          )}
+          <div className="flex items-center gap-2 mt-0.5">
+            {handle && (
+              <span className="text-xs font-bold" style={{ color: 'rgba(0,212,255,0.5)' }}>
+                @{handle}
+              </span>
+            )}
+            {handle && <span className="text-[#8b8fb0] text-xs">·</span>}
+            <p className="text-[#8b8fb0] text-sm">{levelTitle} · Nivel {level}</p>
+          </div>
         </div>
       </motion.div>
 
