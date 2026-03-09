@@ -88,7 +88,7 @@ export function TemaPage() {
 
       {/* Hero image */}
       {tema.heroImage && (
-        <div className="relative w-full h-56 lg:h-72 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-[374px] lg:h-[438px] rounded-2xl overflow-hidden">
           <img
             src={tema.heroImage}
             alt={tema.title}

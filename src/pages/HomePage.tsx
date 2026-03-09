@@ -222,14 +222,17 @@ export function HomePage() {
             >
               <div className="flex items-center gap-6">
                 <div
-                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center text-4xl flex-shrink-0"
+                  className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl overflow-hidden flex items-center justify-center text-4xl flex-shrink-0"
                   style={{
                     background: `${currentTema.tema.color}15`,
                     border: `1px solid ${currentTema.tema.color}35`,
                     boxShadow: `0 0 28px ${currentTema.tema.color}25`,
                   }}
                 >
-                  {getTemaEmoji(currentTema.tema.icon)}
+                  {currentTema.tema.iconImage
+                    ? <img src={currentTema.tema.iconImage} alt={currentTema.tema.title} className="w-full h-full object-cover" />
+                    : getTemaEmoji(currentTema.tema.icon)
+                  }
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
@@ -308,13 +311,16 @@ export function HomePage() {
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl flex-shrink-0"
+                        className="w-14 h-14 rounded-xl overflow-hidden flex items-center justify-center text-3xl flex-shrink-0"
                         style={{
                           background: `${tema.color}15`,
                           border: `1px solid ${tema.color}30`,
                         }}
                       >
-                        {getTemaEmoji(tema.icon)}
+                        {tema.iconImage
+                          ? <img src={tema.iconImage} alt={tema.title} className="w-full h-full object-cover" />
+                          : getTemaEmoji(tema.icon)
+                        }
                       </div>
                       <Badge color={categoryColor(tema.category)} size="sm">{tema.category}</Badge>
                     </div>
