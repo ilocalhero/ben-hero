@@ -26,14 +26,14 @@ export function Sidebar() {
 
   return (
     <aside
-      className="hidden lg:flex flex-col w-[260px] h-full flex-shrink-0"
+      className="hidden lg:flex flex-col w-[240px] h-full flex-shrink-0"
       style={{
         background: 'linear-gradient(180deg, #0c0f20 0%, #090b18 100%)',
         borderRight: '1px solid rgba(0, 212, 255, 0.08)',
       }}
     >
       {/* Player Identity */}
-      <div className="px-5 pt-7 pb-5 space-y-4">
+      <div className="px-5 pt-5 pb-4 space-y-4">
         <div className="flex items-center gap-3">
           <div
             className="w-[52px] h-[52px] rounded-2xl flex items-center justify-center text-xl font-black text-neon-blue flex-shrink-0"
@@ -80,7 +80,7 @@ export function Sidebar() {
       <div className="mx-5 h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
 
       {/* Navigation */}
-      <nav className="flex-1 py-5 px-4 space-y-2">
+      <nav className="flex-1 py-4 px-3 space-y-1.5">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon
           return (
@@ -92,7 +92,7 @@ export function Sidebar() {
             >
               {({ isActive }) => (
                 <motion.div
-                  className="relative flex items-center gap-3 px-4 py-4 rounded-xl cursor-pointer transition-colors duration-150"
+                  className="relative flex items-center gap-3 px-5 py-2.5 rounded-xl cursor-pointer transition-colors duration-150"
                   style={
                     isActive
                       ? {

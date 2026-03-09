@@ -119,7 +119,7 @@ export function HomePage() {
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shimmer rounded-3xl" />
           )}
 
-          <div className="relative flex flex-col lg:flex-row lg:items-center gap-8 p-8 lg:p-12">
+          <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 p-6 lg:p-8">
             {/* Large icon */}
             <div
               className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center flex-shrink-0"
@@ -183,7 +183,7 @@ export function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.15 }}
       >
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <StatCard icon={<Zap size={22} />} label="XP Total" value={totalXP.toLocaleString()} color="#00d4ff" />
           <StatCard icon={<Trophy size={22} />} label="Nivel" value={levelTitle} color="#b24bff" subtitle={`Nv. ${level}`} />
           <StatCard icon={<Flame size={22} />} label="Racha" value={`${streak}d`} color={streak > 0 ? '#ff6b35' : '#4a4e6e'} />
@@ -204,7 +204,7 @@ export function HomePage() {
 
           <Link to={`/temas/${currentTema.tema.id}`} className="block group">
             <div
-              className="rounded-2xl p-7 lg:p-9 transition-all duration-200"
+              className="rounded-2xl p-6 transition-all duration-200"
               style={{
                 background: `linear-gradient(135deg, ${currentTema.tema.color}0a 0%, #141729 30%, #111425 100%)`,
                 border: `1px solid ${currentTema.tema.color}25`,
@@ -290,7 +290,7 @@ export function HomePage() {
               >
                 <Link to={`/temas/${tema.id}`} className="block h-full">
                   <div
-                    className="rounded-2xl p-6 h-full transition-all duration-200"
+                    className="rounded-2xl p-5 h-full transition-all duration-200"
                     style={{
                       background: `linear-gradient(135deg, ${tema.color}0c 0%, #141729 100%)`,
                       border: `1px solid ${tema.color}25`,

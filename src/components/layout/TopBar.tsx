@@ -12,7 +12,7 @@ export function TopBar() {
 
   return (
     <header
-      className="h-[72px] flex items-center px-4 lg:px-6 gap-4 z-50 sticky top-0 flex-shrink-0"
+      className="h-[52px] flex items-center px-4 lg:px-6 gap-4 z-50 sticky top-0 flex-shrink-0"
       style={{
         background: 'linear-gradient(180deg, rgba(15,18,36,0.85) 0%, rgba(12,15,30,0.9) 100%)',
         backdropFilter: 'blur(16px)',
@@ -29,7 +29,7 @@ export function TopBar() {
         transition={{ duration: 0.4 }}
       >
         <div
-          className="w-9 h-9 rounded-xl flex items-center justify-center text-base"
+          className="w-8 h-8 rounded-xl flex items-center justify-center text-sm"
           style={{
             background: 'linear-gradient(135deg, #00d4ff33 0%, #b24bff33 100%)',
             border: '1px solid #00d4ff44',
@@ -39,7 +39,7 @@ export function TopBar() {
           ⚡
         </div>
         <span
-          className="font-black tracking-[0.25em] text-[18px]"
+          className="font-black tracking-[0.25em] text-[16px]"
           style={{
             fontFamily: "'Orbitron', sans-serif",
             color: '#00d4ff',

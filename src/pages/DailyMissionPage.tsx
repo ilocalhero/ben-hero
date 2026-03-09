@@ -219,7 +219,7 @@ export function DailyMissionPage() {
 
   return (
     <div className="min-h-screen" style={{ background: '#0a0b1a' }}>
-      <div className="max-w-2xl mx-auto px-4 py-6">
+      <div className="max-w-2xl mx-auto px-6 py-8">
 
         {/* Step dots (shown during active steps) */}
         <AnimatePresence>
