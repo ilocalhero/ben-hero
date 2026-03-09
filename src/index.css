@@ -62,8 +62,15 @@ body::before {
 /* Orbitron for logo/headers */
 .font-orbitron { font-family: 'Orbitron', sans-serif; }
 
+/* Stronger glow variants for larger UI elements */
+.glow-blue-lg   { box-shadow: 0 0 40px rgba(0, 212, 255, 0.55), 0 0 80px rgba(0, 212, 255, 0.2), 0 0 120px rgba(0, 212, 255, 0.06); }
+.glow-purple-lg { box-shadow: 0 0 40px rgba(178, 75, 255, 0.55), 0 0 80px rgba(178, 75, 255, 0.2), 0 0 120px rgba(178, 75, 255, 0.06); }
+.glow-green-lg  { box-shadow: 0 0 40px rgba(0, 255, 136, 0.55), 0 0 80px rgba(0, 255, 136, 0.2); }
+.glow-orange-lg { box-shadow: 0 0 40px rgba(255, 107, 53, 0.55), 0 0 80px rgba(255, 107, 53, 0.2); }
+.glow-yellow-lg { box-shadow: 0 0 40px rgba(255, 215, 0, 0.55), 0 0 80px rgba(255, 215, 0, 0.2); }
+
 /* Scrollbar */
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #1e2248; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #00d4ff44; }
@@ -96,4 +103,52 @@ body::before {
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-drift {
+  background-size: 200% 200%;
+  animation: gradient-drift 8s ease infinite;
+}
+
+@keyframes border-pulse-blue {
+  0%, 100% { box-shadow: 0 0 0px transparent; }
+  50%       { box-shadow: 0 0 32px rgba(0,212,255,0.5), 0 0 64px rgba(0,212,255,0.2); }
+}
+.border-pulse-blue { animation: border-pulse-blue 2.5s ease-in-out infinite; }
+
+@keyframes border-pulse-purple {
+  0%, 100% { box-shadow: 0 0 0px transparent; }
+  50%       { box-shadow: 0 0 32px rgba(178,75,255,0.5), 0 0 64px rgba(178,75,255,0.2); }
+}
+.border-pulse-purple { animation: border-pulse-purple 2.5s ease-in-out infinite; }
+
+/* Scrollbar hide for horizontal carousels */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Gradient mesh ambient background for main content */
+.main-gradient-mesh { position: relative; }
+.main-gradient-mesh::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0, 212, 255, 0.05), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(178, 75, 255, 0.05), transparent),
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(0, 255, 136, 0.04), transparent);
+  pointer-events: none;
+  z-index: 0;
+  animation: mesh-drift 12s ease-in-out infinite;
+}
+.main-gradient-mesh > * { position: relative; z-index: 1; }
+
+@keyframes mesh-drift {
+  0%   { opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.7; }
 }

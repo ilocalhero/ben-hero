@@ -14,16 +14,16 @@ interface StatCardProps {
 
 function StatCard({ icon, label, value, color, glowColor }: StatCardProps) {
   return (
-    <Card className="flex items-center gap-3">
+    <Card className="flex flex-col gap-3">
       <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+        className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
         style={{ background: `${glowColor}22`, border: `1px solid ${glowColor}44` }}
       >
         <div style={{ color }}>{icon}</div>
       </div>
       <div>
         <p className="text-xs text-[#8b8fb0] font-semibold">{label}</p>
-        <p className="font-black text-white text-lg leading-tight">{value}</p>
+        <p className="font-black text-white text-2xl lg:text-3xl leading-tight">{value}</p>
       </div>
     </Card>
   )
@@ -36,7 +36,7 @@ export function PerfilPage() {
   const nextLevelXP = LEVELS[level]?.xpRequired ?? totalXP
 
   return (
-    <div className="space-y-6 max-w-lg">
+    <div className="space-y-8 max-w-2xl">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -12 }}
@@ -46,17 +46,17 @@ export function PerfilPage() {
       >
         {/* Avatar */}
         <div
-          className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl font-black text-neon-blue flex-shrink-0"
+          className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl font-black text-neon-blue flex-shrink-0"
           style={{
             background: '#00d4ff15',
-            border: '2px solid #00d4ff44',
-            boxShadow: '0 0 20px #00d4ff22',
+            border: '2px solid #00d4ff55',
+            boxShadow: '0 0 32px #00d4ff30',
           }}
         >
           {name.charAt(0).toUpperCase()}
         </div>
         <div>
-          <NeonText as="h1" color="blue" className="text-2xl">
+          <NeonText as="h1" color="blue" className="text-3xl">
             {name}
           </NeonText>
           <p className="text-[#8b8fb0] text-sm mt-0.5">{levelTitle} · Nivel {level}</p>
@@ -101,7 +101,7 @@ export function PerfilPage() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.2 }}
-        className="grid grid-cols-2 gap-3"
+        className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5"
       >
         <StatCard
           icon={<Zap size={20} />}

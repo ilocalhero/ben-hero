@@ -24,8 +24,8 @@ export function AppShell() {
         <Sidebar />
 
         {/* Main content */}
-        <main className="flex-1 overflow-y-auto bg-bg-primary pb-[60px] lg:pb-0">
-          <div className="px-4 py-5 lg:px-8 lg:py-7">
+        <main className="flex-1 overflow-y-auto bg-bg-primary pb-[70px] lg:pb-0 main-gradient-mesh">
+          <div className="px-6 py-8 lg:px-16 lg:py-12 max-w-[1200px]">
             <Outlet />
           </div>
         </main>

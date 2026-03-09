@@ -25,7 +25,7 @@ export function Card({ children, className = '', glow = 'none', onClick }: CardP
   return (
     <div
       onClick={onClick}
-      className={`rounded-2xl p-4 transition-all duration-200 ${onClick ? 'cursor-pointer' : ''} ${className}`}
+      className={`rounded-2xl p-6 transition-all duration-200 ${onClick ? 'cursor-pointer' : ''} ${className}`}
       style={baseStyle}
     >
       {children}

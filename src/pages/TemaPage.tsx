@@ -75,7 +75,7 @@ export function TemaPage() {
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="max-w-2xl mx-auto space-y-5"
+      className="max-w-3xl mx-auto space-y-6"
     >
       {/* Back link */}
       <Link
@@ -88,7 +88,7 @@ export function TemaPage() {
 
       {/* Header card */}
       <div
-        className="rounded-2xl p-5 space-y-4 relative overflow-hidden"
+        className="rounded-2xl p-6 lg:p-8 space-y-5 relative overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
           border: `1px solid ${tema.color}28`,
@@ -102,7 +102,7 @@ export function TemaPage() {
         />
         <div className="flex items-start gap-4">
           <div
-            className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center text-3xl"
+            className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center text-4xl lg:text-5xl"
             style={{
               background: `${tema.color}18`,
               border: `1px solid ${tema.color}44`,
@@ -116,7 +116,7 @@ export function TemaPage() {
               <Badge color={categoryColor} size="sm">{categoryLabel}</Badge>
               <span className="text-text-muted text-xs">{tema.textbookPages}</span>
             </div>
-            <NeonText color="blue" as="h1" className="text-xl lg:text-2xl font-black leading-tight tracking-tight">
+            <NeonText color="blue" as="h1" className="text-2xl lg:text-3xl font-black leading-tight tracking-tight">
               {tema.title}
             </NeonText>
             <p className="text-text-secondary text-sm mt-1">{tema.subtitle}</p>
@@ -137,7 +137,7 @@ export function TemaPage() {
       {/* Lessons section */}
       {tema.lessons.length > 0 && (
         <div className="space-y-2.5">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted px-0.5">Lecciones</h2>
+          <h2 className="text-sm font-black uppercase tracking-widest text-text-muted px-0.5">Lecciones</h2>
           <div className="space-y-2">
             {tema.lessons.map((lesson, i) => {
               const done = isLessonDone(lesson.id)
@@ -150,7 +150,7 @@ export function TemaPage() {
                 >
                   <Link
                     to={`/temas/${tema.id}/lessons/${lesson.id}`}
-                    className="flex items-center gap-3 p-3.5 rounded-xl transition-all duration-150 group"
+                    className="flex items-center gap-4 p-4 lg:p-5 rounded-xl transition-all duration-150 group"
                     style={{
                       background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
                       border: done ? '1px solid rgba(0,255,136,0.2)' : '1px solid rgba(255,255,255,0.07)',
@@ -163,7 +163,7 @@ export function TemaPage() {
                     }}
                   >
                     <div
-                      className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold"
+                      className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold"
                       style={
                         done
                           ? { background: 'rgba(0,255,136,0.12)', color: '#00ff88', border: '1px solid rgba(0,255,136,0.25)' }
@@ -173,7 +173,7 @@ export function TemaPage() {
                       {done ? <Check size={13} /> : lesson.order}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-semibold text-sm truncate ${done ? 'text-neon-green' : 'text-text-primary'}`}>
+                      <p className={`font-semibold text-base truncate ${done ? 'text-neon-green' : 'text-text-primary'}`}>
                         {lesson.title}
                       </p>
                       {lesson.subtitle && (
@@ -192,7 +192,7 @@ export function TemaPage() {
       {/* Activities section */}
       {tema.activities.length > 0 && (
         <div className="space-y-2.5">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
+          <h2 className="text-sm font-black uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {tema.activities.map((activity, i) => {
               const done = isActivityDone(activity.id)
@@ -207,7 +207,7 @@ export function TemaPage() {
                 >
                   <Link
                     to={`/temas/${tema.id}/activities/${activity.id}`}
-                    className="block p-3.5 rounded-xl transition-all duration-150"
+                    className="block p-4 lg:p-5 rounded-xl transition-all duration-150"
                     style={{
                       background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
                       border: done ? '1px solid rgba(0,255,136,0.2)' : '1px solid rgba(255,255,255,0.07)',
@@ -295,7 +295,7 @@ export function TemaPage() {
       {/* Key Dates timeline */}
       {tema.keyDates && tema.keyDates.length > 0 && (
         <div className="space-y-2.5">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-text-muted px-0.5">Fechas clave</h2>
+          <h2 className="text-sm font-black uppercase tracking-widest text-text-muted px-0.5">Fechas clave</h2>
           <div className="relative space-y-2 pl-5">
             <div
               className="absolute left-1.5 top-2 bottom-2 w-px rounded-full"

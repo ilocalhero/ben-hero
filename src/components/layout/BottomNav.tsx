@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Home, BookOpen, User } from 'lucide-react'
+import { Home, BookOpen, User, Target } from 'lucide-react'
 
 interface NavItem {
   label: string
@@ -10,6 +10,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Inicio', path: '/', icon: Home },
+  { label: 'Misiones', path: '/daily', icon: Target },
   { label: 'Temas', path: '/temas', icon: BookOpen },
   { label: 'Perfil', path: '/perfil', icon: User },
 ]
@@ -24,7 +25,7 @@ export function BottomNav() {
         boxShadow: '0 -4px 24px rgba(0,0,0,0.5)',
       }}
     >
-      <div className="flex items-center justify-around h-[58px] px-2">
+      <div className="flex items-center justify-around h-[68px] px-2">
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon
           return (
@@ -36,15 +37,15 @@ export function BottomNav() {
             >
               {({ isActive }) => (
                 <motion.div
-                  className="flex flex-col items-center gap-1 py-2"
+                  className="flex flex-col items-center gap-1.5 py-2.5"
                   whileTap={{ scale: 0.9 }}
                 >
                   <div
-                    className="flex items-center justify-center w-8 h-6 rounded-lg transition-all"
+                    className="flex items-center justify-center w-10 h-8 rounded-xl transition-all"
                     style={isActive ? { background: 'rgba(0,212,255,0.12)' } : undefined}
                   >
                     <Icon
-                      size={18}
+                      size={22}
                       style={
                         isActive
                           ? { color: '#00d4ff', filter: 'drop-shadow(0 0 6px #00d4ff)' }
@@ -53,7 +54,7 @@ export function BottomNav() {
                     />
                   </div>
                   <span
-                    className="text-[9px] font-bold tracking-wide uppercase"
+                    className="text-[11px] font-bold tracking-wide uppercase"
                     style={
                       isActive
                         ? { color: '#00d4ff', textShadow: '0 0 8px #00d4ff66' }
