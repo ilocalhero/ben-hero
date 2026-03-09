@@ -14,6 +14,8 @@ export interface WritingRecord {
 
 export interface PlayerState {
   name: string
+  handle: string | null
+  onboarded: boolean
   totalXP: number
   level: number
   streak: number

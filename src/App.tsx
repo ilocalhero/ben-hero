@@ -1,13 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppShell } from './components/layout'
 import { ProtectedRoute } from './components/ProtectedRoute'
-import { HomePage, TemasPage, PerfilPage, NotFoundPage, TemaPage, LessonPage, ActivityPage, DailyMissionPage, LoginPage } from './pages'
+import { HomePage, TemasPage, PerfilPage, NotFoundPage, TemaPage, LessonPage, ActivityPage, DailyMissionPage, LoginPage, OnboardingPage } from './pages'
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/onboarding" element={<OnboardingPage />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<AppShell />}>
             <Route index element={<HomePage />} />

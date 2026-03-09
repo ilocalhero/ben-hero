@@ -9,11 +9,14 @@ interface PlayerActions {
   resetStreakIfNeeded: () => void
   addWritingRecord: (temaId: string, record: WritingRecord) => void
   setName: (name: string) => void
+  completeOnboarding: (name: string, handle: string) => void
   load: () => void
 }
 
 const DEFAULT_STATE: PlayerState = {
-  name: 'Ben',
+  name: '',
+  handle: null,
+  onboarded: false,
   totalXP: 0,
   level: 1,
   streak: 0,
@@ -93,5 +96,12 @@ export const usePlayerStore = create<PlayerState & PlayerActions>((set, get) => 
     const state = get()
     set({ name })
     saveToStorage('player', { ...state, name })
+  },
+
+  completeOnboarding: (name: string, handle: string) => {
+    const state = get()
+    const update = { name, handle, onboarded: true }
+    set(update)
+    saveToStorage('player', { ...state, ...update })
   },
 }))
