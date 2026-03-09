@@ -75,12 +75,12 @@ export function TemaPage() {
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="max-w-3xl mx-auto space-y-6"
+      className="max-w-4xl mx-auto space-y-6"
     >
       {/* Back link */}
       <Link
         to="/temas"
-        className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors text-sm group"
+        className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors text-base group"
       >
         <ArrowLeft size={15} className="group-hover:-translate-x-0.5 transition-transform" />
         Volver a temas
@@ -114,19 +114,19 @@ export function TemaPage() {
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <Badge color={categoryColor} size="sm">{categoryLabel}</Badge>
-              <span className="text-text-muted text-xs">{tema.textbookPages}</span>
+              <span className="text-text-muted text-sm">{tema.textbookPages}</span>
             </div>
-            <NeonText color="blue" as="h1" className="text-2xl lg:text-3xl font-black leading-tight tracking-tight">
+            <NeonText color="blue" as="h1" className="text-3xl lg:text-4xl font-black leading-tight tracking-tight">
               {tema.title}
             </NeonText>
-            <p className="text-text-secondary text-sm mt-1">{tema.subtitle}</p>
+            <p className="text-text-secondary text-base mt-1">{tema.subtitle}</p>
           </div>
         </div>
 
-        <p className="text-text-secondary text-sm leading-relaxed">{tema.description}</p>
+        <p className="text-text-secondary text-base lg:text-lg leading-relaxed">{tema.description}</p>
 
         <div className="space-y-1.5">
-          <div className="flex justify-between text-xs">
+          <div className="flex justify-between text-sm">
             <span className="text-text-muted font-medium">Progreso</span>
             <span className="font-bold" style={{ color: tema.color }}>{progress}%</span>
           </div>
@@ -137,7 +137,7 @@ export function TemaPage() {
       {/* Lessons section */}
       {tema.lessons.length > 0 && (
         <div className="space-y-2.5">
-          <h2 className="text-sm font-black uppercase tracking-widest text-text-muted px-0.5">Lecciones</h2>
+          <h2 className="text-base font-black uppercase tracking-widest text-text-muted px-0.5">Lecciones</h2>
           <div className="space-y-2">
             {tema.lessons.map((lesson, i) => {
               const done = isLessonDone(lesson.id)
@@ -173,11 +173,11 @@ export function TemaPage() {
                       {done ? <Check size={13} /> : lesson.order}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className={`font-semibold text-base truncate ${done ? 'text-neon-green' : 'text-text-primary'}`}>
+                      <p className={`font-semibold text-xl truncate ${done ? 'text-neon-green' : 'text-text-primary'}`}>
                         {lesson.title}
                       </p>
                       {lesson.subtitle && (
-                        <p className="text-text-secondary text-xs truncate mt-0.5">{lesson.subtitle}</p>
+                        <p className="text-text-secondary text-sm truncate mt-0.5">{lesson.subtitle}</p>
                       )}
                     </div>
                     <ChevronRight size={14} className="text-text-muted group-hover:text-neon-blue transition-colors flex-shrink-0" />
@@ -192,7 +192,7 @@ export function TemaPage() {
       {/* Activities section */}
       {tema.activities.length > 0 && (
         <div className="space-y-2.5">
-          <h2 className="text-sm font-black uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
+          <h2 className="text-base font-black uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {tema.activities.map((activity, i) => {
               const done = isActivityDone(activity.id)
@@ -218,12 +218,12 @@ export function TemaPage() {
                         <span style={{ color: done ? '#00ff88' : '#b24bff' }}>
                           {done ? <Check size={16} /> : activityIcon(activity.type)}
                         </span>
-                        <span className="text-text-muted text-xs">{activityTypeLabel(activity.type)}</span>
+                        <span className="text-text-muted text-sm">{activityTypeLabel(activity.type)}</span>
                       </div>
                       <Badge color="yellow" size="sm">+{activity.xpReward} XP</Badge>
                     </div>
 
-                    <p className={`font-semibold text-sm leading-snug mb-2.5 ${done ? 'text-neon-green' : 'text-text-primary'}`}>
+                    <p className={`font-semibold text-base leading-snug mb-2.5 ${done ? 'text-neon-green' : 'text-text-primary'}`}>
                       {activity.title}
                     </p>
 
@@ -257,7 +257,7 @@ export function TemaPage() {
             onClick={() => setTermsOpen((o) => !o)}
             className="w-full flex items-center justify-between px-4 py-3.5 hover:bg-white/[0.03] transition-colors"
           >
-            <span className="font-bold text-sm text-text-primary">
+            <span className="font-bold text-base text-text-primary">
               Términos clave <span className="text-text-muted font-normal">({tema.keyTerms.length})</span>
             </span>
             <motion.div animate={{ rotate: termsOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -278,10 +278,10 @@ export function TemaPage() {
                 <div className="px-4 pb-4 space-y-3 pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
                   {tema.keyTerms.map((kt) => (
                     <div key={kt.term} className="space-y-0.5">
-                      <p className="font-bold text-neon-blue text-sm">{kt.term}</p>
-                      <p className="text-text-secondary text-sm leading-relaxed">{kt.definition}</p>
+                      <p className="font-bold text-neon-blue text-base">{kt.term}</p>
+                      <p className="text-text-secondary text-base leading-relaxed">{kt.definition}</p>
                       {kt.example && (
-                        <p className="text-text-muted text-xs italic">Ej: {kt.example}</p>
+                        <p className="text-text-muted text-sm italic">Ej: {kt.example}</p>
                       )}
                     </div>
                   ))}
@@ -295,7 +295,7 @@ export function TemaPage() {
       {/* Key Dates timeline */}
       {tema.keyDates && tema.keyDates.length > 0 && (
         <div className="space-y-2.5">
-          <h2 className="text-sm font-black uppercase tracking-widest text-text-muted px-0.5">Fechas clave</h2>
+          <h2 className="text-base font-black uppercase tracking-widest text-text-muted px-0.5">Fechas clave</h2>
           <div className="relative space-y-2 pl-5">
             <div
               className="absolute left-1.5 top-2 bottom-2 w-px rounded-full"
@@ -315,8 +315,8 @@ export function TemaPage() {
                 />
                 <Badge color="orange" size="sm">{kd.year}</Badge>
                 <div>
-                  <p className="text-text-primary text-sm font-semibold">{kd.event}</p>
-                  <p className="text-text-secondary text-xs mt-0.5 leading-relaxed">{kd.detail}</p>
+                  <p className="text-text-primary text-base font-semibold">{kd.event}</p>
+                  <p className="text-text-secondary text-sm mt-0.5 leading-relaxed">{kd.detail}</p>
                 </div>
               </motion.div>
             ))}

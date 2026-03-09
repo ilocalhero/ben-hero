@@ -20,11 +20,11 @@ function renderSection(section: LessonSection, index: number) {
           className="space-y-3"
         >
           {section.title && (
-            <h3 className="text-[#e8eaff] font-semibold text-base">{section.title}</h3>
+            <h3 className="text-[#e8eaff] font-semibold text-xl">{section.title}</h3>
           )}
           {section.content && section.content.split('\n').map((para, i) =>
             para.trim() ? (
-              <p key={i} className="text-[#c0c4e0] leading-relaxed text-sm">
+              <p key={i} className="text-[#c0c4e0] leading-relaxed text-base lg:text-lg">
                 {para.trim()}
               </p>
             ) : null
@@ -42,15 +42,15 @@ function renderSection(section: LessonSection, index: number) {
           className="border-l-4 border-[#00d4ff] bg-[#00d4ff0d] rounded-r-xl px-4 py-3 space-y-2"
         >
           {section.title && (
-            <p className="text-[#00d4ff] font-semibold text-sm">{section.title}</p>
+            <p className="text-[#00d4ff] font-semibold text-base">{section.title}</p>
           )}
           {section.content && (
-            <p className="text-[#c0c4e0] text-sm leading-relaxed">{section.content}</p>
+            <p className="text-[#c0c4e0] text-base lg:text-lg leading-relaxed">{section.content}</p>
           )}
           {section.highlights && section.highlights.length > 0 && (
             <ul className="space-y-1 mt-2">
               {section.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-[#c0c4e0]">
+                <li key={i} className="flex items-start gap-2 text-base text-[#c0c4e0]">
                   <span className="text-[#00d4ff] mt-0.5 flex-shrink-0">•</span>
                   {h}
                 </li>
@@ -70,7 +70,7 @@ function renderSection(section: LessonSection, index: number) {
           className="space-y-2"
         >
           {section.title && (
-            <h3 className="text-[#e8eaff] font-semibold text-base">{section.title}</h3>
+            <h3 className="text-[#e8eaff] font-semibold text-xl">{section.title}</h3>
           )}
           {section.content && (
             <div className="relative pl-4 space-y-2">
@@ -79,7 +79,7 @@ function renderSection(section: LessonSection, index: number) {
                 item.trim() ? (
                   <div key={i} className="relative flex items-start gap-2">
                     <div className="absolute -left-4 top-1.5 w-2 h-2 rounded-full bg-[#b24bff] flex-shrink-0" />
-                    <p className="text-[#c0c4e0] text-sm">{item.trim()}</p>
+                    <p className="text-[#c0c4e0] text-base">{item.trim()}</p>
                   </div>
                 ) : null
               )}
@@ -99,16 +99,16 @@ function renderSection(section: LessonSection, index: number) {
           className="space-y-2"
         >
           {section.title && (
-            <h3 className="text-[#e8eaff] font-semibold text-base">{section.title}</h3>
+            <h3 className="text-[#e8eaff] font-semibold text-xl">{section.title}</h3>
           )}
           <div className="rounded-xl bg-[#1e2248] border border-[#ffffff10] p-8 flex flex-col items-center justify-center gap-2 min-h-[140px]">
-            <p className="text-[#8b8fb0] text-xs font-mono">{section.imageUrl}</p>
-            <p className="text-[#5a5e80] text-xs">
+            <p className="text-[#8b8fb0] text-sm font-mono">{section.imageUrl}</p>
+            <p className="text-[#5a5e80] text-sm">
               {section.type === 'map' ? '[ Mapa ]' : '[ Imagen ]'}
             </p>
           </div>
           {section.caption && (
-            <p className="text-[#8b8fb0] text-xs text-center italic">{section.caption}</p>
+            <p className="text-[#8b8fb0] text-sm text-center italic">{section.caption}</p>
           )}
         </motion.div>
       )
@@ -123,10 +123,10 @@ function renderSection(section: LessonSection, index: number) {
           className="border-l-4 border-[#ffd700] bg-[#ffd7000a] rounded-r-xl px-4 py-3 space-y-1"
         >
           {section.title && (
-            <p className="text-[#ffd700] text-xs font-semibold uppercase tracking-wide">{section.title}</p>
+            <p className="text-[#ffd700] text-sm font-semibold uppercase tracking-wide">{section.title}</p>
           )}
           {section.content && (
-            <blockquote className="text-[#c0c4e0] text-sm leading-relaxed italic">
+            <blockquote className="text-[#c0c4e0] text-base lg:text-lg leading-relaxed italic">
               "{section.content}"
             </blockquote>
           )}
@@ -174,13 +174,13 @@ export function LessonPage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 pb-28">
+    <div className="max-w-4xl mx-auto px-4 py-6 pb-28">
       {/* Back button */}
       <motion.button
         initial={{ opacity: 0, x: -8 }}
         animate={{ opacity: 1, x: 0 }}
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-[#8b8fb0] hover:text-[#e8eaff] transition-colors text-sm mb-6"
+        className="flex items-center gap-2 text-[#8b8fb0] hover:text-[#e8eaff] transition-colors text-base mb-6"
       >
         <ArrowLeft size={16} />
         Volver
@@ -193,14 +193,14 @@ export function LessonPage() {
         transition={{ delay: 0.05 }}
         className="mb-6 space-y-1"
       >
-        <p className="text-[#8b8fb0] text-xs">
+        <p className="text-[#8b8fb0] text-sm">
           Lección {lesson.order} de {totalLessons}
         </p>
-        <NeonText color="blue" as="h1" className="text-2xl font-bold leading-tight">
+        <NeonText color="blue" as="h1" className="text-3xl font-bold leading-tight">
           {lesson.title}
         </NeonText>
         {lesson.subtitle && (
-          <p className="text-[#8b8fb0] text-sm">{lesson.subtitle}</p>
+          <p className="text-[#8b8fb0] text-base">{lesson.subtitle}</p>
         )}
       </motion.div>
 
@@ -211,7 +211,7 @@ export function LessonPage() {
 
       {/* Sticky bottom bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-bg-primary border-t border-[#ffffff10] px-4 py-3 flex justify-center">
-        <div className="max-w-2xl w-full flex justify-end">
+        <div className="max-w-4xl w-full flex justify-end">
           {lessonDone ? (
             <Button variant="success" disabled>
               <Check size={18} />

@@ -158,7 +158,7 @@ export function ActivityPage() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
-        className="max-w-md mx-auto px-4 py-10 flex flex-col items-center gap-6 text-center"
+        className="max-w-xl mx-auto px-4 py-10 flex flex-col items-center gap-6 text-center"
       >
         {/* Stars */}
         <StarRating score={completion.score} />
@@ -171,7 +171,7 @@ export function ActivityPage() {
           className="space-y-1"
         >
           <p className="text-3xl font-black text-white">{congrats}</p>
-          <p className="text-[#8b8fb0] text-base">
+          <p className="text-[#8b8fb0] text-lg">
             Has completado: <span className="text-[#e8eaff] font-semibold">{activity.title}</span>
           </p>
         </motion.div>
@@ -184,7 +184,7 @@ export function ActivityPage() {
           className="bg-[#1a1d3a] rounded-2xl p-6 border border-[#ffffff10] w-full space-y-4"
         >
           <div className="flex items-center justify-between">
-            <span className="text-[#8b8fb0] text-sm">Puntuación</span>
+            <span className="text-[#8b8fb0] text-base">Puntuación</span>
             <span
               className="text-2xl font-bold"
               style={{
@@ -201,7 +201,7 @@ export function ActivityPage() {
           </div>
 
           <div className="flex items-center justify-between">
-            <span className="text-[#8b8fb0] text-sm">XP ganado</span>
+            <span className="text-[#8b8fb0] text-base">XP ganado</span>
             <AnimatedXP xp={completion.xpEarned} />
           </div>
 
@@ -216,8 +216,8 @@ export function ActivityPage() {
               >
                 <span className="text-2xl">🎉</span>
                 <div className="text-left">
-                  <p className="text-[#b24bff] font-bold text-sm">¡Subiste de nivel!</p>
-                  <p className="text-[#c0c4e0] text-xs">
+                  <p className="text-[#b24bff] font-bold text-base">¡Subiste de nivel!</p>
+                  <p className="text-[#c0c4e0] text-sm">
                     Ahora eres nivel {completion.newLevel}
                   </p>
                 </div>
@@ -251,13 +251,13 @@ export function ActivityPage() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="max-w-2xl mx-auto px-4 py-6 space-y-6"
+        className="max-w-4xl mx-auto px-4 py-6 space-y-6"
       >
         {/* Back link */}
         <Link
           to={`/temas/${temaId}`}
           className="inline-flex items-center gap-2 text-[#8b8fb0] hover:text-[#e8eaff]
-            transition-colors text-sm"
+            transition-colors text-base"
         >
           <ArrowLeft size={16} />
           Volver al tema
@@ -270,13 +270,13 @@ export function ActivityPage() {
             <Badge color="yellow" size="sm">+{activity.xpReward} XP</Badge>
           </div>
 
-          <NeonText color="blue" as="h1" className="text-2xl font-bold leading-tight">
+          <NeonText color="blue" as="h1" className="text-3xl font-bold leading-tight">
             {activity.title}
           </NeonText>
 
-          <p className="text-[#c0c4e0] text-sm leading-relaxed">{activity.description}</p>
+          <p className="text-[#c0c4e0] text-base lg:text-lg leading-relaxed">{activity.description}</p>
 
-          <p className="text-[#8b8fb0] text-xs">
+          <p className="text-[#8b8fb0] text-sm">
             Tiempo estimado: ~{activity.estimatedMinutes} minutos
           </p>
         </div>
@@ -322,14 +322,14 @@ export function ActivityPage() {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="max-w-2xl mx-auto px-4 py-6 space-y-4"
+      className="max-w-4xl mx-auto px-4 py-6 space-y-4"
     >
       {/* Header */}
       <div className="flex items-center justify-between">
         <button
           onClick={() => setStarted(false)}
           className="inline-flex items-center gap-2 text-[#8b8fb0] hover:text-[#e8eaff]
-            transition-colors text-sm"
+            transition-colors text-base"
         >
           <ArrowLeft size={16} />
           Salir
@@ -341,7 +341,7 @@ export function ActivityPage() {
       </div>
 
       {/* Activity title */}
-      <NeonText color="blue" as="h2" className="text-xl font-bold leading-tight">
+      <NeonText color="blue" as="h2" className="text-2xl font-bold leading-tight">
         {activity.title}
       </NeonText>
 
