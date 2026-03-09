@@ -6,11 +6,13 @@ const AUTH_KEY = 'benhero_auth'
 export const ALLOWED_USERS: Record<string, string> = {
   'benjaminrfcb@gmail.com': 'ben',
   'sean@ilocalhero.com': 'sean',
+  'verovr@gmail.com': 'veronica',
 }
 
 export const DISPLAY_NAMES: Record<string, string> = {
   'benjaminrfcb@gmail.com': 'Ben',
   'sean@ilocalhero.com': 'Sean',
+  'verovr@gmail.com': 'Veronica',
 }
 
 interface AuthState {
