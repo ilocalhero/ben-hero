@@ -22,22 +22,29 @@ interface AuthState {
   load: () => void
 }
 
+// Initialize synchronously at module load — sets email + user prefix before any component renders
+function initAuth(): { email: string | null } {
+  try {
+    const stored = localStorage.getItem(AUTH_KEY)
+    if (stored) {
+      const { email } = JSON.parse(stored)
+      if (email && ALLOWED_USERS[email]) {
+        setUserPrefix(ALLOWED_USERS[email])
+        return { email }
+      }
+    }
+  } catch {
+    // ignore
+  }
+  return { email: null }
+}
+
 export const useAuthStore = create<AuthState>((set) => ({
-  email: null,
+  ...initAuth(),
 
   load: () => {
-    try {
-      const stored = localStorage.getItem(AUTH_KEY)
-      if (stored) {
-        const { email } = JSON.parse(stored)
-        if (email && ALLOWED_USERS[email]) {
-          setUserPrefix(ALLOWED_USERS[email])
-          set({ email })
-        }
-      }
-    } catch {
-      // ignore
-    }
+    // No-op: auth is now initialized synchronously above.
+    // Kept for backward compat with AppShell's useEffect.
   },
 
   login: (email: string) => {

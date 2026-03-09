@@ -34,7 +34,9 @@ export const usePlayerStore = create<PlayerState & PlayerActions>((set, get) => 
   load: () => {
     const saved = loadFromStorage<PlayerState>('player')
     if (saved) {
-      set({ ...saved, level: getLevelFromXP(saved.totalXP) })
+      // Treat existing saved data (pre-onboarding feature) as already onboarded
+      const onboarded = saved.onboarded ?? (saved.totalXP > 0 || !!saved.name)
+      set({ ...saved, level: getLevelFromXP(saved.totalXP), onboarded })
     }
   },
 
@@ -99,9 +101,12 @@ export const usePlayerStore = create<PlayerState & PlayerActions>((set, get) => 
   },
 
   completeOnboarding: (name: string, handle: string) => {
-    const state = get()
-    const update = { name, handle, onboarded: true }
-    set(update)
-    saveToStorage('player', { ...state, ...update })
+    // Load saved data first — preserves existing XP, streak, and history
+    // (Zustand state may be DEFAULT_STATE if load() was never called)
+    const saved = loadFromStorage<PlayerState>('player')
+    const base = saved ?? get()
+    const next = { ...base, name, handle, onboarded: true, level: getLevelFromXP(base.totalXP) }
+    set(next)
+    saveToStorage('player', next)
   },
 }))
