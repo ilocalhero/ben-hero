@@ -88,6 +88,8 @@ export interface Tema {
   category: 'historia' | 'geografia'
   color: string
   icon: string
+  heroImage?: string
+  iconImage?: string
   description: string
   textbookPages: string
   keyDates?: KeyDate[]

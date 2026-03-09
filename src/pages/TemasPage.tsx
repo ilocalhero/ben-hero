@@ -58,14 +58,17 @@ export function TemasPage() {
                 <div className="flex items-center gap-5">
                   {/* Icon */}
                   <div
-                    className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center text-4xl lg:text-5xl flex-shrink-0"
+                    className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl overflow-hidden flex items-center justify-center text-4xl lg:text-5xl flex-shrink-0"
                     style={{
                       background: `linear-gradient(135deg, ${tema.color}22 0%, ${tema.color}10 100%)`,
                       border: `1px solid ${tema.color}50`,
                       boxShadow: `0 0 24px ${tema.color}28`,
                     }}
                   >
-                    {getTemaEmoji(tema.icon)}
+                    {tema.iconImage
+                      ? <img src={tema.iconImage} alt={tema.title} className="w-full h-full object-cover" />
+                      : getTemaEmoji(tema.icon)
+                    }
                   </div>
 
                   {/* Content */}

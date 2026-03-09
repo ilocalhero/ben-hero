@@ -86,6 +86,23 @@ export function TemaPage() {
         Volver a temas
       </Link>
 
+      {/* Hero image */}
+      {tema.heroImage && (
+        <div className="relative w-full h-56 lg:h-72 rounded-2xl overflow-hidden">
+          <img
+            src={tema.heroImage}
+            alt={tema.title}
+            className="w-full h-full object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(10,11,26,0.05) 0%, rgba(10,11,26,0.25) 55%, rgba(10,11,26,0.88) 100%)',
+            }}
+          />
+        </div>
+      )}
+
       {/* Header card */}
       <div
         className="rounded-2xl p-6 lg:p-8 space-y-5 relative overflow-hidden"
@@ -102,14 +119,17 @@ export function TemaPage() {
         />
         <div className="flex items-start gap-4">
           <div
-            className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center text-4xl lg:text-5xl"
+            className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 rounded-2xl overflow-hidden flex items-center justify-center text-4xl lg:text-5xl"
             style={{
               background: `${tema.color}18`,
               border: `1px solid ${tema.color}44`,
               boxShadow: `0 0 20px ${tema.color}20`,
             }}
           >
-            {getTemaEmoji(tema.icon)}
+            {tema.iconImage
+              ? <img src={tema.iconImage} alt={tema.title} className="w-full h-full object-cover" />
+              : getTemaEmoji(tema.icon)
+            }
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
