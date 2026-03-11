@@ -1,0 +1,439 @@
+{
+  "id": "tema07",
+  "number": 7,
+  "title": "La lucha contra el cambio climático",
+  "subtitle": "El reto medioambiental del siglo XXI",
+  "category": "geografia",
+  "color": "#ff3ea5",
+  "icon": "globe",
+  "heroImage": "/images/temas/tema07-hero.jpg",
+  "iconImage": "/images/temas/tema07-icon.jpg",
+  "description": "Entiende qué es el cambio climático, cuáles son sus causas y consecuencias, y qué podemos hacer para frenar sus efectos en el planeta.",
+  "textbookPages": "pp. 168-201",
+  "keyDates": [
+    {
+      "year": "1988",
+      "event": "Creación del IPCC",
+      "detail": "Se crea el Panel Intergubernamental sobre Cambio Climático (IPCC), organismo científico que evalúa los riesgos del cambio climático."
+    },
+    {
+      "year": "1997",
+      "event": "Protocolo de Kioto",
+      "detail": "Primer acuerdo internacional que obliga legalmente a los países desarrollados a reducir sus emisiones de gases de efecto invernadero."
+    },
+    {
+      "year": "2015",
+      "event": "Acuerdo de París",
+      "detail": "195 países se comprometen a limitar el calentamiento global a 1,5 °C respecto a los niveles preindustriales."
+    },
+    {
+      "year": "2021",
+      "event": "COP26 en Glasgow",
+      "detail": "Conferencia de la ONU sobre el clima en Glasgow, donde se reforzaron los compromisos del Acuerdo de París y se acordó reducir el uso del carbón."
+    },
+    {
+      "year": "2023",
+      "event": "Año más cálido registrado",
+      "detail": "2023 fue el año más caluroso en la historia de los registros meteorológicos, con una temperatura media 1,45 °C por encima de la era preindustrial."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Cambio climático",
+      "definition": "Variación a largo plazo de las temperaturas y los patrones climáticos del planeta, acelerada desde la Revolución Industrial por las actividades humanas."
+    },
+    {
+      "term": "Efecto invernadero",
+      "definition": "Fenómeno natural por el que los gases de la atmósfera retienen parte del calor del sol. La actividad humana lo intensifica, elevando la temperatura global."
+    },
+    {
+      "term": "Gases de efecto invernadero (GEI)",
+      "definition": "Gases como el CO2, el metano o el vapor de agua que retienen el calor en la atmósfera. Sus emisiones humanas son la principal causa del cambio climático."
+    },
+    {
+      "term": "Calentamiento global",
+      "definition": "Aumento de la temperatura media de la Tierra causado por el incremento de los gases de efecto invernadero en la atmósfera."
+    },
+    {
+      "term": "Energía renovable",
+      "definition": "Fuente de energía que se obtiene de recursos naturales inagotables como el sol, el viento o el agua, sin emitir gases de efecto invernadero."
+    },
+    {
+      "term": "Huella ecológica",
+      "definition": "Medida de los recursos naturales que necesita una persona o país para mantener su estilo de vida y absorber sus residuos."
+    },
+    {
+      "term": "Desertificación",
+      "definition": "Proceso por el que zonas fértiles se convierten en desiertos como consecuencia de la sequía, la deforestación o el uso excesivo del suelo."
+    },
+    {
+      "term": "COP",
+      "definition": "Conferencia de las Partes: reunión anual de los países firmantes de la Convención Marco de la ONU sobre el Cambio Climático para revisar los compromisos climáticos."
+    },
+    {
+      "term": "Transición energética",
+      "definition": "Proceso de sustitución de los combustibles fósiles (carbón, petróleo, gas) por fuentes de energía renovables para reducir las emisiones de CO2."
+    },
+    {
+      "term": "Acidificación de los océanos",
+      "definition": "Proceso por el que los océanos se vuelven más ácidos al absorber el exceso de CO2 de la atmósfera, dañando los arrecifes de coral y la vida marina."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema07-lesson01",
+      "order": 1,
+      "title": "¿Qué es el cambio climático?",
+      "subtitle": "El efecto invernadero y sus causas humanas",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El efecto invernadero natural y su intensificación",
+          "content": "El efecto invernadero es un fenómeno natural: los gases de la atmósfera (CO2, metano, vapor de agua) retienen parte del calor del sol y mantienen la Tierra a una temperatura habitable. Sin él, la temperatura media de la Tierra sería de -18 °C. Sin embargo, desde la Revolución Industrial, las actividades humanas han incrementado enormemente la concentración de estos gases, intensificando el efecto invernadero y elevando la temperatura global.",
+          "highlights": [
+            "El efecto invernadero natural es necesario para la vida en la Tierra",
+            "Sin gases de efecto invernadero, la temperatura sería -18 °C",
+            "La actividad humana intensifica el efecto invernadero desde la Revolución Industrial"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las causas humanas del cambio climático",
+          "content": "Las actividades humanas son el principal motor del cambio climático actual. La quema de combustibles fósiles (carbón, petróleo y gas) para producir energía, el transporte y la industria emiten grandes cantidades de CO2. La ganadería intensiva produce metano. La deforestación elimina los bosques que absorben el CO2. Como resultado, la temperatura media mundial ya ha aumentado 1,1 °C desde la era preindustrial.",
+          "highlights": [
+            "Quema de combustibles fósiles: mayor fuente de CO2 humano",
+            "Ganadería intensiva: importante fuente de metano",
+            "La temperatura ha subido ya 1,1 °C desde la era preindustrial"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "¿Sabes cuánto CO2 emites?",
+          "content": "Tu huella de carbono es la cantidad de CO2 que generas con tus actividades diarias: usar el coche, comer carne, volar en avión, calentar tu casa... Un europeo medio emite alrededor de 7-8 toneladas de CO2 al año, mientras que el limite sostenible para el planeta seria de 2 toneladas por persona."
+        }
+      ]
+    },
+    {
+      "id": "tema07-lesson02",
+      "order": 2,
+      "title": "Las consecuencias del calentamiento",
+      "subtitle": "Impactos en el planeta y en las personas",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Impactos en el planeta",
+          "content": "El calentamiento global está provocando consecuencias graves y aceleradas en el planeta: el deshielo de los polos y los glaciares eleva el nivel del mar, amenazando a las zonas costeras. Las olas de calor, sequías e inundaciones son más frecuentes e intensas. La acidificación de los océanos daña los arrecifes de coral. La biodiversidad se reduce porque muchas especies no pueden adaptarse al cambio de temperatura.",
+          "highlights": [
+            "El nivel del mar sube por el deshielo de polos y glaciares",
+            "Eventos climáticos extremos: sequías, inundaciones, olas de calor",
+            "Acidificación de los océanos y pérdida de biodiversidad"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El cambio climático agrava las desigualdades",
+          "content": "El cambio climático no afecta por igual a todos. Los países más pobres, que menos han contaminado históricamente, son los más vulnerables: sufren más sequías, inundaciones y desplazamientos de población. Sin embargo, su huella ecológica es mucho menor que la de los países ricos. Un ciudadano de Estados Unidos tiene una huella ecológica diez veces mayor que uno de un país africano.",
+          "highlights": [
+            "Los países más pobres sufren más el cambio climático pese a contaminar menos",
+            "La huella ecológica de los países ricos es mucho mayor",
+            "El cambio climático es también una cuestión de justicia global"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Refugiados climáticos",
+          "content": "El cambio climático ya está forzando a millones de personas a abandonar sus hogares por la subida del nivel del mar, las sequías extremas o las inundaciones. Se estima que para 2050 podría haber más de 200 millones de refugiados climáticos en el mundo."
+        }
+      ]
+    },
+    {
+      "id": "tema07-lesson03",
+      "order": 3,
+      "title": "El futuro del planeta",
+      "subtitle": "Escenarios y puntos de no retorno",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Los escenarios del IPCC",
+          "content": "El IPCC (Panel Intergubernamental sobre Cambio Climático) elabora escenarios sobre el futuro del planeta según las emisiones que se produzcan. En el escenario optimista, si se reducen drásticamente las emisiones, el calentamiento podría limitarse a 1,5 °C. En el escenario pesimista, si no se actúa, el calentamiento podría alcanzar los 4 °C a finales de siglo, con consecuencias catastróficas e irreversibles para la humanidad.",
+          "highlights": [
+            "Escenario optimista: limitar el calentamiento a 1,5 °C con reducciones urgentes",
+            "Escenario pesimista: hasta 4 °C de calentamiento sin acción",
+            "El IPCC es el organismo científico mundial sobre cambio climático"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los puntos de inflexión",
+          "content": "Los científicos advierten de la existencia de puntos de inflexión o no retorno: umbrales que, una vez superados, desencadenarían cambios climáticos irreversibles. Por ejemplo, el deshielo completo del permafrost siberiano liberaría enormes cantidades de metano, el colapso de la corriente oceánica del Atlántico alteraría el clima de Europa, o la desaparición de la selva amazónica convertiría gran parte de Sudamérica en sabana.",
+          "highlights": [
+            "Puntos de no retorno: cambios que, si ocurren, son irreversibles",
+            "Deshielo del permafrost siberiano libera grandes cantidades de metano",
+            "La urgencia de actuar antes de superar estos umbrales"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema07-lesson04",
+      "order": 4,
+      "title": "Soluciones y acción climática",
+      "subtitle": "Energías renovables, acuerdos y acción individual",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Los acuerdos internacionales",
+          "content": "Frenar el cambio climático requiere cooperación internacional. El Protocolo de Kioto (1997) fue el primer acuerdo vinculante para reducir emisiones. El Acuerdo de París (2015) marcó un hito: 195 países se comprometieron a limitar el calentamiento a 1,5 °C. Las COPs (Conferencias de las Partes) se celebran anualmente para revisar los compromisos y acordar nuevas medidas. Sin embargo, los compromisos actuales siguen siendo insuficientes.",
+          "highlights": [
+            "Protocolo de Kioto 1997: primer acuerdo vinculante sobre emisiones",
+            "Acuerdo de París 2015: objetivo de 1,5 °C de calentamiento máximo",
+            "Las COPs anuales revisan y actualizan los compromisos climáticos"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La transición energética y las energías renovables",
+          "content": "La principal solución al cambio climático es la transición energética: sustituir los combustibles fósiles por fuentes de energía renovables. La energía solar (paneles fotovoltaicos), la eólica (aerogeneradores), la hidráulica y el hidrógeno verde son las principales alternativas limpias. Además, mejorar la eficiencia energética de edificios, transportes e industrias puede reducir enormemente las emisiones.",
+          "highlights": [
+            "Energía solar y eólica: renovables más extendidas en el mundo",
+            "El hidrógeno verde como solución para industrias difíciles de descarbonizar",
+            "La eficiencia energética reduce el consumo sin renunciar al bienestar"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "¿Qué puedes hacer tú?",
+          "content": "La accion individual importa: reduce el consumo de carne, usa transporte público o bicicleta, consume productos locales y de temporada, ahorra energía en casa, y compra solo lo necesario. Pero recuerda: el cambio mas importante debe venir de los gobiernos y las grandes empresas. Tu voz y tu voto tambien cuentan."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema07-quiz01",
+      "lessonId": "tema07-lesson01",
+      "type": "quiz",
+      "title": "El cambio climático: conceptos clave",
+      "description": "Pon a prueba tus conocimientos sobre el efecto invernadero y sus causas.",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué es el efecto invernadero?",
+          "options": [
+            "Un fenómeno artificial creado por la industria en el siglo XX",
+            "Un fenómeno natural por el que los gases atmosféricos retienen calor, manteniendo la Tierra habitable",
+            "El calentamiento producido por las centrales nucleares",
+            "El aumento del ozono en la estratosfera"
+          ],
+          "correctIndex": 1,
+          "explanation": "El efecto invernadero es un fenómeno natural imprescindible para la vida: los gases atmosféricos retienen parte del calor solar. Sin él, la temperatura media de la Tierra seria de -18 °C."
+        },
+        {
+          "question": "¿Cuánto ha aumentado la temperatura media de la Tierra desde la era preindustrial?",
+          "options": ["0,3 °C", "1,1 °C", "2,5 °C", "4 °C"],
+          "correctIndex": 1,
+          "explanation": "La comunidad científica ha comprobado que la temperatura media mundial ha aumentado 1,1 °C desde la era preindustrial, principalmente por la quema de combustibles fósiles."
+        },
+        {
+          "question": "¿Cuál es la principal actividad humana que provoca el cambio climático?",
+          "options": [
+            "La agricultura tradicional",
+            "La pesca industrial",
+            "La quema de combustibles fósiles (carbón, petróleo, gas)",
+            "El turismo masivo"
+          ],
+          "correctIndex": 2,
+          "explanation": "La quema de combustibles fósiles para producir energia, mover vehículos y alimentar la industria es la principal fuente de CO2 humano y el motor del cambio climático."
+        },
+        {
+          "question": "¿Qué gas es el principal responsable del cambio climático causado por humanos?",
+          "options": ["Oxígeno", "Nitrógeno", "Dióxido de carbono (CO2)", "Vapor de agua"],
+          "correctIndex": 2,
+          "explanation": "El dióxido de carbono (CO2) emitido principalmente por la quema de combustibles fósiles es el principal gas de efecto invernadero de origen humano."
+        },
+        {
+          "question": "¿Cuál es la meta de temperatura del Acuerdo de París (2015)?",
+          "options": [
+            "No superar los 0,5 °C de calentamiento",
+            "No superar los 1,5 °C de calentamiento respecto a la era preindustrial",
+            "No superar los 3 °C de calentamiento",
+            "No superar los 5 °C de calentamiento"
+          ],
+          "correctIndex": 1,
+          "explanation": "El Acuerdo de París de 2015, firmado por 195 países, establece el objetivo de limitar el calentamiento global a 1,5 °C respecto a los niveles preindustriales."
+        }
+      ]
+    },
+    {
+      "id": "tema07-quiz02",
+      "lessonId": "tema07-lesson04",
+      "type": "quiz",
+      "title": "Soluciones climáticas",
+      "description": "¿Conoces los acuerdos internacionales y las energías renovables?",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué son las energías renovables?",
+          "options": [
+            "Energías que se obtienen quemando madera o biomasa",
+            "Fuentes de energía inagotables como el sol, el viento o el agua, que no emiten CO2",
+            "Energías producidas por centrales nucleares",
+            "Energías que se obtienen del gas natural"
+          ],
+          "correctIndex": 1,
+          "explanation": "Las energías renovables se obtienen de fuentes naturales inagotables (sol, viento, agua) y no emiten gases de efecto invernadero, siendo fundamentales para frenar el cambio climático."
+        },
+        {
+          "question": "¿Qué es la huella ecológica?",
+          "options": [
+            "El daño que causan los zapatos en el suelo del bosque",
+            "La medida de los recursos naturales que necesita una persona para mantener su estilo de vida",
+            "La cantidad de basura que produce una ciudad",
+            "El area de bosque que se tala cada año"
+          ],
+          "correctIndex": 1,
+          "explanation": "La huella ecológica mide cuántos recursos naturales necesita una persona o país para vivir como lo hace, incluyendo energía, agua, alimentos y espacio."
+        },
+        {
+          "question": "¿En qué año se firmó el Acuerdo de París sobre el clima?",
+          "options": ["1997", "2005", "2015", "2021"],
+          "correctIndex": 2,
+          "explanation": "El Acuerdo de París se firmó en 2015 durante la COP21. Fue firmado por 195 países y estableció el objetivo de limitar el calentamiento a 1,5 °C."
+        },
+        {
+          "question": "¿Qué significa COP en el contexto del cambio climático?",
+          "options": [
+            "Comité de Organizaciones Petroleras",
+            "Conferencia de las Partes: reunión anual de países para revisar compromisos climáticos",
+            "Centro de Operaciones del Planeta",
+            "Coalición de Organizaciones Productoras"
+          ],
+          "correctIndex": 1,
+          "explanation": "COP son las siglas de Conferencia de las Partes, reunión anual de los países firmantes del acuerdo climático de la ONU para revisar y actualizar sus compromisos."
+        }
+      ]
+    },
+    {
+      "id": "tema07-fillblank01",
+      "lessonId": "tema07-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: El efecto invernadero",
+      "description": "Rellena los huecos sobre las causas del cambio climático.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "El ___ es un fenómeno natural que mantiene la Tierra a una temperatura habitable. Desde la Revolución Industrial, la quema de ___ ha aumentado la concentración de gases de efecto invernadero. Como resultado, la temperatura media mundial ha subido ___ desde la era preindustrial. El principal gas de efecto invernadero de origen humano es el ___. Si no se reduce, el calentamiento podría alcanzar los ___ a finales del siglo XXI.",
+        "blanks": ["efecto invernadero", "combustibles fósiles", "1,1 °C", "CO2", "4 °C"],
+        "wordBank": ["efecto invernadero", "ozono", "combustibles fósiles", "energías renovables", "1,1 °C", "0,3 °C", "CO2", "oxígeno", "4 °C", "10 °C"]
+      }
+    },
+    {
+      "id": "tema07-fillblank02",
+      "lessonId": "tema07-lesson04",
+      "type": "fill_blank",
+      "title": "Completa: Las soluciones climáticas",
+      "description": "Rellena los huecos sobre los acuerdos y soluciones al cambio climático.",
+      "difficulty": 2,
+      "xpReward": 35,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "El primer acuerdo internacional sobre emisiones fue el Protocolo de ___ de 1997. En 2015, el ___ comprometió a 195 países a limitar el calentamiento a 1,5 °C. La principal solución es la ___ energética: sustituir los combustibles fósiles por fuentes ___. Las conferencias climáticas anuales de la ONU se llaman ___.",
+        "blanks": ["Kioto", "Acuerdo de París", "transición", "renovables", "COP"],
+        "wordBank": ["Kioto", "Madrid", "Acuerdo de París", "Protocolo de Kyoto", "transición", "revolución", "renovables", "nucleares", "COP", "G20"]
+      }
+    },
+    {
+      "id": "tema07-writing01",
+      "lessonId": "tema07-lesson01",
+      "type": "writing_mission",
+      "title": "Misión Escritura: El efecto invernadero",
+      "description": "Explica qué es el efecto invernadero y por qué provoca el cambio climático.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "Explica qué es el efecto invernadero y por qué las actividades humanas están provocando el cambio climático.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "El efecto invernadero es un fenómeno natural que...",
+          "Sin embargo, desde la Revolución Industrial...",
+          "Las actividades humanas que más CO2 emiten son...",
+          "Como consecuencia, la temperatura de la Tierra...",
+          "Para frenar este proceso, es necesario..."
+        ],
+        "vocabularyHints": [
+          "efecto invernadero",
+          "gases de efecto invernadero",
+          "CO2",
+          "combustibles fósiles",
+          "Revolución Industrial",
+          "calentamiento global"
+        ],
+        "connectors": [
+          "porque",
+          "sin embargo",
+          "como consecuencia",
+          "por lo tanto",
+          "además"
+        ],
+        "keyPointsToAddress": [
+          "Qué es el efecto invernadero y para qué sirve",
+          "Cómo las actividades humanas lo intensifican",
+          "Las consecuencias del calentamiento global"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": ["efecto invernadero", "CO2", "combustibles fósiles", "temperatura", "calentamiento"],
+        "rubricConnectors": ["porque", "sin embargo", "como consecuencia", "por lo tanto"]
+      }
+    },
+    {
+      "id": "tema07-writing02",
+      "lessonId": "tema07-lesson04",
+      "type": "writing_mission",
+      "title": "Misión Escritura: Soluciones climáticas",
+      "description": "¿Qué medidas son más importantes para luchar contra el cambio climático?",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 12,
+      "data": {
+        "prompt": "¿Qué medidas crees que son más importantes para luchar contra el cambio climático? Justifica tu respuesta con argumentos.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "Creo que la medida más importante es..., porque...",
+          "Otra medida fundamental es...",
+          "A nivel individual, podemos...",
+          "Pero las medidas más importantes deben venir de...",
+          "En conclusión, para frenar el cambio climático necesitamos..."
+        ],
+        "vocabularyHints": [
+          "energías renovables",
+          "transición energética",
+          "Acuerdo de París",
+          "huella ecológica",
+          "sostenible",
+          "emisiones"
+        ],
+        "connectors": [
+          "porque",
+          "además",
+          "sin embargo",
+          "por otro lado",
+          "en conclusión"
+        ],
+        "keyPointsToAddress": [
+          "Medidas colectivas e internacionales (acuerdos, leyes)",
+          "Medidas tecnológicas (energías renovables, eficiencia)",
+          "Medidas individuales (consumo, transporte, alimentación)"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": ["renovable", "emisiones", "sostenible", "transición", "medidas"],
+        "rubricConnectors": ["porque", "además", "sin embargo", "en conclusión"]
+      }
+    }
+  ]
+}

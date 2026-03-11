@@ -1,13 +1,13 @@
 {
   "id": "tema02",
-  "number": 2,
+  "number": 3,
   "title": "Guerrear, orar o cultivar la tierra",
   "subtitle": "La Europa feudal",
   "category": "historia",
   "color": "#b24bff",
   "icon": "shield",
-  "heroImage": "/images/temas/tema02-hero.jpeg",
-  "iconImage": "/images/temas/tema02-icon.jpeg",
+  "heroImage": "/images/temas/tema02-hero.jpg",
+  "iconImage": "/images/temas/tema02-icon.jpg",
   "description": "Conoce cómo se organizaba la sociedad medieval europea: señores feudales, caballeros, campesinos e Iglesia.",
   "textbookPages": "pp. 42-73",
   "keyDates": [

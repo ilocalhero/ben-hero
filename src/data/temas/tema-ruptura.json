@@ -1,0 +1,447 @@
+{
+  "id": "tema-ruptura",
+  "number": 1,
+  "title": "La ruptura del Mare Nostrum",
+  "subtitle": "El inicio de la Edad Media",
+  "category": "historia",
+  "color": "#b24bff",
+  "icon": "castle",
+  "heroImage": "/images/temas/tema-ruptura-hero.jpg",
+  "iconImage": "/images/temas/tema-ruptura-icon.jpg",
+  "description": "Descubre cómo cayó el Imperio romano y cómo surgieron tres grandes civilizaciones medievales: Bizancio, los reinos germánicos y el Imperio islámico.",
+  "textbookPages": "pp. 8-39",
+  "keyDates": [
+    {
+      "year": "395",
+      "event": "División del Imperio romano",
+      "detail": "El emperador Teodosio dividió el Imperio romano en dos partes: Oriente y Occidente."
+    },
+    {
+      "year": "476",
+      "event": "Caída del Imperio romano de Occidente",
+      "detail": "Odoacro depuso al último emperador romano, Rómulo Augústulo, marcando el inicio de la Edad Media."
+    },
+    {
+      "year": "527",
+      "event": "Inicio del esplendor bizantino con Justiniano",
+      "detail": "Justiniano intentó reconquistar los territorios del antiguo Imperio romano y mandó compilar las leyes romanas en el Código Justiniano."
+    },
+    {
+      "year": "800",
+      "event": "Coronación de Carlomagno",
+      "detail": "El Papa coronó a Carlomagno como emperador en Aquisgrán, intentando reconstruir la unidad del Imperio romano de Occidente."
+    },
+    {
+      "year": "1054",
+      "event": "Cisma de Oriente",
+      "detail": "Separación definitiva entre la Iglesia católica romana y la Iglesia ortodoxa griega."
+    },
+    {
+      "year": "1453",
+      "event": "Caída de Constantinopla",
+      "detail": "Los turcos otomanos conquistaron Constantinopla, poniendo fin al Imperio bizantino y, para muchos historiadores, a la Edad Media."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Mare Nostrum",
+      "definition": "Expresión latina que significa 'nuestro mar', nombre con el que los romanos llamaban al Mediterráneo, que unía todo su Imperio."
+    },
+    {
+      "term": "Edad Media",
+      "definition": "Período histórico que se extiende desde la caída del Imperio romano de Occidente (476) hasta la caída de Constantinopla (1453) o el descubrimiento de América (1492)."
+    },
+    {
+      "term": "Imperio bizantino",
+      "definition": "El Imperio romano de Oriente, que sobrevivió durante mil años (siglos V-XV) con capital en Constantinopla."
+    },
+    {
+      "term": "Reinos germánicos",
+      "definition": "Reinos formados por los pueblos bárbaros (visigodos, francos, ostrogodos...) en los territorios del antiguo Imperio romano de Occidente."
+    },
+    {
+      "term": "Feudalismo",
+      "definition": "Sistema político, económico y social de la Edad Media basado en las relaciones de vasallaje entre señores y vasallos, y en la economía agraria."
+    },
+    {
+      "term": "Basileus",
+      "definition": "Título del emperador en el Imperio romano de Oriente, palabra griega que significa 'rey'."
+    },
+    {
+      "term": "Cisma de Oriente",
+      "definition": "Separación de las Iglesias cristiana romana (católica) y griega (ortodoxa) ocurrida en el año 1054."
+    },
+    {
+      "term": "Missi dominici",
+      "definition": "Inspectores enviados por Carlomagno para supervisar el cumplimiento de sus mandatos y vigilar la actuación de los condes."
+    },
+    {
+      "term": "Iconostasio",
+      "definition": "Pantalla decorada con iconos que en las iglesias ortodoxas separaba el altar de los fieles."
+    },
+    {
+      "term": "Visigodos",
+      "definition": "Pueblo germánico que se asentó en la Península Ibérica y creó el reino visigodo de Toledo, que duró hasta la conquista musulmana de 711."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema-ruptura-lesson01",
+      "order": 1,
+      "title": "El hundimiento de Roma",
+      "subtitle": "Las invasiones bárbaras del siglo V",
+      "sections": [
+        {
+          "type": "text",
+          "title": "La unidad del Mediterráneo",
+          "content": "Durante siglos, el Imperio romano unió todas las tierras que rodeaban el Mediterráneo bajo una misma lengua (el latín), unas mismas leyes y una misma moneda. El Mediterráneo era el Mare Nostrum, el mar de todos. Pero esta unidad desapareció en el siglo V con las invasiones de los pueblos germánicos.",
+          "highlights": [
+            "El Imperio romano unía el Mediterráneo con una lengua, leyes y moneda comunes",
+            "Los romanos llamaban Mare Nostrum al Mediterráneo",
+            "La unidad desapareció en el siglo V por las invasiones bárbaras"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los hunos y las invasiones germánicas",
+          "content": "A principios del siglo V, los hunos, un pueblo bárbaro llegado de Asia dirigido por Atila, invadieron el Imperio romano. Huyendo de los hunos, los pueblos germánicos (visigodos, ostrogodos, francos, vándalos...) irrumpieron en masa en el Imperio de Occidente. Estos pueblos, que no tenían escritura ni leyes formales, estaban dirigidos por jefes militares que ejercían como reyes.",
+          "highlights": [
+            "Los hunos, dirigidos por Atila, vinieron de Asia",
+            "Los germanos huían de los hunos y buscaban refugio en el Imperio",
+            "Los pueblos germánicos no tenían escritura ni leyes formales"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La caída de Roma (476)",
+          "content": "Gradualmente, los pueblos germánicos se fueron adueñando del debilitado Imperio de Occidente. En el año 476, un guerrero germano llamado Odoacro depuso al último emperador romano, Rómulo Augústulo, y se proclamó rey. Los historiadores señalan el año 476 como el inicio de la Edad Media, un período que duró mil años.",
+          "highlights": [
+            "476 - Odoacro depone al último emperador romano Rómulo Augústulo",
+            "Este acontecimiento marca el inicio de la Edad Media",
+            "La Edad Media duró hasta 1453 o 1492 según los historiadores"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Las tres civilizaciones medievales",
+          "content": "Tras la caída de Roma, el Mediterráneo quedó dividido entre tres grandes civilizaciones: el Imperio bizantino (Roma de Oriente), los reinos germánicos (Europa occidental) y, desde el siglo VII, el Imperio islámico (sur del Mediterráneo y Península Ibérica)."
+        }
+      ]
+    },
+    {
+      "id": "tema-ruptura-lesson02",
+      "order": 2,
+      "title": "El Imperio bizantino",
+      "subtitle": "La continuidad del mundo romano en Oriente",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Constantinopla, la nueva Roma",
+          "content": "Mientras Occidente caía, el Imperio romano de Oriente sobrevivió. Su capital era Constantinopla, fundada por el emperador Constantino en el año 330 sobre una antigua colonia griega llamada Bizancio. Situada entre Europa y Asia, junto al estrecho del Bósforo, era una ciudad estratégica con más de medio millón de habitantes, que se convirtió en la nueva Roma.",
+          "highlights": [
+            "Constantinopla estaba situada entre Europa y Asia, junto al Bósforo",
+            "Tenía más de 500.000 habitantes y era la ciudad más grande de la época",
+            "Contaba con la basílica de Santa Sofía, el palacio imperial y el hipódromo"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El esplendor de Justiniano",
+          "content": "El Imperio bizantino alcanzó su máximo esplendor con el emperador Justiniano (527-565). Reconquistó territorios en Italia, el norte de África y la Península Ibérica. Mandó compilar todas las leyes romanas en el Código Justiniano. Con el tiempo, el Imperio se helenizó, adoptando el griego como lengua oficial y formas culturales más orientales.",
+          "highlights": [
+            "Justiniano reconquistó territorios del antiguo Imperio romano de Occidente",
+            "El Código Justiniano recopiló todas las leyes romanas",
+            "El Imperio fue helenizándose: adoptó el griego como lengua oficial"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El Cisma y la caída de Constantinopla",
+          "content": "En el año 1054 se produjo el Cisma de Oriente: la Iglesia cristiana se dividió en dos ramas, la Iglesia católica romana y la Iglesia ortodoxa griega. Debilitado por guerras y tensiones internas, el Imperio bizantino cayó finalmente en 1453, cuando los turcos otomanos conquistaron Constantinopla.",
+          "highlights": [
+            "1054 - Cisma de Oriente: división entre Iglesia católica y ortodoxa",
+            "1453 - Los turcos otomanos conquistan Constantinopla",
+            "El Imperio bizantino duró mil años, del siglo V al XV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema-ruptura-lesson03",
+      "order": 3,
+      "title": "Los reinos germánicos y Carlomagno",
+      "subtitle": "La Europa de los bárbaros",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El reino visigodo de Toledo",
+          "content": "Los visigodos se establecieron en la Península Ibérica hacia el año 409 y crearon un reino con capital en Toledo. Los monarcas visigodos lograron unificar territorialmente y religiosamente a hispanorromanos y visigodos, adoptando el catolicismo y creando una misma ley para todos (Liber Iudiciorum). El reino visigodo terminó con la conquista musulmana de 711.",
+          "highlights": [
+            "Los visigodos establecieron su capital en Toledo",
+            "Unificaron a hispanorromanos y visigodos con una sola ley y religión",
+            "El reino visigodo acabó con la conquista musulmana de 711"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Carlomagno y el Imperio carolingio",
+          "content": "En el siglo VIII, el rey de los francos Carlomagno conquistó gran parte de Europa occidental, frenó el avance del islam y fue coronado emperador por el Papa en el año 800. Para gobernar su vasto imperio, Carlomagno lo dividió en condados, al frente de los cuales puso a condes que le debían fidelidad. Tras su muerte, el imperio se dividió y los nobles se apropiaron de las tierras, iniciando el feudalismo.",
+          "highlights": [
+            "800 - Carlomagno coronado emperador por el Papa en Aquisgrán",
+            "Dividió el imperio en condados gobernados por condes vasallos",
+            "Tras su muerte, el imperio se fragmentó y nació el feudalismo"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Los missi dominici",
+          "content": "Para controlar a los condes de su vasto territorio, Carlomagno enviaba inspectores llamados missi dominici (enviados del señor) que viajaban por el imperio para vigilar que los condes cumplieran sus órdenes y gobernaran con justicia."
+        }
+      ]
+    },
+    {
+      "id": "tema-ruptura-lesson04",
+      "order": 4,
+      "title": "El arte cristiano medieval",
+      "subtitle": "Mosaicos, iconos y orfebrería",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El arte bizantino: mosaicos e iconos",
+          "content": "El arte bizantino se caracterizó por sus espectaculares mosaicos de fondo dorado que decoraban las iglesias, representando figuras religiosas de forma hierática y solemne. Los iconos eran representaciones religiosas pintadas sobre madera, muy veneradas en las iglesias ortodoxas. El interior de los templos estaba dividido por el iconostasio, una pantalla decorada con iconos que separaba el altar de los fieles.",
+          "highlights": [
+            "Mosaicos de fondo dorado en iglesias como San Vital de Rávena",
+            "Iconos: imágenes religiosas pintadas en madera muy veneradas",
+            "El iconostasio separaba el altar de los fieles en las iglesias ortodoxas"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El arte visigodo: el Tesoro de Guarrazar",
+          "content": "Los visigodos destacaron en la orfebrería, el arte de trabajar metales preciosos. El Tesoro de Guarrazar, hallado en Toledo, es el conjunto de orfebrería visigoda más importante conservado. Incluye coronas votivas de reyes visigodos como Recesvinto, adornadas con zafiros, perlas y letras colgantes que formaban el nombre del rey.",
+          "highlights": [
+            "Los visigodos eran expertos orfebres (trabajo en metales preciosos)",
+            "El Tesoro de Guarrazar: coronas votivas de reyes visigodos",
+            "Coronas decoradas con zafiros, perlas y letras de oro"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "El arte prerrománico asturiano",
+          "content": "En el norte de España, el reino asturiano desarrolló un estilo artístico propio llamado prerrománico asturiano. La iglesia de Santa María del Naranco, en Oviedo, construida en el siglo IX como palacio de los reyes asturianos, es uno de los ejemplos más importantes."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema-ruptura-quiz01",
+      "lessonId": "tema-ruptura-lesson01",
+      "type": "quiz",
+      "title": "La caída de Roma",
+      "description": "Pon a prueba tus conocimientos sobre las invasiones bárbaras y el inicio de la Edad Media.",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿En qué año cayó el Imperio romano de Occidente, iniciando la Edad Media?",
+          "options": ["395", "476", "527", "800"],
+          "correctIndex": 1,
+          "explanation": "En el año 476, Odoacro depuso al último emperador romano, Rómulo Augústulo. Los historiadores señalan esta fecha como el inicio de la Edad Media."
+        },
+        {
+          "question": "¿Qué pueblo asiático empujó a los germanos hacia el Imperio romano?",
+          "options": ["Los visigodos", "Los francos", "Los hunos", "Los vándalos"],
+          "correctIndex": 2,
+          "explanation": "Los hunos, un pueblo bárbaro de Asia dirigido por Atila, invadieron Europa y empujaron a los pueblos germánicos hacia el Imperio romano de Occidente."
+        },
+        {
+          "question": "¿Quién depuso al último emperador romano en el año 476?",
+          "options": ["Atila", "Odoacro", "Carlomagno", "Justiniano"],
+          "correctIndex": 1,
+          "explanation": "Odoacro, un guerrero germano que comandaba las tropas imperiales, depuso al último emperador romano, Rómulo Augústulo, en el año 476."
+        },
+        {
+          "question": "¿Cuánto duró la Edad Media?",
+          "options": ["500 años", "750 años", "1000 años", "1500 años"],
+          "correctIndex": 2,
+          "explanation": "La Edad Media duró aproximadamente mil años, desde la caída de Roma (476) hasta la caída de Constantinopla (1453) o el descubrimiento de América (1492)."
+        },
+        {
+          "question": "¿En cuántas civilizaciones quedó dividido el Mediterráneo tras la caída de Roma?",
+          "options": ["Dos", "Tres", "Cuatro", "Cinco"],
+          "correctIndex": 1,
+          "explanation": "El Mediterráneo quedó dividido entre tres grandes civilizaciones: el Imperio bizantino, los reinos germánicos y, desde el siglo VII, el Imperio islámico."
+        }
+      ]
+    },
+    {
+      "id": "tema-ruptura-quiz02",
+      "lessonId": "tema-ruptura-lesson02",
+      "type": "quiz",
+      "title": "Bizancio y Carlomagno",
+      "description": "¿Conoces el Imperio bizantino y el Imperio carolingio?",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué emperador intentó reconquistar los territorios del antiguo Imperio romano de Occidente en el siglo VI?",
+          "options": ["Constantino", "Justiniano", "Carlomagno", "Teodosio"],
+          "correctIndex": 1,
+          "explanation": "Justiniano (527-565) intentó restablecer la unidad del antiguo Imperio romano reconquistando territorios en Italia, norte de África y parte de la Península Ibérica."
+        },
+        {
+          "question": "¿Qué fue el Cisma de Oriente (1054)?",
+          "options": [
+            "Una guerra entre Bizancio y Roma",
+            "La separación entre la Iglesia católica y la Iglesia ortodoxa",
+            "La conquista de Constantinopla por los turcos",
+            "La división del Imperio romano en Oriente y Occidente"
+          ],
+          "correctIndex": 1,
+          "explanation": "En 1054 se produjo el Cisma de Oriente: la Iglesia cristiana se dividió definitivamente en la Iglesia católica romana y la Iglesia ortodoxa griega."
+        },
+        {
+          "question": "¿En qué año fue coronado Carlomagno como emperador por el Papa?",
+          "options": ["711", "756", "800", "987"],
+          "correctIndex": 2,
+          "explanation": "En el año 800, el Papa León III coronó a Carlomagno como emperador de los romanos en Aquisgrán, intentando reconstruir la unidad del Imperio de Occidente."
+        },
+        {
+          "question": "¿Cómo organizó Carlomagno su Imperio para poder gobernarlo?",
+          "options": [
+            "En provincias con gobernadores nombrados por él",
+            "En condados gobernados por condes que eran sus vasallos",
+            "En reinos independientes con sus propios reyes",
+            "En clanes familiares dirigidos por jefes guerreros"
+          ],
+          "correctIndex": 1,
+          "explanation": "Para gobernar su vasto Imperio, Carlomagno lo dividió en condados y puso al frente de estos a condes que le debían fidelidad como vasallos."
+        }
+      ]
+    },
+    {
+      "id": "tema-ruptura-fillblank01",
+      "lessonId": "tema-ruptura-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: Las invasiones bárbaras",
+      "description": "Rellena los huecos sobre la caída del Imperio romano.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "A principios del siglo V, los hunos, dirigidos por ___, empujaron a los pueblos germánicos hacia el Imperio romano. En el año ___, Odoacro depuso al último emperador romano, marcando el inicio de la ___. Tras la caída, el Mediterráneo quedó dividido entre tres civilizaciones: el Imperio ___, los reinos germánicos y el Islam.",
+        "blanks": ["Atila", "476", "Edad Media", "bizantino"],
+        "wordBank": ["Atila", "Carlomagno", "476", "395", "Edad Media", "Antigüedad", "bizantino", "carolingio", "Islam", "feudalismo"]
+      }
+    },
+    {
+      "id": "tema-ruptura-fillblank02",
+      "lessonId": "tema-ruptura-lesson03",
+      "type": "fill_blank",
+      "title": "Completa: Los reinos germánicos",
+      "description": "Rellena los huecos sobre los reinos germánicos y Carlomagno.",
+      "difficulty": 2,
+      "xpReward": 35,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "Los visigodos se establecieron en la Península Ibérica y crearon un reino con capital en ___. Los monarcas visigodos unificaron a hispanorromanos y visigodos con una misma ley y la religión ___. En el siglo VIII, ___ fue coronado como emperador en el año 800. Para gobernar su Imperio, lo dividió en ___ gobernados por condes vasallos. Tras su muerte, el Imperio se fragmentó y nació el ___.",
+        "blanks": ["Toledo", "catolicismo", "Carlomagno", "condados", "feudalismo"],
+        "wordBank": ["Toledo", "Córdoba", "catolicismo", "islamismo", "Carlomagno", "Justiniano", "condados", "provincias", "feudalismo", "islamismo"]
+      }
+    },
+    {
+      "id": "tema-ruptura-writing01",
+      "lessonId": "tema-ruptura-lesson01",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La caída de Roma",
+      "description": "Explica por qué cayó el Imperio romano de Occidente.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "¿Por qué cayó el Imperio romano de Occidente en el año 476? Explica las causas principales.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "El Imperio romano de Occidente cayó porque...",
+          "Una causa importante fue la llegada de los hunos, que...",
+          "Los pueblos germánicos pudieron invadir el Imperio porque...",
+          "Además, el Imperio estaba debilitado por...",
+          "En conclusión, la caída de Roma fue causada por..."
+        ],
+        "vocabularyHints": [
+          "hunos",
+          "Atila",
+          "pueblos germánicos",
+          "invasiones bárbaras",
+          "Odoacro",
+          "476",
+          "debilitado"
+        ],
+        "connectors": [
+          "porque",
+          "además",
+          "por lo tanto",
+          "como consecuencia",
+          "finalmente"
+        ],
+        "keyPointsToAddress": [
+          "Las invasiones de los hunos que empujaron a los pueblos germánicos",
+          "La debilidad del Imperio romano de Occidente",
+          "El papel de Odoacro en la caída final de Roma"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": ["germánicos", "hunos", "476", "Odoacro", "invasiones"],
+        "rubricConnectors": ["porque", "además", "por lo tanto", "como consecuencia"]
+      }
+    },
+    {
+      "id": "tema-ruptura-writing02",
+      "lessonId": "tema-ruptura-lesson02",
+      "type": "writing_mission",
+      "title": "Misión Escritura: Roma y Bizancio",
+      "description": "Compara el Imperio romano y el Imperio bizantino.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 12,
+      "data": {
+        "prompt": "Compara el Imperio romano y el Imperio bizantino: ¿qué tienen en común y en qué se diferencian?",
+        "scaffoldLevel": 3,
+        "sentenceStarters": [
+          "El Imperio romano y el Imperio bizantino tienen en común que...",
+          "Sin embargo, se diferencian en que...",
+          "Por un lado, el Imperio romano...",
+          "Por otro lado, el Imperio bizantino...",
+          "En conclusión, podemos decir que..."
+        ],
+        "vocabularyHints": [
+          "continuidad",
+          "helenización",
+          "Justiniano",
+          "Constantinopla",
+          "cultura romana",
+          "lengua griega",
+          "mil años"
+        ],
+        "connectors": [
+          "sin embargo",
+          "por un lado",
+          "por otro lado",
+          "a diferencia de",
+          "en cambio",
+          "además"
+        ],
+        "keyPointsToAddress": [
+          "Lo que tienen en común: origen romano, derecho, religión cristiana",
+          "Las diferencias: lengua, cultura, duración",
+          "La evolución del Imperio bizantino hacia una cultura más griega"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": ["romano", "bizantino", "Constantinopla", "griego", "helenización"],
+        "rubricConnectors": ["sin embargo", "por un lado", "por otro lado", "a diferencia de"]
+      }
+    }
+  ]
+}

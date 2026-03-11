@@ -1,0 +1,444 @@
+{
+  "id": "tema08",
+  "number": 8,
+  "title": "Cada vez más y más grandes",
+  "subtitle": "El mundo urbano del siglo XXI",
+  "category": "geografia",
+  "color": "#4dffb4",
+  "icon": "building",
+  "heroImage": "/images/temas/tema08-hero.jpg",
+  "iconImage": "/images/temas/tema08-icon.jpg",
+  "description": "Descubre por qué cada vez más personas viven en ciudades, cómo han evolucionado y cuáles son los retos de las metrópolis del futuro.",
+  "textbookPages": "pp. 202-239",
+  "keyDates": [
+    { "year": 1800, "event": "Solo el 2 % de la población mundial vive en ciudades" },
+    { "year": 1900, "event": "La Revolución Industrial dispara el crecimiento urbano en Europa y América" },
+    { "year": 2007, "event": "Por primera vez en la historia, más personas viven en ciudades que en el campo" },
+    { "year": 2021, "event": "El 56 % de la población mundial es urbana; España supera el 80 %" },
+    { "year": 2035, "event": "Previsión: dos de cada tres personas vivirán en ciudades (5 600 millones)" },
+    { "year": 2050, "event": "El 80 % de los países del mundo tendrá mayoría de población urbana" }
+  ],
+  "keyTerms": [
+    {
+      "term": "Urbanización",
+      "definition": "Proceso por el que la población se concentra en ciudades, reduciéndose la rural."
+    },
+    {
+      "term": "Megalópolis",
+      "definition": "Gran región urbana formada por la unión de varias megaciudades a través de corredores continuos."
+    },
+    {
+      "term": "Megaciudad",
+      "definition": "Área metropolitana con más de 10 millones de habitantes."
+    },
+    {
+      "term": "Ciudad global",
+      "definition": "Megaciudad con gran influencia económica internacional y sede de multinacionales y bolsas de valores."
+    },
+    {
+      "term": "Morfología urbana",
+      "definition": "Forma que presentan las ciudades según la disposición de calles, edificios e infraestructuras."
+    },
+    {
+      "term": "Trama irregular",
+      "definition": "Calles sinuosas y desordenadas, sin planificación, adaptadas a la topografía. Ej.: Toledo, Fez."
+    },
+    {
+      "term": "Trama ortogonal",
+      "definition": "Plano en cuadrícula con calles perpendiculares, fruto de planificación. Ej.: Barcelona, Buenos Aires."
+    },
+    {
+      "term": "Trama radial",
+      "definition": "Calles que parten de un núcleo central como radios de una rueda, con anillos concéntricos. Ej.: París."
+    },
+    {
+      "term": "Área metropolitana",
+      "definition": "Ciudad central más localidades colindantes que funcionan como ciudades-dormitorio o industriales."
+    },
+    {
+      "term": "Emplazamiento",
+      "definition": "Características físicas del lugar donde se asienta la ciudad: altitud, terreno, río, costa..."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema08-lesson01",
+      "title": "Un mundo cada vez más urbano",
+      "duration": 12,
+      "xpReward": 80,
+      "sections": [
+        {
+          "type": "text",
+          "title": "Del campo a la ciudad",
+          "content": "Hasta el siglo XVIII, la mayor parte de la humanidad vivía en el campo: solo el 2 % de la población mundial residía en ciudades. Todo cambió con la Revolución Industrial, que arrancó en Europa y América del Norte a partir del siglo XIX. Las fábricas necesitaban mano de obra, y millones de personas abandonaron el mundo rural para establecerse en las ciudades. Desde entonces, el crecimiento urbano no ha parado.",
+          "highlights": [
+            "En 1800, solo el 2 % de la población vivía en ciudades.",
+            "La Revolución Industrial fue el gran motor del crecimiento urbano.",
+            "El trasvase del campo a la ciudad continúa hoy en todo el mundo."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "El año clave: 2007",
+          "content": "En 2007, por primera vez en la historia de la humanidad, más personas vivían en ciudades que en el campo. Fue un hito sin precedentes. Desde entonces, la tendencia no ha hecho más que acelerarse: en 2021 el 56 % de la población mundial era urbana, y para 2035 se espera que dos de cada tres personas —unos 5.600 millones— vivan en espacios urbanos."
+        },
+        {
+          "type": "text",
+          "title": "¿Por qué la gente se va a las ciudades?",
+          "content": "Las causas de la urbanización son variadas. La globalización económica concentra la tecnología y las finanzas en las grandes ciudades: Nueva York, Londres y Tokio controlan la economía mundial. Además, las ciudades ofrecen más y mejores empleos y servicios que el campo. La diferencia de nivel de vida empuja a millones de personas a emigrar del medio rural al urbano, especialmente en China, India, el Sudeste asiático y África.",
+          "highlights": [
+            "Las ciudades concentran tecnología, finanzas y empleo.",
+            "La desigualdad campo-ciudad impulsa la emigración hacia los núcleos urbanos.",
+            "Asia y África lideran el crecimiento urbano del siglo XXI."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Megaciudades y megalópolis",
+          "content": "Cuando un área metropolitana supera los 10 millones de habitantes se llama megaciudad. Las mayores megalópolis del mundo —superando los 100 millones— se encuentran en China, en torno al río Yangtsé (Shanghái-Nanjing-Hangzhou) y al delta del río de las Perlas (Cantón-Shenzhen-Hong Kong). La primera megalópolis en definirse fue BosWash (Boston–Nueva York–Washington), con 52 millones de habitantes."
+        }
+      ]
+    },
+    {
+      "id": "tema08-lesson02",
+      "title": "¿Qué es exactamente una ciudad?",
+      "duration": 10,
+      "xpReward": 70,
+      "sections": [
+        {
+          "type": "text",
+          "title": "Criterios para definir una ciudad",
+          "content": "No existe en el mundo un criterio único para definir una ciudad. En España, una localidad se considera urbana cuando supera los 10.000 habitantes, aunque este umbral varía entre países. La Comisión Europea fija el límite en más de 1.500 habitantes por km². Otros criterios son: actividad económica basada en servicios, paisaje edificado con alta densidad de construcciones y una extensa influencia sobre el territorio que la rodea.",
+          "highlights": [
+            "En España, más de 10.000 hab. = ciudad; en otros países el umbral es diferente.",
+            "La Comisión Europea exige más de 1.500 hab./km² para considerar un espacio urbano.",
+            "Las ciudades se caracterizan por servicios, comercio e industria, no por la agricultura."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Emplazamiento y situación",
+          "content": "El surgimiento de una ciudad no es casual: depende de su emplazamiento (las características físicas del lugar: altitud, terreno llano, ribera de río...) y de su situación (la posición relativa respecto al territorio: centro del país, nudo de comunicaciones, estuario...). Toledo, por ejemplo, fue construida en una colina rodeada por el río Tajo, lo que la hacía muy difícil de conquistar. Londres, en el estuario del Támesis, pudo desarrollar el comercio marítimo."
+        },
+        {
+          "type": "text",
+          "title": "Ventajas e inconvenientes de vivir en una ciudad",
+          "content": "Las ciudades son lugares de oportunidades: ofrecen empleo, formación, infraestructuras de transporte, equipamientos culturales y un ambiente cosmopolita y multicultural. Sin embargo, también generan graves problemas: contaminación del aire y del agua, tráfico, escasez de vivienda, segregación social, desigualdad y gestión complicada de residuos y energía. La ONU advierte que el crecimiento urbano puede convertirse en un serio problema si no se logra el equilibrio entre lo espacial, lo social y lo ambiental.",
+          "highlights": [
+            "Las ciudades ofrecen empleo, formación y servicios de calidad.",
+            "Pero también concentran contaminación, tráfico y desigualdad social.",
+            "El reto: hacer las ciudades más habitables, sostenibles e inclusivas."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema08-lesson03",
+      "title": "La forma y las zonas de la ciudad",
+      "duration": 12,
+      "xpReward": 80,
+      "sections": [
+        {
+          "type": "text",
+          "title": "Morfología urbana: ¿qué forma tienen las ciudades?",
+          "content": "La morfología urbana es la forma que presentan las ciudades, y muestra la disposición geométrica de sus calles, edificios, zonas verdes e infraestructuras. Refleja tanto la historia de la ciudad como si su crecimiento fue espontáneo o planificado. Se reconocen tres grandes tramas urbanas: irregular, ortogonal y radial, aunque la mayoría de las ciudades combina varias de ellas.",
+          "highlights": [
+            "Trama irregular: sinuosa, sin planificación. Ejemplos: Toledo, Fez, El Cairo.",
+            "Trama ortogonal (cuadrícula): calles perpendiculares y ordenadas. Ejemplos: Barcelona, Buenos Aires.",
+            "Trama radial: calles que salen de un centro como radios. Ejemplos: París, Moscú."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "¿Por qué existen tramas diferentes?",
+          "content": "La trama irregular surgió en ciudades islámicas y medievales, adaptadas a la topografía del terreno o a los caminos preexistentes. La ortogonal fue usada ya en la Antigüedad por griegos y romanos, y después en los ensanches de ciudades como Barcelona. La radial facilita el acceso rápido al centro y se complementa con circunvalaciones que evitan pasar por el núcleo urbano. Muchas ciudades modernas combinan varias tramas."
+        },
+        {
+          "type": "text",
+          "title": "Las zonas de la ciudad",
+          "content": "Una ciudad no es uniforme: tiene zonas diferenciadas según su historia y función. El centro histórico (casco antiguo) conserva el patrimonio arquitectónico y suele tener trama irregular o radial. El ensanche es la zona planificada del siglo XIX, con trama ortogonal y edificios de mayor altura. La periferia incluye barrios residenciales, polígonos industriales y zonas comerciales en torno a grandes vías. Las ciudades-dormitorio son municipios colindantes cuya población trabaja en la ciudad central.",
+          "highlights": [
+            "Centro histórico: trama irregular, patrimonio arquitectónico.",
+            "Ensanche: cuadrícula planificada, mayor altura de edificios.",
+            "Periferia: barrios residenciales, polígonos, grandes superficies comerciales."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema08-lesson04",
+      "title": "Las ciudades del futuro",
+      "duration": 10,
+      "xpReward": 90,
+      "sections": [
+        {
+          "type": "text",
+          "title": "Retos de las ciudades en el siglo XXI",
+          "content": "Las ciudades del siglo XXI se enfrentan a desafíos enormes: el aumento imparable de la población urbana, la contaminación atmosférica, la crisis de la vivienda, la desigualdad social y los efectos del cambio climático. Lagos (Nigeria) ha pasado de 288.000 habitantes en 1950 a más de 15 millones actualmente. Este crecimiento tan rápido provoca barrios sin infraestructuras, chabolismo y problemas de sanidad.",
+          "highlights": [
+            "El crecimiento urbano descontrolado genera chabolismo y falta de servicios.",
+            "El cambio climático amenaza a las ciudades costeras y aumenta las olas de calor.",
+            "La desigualdad social dentro de las ciudades es un reto urgente."
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Las ciudades inteligentes (Smart Cities)",
+          "content": "Las ciudades inteligentes o smart cities utilizan la tecnología para mejorar la calidad de vida de sus habitantes y reducir el impacto ambiental. Usan sensores, datos e inteligencia artificial para optimizar el transporte público, el consumo de energía, la gestión de residuos y el alumbrado. Ejemplos de ciudades que aplican estos conceptos son Singapur, Ámsterdam y Barcelona. El objetivo es que las ciudades sean más eficientes, sostenibles e inclusivas."
+        },
+        {
+          "type": "text",
+          "title": "Hacia ciudades más sostenibles",
+          "content": "Para que las ciudades del futuro sean habitables, es necesario avanzar en varias direcciones: impulsar el transporte público y la movilidad sostenible (bicicleta, peatonalización), crear más zonas verdes, construir edificios de bajo consumo energético, gestionar bien los residuos y el agua, y reducir la desigualdad. La ONU recoge estos objetivos en la meta número 11 de los Objetivos de Desarrollo Sostenible: 'Ciudades y comunidades sostenibles'.",
+          "highlights": [
+            "Más transporte público, bicicletas y zonas peatonales.",
+            "Edificios eficientes y energías renovables en las ciudades.",
+            "ODS 11: ciudades inclusivas, seguras, resilientes y sostenibles."
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema08-quiz01",
+      "type": "quiz",
+      "title": "El mundo urbano",
+      "xpReward": 50,
+      "questions": [
+        {
+          "question": "¿Qué porcentaje de la población mundial vivía en ciudades en el año 1800?",
+          "options": [
+            "Solo el 2 %",
+            "El 20 %",
+            "El 50 %",
+            "El 80 %"
+          ],
+          "correctIndex": 0,
+          "explanation": "Hasta el siglo XVIII, la mayor parte de la humanidad vivía del campo. En 1800 solo el 2 % de la población mundial residía en ciudades."
+        },
+        {
+          "question": "¿Por qué fue histórico el año 2007 para la urbanización mundial?",
+          "options": [
+            "Se fundó la primera megaciudad con 10 millones de habitantes",
+            "Por primera vez, más personas vivían en ciudades que en el campo",
+            "Se aprobó el primer plan global de ciudades sostenibles",
+            "Las ciudades empezaron a usar energías renovables"
+          ],
+          "correctIndex": 1,
+          "explanation": "En 2007, por primera vez en la historia, la población urbana superó a la rural. Fue un hito sin precedentes en la historia de la humanidad."
+        },
+        {
+          "question": "¿Cuándo se considera que una localidad es ciudad en España?",
+          "options": [
+            "Cuando supera los 5.000 habitantes",
+            "Cuando supera los 1.000 habitantes",
+            "Cuando supera los 10.000 habitantes",
+            "Cuando supera los 50.000 habitantes"
+          ],
+          "correctIndex": 2,
+          "explanation": "En España, las localidades con más de 10.000 habitantes se consideran urbanas, aunque este umbral varía en otros países."
+        },
+        {
+          "question": "¿Qué tipo de ciudad supera los 10 millones de habitantes?",
+          "options": [
+            "Área metropolitana",
+            "Ciudad global",
+            "Megalópolis",
+            "Megaciudad"
+          ],
+          "correctIndex": 3,
+          "explanation": "Una megaciudad es un área metropolitana que supera los 10 millones de habitantes. Las ciudades globales son megaciudades con gran influencia económica internacional."
+        },
+        {
+          "question": "¿Cuál fue la primera megalópolis que se definió en el mundo?",
+          "options": [
+            "Tokio-Yokohama (Japón)",
+            "Shanghái-Nanjing-Hangzhou (China)",
+            "BosWash: Boston-Nueva York-Washington (EE. UU.)",
+            "Cantón-Shenzhen-Hong Kong (China)"
+          ],
+          "correctIndex": 2,
+          "explanation": "La primera megalópolis en definirse fue BosWash (Boston–Nueva York–Philadelphia–Baltimore–Washington), que actualmente alcanza los 52 millones de habitantes."
+        }
+      ]
+    },
+    {
+      "id": "tema08-quiz02",
+      "type": "quiz",
+      "title": "Morfología y futuro urbano",
+      "xpReward": 50,
+      "questions": [
+        {
+          "question": "¿Qué trama urbana tienen ciudades como Toledo, Fez y El Cairo?",
+          "options": [
+            "Trama ortogonal",
+            "Trama radial",
+            "Trama irregular",
+            "Trama lineal"
+          ],
+          "correctIndex": 2,
+          "explanation": "Estas ciudades tienen trama irregular: calles sinuosas, estrechas y desordenadas, adaptadas a la topografía del terreno o a caminos preexistentes, sin planificación."
+        },
+        {
+          "question": "¿Qué característica tiene la trama urbana ortogonal o reticular?",
+          "options": [
+            "Las calles parten de un núcleo central como radios",
+            "Las calles son sinuosas y se adaptan al terreno",
+            "Las calles son perpendiculares y forman una cuadrícula regular",
+            "No existe ningún tipo de planificación previa"
+          ],
+          "correctIndex": 2,
+          "explanation": "La trama ortogonal responde a una ordenación planificada en forma de cuadrícula. Las calles se disponen de forma perpendicular. Ejemplos: Barcelona, Buenos Aires, Nueva York."
+        },
+        {
+          "question": "¿Qué son las smart cities o ciudades inteligentes?",
+          "options": [
+            "Ciudades construidas íntegramente de materiales reciclados",
+            "Ciudades que usan tecnología y datos para mejorar la calidad de vida y reducir el impacto ambiental",
+            "Ciudades donde solo viven personas con estudios universitarios",
+            "Megaciudades con más de 50 millones de habitantes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Las smart cities usan sensores, inteligencia artificial y datos para optimizar el transporte, la energía, los residuos y el alumbrado, mejorando la vida urbana."
+        },
+        {
+          "question": "¿Cuál es la referencia de los Objetivos de Desarrollo Sostenible (ODS) sobre ciudades?",
+          "options": [
+            "ODS 7: Energía asequible y no contaminante",
+            "ODS 11: Ciudades y comunidades sostenibles",
+            "ODS 13: Acción por el clima",
+            "ODS 15: Vida de ecosistemas terrestres"
+          ],
+          "correctIndex": 1,
+          "explanation": "El ODS 11 busca ciudades inclusivas, seguras, resilientes y sostenibles. Es el objetivo de la ONU directamente relacionado con el desarrollo urbano."
+        }
+      ]
+    },
+    {
+      "id": "tema08-fillblank01",
+      "type": "fill_blank",
+      "title": "La urbanización mundial",
+      "xpReward": 60,
+      "data": {
+        "paragraph": "Hasta el siglo XVIII, solo el ___ % de la población mundial vivía en ciudades. Todo cambió con la ___ Industrial, que provocó un gran trasvase del campo a la ciudad. En ___, por primera vez en la historia, más personas vivían en ciudades que en el campo. Hoy, el ___ % de la población mundial es urbana, y se prevé que en 2050, el 80 % de los ___ del mundo tendrá mayoría de población urbana.",
+        "blanks": ["2", "Revolución", "2007", "56", "países"],
+        "wordBank": [
+          "2007",
+          "2",
+          "Revolución",
+          "Industrial",
+          "56",
+          "países",
+          "1900",
+          "10",
+          "continentes",
+          "Agraria"
+        ]
+      }
+    },
+    {
+      "id": "tema08-fillblank02",
+      "type": "fill_blank",
+      "title": "Las tramas urbanas",
+      "xpReward": 60,
+      "data": {
+        "paragraph": "La morfología urbana es la ___ que presentan las ciudades. Se reconocen tres grandes tramas: la trama ___, sin planificación, con calles estrechas y sinuosas (como en Toledo o Fez); la trama ___, planificada en cuadrícula, con calles perpendiculares (como en Barcelona o Buenos Aires); y la trama ___, organizada en torno a un ___ central del que parten ejes como radios de una bicicleta (como en París o Moscú).",
+        "blanks": ["forma", "irregular", "ortogonal", "radial", "núcleo"],
+        "wordBank": [
+          "forma",
+          "irregular",
+          "ortogonal",
+          "radial",
+          "núcleo",
+          "estructura",
+          "regular",
+          "diagonal",
+          "borde",
+          "periferia"
+        ]
+      }
+    },
+    {
+      "id": "tema08-writing01",
+      "type": "writing_mission",
+      "title": "¿Por qué creció la ciudad?",
+      "xpReward": 80,
+      "data": {
+        "prompt": "Explica cuáles fueron las principales causas del crecimiento de las ciudades a partir del siglo XIX y por qué ese proceso se ha acelerado en el siglo XXI.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "El crecimiento de las ciudades comenzó con...",
+          "La Revolución Industrial provocó que...",
+          "En el siglo XXI, el proceso se ha acelerado porque...",
+          "Además, la globalización económica ha hecho que..."
+        ],
+        "vocabularyHints": [
+          "urbanización",
+          "Revolución Industrial",
+          "mano de obra",
+          "globalización",
+          "megaciudad"
+        ],
+        "connectors": [
+          "en primer lugar",
+          "además",
+          "como consecuencia",
+          "por otro lado",
+          "en conclusión"
+        ],
+        "keyPointsToAddress": [
+          "El papel de la Revolución Industrial",
+          "La diferencia de nivel de vida campo-ciudad",
+          "La globalización y la concentración de tecnología y finanzas",
+          "El crecimiento de países emergentes como China e India"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": ["urbanización", "industrial", "globalización", "ciudad", "campo"],
+        "rubricConnectors": ["porque", "además", "por eso", "en consecuencia"]
+      }
+    },
+    {
+      "id": "tema08-writing02",
+      "type": "writing_mission",
+      "title": "Mi ciudad ideal del futuro",
+      "xpReward": 100,
+      "data": {
+        "prompt": "Imagina cómo debería ser una ciudad sostenible e inteligente del futuro. ¿Qué cambios serían necesarios para que las ciudades sean más habitables, justas y respetuosas con el medio ambiente?",
+        "scaffoldLevel": 3,
+        "sentenceStarters": [
+          "Una ciudad sostenible del futuro debería tener...",
+          "Para reducir la contaminación, sería necesario...",
+          "Las smart cities utilizan tecnología para...",
+          "Un aspecto fundamental para la igualdad social sería...",
+          "En conclusión, la ciudad del futuro debe..."
+        ],
+        "vocabularyHints": [
+          "sostenible",
+          "smart city",
+          "transporte público",
+          "energía renovable",
+          "desigualdad",
+          "ODS 11"
+        ],
+        "connectors": [
+          "en primer lugar",
+          "también",
+          "por otro lado",
+          "además",
+          "sin embargo",
+          "finalmente"
+        ],
+        "keyPointsToAddress": [
+          "Transporte sostenible y movilidad urbana",
+          "Tecnología para mejorar la gestión de la ciudad",
+          "Reducción de desigualdades sociales",
+          "Respeto al medio ambiente y ahorro energético"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": ["sostenible", "transporte", "energía", "desigualdad", "tecnología"],
+        "rubricConnectors": ["además", "sin embargo", "por eso", "finalmente", "en conclusión"]
+      }
+    }
+  ]
+}

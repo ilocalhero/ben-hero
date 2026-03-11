@@ -1,13 +1,13 @@
 {
   "id": "tema01",
-  "number": 1,
+  "number": 2,
   "title": "La huella andalusí",
   "subtitle": "El inicio de la Edad Media",
   "category": "historia",
   "color": "#ff6b35",
   "icon": "castle",
-  "heroImage": "/images/temas/tema01-hero.jpeg",
-  "iconImage": "/images/temas/tema01-icon.jpeg",
+  "heroImage": "/images/temas/tema01-hero.jpg",
+  "iconImage": "/images/temas/tema01-icon.jpg",
   "description": "Descubre cómo los musulmanes llegaron a la Península Ibérica y crearon una de las civilizaciones más avanzadas de la Edad Media.",
   "textbookPages": "pp. 8-41",
   "keyDates": [

@@ -1,0 +1,574 @@
+{
+  "id": "tema05",
+  "number": 5,
+  "title": "Conquista y repoblación",
+  "subtitle": "Los reinos cristianos y la Reconquista",
+  "category": "historia",
+  "color": "#00ff88",
+  "icon": "cross",
+  "heroImage": "/images/temas/tema05-hero.jpg",
+  "iconImage": "/images/temas/tema05-icon.jpg",
+  "description": "Descubre cómo los pequeños reinos cristianos del norte de España fueron avanzando hacia el sur durante siglos hasta conquistar toda la Península Ibérica.",
+  "textbookPages": "pp. 102-135",
+  "keyDates": [
+    {
+      "year": "718",
+      "event": "Resistencia en Covadonga",
+      "detail": "Pelayo, noble visigodo refugiado en la Cordillera Cantábrica, resiste un ataque musulmán cerca de Covadonga, dando origen al reino de Asturias."
+    },
+    {
+      "year": "939",
+      "event": "Batalla de Simancas",
+      "detail": "Coalición cristiana de León y Castilla vence a los musulmanes en Simancas, permitiendo avanzar al sur del río Duero."
+    },
+    {
+      "year": "987",
+      "event": "Independencia catalana",
+      "detail": "Borrell II, conde de Barcelona, se niega a renovar su vasallaje al rey franco, consumando la independencia de los condados catalanes."
+    },
+    {
+      "year": "1085",
+      "event": "Conquista de Toledo",
+      "detail": "Alfonso VI de Castilla y León toma Toledo, ciudad clave del centro peninsular, empujando la frontera hasta el río Tajo."
+    },
+    {
+      "year": "1238",
+      "event": "Conquista de Valencia",
+      "detail": "Jaime I el Conquistador toma la ciudad de Valencia tras cinco meses de asedio, fundando el Reino de Valencia."
+    },
+    {
+      "year": "1492",
+      "event": "Conquista de Granada",
+      "detail": "Los Reyes Católicos conquistan Granada, el último reino musulmán, poniendo fin a la Reconquista."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Reconquista",
+      "definition": "Proceso de conquista de Al-Ándalus por los reinos cristianos entre los años 711 y 1492. El término subraya la continuidad con el reino visigodo, aunque es debatido por los historiadores."
+    },
+    {
+      "term": "Mozárabe",
+      "definition": "Cristiano que vivía en territorio musulmán, conservando su religión y sus costumbres bajo dominio islámico."
+    },
+    {
+      "term": "Repoblación",
+      "definition": "Proceso de ocupación por nuevos habitantes de las tierras conquistadas o deshabitadas, con el fin de defender y explotar los territorios fronterizos."
+    },
+    {
+      "term": "Marca Hispánica",
+      "definition": "Zona fronteriza creada por Carlomagno en los Pirineos (siglo VIII) como barrera entre el Imperio Franco y Al-Ándalus, que dio origen a los condados catalanes."
+    },
+    {
+      "term": "Condado",
+      "definition": "Territorio gobernado por un conde, vasallo del rey o del emperador. Los condados catalanes formaban parte de la Marca Hispánica."
+    },
+    {
+      "term": "Vasallo",
+      "definition": "Persona que se somete a la autoridad de un señor y le jura fidelidad a cambio de protección y tierras."
+    },
+    {
+      "term": "Camino de Santiago",
+      "definition": "Ruta de peregrinación a la tumba del apóstol Santiago en Compostela. Tuvo gran importancia religiosa, cultural y económica en la Edad Media."
+    },
+    {
+      "term": "Fuero",
+      "definition": "Documento otorgado por el rey que recogía los derechos y privilegios de los habitantes de una villa o territorio, usado para atraer repobladores."
+    },
+    {
+      "term": "Arte románico",
+      "definition": "Estilo artístico difundido en la Península Ibérica entre los siglos XI y XII, caracterizado por arcos de medio punto, muros gruesos y escasa iluminación interior."
+    },
+    {
+      "term": "Cruzada",
+      "definition": "Expedición militar organizada por la Iglesia con objetivo religioso. La Reconquista fue considerada por el papado como una cruzada cristiana contra el islam."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema05-lesson01",
+      "order": 1,
+      "title": "Los primeros reinos cristianos",
+      "subtitle": "Asturias, León, Navarra y los condados catalanes",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Los núcleos de resistencia del norte",
+          "content": "Cuando los ejércitos musulmanes conquistaron la Península Ibérica, una estrecha franja del norte quedó fuera del control andalusí. En la Cordillera Cantábrica se refugiaron nobles visigodos que huían de la conquista, entre ellos Pelayo, quien resistió un ataque musulmán cerca de Covadonga hacia el año 722. Así nació el reino de Asturias, con capital en Oviedo, que pronto dominó Galicia y se expandió por el valle del Duero. La capital se trasladó a León en el año 910 y el reino pasó a llamarse reino de León.",
+          "highlights": [
+            "Pelayo resiste en Covadonga (722)",
+            "Nace el reino de Asturias, luego León",
+            "El norte peninsular queda fuera del control musulmán"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El Condado de Castilla y la Marca Hispánica",
+          "content": "En el siglo X, en la frontera oriental del reino de León, se creó el Condado de Castilla (en las actuales Cantabria y Burgos), cuyo nombre viene de los numerosos castillos construidos para defender la zona. En los Pirineos, el emperador franco Carlomagno creó la Marca Hispánica (siglo VIII) como frontera entre su reino y Al-Ándalus. Esta zona se extendía desde Pamplona hasta Barcelona. La Marca estaba formada por condados gobernados por condes vasallos del rey franco. Tras la muerte de Carlomagno, se fueron independizando: así surgieron el reino de Pamplona, los condados aragoneses y los condados catalanes.",
+          "highlights": [
+            "Castilla: nombre por los castillos defensivos",
+            "Carlomagno crea la Marca Hispánica en los Pirineos",
+            "Los condados se independizan del rey franco"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Conquista o Reconquista",
+          "content": "Con el término Reconquista se nombra el proceso de conquista de Al-Ándalus por los reinos cristianos entre los años 711 y 1492. Este concepto subraya la continuidad entre el reino visigodo y los nuevos reinos cristianos. Sin embargo, es objeto de debate, ya que esa vinculación se basa solo en la continuidad religiosa."
+        },
+        {
+          "type": "text",
+          "title": "El avance hacia el sur y el freno de al-Mansur",
+          "content": "En el siglo X, el conde castellano Fernán González aprovechó los conflictos dinásticos del reino de León para independizarse. Tras la victoria en Simancas (939), León y Castilla avanzaron al sur del Duero. Sin embargo, estos avances fueron frenados por las expediciones de al-Mansur, valido del Califato de Córdoba, que devastó ciudades y castillos cristianos a finales del siglo X. Leoneses y castellanos tuvieron que pagar tributos y reconocer la superioridad militar del califa.",
+          "highlights": [
+            "Victoria en Simancas (939): avance al sur del Duero",
+            "Al-Mansur frena la expansión cristiana",
+            "Los reinos pagan tributos al Califato"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los condados catalanes se independizan",
+          "content": "La independencia de los condados catalanes se realizó en dos etapas: a finales del siglo IX, Wifredo el Velloso, conde de Barcelona, convirtió su cargo en hereditario; posteriormente, Borrell II se negó a renovar su vasallaje al rey franco en el año 987. Los reinos de Pamplona conquistaron territorios en Álava y La Rioja y conocieron su máxima expansión bajo Sancho III el Mayor en el siglo XI.",
+          "highlights": [
+            "Wifredo el Velloso: el condado de Barcelona se hace hereditario",
+            "Borrell II (987): independencia definitiva de los condados catalanes",
+            "Sancho III el Mayor: máxima expansión de Pamplona"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema05-lesson02",
+      "order": 2,
+      "title": "El avance de la Reconquista",
+      "subtitle": "Siglos XI al XIII: grandes victorias",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Se consolidan cuatro grandes reinos",
+          "content": "Tras el fallecimiento de Sancho III el Mayor en 1035, los enfrentamientos entre sus herederos dieron origen a los reinos de Castilla y Aragón. Los reinos de León y Castilla se unieron y separaron en diversas ocasiones hasta que Fernando III el Santo los unificó definitivamente en 1230, formando la Corona de Castilla. La Corona de Aragón surgió del matrimonio en 1137 entre Petronila de Aragón y Ramón Berenguer IV, conde de Barcelona. El reino de Portugal se independizó de León en el siglo XII.",
+          "highlights": [
+            "1230: unificación definitiva de Castilla y León",
+            "1137: matrimonio que crea la Corona de Aragón",
+            "Portugal se independiza de León en el siglo XII"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las parias y la conquista del Tajo y el Ebro",
+          "content": "La división de Al-Ándalus en reinos de taifas dio la superioridad militar a los cristianos, que exigieron parias (pagos a cambio de paz) a las taifas. Entre 1031 y 1150, los cristianos ocuparon los valles del Tajo y del Ebro: Alfonso VI tomó Toledo en 1085; Alfonso el Batallador de Aragón tomó Zaragoza en 1118; y Ramón Berenguer IV conquistó Tortosa (1148) y Lleida (1149). La llegada de los almorávides y almohades desde el norte de África frenó el avance cristiano durante el siglo XII.",
+          "highlights": [
+            "Las parias: los reinos de taifas pagan tributos a los cristianos",
+            "1085: Alfonso VI conquista Toledo",
+            "Almorávides y almohades frenan el avance cristiano"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "La batalla de las Navas de Tolosa (1212)",
+          "content": "La batalla de las Navas de Tolosa, en la que colaboraron Castilla, Navarra y Aragón, terminó con el poder almohade y permitió un gran avance de los reinos cristianos hacia el sur. Fue el punto de inflexión definitivo de la Reconquista."
+        },
+        {
+          "type": "text",
+          "title": "El gran avance del siglo XIII",
+          "content": "Tras las Navas de Tolosa, Fernando III el Santo tomó Córdoba (1236), Murcia (1243) y Sevilla (1248). En la Corona de Aragón, Jaime I el Conquistador ocupó Valencia (1238), las Baleares y llegó hasta Murcia (que entregó a Castilla mediante el Tratado de Almizra, 1244). Portugal terminó su conquista con la toma de Faro (1249). A finales del siglo XIII solo permanecía el reino musulmán de Granada.",
+          "highlights": [
+            "Fernando III toma Córdoba, Murcia y Sevilla",
+            "Jaime I conquista Valencia (1238) y las Baleares",
+            "Solo queda el reino de Granada"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema05-lesson03",
+      "order": 3,
+      "title": "La repoblación y el territorio valenciano",
+      "subtitle": "Cómo se organizaban las tierras conquistadas",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Tres modelos de repoblación",
+          "content": "Para asegurar el dominio de las tierras conquistadas, los reyes cristianos establecieron diferentes fórmulas de repoblación. Entre los siglos VIII y X, la repoblación al norte del Duero fue espontánea: campesinos ocupaban las tierras despobladas mediante la presura. Entre los siglos XI y XII, las villas entre el Duero y el Tajo recibían fueros o cartas pueblas, documentos que garantizaban privilegios a sus habitantes. Durante el siglo XIII, al sur del Tajo, se repartieron grandes latifundios entre la Iglesia, la nobleza y las órdenes militares que habían ayudado en las campañas militares.",
+          "highlights": [
+            "Siglos VIII-X: repoblación espontánea por presura",
+            "Siglos XI-XII: fueros y cartas pueblas",
+            "Siglo XIII: latifundios al sur del Tajo"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Mudéjares y judíos en la sociedad cristiana",
+          "content": "La ocupación de nuevos territorios significó la presencia de musulmanes en territorio cristiano, denominados mudéjares. Podían conservar sus leyes, religión y parte de sus propiedades, pero debían pagar impuestos especiales y residir en barrios segregados llamados morerías. Las comunidades judías trabajaban en artesanía, comercio, medicina y finanzas, y vivían en barrios separados llamados juderías. Toledo se convirtió en un gran centro cultural con su Escuela de Traductores, donde cristianos, musulmanes y judíos traducían textos filosóficos y científicos de la Antigüedad clásica.",
+          "highlights": [
+            "Mudéjares: musulmanes en territorio cristiano, en las morerías",
+            "Juderías: barrios judíos en las ciudades",
+            "Escuela de Traductores de Toledo: encuentro de culturas"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La conquista del territorio valenciano",
+          "content": "Durante el reinado de Jaime I (1213-1276), aprovechando la debilidad musulmana tras las Navas de Tolosa, la Corona de Aragón avanzó hacia el sur. Tras tomar Morella (1232) y Burriana, Jaime I conquistó Valencia en 1238, que se rindió tras cinco meses de asedio. El Tratado de Almizra (1244) fijó las fronteras del nuevo Reino de Valencia. Jaime I otorgó los Fueros de Valencia (1261) para garantizar los derechos de sus habitantes y limitar el poder de los señores. El territorio fue repoblado principalmente por catalanes en el litoral y aragoneses en el interior.",
+          "highlights": [
+            "1238: Valencia se rinde tras cinco meses de asedio",
+            "Tratado de Almizra (1244): fronteras del Reino de Valencia",
+            "Fueros de Valencia (1261): derechos de los repobladores"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Los mudéjares en el Reino de Valencia",
+          "content": "Los mudéjares valencianos, mayoritariamente campesinos expertos en agricultura, fueron despojados de sus casas y sus huertas y desplazados de las fértiles tierras del litoral hacia zonas del interior más pobres. En Valencia y Xàtiva siguieron trabajando como artesanos, pero recluidos en las morerías. La mayoría fueron convertidos en siervos y obligados a pagar elevadas rentas."
+        }
+      ]
+    },
+    {
+      "id": "tema05-lesson04",
+      "order": 4,
+      "title": "El Camino de Santiago y el arte románico",
+      "subtitle": "Fe, cultura y arquitectura",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El descubrimiento del sepulcro de Santiago",
+          "content": "En el siglo IX se descubrió en Galicia, en un lugar llamado Compostela (que significa campo de estrellas), la supuesta tumba del apóstol Santiago. El rey de Asturias, Alfonso II, ordenó construir una iglesia para proteger el sepulcro. Pronto llegaron miles de peregrinos de toda Europa para venerar las reliquias del apóstol. El camino se hacía a pie y en grupo para evitar los numerosos peligros. Los peregrinos llevaban cosida a sus ropas una concha, símbolo del apóstol, y se dirigían a la catedral de Santiago de Compostela para admirar el Pórtico de la Gloria.",
+          "highlights": [
+            "Siglo IX: descubrimiento de la tumba de Santiago en Compostela",
+            "Alfonso II manda construir una iglesia sobre el sepulcro",
+            "Peregrinos de toda Europa acuden a Compostela"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las consecuencias del Camino de Santiago",
+          "content": "El intenso flujo de peregrinos durante siglos provocó importantes consecuencias sociales, económicas y culturales. La Iglesia y los reyes organizaron rutas, construyeron iglesias, hospitales y hospederías. El Camino se convirtió en un foco de propagación religiosa, cultural y artística que posibilitó la introducción del estilo románico en la Península Ibérica. A lo largo del recorrido se produjo el renacimiento urbano de ciudades como Jaca, Pamplona, Logroño, Burgos y León, cuyas ferias y mercados se beneficiaron del auge económico del Camino.",
+          "highlights": [
+            "Renacimiento urbano de ciudades a lo largo del Camino",
+            "Introducción del arte románico en la Península",
+            "Intercambio cultural entre Europa y los reinos peninsulares"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El arte románico peninsular",
+          "content": "Durante los siglos XI y XII se difundió en la Península el arte románico, gracias al Camino de Santiago y a los monjes cluniacenses. La combinación del románico europeo (francés y lombardo) con fórmulas del arte prerrománico (visigodo, asturiano y mozárabe) dio lugar a un románico peninsular de gran personalidad. El románico francés, vinculado al Camino y a la orden de Cluny, se difundió por el norte: destacan la catedral de Santiago de Compostela y las iglesias de San Martín de Frómista (Palencia) y Santa María de Eunate (Navarra). El románico lombardo se extendió por Cataluña y Aragón, con iglesias de alto campanario como las de Tahull (Lleida). El románico mudéjar usó el ladrillo como material principal en Aragón, Castilla y Extremadura.",
+          "highlights": [
+            "Románico francés: catedral de Santiago, Frómista, Eunate",
+            "Románico lombardo: Tahull, monasterio de Ripoll",
+            "Románico mudéjar: ladrillo en Aragón, Castilla y Extremadura"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "La escultura y la pintura románicas",
+          "content": "La escultura románica se concentra en portadas y capiteles, representando a Cristo en Majestad, la Virgen con el Niño, santos y apóstoles. El Pórtico de la Gloria de la catedral de Santiago es la obra cumbre. La pintura románica, ejecutada al fresco, decora ábsides y muros con figuras hieráticas de colores primarios. Sobresalen las pinturas de San Clemente y Santa María de Tahull (Lleida)."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema05-quiz01",
+      "lessonId": "tema05-lesson01",
+      "type": "quiz",
+      "title": "Los primeros reinos: ¿cuánto sabes?",
+      "description": "Pon a prueba tus conocimientos sobre los orígenes de los reinos cristianos.",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Quién resistió el ataque musulmán cerca de Covadonga y dio origen al reino de Asturias?",
+          "options": [
+            "Carlomagno",
+            "Fernán González",
+            "Pelayo",
+            "Alfonso II"
+          ],
+          "correctIndex": 2,
+          "explanation": "Pelayo, noble visigodo refugiado en la Cordillera Cantábrica, resistió un ataque musulmán cerca de Covadonga hacia el año 722, dando origen al reino de Asturias."
+        },
+        {
+          "question": "¿Cómo se llamaba la zona fronteriza creada por Carlomagno en los Pirineos para separar su reino de Al-Ándalus?",
+          "options": [
+            "Condado de Castilla",
+            "Reino de Navarra",
+            "Marca Hispánica",
+            "Ducado de Gascuña"
+          ],
+          "correctIndex": 2,
+          "explanation": "La Marca Hispánica fue creada por Carlomagno en el siglo VIII como frontera entre el Imperio Franco y Al-Ándalus. Se extendía desde Pamplona hasta Barcelona y estaba formada por condados gobernados por vasallos del rey franco."
+        },
+        {
+          "question": "¿Por qué el Condado de Castilla recibió ese nombre?",
+          "options": [
+            "Por el rey Castillo que lo fundó",
+            "Por los numerosos castillos construidos para defender la zona",
+            "Por su capital, la ciudad de Castilla",
+            "Por el río Castillo que lo atravesaba"
+          ],
+          "correctIndex": 1,
+          "explanation": "El Condado de Castilla recibió su nombre por los numerosos castillos construidos para defender y fortificar aquella peligrosa zona fronteriza expuesta a los ataques musulmanes."
+        },
+        {
+          "question": "¿En qué año Borrell II consumó la independencia de los condados catalanes?",
+          "options": [
+            "722",
+            "801",
+            "939",
+            "987"
+          ],
+          "correctIndex": 3,
+          "explanation": "En el año 987, Borrell II se negó a renovar su vasallaje al rey franco, consumando la independencia definitiva de los condados catalanes."
+        },
+        {
+          "question": "¿Cuál fue el efecto de las razias de al-Mansur sobre la expansión cristiana?",
+          "options": [
+            "Impulsaron el avance cristiano hacia el sur",
+            "No tuvieron ningún efecto sobre los reinos cristianos",
+            "Frenaron la expansión leonesa y castellana al sur del Duero",
+            "Provocaron la caída del Califato de Córdoba"
+          ],
+          "correctIndex": 2,
+          "explanation": "Las expediciones de al-Mansur, valido del Califato de Córdoba, devastaron ciudades y castillos cristianos a finales del siglo X y frenaron la expansión de León y Castilla, que tuvieron que pagar tributos al califa."
+        }
+      ]
+    },
+    {
+      "id": "tema05-quiz02",
+      "lessonId": "tema05-lesson04",
+      "type": "quiz",
+      "title": "Reconquista, Santiago y románico",
+      "description": "Preguntas sobre el avance cristiano, el Camino de Santiago y el arte románico.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿En qué año Alfonso VI de Castilla y León conquistó Toledo?",
+          "options": [
+            "1031",
+            "1085",
+            "1137",
+            "1212"
+          ],
+          "correctIndex": 1,
+          "explanation": "En el año 1085, Alfonso VI tomó Toledo, ciudad clave del centro peninsular que empujó la frontera cristiana hasta el río Tajo."
+        },
+        {
+          "question": "¿Qué batalla en 1212 acabó con el poder almohade y abrió el sur de la Península a los reinos cristianos?",
+          "options": [
+            "Batalla de Covadonga",
+            "Batalla de Guadalete",
+            "Batalla de Simancas",
+            "Batalla de las Navas de Tolosa"
+          ],
+          "correctIndex": 3,
+          "explanation": "La batalla de las Navas de Tolosa (1212), en la que colaboraron Castilla, Navarra y Aragón, terminó con el poder almohade y permitió un gran avance de los reinos cristianos hacia el sur."
+        },
+        {
+          "question": "¿Cómo llegó el arte románico a la Península Ibérica?",
+          "options": [
+            "A través de las rutas comerciales mediterráneas",
+            "A través del Camino de Santiago y la llegada de monjes cluniacenses",
+            "A través de las campañas militares en el sur de Europa",
+            "A través de los comerciantes árabes"
+          ],
+          "correctIndex": 1,
+          "explanation": "El arte románico llegó a la Península Ibérica a través del Camino de Santiago, con la llegada de artesanos y nuevas técnicas, y por la fundación de monasterios benedictinos por parte de monjes cluniacenses."
+        },
+        {
+          "question": "¿Qué es el Pórtico de la Gloria?",
+          "options": [
+            "La puerta principal de la Alhambra de Granada",
+            "La obra cumbre de la escultura románica, en la catedral de Santiago de Compostela",
+            "Un arco romano de la ciudad de Toledo",
+            "La entrada principal del monasterio de Ripoll"
+          ],
+          "correctIndex": 1,
+          "explanation": "El Pórtico de la Gloria es la obra cumbre de la escultura románica peninsular, ubicado en la catedral de Santiago de Compostela. Entre sus numerosas figuras bíblicas destacan las representaciones de Cristo y del apóstol Santiago vestido de peregrino."
+        }
+      ]
+    },
+    {
+      "id": "tema05-fillblank01",
+      "lessonId": "tema05-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: Los reinos cristianos",
+      "description": "Rellena los huecos con las palabras correctas sobre el origen de los reinos cristianos.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "Cuando los musulmanes conquistaron la Península, la zona norte quedó fuera de su control. En la Cordillera Cantábrica, ___ resistió un ataque musulmán cerca de ___, dando origen al reino de ___. En los Pirineos, Carlomagno creó la ___ como zona fronteriza entre su reino y Al-Ándalus. En 987, ___ se negó a renovar su vasallaje al rey franco, completando la independencia de los condados catalanes.",
+        "blanks": [
+          "Pelayo",
+          "Covadonga",
+          "Asturias",
+          "Marca Hispánica",
+          "Borrell II"
+        ],
+        "wordBank": [
+          "Pelayo",
+          "Alfonso VI",
+          "Covadonga",
+          "Guadalete",
+          "Asturias",
+          "Navarra",
+          "Marca Hispánica",
+          "Condado de Castilla",
+          "Borrell II",
+          "Wifredo el Velloso"
+        ]
+      }
+    },
+    {
+      "id": "tema05-fillblank02",
+      "lessonId": "tema05-lesson03",
+      "type": "fill_blank",
+      "title": "Completa: La repoblación",
+      "description": "Rellena los huecos sobre cómo se organizó la repoblación de las tierras conquistadas.",
+      "difficulty": 2,
+      "xpReward": 35,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "Para atraer nuevos pobladores a las tierras fronterizas, los reyes otorgaban ___, documentos que garantizaban privilegios a los habitantes. Los musulmanes que vivían en territorio cristiano se llamaban ___ y residían en barrios separados llamados ___. Jaime I conquistó la ciudad de Valencia en ___ tras cinco meses de asedio. El territorio valenciano fue repoblado principalmente por ___ en el litoral y aragoneses en el interior.",
+        "blanks": [
+          "fueros",
+          "mudéjares",
+          "morerías",
+          "1238",
+          "catalanes"
+        ],
+        "wordBank": [
+          "fueros",
+          "cartas reales",
+          "mudéjares",
+          "mozárabes",
+          "morerías",
+          "juderías",
+          "1238",
+          "1085",
+          "catalanes",
+          "castellanos"
+        ]
+      }
+    },
+    {
+      "id": "tema05-writing01",
+      "lessonId": "tema05-lesson04",
+      "type": "writing_mission",
+      "title": "Misión Escritura: El Camino de Santiago",
+      "description": "Explica por qué fue importante el Camino de Santiago para los reinos cristianos.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "¿Por qué fue importante el Camino de Santiago para los reinos cristianos medievales? Menciona al menos dos consecuencias.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "El Camino de Santiago fue importante porque...",
+          "Desde el punto de vista religioso, el Camino...",
+          "En cuanto a la economía, las ciudades del Camino...",
+          "Culturalmente, el Camino permitió que...",
+          "En conclusión, el Camino de Santiago..."
+        ],
+        "vocabularyHints": [
+          "peregrinación",
+          "reliquias de Santiago",
+          "arte románico",
+          "ciudades",
+          "comercio",
+          "intercambio cultural"
+        ],
+        "connectors": [
+          "porque",
+          "además",
+          "por ejemplo",
+          "en primer lugar",
+          "por otro lado",
+          "finalmente"
+        ],
+        "keyPointsToAddress": [
+          "Importancia religiosa: peregrinación y reliquias",
+          "Importancia económica: renacimiento de ciudades",
+          "Importancia cultural: introducción del arte románico"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": [
+          "Santiago",
+          "peregrinación",
+          "románico",
+          "ciudades",
+          "cultural"
+        ],
+        "rubricConnectors": [
+          "porque",
+          "además",
+          "por ejemplo",
+          "en primer lugar"
+        ]
+      }
+    },
+    {
+      "id": "tema05-writing02",
+      "lessonId": "tema05-lesson02",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La Reconquista",
+      "description": "Explica qué es la Reconquista y por qué es un término debatido.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 12,
+      "data": {
+        "prompt": "Explica qué es la Reconquista y por qué es un término debatido por los historiadores. Usa lo que has aprendido en esta lección.",
+        "scaffoldLevel": 3,
+        "sentenceStarters": [
+          "La Reconquista es el nombre que recibe el proceso por el cual...",
+          "Este proceso duró desde el año 711 hasta...",
+          "El término Reconquista es debatido porque...",
+          "Algunos historiadores prefieren hablar simplemente de conquista porque...",
+          "En conclusión, se puede decir que..."
+        ],
+        "vocabularyHints": [
+          "reinos cristianos",
+          "Al-Ándalus",
+          "reino visigodo",
+          "continuidad religiosa",
+          "conquista",
+          "711",
+          "1492"
+        ],
+        "connectors": [
+          "porque",
+          "sin embargo",
+          "por otro lado",
+          "además",
+          "aunque",
+          "en cambio"
+        ],
+        "keyPointsToAddress": [
+          "Definición: proceso de conquista de Al-Ándalus (711-1492)",
+          "El término subraya la continuidad con el reino visigodo",
+          "El debate: esa continuidad se basa solo en la religión"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": [
+          "Reconquista",
+          "conquista",
+          "711",
+          "1492",
+          "reinos cristianos",
+          "Al-Ándalus"
+        ],
+        "rubricConnectors": [
+          "porque",
+          "sin embargo",
+          "aunque",
+          "por otro lado"
+        ]
+      }
+    }
+  ]
+}

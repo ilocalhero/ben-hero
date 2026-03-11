@@ -1,0 +1,575 @@
+{
+  "id": "tema06",
+  "number": 6,
+  "title": "Poder real y auge de las Cortes",
+  "subtitle": "Las coronas medievales de la Península",
+  "category": "historia",
+  "color": "#ffd700",
+  "icon": "crown",
+  "heroImage": "/images/temas/tema06-hero.jpg",
+  "iconImage": "/images/temas/tema06-icon.jpg",
+  "description": "Conoce cómo se organizaron la Corona de Aragón y la Corona de Castilla, y cómo la Baja Edad Media estuvo marcada por conflictos y cambios políticos.",
+  "textbookPages": "pp. 136-165",
+  "keyDates": [
+    {
+      "year": "1137",
+      "event": "Unión de Aragón y Cataluña",
+      "detail": "El matrimonio entre Petronila de Aragón y Ramón Berenguer IV, conde de Barcelona, une el reino de Aragón y los condados catalanes, dando origen a la Corona de Aragón."
+    },
+    {
+      "year": "1238",
+      "event": "Jaime I conquista Valencia",
+      "detail": "Jaime I el Conquistador toma Valencia y funda el Reino de Valencia, que se convierte en el tercer gran territorio de la Corona de Aragón."
+    },
+    {
+      "year": "1258",
+      "event": "Tratado de Corbeil",
+      "detail": "Tratado entre Jaime I y el rey de Francia por el que la Corona de Aragón renuncia a sus territorios al norte de los Pirineos a cambio del reconocimiento de sus conquistas peninsulares."
+    },
+    {
+      "year": "1282",
+      "event": "Vísperas Sicilianas",
+      "detail": "Pedro III de Aragón aprovecha la rebelión de Sicilia contra los franceses (Vísperas Sicilianas) para conquistar la isla e iniciar la expansión mediterránea de la Corona de Aragón."
+    },
+    {
+      "year": "1348",
+      "event": "La peste negra",
+      "detail": "La peste negra llega a la Península Ibérica, provocando hambrunas, la despoblación de numerosas localidades y un freno de la actividad comercial."
+    },
+    {
+      "year": "1391",
+      "event": "Pogromos contra los judíos",
+      "detail": "Se producen violentos pogromos (saqueos y matanzas) contra las comunidades judías en la Corona de Castilla y la Corona de Aragón, forzando conversiones masivas al cristianismo."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Corona de Aragón",
+      "definition": "Unión dinástica formada por los reinos de Aragón, Cataluña y Valencia, cada uno con sus propias leyes e instituciones, bajo la autoridad de un mismo monarca."
+    },
+    {
+      "term": "Corona de Castilla",
+      "definition": "Unión de los reinos de Castilla y León consumada en 1230 bajo Fernando III. Compartían Cortes e instituciones y su monarquía era más centralizada que la aragonesa."
+    },
+    {
+      "term": "Cortes",
+      "definition": "Principal órgano consultivo de los reinos medievales peninsulares, formado por representantes de la nobleza, el clero y las ciudades. Aprobaban leyes e impuestos."
+    },
+    {
+      "term": "Fueros",
+      "definition": "Leyes y privilegios propios de cada reino o territorio. En la Corona de Aragón, el rey debía jurar respetar los fueros de cada reino al comenzar su reinado."
+    },
+    {
+      "term": "Monarquía feudal",
+      "definition": "Sistema de gobierno medieval en el que el rey compartía el poder con la nobleza, el clero y las ciudades, que exigían respetar sus privilegios a cambio de apoyo."
+    },
+    {
+      "term": "Baja Edad Media",
+      "definition": "Periodo histórico comprendido entre los siglos XIV y XV, caracterizado por crisis económicas, epidemias, guerras civiles y conflictos sociales en toda Europa."
+    },
+    {
+      "term": "Arte gótico",
+      "definition": "Estilo artístico que se extendió por la Península desde finales del siglo XII, caracterizado por la verticalidad, los arcos apuntados y las grandes vidrieras que inundan de luz los templos."
+    },
+    {
+      "term": "Converso",
+      "definition": "Judío que se convirtió al cristianismo, en muchos casos bajo presión o amenaza de muerte, durante los conflictos religiosos de la Baja Edad Media."
+    },
+    {
+      "term": "Pogrom",
+      "definition": "Saqueo y matanza organizada contra una minoría étnica o religiosa. Los pogromos de 1391 afectaron gravemente a las comunidades judías de la Península."
+    },
+    {
+      "term": "Consell de Cent",
+      "definition": "Institución de gobierno municipal de Barcelona formada por cien consejeros representantes de los diferentes estamentos de la ciudad, creada en el siglo XIII."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema06-lesson01",
+      "order": 1,
+      "title": "La Corona de Aragón",
+      "subtitle": "Expansión mediterránea y el dinamismo del Reino de Valencia",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Una unión dinástica de varios reinos",
+          "content": "La Corona de Aragón estaba formada por tres reinos (Aragón, Cataluña y Valencia), cada uno con sus propias leyes e instituciones de gobierno, aunque bajo la autoridad de un mismo monarca. El monarca tenía el poder militar, legislativo y judicial, pero debía jurar las constituciones de cada reino, pactar con las Cortes la elaboración de leyes y respetar los privilegios de los tres estamentos (nobleza, clero y ciudades). Este sistema se llamaba pactismo.",
+          "highlights": [
+            "Tres reinos: Aragón, Cataluña y Valencia",
+            "Cada reino con sus propias leyes e instituciones",
+            "Pactismo: el rey pacta con las Cortes"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las instituciones de la Corona de Aragón",
+          "content": "Las principales instituciones de gobierno fueron: el Lloctinent General o virrey, que representaba al rey en cada reino; la Cort General o Cortes, que reunía a los tres estamentos; y la Generalitat o Diputación del General, comisión permanente de las Cortes de cada reino. Jaime I convocó las Cortes de Valencia por primera vez en 1261. La Generalitat de Valencia fue creada en 1418 y asumió la defensa de los fueros y el control del rey. Valencia creó el primer Consulado del Mar de la Península en 1283, institución mercantil que resolvía conflictos entre comerciantes.",
+          "highlights": [
+            "Cortes: representación de los tres estamentos",
+            "Generalitat de Valencia: creada en 1418",
+            "Consulado del Mar: primer tribunal mercantil (1283)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La expansión mediterránea",
+          "content": "La Corona de Aragón organizó expediciones militares para dominar territorios en el Mediterráneo. Los mercaderes catalanes, valencianos y mallorquines financiaron a la Corona a cambio de una densa red de relaciones comerciales. Se estableció un intenso comercio marítimo con los puertos mediterráneos y con Flandes. Las naves partían cargadas de tejidos, aceite y armas, y volvían con especias, seda, azúcar y trigo. Pedro III de Aragón conquistó Sicilia en 1282 aprovechando las Vísperas Sicilianas, iniciando la expansión por el Mediterráneo.",
+          "highlights": [
+            "Comercio mediterráneo: base de la prosperidad de la Corona",
+            "1282: Pedro III conquista Sicilia",
+            "Red de consulados en las grandes ciudades mediterráneas"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "El dinamismo del Reino de Valencia en el siglo XV",
+          "content": "Durante el siglo XV, el Reino de Valencia vivió una gran expansión económica. La guerra civil en Cataluña desplazó hacia Valencia el centro comercial y financiero de la Corona. La ciudad de Valencia contaba con 40.000 habitantes a principios del siglo XV, cifra que se dobló a finales de siglo. Se construyó la Lonja de la Seda para acoger a los mercaderes y se creó la Taula de Canvis i Depòsits, una banca municipal. Destacaron escritores como Ausiàs March y Joanot Martorell, autor del Tirant lo Blanc."
+        },
+        {
+          "type": "text",
+          "title": "La economía agrícola y comercial",
+          "content": "La economía de la Corona de Aragón se basó en la agricultura y la ganadería. Junto a los cultivos mediterráneos (cereal, vid y olivo), heredó de la población mudéjar una valiosa tradición hortofrutícola en los regadíos del Ebro y las huertas valencianas. Buena parte de la producción se dedicó a la exportación. Los mercaderes de Barcelona y Valencia hicieron del comercio la actividad más importante, especialmente entre 1250 y 1350. El comercio marítimo se regulaba por el Libro del Consulado del Mar, recopilación de normas jurídicas elaborada en Valencia en el siglo XIII.",
+          "highlights": [
+            "Agricultura: cereales, vid, olivo y regadíos valencianos",
+            "Barcelona y Valencia: grandes centros comerciales",
+            "Libro del Consulado del Mar: normas del comercio marítimo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema06-lesson02",
+      "order": 2,
+      "title": "La Corona de Castilla y Navarra",
+      "subtitle": "Los otros grandes reinos peninsulares",
+      "sections": [
+        {
+          "type": "text",
+          "title": "La Corona de Castilla: una monarquía más centralizada",
+          "content": "Los reinos de Castilla y León se hallaban unidos bajo una misma Corona y compartían las Cortes y otras instituciones. La monarquía castellana era más poderosa que en los otros reinos peninsulares, gracias a medidas como la unificación jurídica mediante las Partidas de Alfonso X, el aumento de soldados mercenarios y la creación del Consejo Real para el gobierno y la Audiencia de justicia. Las Cortes de León, creadas en 1188, fueron las primeras de la Península y reunían a representantes de la nobleza, el clero y las ciudades para aprobar leyes e impuestos.",
+          "highlights": [
+            "Cortes de León (1188): las primeras de la Península",
+            "Alfonso X unifica el derecho con las Partidas",
+            "Monarquía más centralizada que la aragonesa"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "La economía ganadera de Castilla",
+          "content": "La economía de Castilla era mayoritariamente agraria, pero la ganadería lanar tuvo un papel fundamental. Se practicaba la trashumancia: el ganado se desplazaba en verano a las sierras del norte y en invierno a las dehesas del sur. Para regular estos desplazamientos y el comercio de la lana, se creó la Mesta en 1273. La lana de oveja merina, de gran calidad, era el principal producto de exportación. Sin embargo, el predominio ganadero dificultó el desarrollo de la industria textil y de una burguesía urbana sólida.",
+          "highlights": [
+            "Trashumancia: ganado entre sierras y dehesas",
+            "La Mesta (1273): asociación de ganaderos",
+            "Lana merina: principal exportación de Castilla"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Las Cortes de León (1188)",
+          "content": "Las Cortes de León, convocadas por Alfonso IX en 1188, son consideradas las primeras Cortes parlamentarias de Europa. El rey prometió no declarar la guerra ni firmar la paz sin el consejo de los obispos, nobles y ciudadanos. Esta tradición de consulta fue la base del sistema parlamentario medieval."
+        },
+        {
+          "type": "text",
+          "title": "El reino de Navarra",
+          "content": "Navarra fue hasta el siglo XI uno de los grandes reinos peninsulares, con su máxima expansión bajo Sancho III el Mayor. Sin embargo, Castilla y Aragón le cerraron la expansión hacia el sur, y en 1200 Castilla se anexionó La Rioja, Álava y Guipúzcoa. Desde el siglo XIII, Navarra estuvo gobernada por dinastías francesas. El reino se dotó de un Fuero General con los derechos y deberes de los navarros, y sus primeras Cortes se reunieron en Pamplona en 1253. En la Baja Edad Media, Navarra se vio envuelta en una guerra civil por la sucesión de la reina Blanca, que enfrentó a los bandos agramontés y beaumontés.",
+          "highlights": [
+            "Navarra pierde terreno ante Castilla y Aragón desde el siglo XI",
+            "Fuero General y Cortes de Pamplona (1253)",
+            "Guerra civil navarra: agramonteses contra beaumonteses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema06-lesson03",
+      "order": 3,
+      "title": "La crisis de la Baja Edad Media",
+      "subtitle": "Guerras, pestes y conflictos sociales",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Crisis económica y demográfica",
+          "content": "Al igual que en el resto de Europa, el siglo XIV fue un periodo de crisis económica y demográfica para los reinos peninsulares. Las malas cosechas provocaron hambrunas generalizadas. En 1348 llegó a la Península la peste negra, que causó la muerte de millones de personas, la despoblación de numerosas localidades y un freno de la actividad comercial. Esta crisis económica y demográfica fue el caldo de cultivo de una gran inestabilidad política y social.",
+          "highlights": [
+            "Malas cosechas y hambrunas en el siglo XIV",
+            "1348: llegada de la peste negra a la Península",
+            "Despoblación y freno del comercio"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Inestabilidad política y guerras civiles",
+          "content": "La Baja Edad Media se caracterizó por una gran inestabilidad política. En Castilla, la guerra civil entre el rey Pedro I y su hermanastro Enrique de Trastámara terminó con la victoria de este último en la batalla de Montiel (1369). En la Corona de Aragón, tras la muerte sin descendencia del rey Martín I, el Compromiso de Caspe (1412) proclamó rey a Fernando de Antequera, de la dinastía castellana de los Trastámara. En Cataluña estalló una guerra civil entre la nobleza urbana (la Biga) y los sectores populares (la Busca), con la participación de los campesinos remensas.",
+          "highlights": [
+            "1369: batalla de Montiel, Enrique de Trastámara vence en Castilla",
+            "1412: Compromiso de Caspe en la Corona de Aragón",
+            "Guerra civil en Cataluña: Biga contra Busca"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los pogromos y la persecución de los judíos",
+          "content": "La crisis del siglo XIV fue el caldo de cultivo para una creciente hostilidad contra las comunidades judías, que desembocó en violentos pogromos (saqueos y matanzas) tanto en Castilla como en Aragón en 1391. En Castilla se aprobaron leyes como las de Ayllón (1412) que obligaban a los judíos a vivir en barrios cerrados, llevar una señal distintiva en la ropa y les impedían acceder a cargos públicos. La consecuencia fue la conversión masiva de judíos, llamados conversos, que abrazaron el cristianismo bajo amenaza de muerte.",
+          "highlights": [
+            "1391: pogromos contra los judíos en Castilla y Aragón",
+            "Leyes de Ayllón (1412): segregación y exclusión de los judíos",
+            "Conversiones masivas: los conversos"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Revueltas sociales en el siglo XV",
+          "content": "En el siglo XV se produjeron múltiples conflictos sociales. En Castilla, los abusos de la nobleza provocaron la insurrección de campesinos y burguesía, agrupados en hermandades. En Galicia, la Gran Guerra Irmandiña fue especialmente violenta. En la Corona de Aragón, los campesinos catalanes llamados remensas se sublevaron contra los nobles que les exigían impuestos y servidumbres injustas."
+        }
+      ]
+    },
+    {
+      "id": "tema06-lesson04",
+      "order": 4,
+      "title": "El arte gótico peninsular",
+      "subtitle": "Catedrales, pintura y el Gótico valenciano",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El gótico llega a la Península",
+          "content": "A finales del siglo XII se extendió por la Península el arte gótico, proveniente de Francia. Este estilo comenzó a utilizarse en monasterios cistercienses como el de Poblet (Tarragona) o el de Piedra (Zaragoza). Las grandes catedrales peninsulares se edificaron en los siglos XIII y XIV. Se trata de un arte urbano y religioso, vinculado al crecimiento de las ciudades y a la nueva sociedad. La arquitectura civil también alcanzó gran desarrollo, con palacios nobiliarios, municipales y edificios comerciales como las lonjas.",
+          "highlights": [
+            "El gótico llega desde Francia a finales del siglo XII",
+            "Grandes catedrales: siglos XIII y XIV",
+            "Arte urbano ligado al crecimiento de las ciudades"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las corrientes del gótico peninsular",
+          "content": "El gótico mediterráneo, propio de la Corona de Aragón, se caracteriza por ser compacto y macizo, con plantas de salón en las que la nave central y las laterales tienen la misma altura. Destacan la catedral de Palma de Mallorca y la iglesia de Santa María del Mar (Barcelona). El gótico francés, en Castilla y Navarra, se caracteriza por su acusada verticalidad, imponentes torres y fachadas ricamente decoradas; destacan las catedrales de León, Burgos y Toledo. El gótico mudéjar, muy difundido, usa el ladrillo decorado con pinturas murales y artesonados de madera.",
+          "highlights": [
+            "Gótico mediterráneo: planta de salón, Santa María del Mar",
+            "Gótico francés: verticalidad, catedrales de León, Burgos y Toledo",
+            "Gótico mudéjar: ladrillo y decoración artesanal"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El Gótico valenciano",
+          "content": "La fundación del Reino de Valencia impulsó una intensa actividad arquitectónica. Se construyeron la catedral de Valencia (iniciada en 1262 sobre una antigua mezquita), las Torres de Serranos, las Torres de Quart y, sobre todo, la Lonja de la Seda de Valencia, declarada Patrimonio de la Humanidad por la UNESCO en 1996. En pintura, los llamados primitivos valencianos (Gonçal Peris, Pere Nicolau, Jaume Mateu) pintaron retablos de gran calidad al temple sobre tabla, técnica que fueron sustituyendo por la pintura al óleo bajo la influencia flamenca.",
+          "highlights": [
+            "Catedral de Valencia: iniciada en 1262",
+            "Lonja de la Seda: Patrimonio de la Humanidad (1996)",
+            "Primitivos valencianos: grandes pintores del gótico"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "La escultura y pintura góticas",
+          "content": "La escultura gótica se desarrolló en portadas de catedrales y, en el siglo XV, en retablos y sepulcros. Destacan los escultores Pere Joan en la Corona de Aragón y Gil de Siloé en Castilla. La pintura gótica era religiosa: los artistas abandonaron la pintura mural del románico y prefirieron la pintura al temple o al óleo sobre tabla. En la Corona de Aragón trabajaron Bernat Martorell y Lluís Dalmau, este último influido por los pintores flamencos."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema06-quiz01",
+      "lessonId": "tema06-lesson01",
+      "type": "quiz",
+      "title": "La Corona de Aragón: ¿cuánto sabes?",
+      "description": "Preguntas sobre la Corona de Aragón, Jaime I, Valencia y la expansión mediterránea.",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cómo se llamaba el sistema por el cual el rey de la Corona de Aragón debía pactar con las Cortes y respetar los fueros de cada reino?",
+          "options": [
+            "Feudalismo",
+            "Absolutismo",
+            "Pactismo",
+            "Municipalismo"
+          ],
+          "correctIndex": 2,
+          "explanation": "El pactismo era el sistema político de la Corona de Aragón por el que el monarca debía jurar las constituciones de cada reino, pactar con las Cortes la elaboración de leyes y respetar los privilegios de los tres estamentos."
+        },
+        {
+          "question": "¿En qué año se unieron el reino de Aragón y los condados catalanes formando la Corona de Aragón?",
+          "options": [
+            "1085",
+            "1137",
+            "1212",
+            "1238"
+          ],
+          "correctIndex": 1,
+          "explanation": "La Corona de Aragón surgió del matrimonio en 1137 entre Petronila de Aragón y Ramón Berenguer IV, conde de Barcelona. Su hijo Alfonso II sería el primer rey de la Corona de Aragón."
+        },
+        {
+          "question": "¿Qué institución mercantil creó Valencia en 1283 para resolver conflictos entre comerciantes?",
+          "options": [
+            "La Generalitat",
+            "La Lonja de la Seda",
+            "El Consulado del Mar",
+            "La Taula de Canvis"
+          ],
+          "correctIndex": 2,
+          "explanation": "Valencia creó el primer Consulado del Mar de la Península en 1283, con la autorización del rey Pedro el Grande. Era una institución mercantil con poder judicial que resolvía los conflictos entre los mercaderes."
+        },
+        {
+          "question": "¿Por qué el Reino de Valencia se convirtió en el principal centro comercial de la Corona de Aragón en el siglo XV?",
+          "options": [
+            "Porque Jaime I trasladó allí la capital de la Corona",
+            "Porque la guerra civil en Cataluña desplazó hacia Valencia el centro comercial y financiero",
+            "Porque Valencia conquistó nuevos territorios en el Mediterráneo",
+            "Porque el papa estableció su sede en Valencia"
+          ],
+          "correctIndex": 1,
+          "explanation": "La guerra civil en Cataluña provocó una crisis económica y social, y el centro manufacturero, comercial y financiero de la Corona de Aragón se desplazó al Reino de Valencia durante el siglo XV."
+        },
+        {
+          "question": "¿Qué rey de la Corona de Aragón inició la expansión mediterránea conquistando Sicilia en 1282?",
+          "options": [
+            "Jaime I el Conquistador",
+            "Alfonso II",
+            "Pedro III el Grande",
+            "Ramón Berenguer IV"
+          ],
+          "correctIndex": 2,
+          "explanation": "Pedro III de Aragón aprovechó la rebelión de Sicilia contra los franceses (conocida como las Vísperas Sicilianas) para conquistar la isla en 1282, iniciando la expansión mediterránea de la Corona de Aragón."
+        }
+      ]
+    },
+    {
+      "id": "tema06-quiz02",
+      "lessonId": "tema06-lesson04",
+      "type": "quiz",
+      "title": "Arte gótico y Baja Edad Media",
+      "description": "Preguntas sobre el arte gótico, las Cortes y la crisis de la Baja Edad Media.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué caracteriza al gótico mediterráneo de la Corona de Aragón frente al gótico francés?",
+          "options": [
+            "Sus torres altísimas y fachadas muy decoradas",
+            "El uso del ladrillo como material principal",
+            "Ser compacto y macizo, con naves de igual altura",
+            "El uso de pinturas murales al fresco"
+          ],
+          "correctIndex": 2,
+          "explanation": "El gótico mediterráneo se caracteriza por ser compacto y macizo, con plantas de salón en las que la nave central y las laterales tienen prácticamente la misma altura, a diferencia del gótico francés, de acusada verticalidad."
+        },
+        {
+          "question": "¿Cuándo fue declarada la Lonja de la Seda de Valencia Patrimonio de la Humanidad por la UNESCO?",
+          "options": [
+            "1262",
+            "1418",
+            "1996",
+            "2015"
+          ],
+          "correctIndex": 2,
+          "explanation": "La Lonja de la Seda de Valencia fue declarada Patrimonio de la Humanidad por la UNESCO en 1996, siendo uno de los mejores ejemplos del gótico civil mediterráneo."
+        },
+        {
+          "question": "¿Qué provocó la conversión masiva de judíos llamados conversos en la Baja Edad Media?",
+          "options": [
+            "Una decisión voluntaria de las comunidades judías",
+            "Los pogromos de 1391 y las leyes de exclusión que les obligaban a convertirse bajo amenaza de muerte",
+            "Un acuerdo entre el papa y los reyes peninsulares",
+            "La llegada de la peste negra que afectó solo a los judíos"
+          ],
+          "correctIndex": 1,
+          "explanation": "Los violentos pogromos de 1391 y las leyes de exclusión como las de Ayllón (1412) forzaron la conversión masiva de judíos al cristianismo bajo amenaza de muerte. Estos conversos fueron objeto de sospecha y persecución posterior."
+        },
+        {
+          "question": "¿Qué resolvió el Compromiso de Caspe en 1412?",
+          "options": [
+            "La unión de la Corona de Aragón y la Corona de Castilla",
+            "El fin de la guerra civil en Cataluña",
+            "La elección de Fernando de Antequera como nuevo rey de la Corona de Aragón",
+            "La expulsión de los judíos de la Península"
+          ],
+          "correctIndex": 2,
+          "explanation": "El Compromiso de Caspe (1412) fue la reunión de representantes de Aragón, Cataluña y Valencia para elegir al nuevo rey tras la muerte sin descendencia de Martín I. Proclamaron rey a Fernando de Antequera, de la dinastía castellana de los Trastámara."
+        }
+      ]
+    },
+    {
+      "id": "tema06-fillblank01",
+      "lessonId": "tema06-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: La Corona de Aragón",
+      "description": "Rellena los huecos sobre la organización de la Corona de Aragón.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "La Corona de Aragón estaba formada por tres reinos: Aragón, ___ y Valencia. El sistema político por el que el rey debía pactar con las Cortes y respetar los fueros se llamaba ___. La institución permanente de las Cortes de cada reino era la ___. Valencia creó el primer ___ de la Península en 1283 para resolver conflictos entre mercaderes. El comercio marítimo se regulaba por el Libro del ___, elaborado en Valencia en el siglo XIII.",
+        "blanks": [
+          "Cataluña",
+          "pactismo",
+          "Generalitat",
+          "Consulado del Mar",
+          "Consulado del Mar"
+        ],
+        "wordBank": [
+          "Cataluña",
+          "Navarra",
+          "pactismo",
+          "feudalismo",
+          "Generalitat",
+          "Cort General",
+          "Consulado del Mar",
+          "Lonja de la Seda",
+          "Consulado del Mar",
+          "Libro del Comercio"
+        ]
+      }
+    },
+    {
+      "id": "tema06-fillblank02",
+      "lessonId": "tema06-lesson03",
+      "type": "fill_blank",
+      "title": "Completa: La Baja Edad Media",
+      "description": "Rellena los huecos sobre la crisis de la Baja Edad Media.",
+      "difficulty": 2,
+      "xpReward": 35,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "En el siglo XIV llegó a la Península la ___, que causó millones de muertes y la despoblación de numerosas localidades. En Castilla, la guerra civil terminó con la victoria de Enrique de Trastámara sobre el rey ___ en la batalla de Montiel. En 1391 se produjeron violentos ___ contra las comunidades judías, que forzaron conversiones masivas al cristianismo. Los judíos convertidos se llamaron ___. En 1412, el ___ eligió a Fernando de Antequera como nuevo rey de la Corona de Aragón.",
+        "blanks": [
+          "peste negra",
+          "Pedro I",
+          "pogromos",
+          "conversos",
+          "Compromiso de Caspe"
+        ],
+        "wordBank": [
+          "peste negra",
+          "hambruna",
+          "Pedro I",
+          "Alfonso X",
+          "pogromos",
+          "cruzadas",
+          "conversos",
+          "mudéjares",
+          "Compromiso de Caspe",
+          "Tratado de Almizra"
+        ]
+      }
+    },
+    {
+      "id": "tema06-writing01",
+      "lessonId": "tema06-lesson01",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La Corona de Aragón",
+      "description": "Explica qué era la Corona de Aragón y por qué fue importante en el Mediterráneo.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "¿Qué era la Corona de Aragón y por qué fue importante en el Mediterráneo? Menciona su organización y su expansión comercial.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "La Corona de Aragón era una unión de reinos formada por...",
+          "Su sistema de gobierno se basaba en el pactismo, que significaba...",
+          "En el Mediterráneo, la Corona de Aragón fue importante porque...",
+          "Los mercaderes de Barcelona y Valencia...",
+          "En conclusión, la Corona de Aragón..."
+        ],
+        "vocabularyHints": [
+          "pactismo",
+          "Cortes",
+          "Generalitat",
+          "comercio mediterráneo",
+          "Consulado del Mar",
+          "Jaime I"
+        ],
+        "connectors": [
+          "porque",
+          "además",
+          "por ejemplo",
+          "en primer lugar",
+          "por otro lado",
+          "finalmente"
+        ],
+        "keyPointsToAddress": [
+          "Composición: tres reinos con sus propias leyes",
+          "Pactismo: el rey pacta con las Cortes",
+          "Expansión mediterránea y comercio marítimo"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": [
+          "Corona de Aragón",
+          "pactismo",
+          "Cortes",
+          "Mediterráneo",
+          "comercio"
+        ],
+        "rubricConnectors": [
+          "porque",
+          "además",
+          "por ejemplo",
+          "en primer lugar"
+        ]
+      }
+    },
+    {
+      "id": "tema06-writing02",
+      "lessonId": "tema06-lesson03",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La crisis de la Baja Edad Media",
+      "description": "Explica las principales causas de la crisis de la Baja Edad Media.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 12,
+      "data": {
+        "prompt": "Explica cuáles fueron las principales causas de la crisis de la Baja Edad Media en los reinos peninsulares. Menciona al menos tres aspectos diferentes.",
+        "scaffoldLevel": 3,
+        "sentenceStarters": [
+          "La Baja Edad Media fue un período de crisis porque...",
+          "En primer lugar, la crisis económica se debió a...",
+          "La llegada de la peste negra en 1348 provocó...",
+          "Además de la crisis económica, hubo una gran inestabilidad política, como por ejemplo...",
+          "Por último, los conflictos sociales incluyeron...",
+          "En conclusión, la Baja Edad Media fue tan conflictiva porque..."
+        ],
+        "vocabularyHints": [
+          "peste negra",
+          "malas cosechas",
+          "hambruna",
+          "guerra civil",
+          "pogromos",
+          "conversos",
+          "Trastámara"
+        ],
+        "connectors": [
+          "en primer lugar",
+          "además",
+          "por otro lado",
+          "también",
+          "finalmente",
+          "como consecuencia"
+        ],
+        "keyPointsToAddress": [
+          "Crisis económica y demográfica: malas cosechas y peste negra",
+          "Inestabilidad política: guerras civiles y cambio de dinastías",
+          "Conflictos sociales y religiosos: pogromos y persecución de judíos"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": [
+          "peste negra",
+          "guerra civil",
+          "crisis",
+          "pogromos",
+          "conversos",
+          "Trastámara"
+        ],
+        "rubricConnectors": [
+          "en primer lugar",
+          "además",
+          "por otro lado",
+          "como consecuencia"
+        ]
+      }
+    }
+  ]
+}

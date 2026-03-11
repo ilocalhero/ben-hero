@@ -1,0 +1,441 @@
+{
+  "id": "tema04",
+  "number": 4,
+  "title": "Por caminos y murallas",
+  "subtitle": "El renacer de las ciudades medievales",
+  "category": "historia",
+  "color": "#00d4ff",
+  "icon": "city",
+  "heroImage": "/images/temas/tema04-hero.jpg",
+  "iconImage": "/images/temas/tema04-icon.jpg",
+  "description": "Descubre cómo entre los siglos XI y XV las ciudades medievales volvieron a florecer gracias a las mejoras agrícolas, el comercio y la nueva clase burguesa.",
+  "textbookPages": "pp. 68-101",
+  "keyDates": [
+    {
+      "year": "Año 1000",
+      "event": "Inicio del renacer urbano",
+      "detail": "Con el fin de las invasiones y la mejoría climática, la producción agrícola y el comercio comenzaron a crecer, impulsando la revitalización de las ciudades."
+    },
+    {
+      "year": "Siglo XI",
+      "event": "Innovaciones agrícolas",
+      "detail": "La introducción del arado de vertedera, la rotación trienal y los molinos de agua y viento aumentó la productividad del campo."
+    },
+    {
+      "year": "Siglos XII-XIII",
+      "event": "Apogeo del comercio medieval",
+      "detail": "Las ferias y las rutas comerciales mediterráneas y atlánticas conectaron Europa con Oriente. Surgieron las letras de cambio y los primeros bancos."
+    },
+    {
+      "year": "1268",
+      "event": "Libro de los oficios de E. Boileau",
+      "detail": "Primer gran reglamento gremial documentado, que regulaba los oficios artesanales en Paris."
+    },
+    {
+      "year": "1348",
+      "event": "La Peste Negra llega a Europa",
+      "detail": "La Peste Negra, procedente de Asia, mató entre el 30 y el 40% de la población europea y provocó una grave crisis demográfica, económica y social."
+    }
+  ],
+  "keyTerms": [
+    {
+      "term": "Burgo",
+      "definition": "Pequeña ciudad o barrio situado fuera de las murallas donde se instalaban artesanos y comerciantes en la Edad Media."
+    },
+    {
+      "term": "Burgués",
+      "definition": "Habitante de un burgo cuya riqueza provenía del comercio o la artesanía, no del trabajo de la tierra."
+    },
+    {
+      "term": "Gremio",
+      "definition": "Asociación de artesanos del mismo oficio que regulaba la producción, los precios y la formación de sus miembros."
+    },
+    {
+      "term": "Rotación trienal",
+      "definition": "Sistema de cultivo que dividía la tierra en tres partes, dejando solo un tercio en barbecho cada año, frente a la mitad del sistema anterior."
+    },
+    {
+      "term": "Arado de vertedera",
+      "definition": "Arado más pesado que el romano que hacía surcos más profundos y aireaba mejor la tierra, aumentando la productividad agrícola."
+    },
+    {
+      "term": "Peste Negra",
+      "definition": "Epidemia de peste bubónica que llegó a Europa en 1348 y causó la muerte del 30-40% de la población europea."
+    },
+    {
+      "term": "Catedral gótica",
+      "definition": "Gran iglesia medieval de estilo gótico, caracterizada por su gran altura, bóvedas de crucería, arbotantes y amplios ventanales con vidrieras."
+    },
+    {
+      "term": "Letra de cambio",
+      "definition": "Documento financiero medieval que permitía a los comerciantes pagar sin necesidad de llevar dinero en efectivo durante sus viajes."
+    },
+    {
+      "term": "Feria",
+      "definition": "Mercado periódico anual que reunía durante varios días a comerciantes llegados de lugares muy lejanos."
+    },
+    {
+      "term": "Patriciado urbano",
+      "definition": "Grupo de las familias más ricas de las ciudades medievales (grandes comerciantes, banqueros y nobles) que controlaba el gobierno de la ciudad."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tema04-lesson01",
+      "order": 1,
+      "title": "El renacer urbano",
+      "subtitle": "¿Por qué crecieron las ciudades a partir del año 1000?",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Las innovaciones agrícolas",
+          "content": "A partir del año 1000, Europa experimentó una mejoría climática y el fin de las grandes invasiones. Esto permitió introducir nuevas técnicas agrícolas: el arado de vertedera que hacía surcos más profundos, la rotación trienal que dejaba solo un tercio de la tierra en barbecho (frente a la mitad anterior), y la generalización de los molinos de agua y viento. El resultado fue un gran aumento de la productividad agrícola.",
+          "highlights": [
+            "Rotación trienal: solo 1/3 de tierra en barbecho, el doble de producción",
+            "Arado de vertedera: surcos más profundos, tierra mejor aireada",
+            "Molinos de agua y viento: moler más grano con menos esfuerzo"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El crecimiento de la población y los excedentes",
+          "content": "La mejor alimentación redujo la mortalidad y la población europea creció de 45 millones en el siglo XII a unos 75 millones en el siglo XIV. El aumento de la producción generó excedentes agrarios que podían venderse en el mercado. Señores y campesinos pudieron vender parte de sus cosechas y comprar artículos artesanales. Este intercambio estimuló el comercio y la producción artesana.",
+          "highlights": [
+            "La población europea pasó de 45 a 75 millones de habitantes",
+            "Los excedentes agrarios impulsaron el comercio",
+            "Comerciantes y artesanos se instalaron en las ciudades"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "El aire de la ciudad hace libres a los hombres",
+          "content": "Las ciudades ofrecían libertad que el campo no tenía. Si un siervo conseguía vivir un año en la ciudad sin ser detenido por su señor feudal, quedaba liberado de su condición de siervo. Por eso muchos campesinos emigraban a las ciudades buscando una vida mejor."
+        }
+      ]
+    },
+    {
+      "id": "tema04-lesson02",
+      "order": 2,
+      "title": "El comercio medieval",
+      "subtitle": "Rutas, ferias y la burguesía",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Las rutas comerciales",
+          "content": "Con el fin de las guerras e invasiones, las rutas comerciales se hicieron más seguras. La ruta mediterránea unía los puertos de Venecia, Génova, Barcelona y Valencia con Oriente Próximo: se importaban productos de lujo (seda, especias, perfumes) y se exportaban tejidos y armas. La ruta atlántica y del Báltico conectaba Lisboa y los puertos castellanos con las ciudades de la Liga Hanseática en el norte de Europa, transportando sal, lana, vino, pieles y trigo.",
+          "highlights": [
+            "Ruta mediterránea: especias y seda de Oriente a Europa",
+            "Ruta atlántica: sal, lana, vino y pieles del norte al sur",
+            "Puertos clave: Venecia, Génova, Barcelona, Valencia, Brujas"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las ferias y los nuevos instrumentos financieros",
+          "content": "Además de los mercados semanales, muchas ciudades organizaban ferias anuales que concentraban a mercaderes de toda Europa. El auge del comercio impulsó nuevos instrumentos financieros. Los cambistas conocían el valor de las distintas monedas y facilitaban los intercambios. Surgieron las letras de cambio, documentos que garantizaban el dinero de un comerciante en otro lugar, evitando tener que llevar monedas físicas en los peligrosos caminos medievales.",
+          "highlights": [
+            "Ferias anuales: mercaderes de toda Europa durante varios días",
+            "Letras de cambio: pagar sin llevar monedas físicas",
+            "Los cambistas se convirtieron en los primeros banqueros"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "La Liga Hanseática",
+          "content": "En el norte de Europa, más de 70 ciudades como Hamburgo, Lubeca, Brujas y Gdansk formaron la Liga Hanseática, una alianza comercial para proteger sus intereses, rutas y barcos comerciales. Era tan poderosa que podía hacer la guerra a los reinos que amenazaban el comercio."
+        }
+      ]
+    },
+    {
+      "id": "tema04-lesson03",
+      "order": 3,
+      "title": "La ciudad medieval",
+      "subtitle": "Gremios, gobierno y vida urbana",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El urbanismo medieval",
+          "content": "Las ciudades medievales estaban rodeadas de murallas para su defensa y el cobro de impuestos. El plano urbano era muy irregular y se articulaba en torno a una plaza central donde se encontraban la catedral, el ayuntamiento y la lonja comercial. Las calles eran sinuosas y estrechas. Los barrios agrupaban a la población según su religión (juderías, morerías) o su oficio. Fuera de las murallas crecían los arrabales, barrios más humildes.",
+          "highlights": [
+            "Murallas: defensa y control de acceso a la ciudad",
+            "Plano irregular: calles estrechas y sinuosas en torno a la plaza central",
+            "Arrabales: barrios populares que crecieron fuera de las murallas"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Los gremios y la vida artesanal",
+          "content": "Los artesanos se organizaban en gremios de oficios que controlaban la producción, la calidad y los precios en cada sector. El sistema de formación era muy rígido: se empezaba como aprendiz durante varios años, luego se ascendía a oficial y finalmente, tras superar una prueba llamada obra maestra, se llegaba a maestro y se podía tener el propio taller. Las calles solían tomar el nombre del oficio de sus artesanos: cuchilleros, plateros, tejedores.",
+          "highlights": [
+            "Aprendiz → Oficial → Maestro: la jerarquía del gremio",
+            "Los gremios regulaban calidad, cantidad y precios de la producción",
+            "Las calles tomaban el nombre del oficio de sus artesanos"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "El gobierno de la ciudad",
+          "content": "Los habitantes elegían a sus magistrados (concejales), encargados de las finanzas, el orden y la justicia, bajo la dirección de un burgomaestre o alcalde. Para obtener el apoyo económico de la burguesía, los reyes otorgaban a las ciudades fueros o cartas de privilegio que reconocían su libertad y el derecho a su propio gobierno. Con el tiempo, el poder de las ciudades fue quedando en manos del patriciado urbano: las familias más ricas de comerciantes y banqueros.",
+          "highlights": [
+            "Los ciudadanos elegían sus propios magistrados (concejales) y alcaldes",
+            "Los reyes otorgaban fueros a cambio de dinero e impuestos",
+            "El patriciado urbano: familias ricas que controlaban el gobierno"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tema04-lesson04",
+      "order": 4,
+      "title": "Crisis y esplendor: la Peste Negra y el gótico",
+      "subtitle": "El siglo XIV: pandemia y arte",
+      "sections": [
+        {
+          "type": "text",
+          "title": "La Peste Negra (1348)",
+          "content": "En 1348 llegó a Europa la Peste Negra, procedente de Asia. Era una enfermedad infecciosa transmitida por las picaduras de pulgas de ratas que se manifestaba con fiebre alta y manchas negras en la piel. Se desconocían sus causas: unos la atribuían a un castigo divino, otros culpaban injustamente a los judíos. La pandemia asoló Europa en sucesivas oleadas durante décadas.",
+          "highlights": [
+            "1348: La Peste Negra llega a Europa desde Asia",
+            "Se transmitía por las picaduras de pulgas de ratas infectadas",
+            "Sin explicación científica, se culpó injustamente a los judíos"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las consecuencias de la pandemia",
+          "content": "Las consecuencias de la Peste Negra fueron devastadoras. Demográficamente, la población europea pasó de 73 a 45 millones, con la muerte del 30-40% de los europeos. Económicamente, cayó la demanda, se paralizó el comercio y se abandonaron tierras de cultivo. Socialmente, hubo revueltas antiseñoriales y urbanas, y persecuciones de grupos considerados culpables. En las mentalidades, creció el fanatismo religioso y surgieron manifestaciones artísticas como las Danzas de la Muerte.",
+          "highlights": [
+            "Murió entre el 30 y el 40% de la población europea",
+            "Crisis del comercio, la artesanía y la agricultura",
+            "Revueltas sociales y aumento del fanatismo religioso"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Las catedrales góticas",
+          "content": "En contraste con la crisis, el arte gótico representó el esplendor de las ciudades medievales. Las catedrales góticas se caracterizaban por su gran altura, conseguida gracias a las bóvedas de crucería y los arbotantes (arcos exteriores que sostenían los muros). Los amplios ventanales con vidrieras de colores llenaban el interior de luz, simbolizando la presencia divina. En la Península Ibérica destacan las catedrales de Burgos y Toledo, y en Valencia, la Lonja de la Seda, Patrimonio de la Humanidad.",
+          "highlights": [
+            "Bóvedas de crucería y arbotantes permiten mayor altura",
+            "Vidrieras de colores llenan el interior de luz",
+            "La catedral era el edificio más importante de la ciudad medieval"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tema04-quiz01",
+      "lessonId": "tema04-lesson01",
+      "type": "quiz",
+      "title": "El renacer urbano: ¿Cuánto sabes?",
+      "description": "Pon a prueba tus conocimientos sobre el crecimiento medieval.",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué era la rotación trienal?",
+          "options": [
+            "Un sistema de gobierno de las ciudades medievales",
+            "Un método agrícola que dejaba solo 1/3 de la tierra en barbecho cada año",
+            "Una ruta comercial entre ciudades medievales",
+            "Un tipo de arado más eficiente"
+          ],
+          "correctIndex": 1,
+          "explanation": "La rotación trienal dividía los campos en tres partes y dejaba solo un tercio en barbecho cada año, frente a la mitad del método anterior, duplicando la producción."
+        },
+        {
+          "question": "¿A cuántos millones de habitantes llegó la población europea en el siglo XIV, antes de la Peste Negra?",
+          "options": ["30 millones", "45 millones", "75 millones", "100 millones"],
+          "correctIndex": 2,
+          "explanation": "Gracias a las mejoras agrícolas, la población europea creció de unos 45 millones en el siglo XII a unos 75 millones en el siglo XIV."
+        },
+        {
+          "question": "¿Qué significaba el refrán medieval 'el aire de la ciudad hace libres a los hombres'?",
+          "options": [
+            "Que el clima de las ciudades era más saludable que el del campo",
+            "Que un siervo que viviera un año en la ciudad quedaba libre de su señor feudal",
+            "Que las ciudades tenían mejor ventilación que el campo",
+            "Que los burgueses podían respirar sin pagar impuestos"
+          ],
+          "correctIndex": 1,
+          "explanation": "Si un siervo conseguía vivir un año en la ciudad sin ser detenido por su señor, quedaba liberado de su condición de siervo y ganaba la libertad."
+        },
+        {
+          "question": "¿Cómo se llamaba el nuevo grupo social que surgió en las ciudades medievales?",
+          "options": ["Nobleza", "Burguesía", "Clero", "Campesinado"],
+          "correctIndex": 1,
+          "explanation": "La burguesía era el nuevo grupo social formado en los burgos: comerciantes y artesanos cuya riqueza provenía del comercio, no de la tierra."
+        },
+        {
+          "question": "¿Qué innovación agrícola hacía surcos más profundos en la tierra?",
+          "options": ["El molino de agua", "La collera", "El arado de vertedera", "La rotación trienal"],
+          "correctIndex": 2,
+          "explanation": "El arado de vertedera, más pesado que el arado romano, hacía surcos más profundos y aireaba mejor la tierra, aumentando la productividad agrícola."
+        }
+      ]
+    },
+    {
+      "id": "tema04-quiz02",
+      "lessonId": "tema04-lesson04",
+      "type": "quiz",
+      "title": "La Peste Negra y el arte gótico",
+      "description": "¿Conoces la gran crisis del siglo XIV y el arte medieval?",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿En qué año llegó la Peste Negra a Europa?",
+          "options": ["1254", "1300", "1348", "1400"],
+          "correctIndex": 2,
+          "explanation": "La Peste Negra llegó a Europa hacia 1348, procedente de Asia, a través de las rutas comerciales mediterráneas."
+        },
+        {
+          "question": "¿Qué porcentaje de la población europea murió a causa de la Peste Negra?",
+          "options": ["5-10%", "15-20%", "30-40%", "60-70%"],
+          "correctIndex": 2,
+          "explanation": "Se estima que la Peste Negra causó la muerte del 30-40% de la población europea, que pasó de 73 a 45 millones de habitantes."
+        },
+        {
+          "question": "¿Cuál es la característica principal de las catedrales góticas que las distingue del románico?",
+          "options": [
+            "Sus gruesas paredes y ventanas muy pequeñas",
+            "Su gran altura con bóvedas de crucería y amplios ventanales de vidrieras",
+            "Su planta circular y cúpula central",
+            "Sus pinturas al fresco en todas las paredes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Las catedrales góticas se caracterizan por su gran altura gracias a las bóvedas de crucería y los arbotantes, y por sus amplios ventanales con vidrieras de colores."
+        },
+        {
+          "question": "¿Cómo se llamaban los arcos exteriores que sostenían los muros de las catedrales góticas?",
+          "options": ["Pilares románicos", "Arcos de medio punto", "Arbotantes", "Columnas dóricas"],
+          "correctIndex": 2,
+          "explanation": "Los arbotantes eran arcos exteriores que sostenían los muros de las catedrales góticas, permitiendo que las paredes fueran más delgadas y tuvieran grandes ventanales."
+        }
+      ]
+    },
+    {
+      "id": "tema04-fillblank01",
+      "lessonId": "tema04-lesson01",
+      "type": "fill_blank",
+      "title": "Completa: El renacer urbano",
+      "description": "Rellena los huecos sobre el crecimiento medieval.",
+      "difficulty": 1,
+      "xpReward": 30,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "A partir del año ___, Europa comenzó un proceso de renacer urbano. La introducción de la ___ dejaba solo un tercio de la tierra en barbecho. Gracias a estas innovaciones, la población europea pasó de 45 a ___ millones de habitantes. Los excedentes agrícolas impulsaron el ___ y los artesanos y comerciantes que se instalaban en las ciudades recibieron el nombre de ___.",
+        "blanks": ["1000", "rotación trienal", "75", "comercio", "burgueses"],
+        "wordBank": ["1000", "1500", "rotación trienal", "arado de vertedera", "75", "100", "comercio", "feudalismo", "burgueses", "nobles"]
+      }
+    },
+    {
+      "id": "tema04-fillblank02",
+      "lessonId": "tema04-lesson03",
+      "type": "fill_blank",
+      "title": "Completa: La ciudad medieval",
+      "description": "Rellena los huecos sobre la vida en las ciudades medievales.",
+      "difficulty": 2,
+      "xpReward": 35,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "Las ciudades medievales estaban rodeadas de ___ para protegerse. Su plano era muy ___ y se organizaba en torno a una plaza central con la ___, el ayuntamiento y el mercado. Los artesanos se agrupaban en ___ que regulaban la calidad y los precios de sus productos. El gobierno de la ciudad quedó en manos del ___ urbano, formado por las familias más ricas.",
+        "blanks": ["murallas", "irregular", "catedral", "gremios", "patriciado"],
+        "wordBank": ["murallas", "torres", "irregular", "cuadriculado", "catedral", "castillo", "gremios", "sindicatos", "patriciado", "campesinado"]
+      }
+    },
+    {
+      "id": "tema04-writing01",
+      "lessonId": "tema04-lesson01",
+      "type": "writing_mission",
+      "title": "Misión Escritura: El renacer urbano",
+      "description": "Explica por qué crecieron las ciudades medievales a partir del año 1000.",
+      "difficulty": 1,
+      "xpReward": 40,
+      "estimatedMinutes": 10,
+      "data": {
+        "prompt": "¿Por qué crecieron las ciudades medievales a partir del año 1000? Explica las causas principales.",
+        "scaffoldLevel": 2,
+        "sentenceStarters": [
+          "Las ciudades medievales crecieron porque...",
+          "Una causa importante fue la mejora de la agricultura, que...",
+          "Gracias a los excedentes agrícolas...",
+          "Además, las ciudades ofrecían mayor libertad porque...",
+          "En conclusión, el renacer urbano fue posible gracias a..."
+        ],
+        "vocabularyHints": [
+          "rotación trienal",
+          "excedentes agrarios",
+          "burguesía",
+          "comercio",
+          "burgo",
+          "libertad"
+        ],
+        "connectors": [
+          "porque",
+          "además",
+          "gracias a",
+          "por lo tanto",
+          "como consecuencia"
+        ],
+        "keyPointsToAddress": [
+          "Las mejoras agrícolas que generaron excedentes",
+          "El crecimiento de la población y del comercio",
+          "La libertad que ofrecían las ciudades frente al campo"
+        ],
+        "minimumWords": 40,
+        "rubricKeyTerms": ["agricultura", "excedentes", "comercio", "burguesía", "burgo"],
+        "rubricConnectors": ["porque", "además", "gracias a", "como consecuencia"]
+      }
+    },
+    {
+      "id": "tema04-writing02",
+      "lessonId": "tema04-lesson04",
+      "type": "writing_mission",
+      "title": "Misión Escritura: La Peste Negra",
+      "description": "Explica qué fue la Peste Negra y cuáles fueron sus consecuencias.",
+      "difficulty": 2,
+      "xpReward": 50,
+      "estimatedMinutes": 12,
+      "data": {
+        "prompt": "Explica qué fue la Peste Negra y qué consecuencias tuvo para la sociedad medieval.",
+        "scaffoldLevel": 3,
+        "sentenceStarters": [
+          "La Peste Negra fue una epidemia que...",
+          "Llegó a Europa en el año 1348 procedente de...",
+          "Sus consecuencias demográficas fueron muy graves: murió...",
+          "Además, tuvo consecuencias económicas como...",
+          "También afectó a las mentalidades, ya que..."
+        ],
+        "vocabularyHints": [
+          "epidemia",
+          "bubónica",
+          "pulgas",
+          "ratas",
+          "1348",
+          "mortalidad",
+          "revueltas",
+          "fanatismo religioso"
+        ],
+        "connectors": [
+          "en primer lugar",
+          "además",
+          "también",
+          "como consecuencia",
+          "finalmente"
+        ],
+        "keyPointsToAddress": [
+          "Qué era la Peste Negra y cómo se transmitía",
+          "El impacto demográfico: murió el 30-40% de la población",
+          "Las consecuencias económicas y sociales"
+        ],
+        "minimumWords": 60,
+        "rubricKeyTerms": ["epidemia", "1348", "mortalidad", "crisis", "consecuencias"],
+        "rubricConnectors": ["en primer lugar", "además", "también", "como consecuencia"]
+      }
+    }
+  ]
+}
