@@ -34,7 +34,8 @@ function StatCard({ icon, label, value, color, glowColor }: StatCardProps) {
 
 export function PerfilPage() {
   const { name, handle, totalXP, level, streak, setName } = usePlayerStore()
-  const logout = useAuthStore((s) => s.logout)
+  const { logout, email } = useAuthStore()
+  const isBen = email === 'benjaminrfcb@gmail.com'
   const navigate = useNavigate()
   const xpProgress = getXPProgress(totalXP)
   const levelTitle = getLevelTitle(level)
@@ -84,15 +85,19 @@ export function PerfilPage() {
             boxShadow: '0 0 32px #00d4ff30',
           }}
         >
-          <img
-            src="/images/ben-profile-image.png"
-            alt={name}
-            className="w-full h-full object-cover object-top"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none'
-              e.currentTarget.parentElement!.textContent = name.charAt(0).toUpperCase()
-            }}
-          />
+          {isBen ? (
+            <img
+              src="/images/ben-profile-image.png"
+              alt={name}
+              className="w-full h-full object-cover object-top"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+                e.currentTarget.parentElement!.textContent = name.charAt(0).toUpperCase()
+              }}
+            />
+          ) : (
+            name.charAt(0).toUpperCase()
+          )}
         </div>
         <div className="min-w-0">
           {editing ? (

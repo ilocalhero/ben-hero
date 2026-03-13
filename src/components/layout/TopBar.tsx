@@ -2,11 +2,14 @@ import { motion } from 'framer-motion'
 import { Flame, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { usePlayerStore } from '../../stores/usePlayerStore'
+import { useAuthStore } from '../../stores/useAuthStore'
 import { getXPProgress, getLevelTitle } from '../../lib/xpCalculator'
 import { ProgressBar } from '../ui'
 
 export function TopBar() {
   const { name, totalXP, level, streak } = usePlayerStore()
+  const email = useAuthStore((s) => s.email)
+  const isBen = email === 'benjaminrfcb@gmail.com'
   const xpProgress = getXPProgress(totalXP)
   const levelTitle = getLevelTitle(level)
 
@@ -116,15 +119,19 @@ export function TopBar() {
               border: '1px solid rgba(0,212,255,0.3)',
             }}
           >
-            <img
-              src="/images/ben-profile-image.png"
-              alt={name}
-              className="w-full h-full object-cover object-top"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-                e.currentTarget.parentElement!.textContent = name.charAt(0).toUpperCase()
-              }}
-            />
+            {isBen ? (
+              <img
+                src="/images/ben-profile-image.png"
+                alt={name}
+                className="w-full h-full object-cover object-top"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.parentElement!.textContent = name.charAt(0).toUpperCase()
+                }}
+              />
+            ) : (
+              name.charAt(0).toUpperCase()
+            )}
           </div>
         </Link>
       </div>
