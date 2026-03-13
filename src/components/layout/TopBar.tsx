@@ -12,7 +12,7 @@ export function TopBar() {
 
   return (
     <header
-      className="h-[52px] flex items-center px-4 lg:px-6 gap-4 z-50 sticky top-0 flex-shrink-0"
+      className="h-[52px] flex items-center px-3 sm:px-4 lg:px-6 gap-2 sm:gap-4 z-50 sticky top-0 flex-shrink-0"
       style={{
         background: 'linear-gradient(180deg, rgba(15,18,36,0.85) 0%, rgba(12,15,30,0.9) 100%)',
         backdropFilter: 'blur(16px)',
@@ -39,7 +39,7 @@ export function TopBar() {
           ⚡
         </div>
         <span
-          className="font-black tracking-[0.25em] text-[16px]"
+          className="hidden sm:inline font-black tracking-[0.25em] text-[16px]"
           style={{
             fontFamily: "'Orbitron', sans-serif",
             color: '#00d4ff',
@@ -71,7 +71,7 @@ export function TopBar() {
       <div className="flex items-center gap-2.5 flex-shrink-0">
         {/* Streak */}
         <motion.div
-          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full"
+          className="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 rounded-full"
           style={{
             background: streak > 0 ? 'rgba(255,107,53,0.12)' : 'rgba(255,255,255,0.04)',
             border: streak > 0 ? '1px solid rgba(255,107,53,0.3)' : '1px solid rgba(255,255,255,0.06)',
@@ -110,13 +110,21 @@ export function TopBar() {
         {/* Mobile avatar */}
         <Link to="/perfil" className="lg:hidden">
           <div
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold text-neon-blue"
+            className="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center text-sm font-bold text-neon-blue"
             style={{
               background: 'rgba(0,212,255,0.12)',
               border: '1px solid rgba(0,212,255,0.3)',
             }}
           >
-            {name.charAt(0).toUpperCase()}
+            <img
+              src="/images/ben-profile-image.png"
+              alt={name}
+              className="w-full h-full object-cover object-top"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+                e.currentTarget.parentElement!.textContent = name.charAt(0).toUpperCase()
+              }}
+            />
           </div>
         </Link>
       </div>

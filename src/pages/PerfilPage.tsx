@@ -77,14 +77,22 @@ export function PerfilPage() {
       >
         {/* Avatar */}
         <div
-          className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl font-black text-neon-blue flex-shrink-0"
+          className="w-20 h-20 rounded-2xl overflow-hidden flex items-center justify-center text-4xl font-black text-neon-blue flex-shrink-0"
           style={{
             background: '#00d4ff15',
             border: '2px solid #00d4ff55',
             boxShadow: '0 0 32px #00d4ff30',
           }}
         >
-          {name.charAt(0).toUpperCase()}
+          <img
+            src="/images/ben-profile-image.png"
+            alt={name}
+            className="w-full h-full object-cover object-top"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none'
+              e.currentTarget.parentElement!.textContent = name.charAt(0).toUpperCase()
+            }}
+          />
         </div>
         <div className="min-w-0">
           {editing ? (
@@ -99,7 +107,7 @@ export function PerfilPage() {
                 }}
                 maxLength={30}
                 autoFocus
-                className="rounded-lg px-3 py-1.5 text-xl font-black text-white outline-none w-44"
+                className="rounded-lg px-3 py-1.5 text-xl font-black text-white outline-none w-full max-w-[176px]"
                 style={{
                   background: 'rgba(255,255,255,0.07)',
                   border: '1px solid rgba(0,212,255,0.5)',
@@ -109,12 +117,12 @@ export function PerfilPage() {
               <button
                 onClick={confirmEdit}
                 disabled={draft.trim().length < 2}
-                className="p-1.5 rounded-lg disabled:opacity-40"
+                className="p-2.5 rounded-lg disabled:opacity-40"
                 style={{ color: '#00ff88' }}
               >
                 <Check size={18} />
               </button>
-              <button onClick={cancelEdit} className="p-1.5 rounded-lg" style={{ color: '#ff3ea5' }}>
+              <button onClick={cancelEdit} className="p-2.5 rounded-lg" style={{ color: '#ff3ea5' }}>
                 <X size={18} />
               </button>
             </div>
@@ -125,7 +133,7 @@ export function PerfilPage() {
               </NeonText>
               <button
                 onClick={startEdit}
-                className="p-1.5 rounded-lg opacity-50 hover:opacity-100 transition-opacity flex-shrink-0"
+                className="p-2.5 rounded-lg opacity-50 hover:opacity-100 transition-opacity flex-shrink-0"
                 style={{ color: '#00d4ff' }}
                 title="Cambiar nombre"
               >
