@@ -41,6 +41,8 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
       const today = todayStr()
       const dailyMissionCompleted = saved.dailyMissionDate === today ? saved.dailyMissionCompleted : false
       set({ ...saved, dailyMissionCompleted })
+    } else {
+      set({ ...DEFAULT_STATE })
     }
   },
 

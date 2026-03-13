@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { setUserPrefix, loadFromStorage } from '../lib/storage'
 import { usePlayerStore } from './usePlayerStore'
+import { useProgressStore } from './useProgressStore'
 import type { PlayerState } from '../types/player'
 
 const AUTH_KEY = 'benhero_auth'
@@ -80,6 +81,8 @@ export const useAuthStore = create<AuthState>((set) => ({
     localStorage.setItem(AUTH_KEY, JSON.stringify({ email: normalised }))
     set({ email: normalised })
     seedPlayerIfNeeded(normalised)
+    usePlayerStore.getState().load()
+    useProgressStore.getState().load()
     return true
   },
 
@@ -87,5 +90,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     localStorage.removeItem(AUTH_KEY)
     setUserPrefix('')
     set({ email: null })
+    usePlayerStore.getState().load()
+    useProgressStore.getState().load()
   },
 }))
