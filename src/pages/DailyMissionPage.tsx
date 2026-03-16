@@ -542,6 +542,8 @@ export function DailyMissionPage() {
               <WritingMission
                 activity={writeActivity}
                 temaId={tema.id}
+                temaTitle={tema.title}
+                lessonTitle={lesson.title}
                 onComplete={(_score, xpEarned) => {
                   setMissionXP(prev => prev + xpEarned)
                   setStep('victory')

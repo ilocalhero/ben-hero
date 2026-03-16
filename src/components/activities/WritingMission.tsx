@@ -1,18 +1,23 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Star, CheckCircle, AlertCircle, Send, FileText } from 'lucide-react'
+import { Star, CheckCircle, AlertCircle, Send, FileText, Loader2 } from 'lucide-react'
 import { NeonText } from '../ui/NeonText'
 import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
-import { evaluateWriting } from '../../lib/writingEvaluator'
+import { evaluateWritingAI } from '../../lib/aiEvaluator'
+import { sendMissionEmail } from '../../lib/emailService'
 import type { EvaluationResult } from '../../types/gamification'
 import type { Activity, WritingMissionData } from '../../types/tema'
 import { usePlayerStore } from '../../stores/usePlayerStore'
 import { useProgressStore } from '../../stores/useProgressStore'
+import { useAuthStore } from '../../stores/useAuthStore'
+import { DISPLAY_NAMES } from '../../stores/useAuthStore'
 
 interface WritingMissionProps {
   activity: Activity
   temaId: string
+  temaTitle?: string
+  lessonTitle?: string
   onComplete: (score: number, xpEarned: number) => void
 }
 
@@ -107,17 +112,19 @@ function XPCountUp({ target }: { target: number }) {
 // ---------------------------------------------------------------------------
 // Main component
 // ---------------------------------------------------------------------------
-export function WritingMission({ activity, temaId, onComplete }: WritingMissionProps) {
+export function WritingMission({ activity, temaId, temaTitle, lessonTitle, onComplete }: WritingMissionProps) {
   const data = activity.data as WritingMissionData
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   const [text, setText] = useState('')
   const [showReport, setShowReport] = useState(false)
   const [result, setResult] = useState<EvaluationResult | null>(null)
+  const [isEvaluating, setIsEvaluating] = useState(false)
 
   const addXP = usePlayerStore(s => s.addXP)
   const addWritingRecord = usePlayerStore(s => s.addWritingRecord)
   const completeActivity = useProgressStore(s => s.completeActivity)
+  const email = useAuthStore(s => s.email)
 
   const wordCount = countWords(text)
   const wordsNeeded = Math.max(0, data.minimumWords - wordCount)
@@ -146,9 +153,12 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
     })
   }
 
-  function handleSubmit() {
-    if (!canSubmit) return
-    const evaluation = evaluateWriting(text, data)
+  async function handleSubmit() {
+    if (!canSubmit || isEvaluating) return
+    setIsEvaluating(true)
+
+    const playerName = email ? (DISPLAY_NAMES[email] || 'Estudiante') : 'Estudiante'
+    const evaluation = await evaluateWritingAI(text, data, playerName)
     setResult(evaluation)
 
     // Record progress in stores
@@ -162,6 +172,18 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
     })
 
     setShowReport(true)
+    setIsEvaluating(false)
+
+    // Send email notification (fire-and-forget)
+    sendMissionEmail(
+      evaluation,
+      text,
+      activity.xpReward + evaluation.xpBonus,
+      playerName,
+      email || '',
+      temaTitle || 'Sin tema',
+      lessonTitle || 'Sin lección'
+    )
   }
 
   function handleContinue() {
@@ -314,7 +336,18 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
 
             {/* Submit button */}
             <div className="flex flex-col items-stretch gap-2">
-              {canSubmit ? (
+              {isEvaluating ? (
+                <Button
+                  onClick={undefined}
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  disabled
+                >
+                  <Loader2 size={18} className="animate-spin" />
+                  Evaluando con IA...
+                </Button>
+              ) : canSubmit ? (
                 <motion.div
                   animate={{ boxShadow: ['0 0 0px #00d4ff00', '0 0 18px #00d4ff55', '0 0 0px #00d4ff00'] }}
                   transition={{ repeat: Infinity, duration: 2 }}
