@@ -495,74 +495,141 @@
     {
       "id": "mat11-exam",
       "lessonId": "mat11-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Estadística y probabilidad",
       "description": "10 preguntas avanzadas sobre media, mediana, moda, desviación típica, tablas de frecuencias, probabilidad y sucesos complementarios",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "Los datos 3, 5, 5, 7, 7, 7, 9 tienen media $\\bar{x} \\approx 6{,}14$. ¿Cuál es la mediana?",
-          "options": ["5", "6,14", "7", "6"],
-          "correctIndex": 2,
-          "explanation": "Hay 7 datos (impar). El dato central es el 4.º valor ordenado: 7."
-        },
-        {
-          "question": "En la tabla de frecuencias: valor 1 ($f=4$), valor 2 ($f=6$), valor 3 ($f=5$), valor 4 ($f=5$). ¿Cuál es la moda?",
-          "options": ["1", "2", "3", "4"],
-          "correctIndex": 1,
-          "explanation": "La moda es el valor con mayor frecuencia absoluta. El valor 2 aparece 6 veces, más que cualquier otro."
-        },
-        {
-          "question": "Calcula la media ponderada: valor 10 (peso 2), valor 20 (peso 3), valor 30 (peso 5).",
-          "options": ["20", "23", "25", "18"],
-          "correctIndex": 1,
-          "explanation": "$\\bar{x}_p = \\frac{10 \\cdot 2 + 20 \\cdot 3 + 30 \\cdot 5}{2+3+5} = \\frac{20+60+150}{10} = \\frac{230}{10} = 23$."
-        },
-        {
-          "question": "Los datos 2, 4, 6, 8 tienen media $\\bar{x} = 5$. ¿Cuál es la varianza?",
-          "options": ["5", "4", "3", "2,5"],
-          "correctIndex": 0,
-          "explanation": "$s^2 = \\frac{(2-5)^2+(4-5)^2+(6-5)^2+(8-5)^2}{4} = \\frac{9+1+1+9}{4} = \\frac{20}{4} = 5$."
-        },
-        {
-          "question": "Si la desviación típica de un conjunto de datos es $s = 3$, ¿cuál es la varianza?",
-          "options": ["3", "6", "9", "$\\sqrt{3}$"],
-          "correctIndex": 2,
-          "explanation": "La varianza es el cuadrado de la desviación típica: $s^2 = 3^2 = 9$."
-        },
-        {
-          "question": "En una tabla de frecuencias con $N = 40$ datos, el valor $x_3$ tiene frecuencia absoluta acumulada $F_3 = 25$. ¿Cuál es la frecuencia relativa acumulada $H_3$?",
-          "options": ["0,375", "0,500", "0,625", "0,750"],
-          "correctIndex": 2,
-          "explanation": "$H_3 = \\frac{F_3}{N} = \\frac{25}{40} = 0{,}625$."
-        },
-        {
-          "question": "Se lanza un dado. ¿Cuál es la probabilidad de obtener un número mayor que 4?",
-          "options": ["$\\frac{1}{6}$", "$\\frac{2}{6}$", "$\\frac{3}{6}$", "$\\frac{4}{6}$"],
-          "correctIndex": 1,
-          "explanation": "Los números mayores que 4 son {5, 6} → 2 casos favorables de 6 posibles. $P = \\frac{2}{6} = \\frac{1}{3}$."
-        },
-        {
-          "question": "La probabilidad de que llueva mañana es $P(A) = 0{,}35$. ¿Cuál es la probabilidad del suceso complementario (que NO llueva)?",
-          "options": ["0,35", "0,50", "0,65", "1,35"],
-          "correctIndex": 2,
-          "explanation": "El suceso complementario tiene probabilidad $P(\\bar{A}) = 1 - P(A) = 1 - 0{,}35 = 0{,}65$."
-        },
-        {
-          "question": "Se extraen bolas de una urna con 4 blancas, 3 negras y 3 rojas. ¿Cuál es la probabilidad de sacar una bola que NO sea negra?",
-          "options": ["$\\frac{3}{10}$", "$\\frac{4}{10}$", "$\\frac{7}{10}$", "$\\frac{6}{10}$"],
-          "correctIndex": 2,
-          "explanation": "Bolas no negras = 4 blancas + 3 rojas = 7. Total = 10. $P = \\frac{7}{10}$."
-        },
-        {
-          "question": "Los datos 10, 10, 12, 14, 14, 14, 16 tienen mediana 14 y moda 14. ¿Cuál es el rango?",
-          "options": ["4", "6", "10", "14"],
-          "correctIndex": 1,
-          "explanation": "Rango = valor máximo − valor mínimo = 16 − 10 = 6."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Los datos 3, 5, 5, 7, 7, 7, 9 tienen media $\\bar{x} \\approx 6{,}14$. ¿Cuál es la mediana?",
+              "options": ["5", "6,14", "7", "6"],
+              "correctIndex": 2,
+              "explanation": "Hay 7 datos (impar). El dato central es el 4.º valor ordenado: 7."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "En la tabla de frecuencias: valor 1 ($f=4$), valor 2 ($f=6$), valor 3 ($f=5$), valor 4 ($f=5$). ¿Cuál es la moda?",
+              "options": ["1", "2", "3", "4"],
+              "correctIndex": 1,
+              "explanation": "La moda es el valor con mayor frecuencia absoluta. El valor 2 aparece 6 veces, más que cualquier otro."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "En un estudio estadístico, la ___ aritmética se calcula sumando todos los datos y dividiendo entre ___. La ___ es el valor central de los datos ordenados, y la ___ es el valor que más se repite. Para medir la dispersión usamos la desviación ___.",
+              "blanks": ["media", "N", "mediana", "moda", "típica"],
+              "wordBank": ["media", "N", "mediana", "moda", "típica", "varianza", "rango", "absoluta", "relativa"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Calcula la media ponderada: valor 10 (peso 2), valor 20 (peso 3), valor 30 (peso 5).",
+              "options": ["20", "23", "25", "18"],
+              "correctIndex": 1,
+              "explanation": "$\\bar{x}_p = \\frac{10 \\cdot 2 + 20 \\cdot 3 + 30 \\cdot 5}{2+3+5} = \\frac{20+60+150}{10} = \\frac{230}{10} = 23$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Calcula la varianza de los datos: 2, 4, 6, 8 (media $\\bar{x} = 5$)",
+              "steps": [
+                {
+                  "prompt": "Calcula las desviaciones al cuadrado: $(x_i - \\bar{x})^2$",
+                  "correctParts": ["(2-5)^2 = 9,\\; (4-5)^2 = 1,\\; (6-5)^2 = 1,\\; (8-5)^2 = 9"],
+                  "distractors": ["(2-5)^2 = 3,\\; (4-5)^2 = 1,\\; (6-5)^2 = 1,\\; (8-5)^2 = 3", "(2-5) = -3,\\; (4-5) = -1,\\; (6-5) = 1,\\; (8-5) = 3", "(2-5)^2 = 9,\\; (4-5)^2 = 1,\\; (6-5)^2 = 1,\\; (8-5)^2 = 16"],
+                  "hint": "Resta la media a cada dato y eleva al cuadrado: $(2-5)^2 = (-3)^2 = 9$"
+                },
+                {
+                  "prompt": "Suma las desviaciones al cuadrado",
+                  "correctParts": ["9 + 1 + 1 + 9 = 20"],
+                  "distractors": ["9 + 1 + 1 + 9 = 18", "3 + 1 + 1 + 3 = 8", "9 + 1 + 1 + 9 = 22"],
+                  "hint": "Suma: $9 + 1 + 1 + 9$"
+                },
+                {
+                  "prompt": "Divide entre el número de datos $N$",
+                  "correctParts": ["s^2 = \\frac{20}{4} = 5"],
+                  "distractors": ["s^2 = \\frac{20}{3} = 6{,}67", "s^2 = \\frac{20}{5} = 4", "s^2 = \\frac{18}{4} = 4{,}5"],
+                  "hint": "Hay 4 datos: $s^2 = \\frac{20}{4}$"
+                }
+              ],
+              "finalAnswer": "s^2 = 5"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Si la desviación típica de un conjunto de datos es $s = 3$, ¿cuál es la varianza?",
+              "options": ["3", "6", "9", "$\\sqrt{3}$"],
+              "correctIndex": 2,
+              "explanation": "La varianza es el cuadrado de la desviación típica: $s^2 = 3^2 = 9$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Un experimento ___ es aquel cuyo resultado no podemos predecir. El conjunto de todos los resultados posibles se llama espacio ___. La regla de ___ se aplica cuando todos los sucesos elementales son equiprobables: $P(A) = $ casos ___ entre casos posibles. La probabilidad de un suceso ___ es siempre 0.",
+              "blanks": ["aleatorio", "muestral", "Laplace", "favorables", "imposible"],
+              "wordBank": ["aleatorio", "muestral", "Laplace", "favorables", "imposible", "determinista", "seguro", "compuesto", "elemental"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Se lanza un dado. ¿Cuál es la probabilidad de obtener un número mayor que 4?",
+              "options": ["$\\frac{1}{6}$", "$\\frac{2}{6}$", "$\\frac{3}{6}$", "$\\frac{4}{6}$"],
+              "correctIndex": 1,
+              "explanation": "Los números mayores que 4 son {5, 6} → 2 casos favorables de 6 posibles. $P = \\frac{2}{6} = \\frac{1}{3}$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "En una urna hay 4 blancas, 3 negras y 3 rojas. Calcula la probabilidad de sacar una bola que NO sea negra.",
+              "steps": [
+                {
+                  "prompt": "Cuenta el total de bolas",
+                  "correctParts": ["4 + 3 + 3 = 10"],
+                  "distractors": ["4 + 3 = 7", "3 + 3 = 6", "4 \\times 3 \\times 3 = 36"],
+                  "hint": "Suma todas las bolas: blancas + negras + rojas"
+                },
+                {
+                  "prompt": "Cuenta los casos favorables (bolas NO negras)",
+                  "correctParts": ["4 + 3 = 7"],
+                  "distractors": ["4 + 3 + 3 = 10", "3 + 3 = 6", "4 = 4"],
+                  "hint": "Las bolas que no son negras son las blancas (4) y las rojas (3)"
+                },
+                {
+                  "prompt": "Aplica la regla de Laplace: $P = \\frac{\\text{favorables}}{\\text{posibles}}$",
+                  "correctParts": ["P = \\frac{7}{10} = 0{,}7"],
+                  "distractors": ["P = \\frac{3}{10} = 0{,}3", "P = \\frac{4}{10} = 0{,}4", "P = \\frac{7}{3} \\approx 2{,}33"],
+                  "hint": "Divide los casos favorables (7) entre el total (10)"
+                }
+              ],
+              "finalAnswer": "P = \\frac{7}{10} = 0{,}7"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Los datos 10, 10, 12, 14, 14, 14, 16 tienen mediana 14 y moda 14. ¿Cuál es el rango?",
+              "options": ["4", "6", "10", "14"],
+              "correctIndex": 1,
+              "explanation": "Rango = valor máximo − valor mínimo = 16 − 10 = 6."
+            }
+          }
+        ]
+      }
     }
   ]
 }

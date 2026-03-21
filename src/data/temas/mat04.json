@@ -397,74 +397,153 @@
     {
       "id": "mat04-exam",
       "lessonId": "mat04-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: La medida apropiada",
       "description": "10 preguntas avanzadas sobre razones, proporciones, proporcionalidad directa e inversa, porcentajes e interés",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "Halla el valor de $x$ en la proporción $\\frac{x}{9} = \\frac{20}{45}$.",
-          "options": ["2", "4", "5", "3"],
-          "correctIndex": 1,
-          "explanation": "$x \\cdot 45 = 9 \\cdot 20 = 180 \\Rightarrow x = \\frac{180}{45} = 4$."
-        },
-        {
-          "question": "Si 5 kg de naranjas cuestan 8 €, ¿cuánto cuestan 12 kg?",
-          "options": ["15,20 €", "19,20 €", "20,00 €", "16,80 €"],
-          "correctIndex": 1,
-          "explanation": "Proporcionalidad directa: $\\frac{8}{5} = 1{,}6$ €/kg. Para 12 kg: $1{,}6 \\times 12 = 19{,}20$ €."
-        },
-        {
-          "question": "4 grifos llenan una piscina en 6 horas. ¿Cuánto tardan 8 grifos?",
-          "options": ["12 horas", "2 horas", "3 horas", "4 horas"],
-          "correctIndex": 2,
-          "explanation": "Proporcionalidad inversa: $4 \\times 6 = 8 \\times x \\Rightarrow x = \\frac{24}{8} = 3$ horas."
-        },
-        {
-          "question": "¿Cuál es el índice de variación de un aumento del 35 %?",
-          "options": ["0,35", "0,65", "1,35", "3,50"],
-          "correctIndex": 2,
-          "explanation": "El índice de variación para un aumento del $r\\,\\%$ es $1 + \\frac{r}{100} = 1 + 0{,}35 = 1{,}35$."
-        },
-        {
-          "question": "Un televisor de 600 € se rebaja un 20 % y luego un 10 % adicional. ¿Cuál es el precio final?",
-          "options": ["420,00 €", "432,00 €", "400,00 €", "408,00 €"],
-          "correctIndex": 1,
-          "explanation": "$600 \\times 0{,}8 = 480$ €. Luego $480 \\times 0{,}9 = 432$ €. Los porcentajes no se suman."
-        },
-        {
-          "question": "Se reparten 1200 € inversamente proporcional a 2, 3 y 6. ¿Cuánto recibe la persona asociada al 3?",
-          "options": ["200 €", "400 €", "600 €", "300 €"],
-          "correctIndex": 1,
-          "explanation": "Inversos: $\\frac{1}{2}, \\frac{1}{3}, \\frac{1}{6}$. Suma = 1. $k = \\frac{1200}{1} = 1200$. Parte del 3: $\\frac{1}{3} \\times 1200 = 400$ €."
-        },
-        {
-          "question": "Calcula el interés simple de 2000 € al 3 % durante 5 años.",
-          "options": ["300 €", "200 €", "500 €", "150 €"],
-          "correctIndex": 0,
-          "explanation": "$I = \\frac{2000 \\times 3 \\times 5}{100} = \\frac{30000}{100} = 300$ €."
-        },
-        {
-          "question": "¿Cuál es el capital final de 5000 € al 4 % de interés compuesto durante 2 años?",
-          "options": ["5400,00 €", "5408,00 €", "5416,00 €", "5380,00 €"],
-          "correctIndex": 1,
-          "explanation": "$C_F = 5000 \\times 1{,}04^2 = 5000 \\times 1{,}0816 = 5408$ €."
-        },
-        {
-          "question": "Un producto costaba 50 € y ahora cuesta 62 €. ¿Qué porcentaje de aumento ha sufrido?",
-          "options": ["12 %", "20 %", "24 %", "22 %"],
-          "correctIndex": 2,
-          "explanation": "Aumento = $62 - 50 = 12$ €. Porcentaje = $\\frac{12}{50} \\times 100 = 24\\,\\%$."
-        },
-        {
-          "question": "12 obreros construyen un muro en 15 días. Si se añaden 6 obreros más, ¿cuántos días tardarán?",
-          "options": ["12 días", "10 días", "8 días", "9 días"],
-          "correctIndex": 1,
-          "explanation": "Proporcionalidad inversa: $12 \\times 15 = 18 \\times x \\Rightarrow x = \\frac{180}{18} = 10$ días."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Halla el valor de $x$ en la proporción $\\frac{x}{9} = \\frac{20}{45}$.",
+              "options": ["2", "4", "5", "3"],
+              "correctIndex": 1,
+              "explanation": "$x \\cdot 45 = 9 \\cdot 20 = 180 \\Rightarrow x = \\frac{180}{45} = 4$."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Si 5 kg de naranjas cuestan 8 €, ¿cuánto cuestan 12 kg?",
+              "options": ["15,20 €", "19,20 €", "20,00 €", "16,80 €"],
+              "correctIndex": 1,
+              "explanation": "Proporcionalidad directa: $\\frac{8}{5} = 1{,}6$ €/kg. Para 12 kg: $1{,}6 \\times 12 = 19{,}20$ €."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Si dos magnitudes son ___ proporcionales, al multiplicar una por un número la otra queda multiplicada por el mismo. Su cociente es ___. En cambio, si son inversamente proporcionales, su ___ es constante. Para repartir inversamente proporcional a varios números, se reparte directamente proporcional a sus ___.",
+              "blanks": ["directamente", "constante", "producto", "inversos"],
+              "wordBank": ["directamente", "constante", "producto", "inversos", "inversamente", "variable", "cociente", "cuadrados", "suma"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el índice de variación de un aumento del 35 %?",
+              "options": ["0,35", "0,65", "1,35", "3,50"],
+              "correctIndex": 2,
+              "explanation": "El índice de variación para un aumento del $r\\,\\%$ es $1 + \\frac{r}{100} = 1 + 0{,}35 = 1{,}35$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Un televisor de 600€ se rebaja un 20\\% y luego un 10\\% adicional. ¿Cuál es el precio final?",
+              "steps": [
+                {
+                  "prompt": "Calcular el índice de variación de la rebaja del 20\\%",
+                  "correctParts": ["1", "-", "0{,}20", "=", "0{,}80"],
+                  "distractors": ["1{,}20", "0{,}20", "+"],
+                  "hint": "Una disminución del 20\\% tiene índice $1 - \\frac{20}{100} = 0{,}80$"
+                },
+                {
+                  "prompt": "Aplicar la primera rebaja: $600 \\times 0{,}80$",
+                  "correctParts": ["480€"],
+                  "distractors": ["520€", "420€", "500€"],
+                  "hint": "Multiplica el precio original por el índice: $600 \\times 0{,}8 = 480$"
+                },
+                {
+                  "prompt": "Aplicar la segunda rebaja del 10\\% sobre 480€",
+                  "correctParts": ["480", "\\times", "0{,}90"],
+                  "distractors": ["0{,}10", "600", "1{,}10"],
+                  "hint": "El índice de una disminución del 10\\% es $1 - 0{,}10 = 0{,}90$"
+                },
+                {
+                  "prompt": "Calcular $480 \\times 0{,}90$",
+                  "correctParts": ["432€"],
+                  "distractors": ["420€", "408€", "440€"],
+                  "hint": "$480 \\times 0{,}9 = 432$. Los porcentajes no se suman directamente."
+                }
+              ],
+              "finalAnswer": "432€"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Se reparten 1200 € inversamente proporcional a 2, 3 y 6. ¿Cuánto recibe la persona asociada al 3?",
+              "options": ["200 €", "400 €", "600 €", "300 €"],
+              "correctIndex": 1,
+              "explanation": "Inversos: $\\frac{1}{2}, \\frac{1}{3}, \\frac{1}{6}$. Suma = 1. $k = \\frac{1200}{1} = 1200$. Parte del 3: $\\frac{1}{3} \\times 1200 = 400$ €."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "El interés ___ calcula los intereses siempre sobre el capital inicial, usando la fórmula $I = \\frac{C \\cdot r \\cdot t}{100}$. En el interés ___, los intereses de cada período se ___ al capital y generan nuevos intereses. La fórmula del capital final con interés compuesto es $C_F = C_I \\cdot (1 + \\frac{r}{100})^___$.",
+              "blanks": ["simple", "compuesto", "acumulan", "t"],
+              "wordBank": ["simple", "compuesto", "acumulan", "t", "doble", "restan", "r", "dividen", "C"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Un producto costaba 50 € y ahora cuesta 62 €. ¿Qué porcentaje de aumento ha sufrido?",
+              "options": ["12 %", "20 %", "24 %", "22 %"],
+              "correctIndex": 2,
+              "explanation": "Aumento = $62 - 50 = 12$ €. Porcentaje = $\\frac{12}{50} \\times 100 = 24\\,\\%$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Calcula el capital final de 2000€ al 5\\% de interés compuesto durante 3 años.",
+              "steps": [
+                {
+                  "prompt": "Escribir la fórmula de interés compuesto con los datos",
+                  "correctParts": ["C_F", "=", "2000", "\\times", "\\left(1 + \\frac{5}{100}\\right)^3"],
+                  "distractors": ["\\frac{2000 \\times 5 \\times 3}{100}", "1000", "\\left(1 - \\frac{5}{100}\\right)^3"],
+                  "hint": "La fórmula del interés compuesto es $C_F = C_I \\cdot \\left(1 + \\frac{r}{100}\\right)^t$"
+                },
+                {
+                  "prompt": "Calcular la base: $1 + \\frac{5}{100}$",
+                  "correctParts": ["1{,}05"],
+                  "distractors": ["0{,}05", "1{,}5", "0{,}95"],
+                  "hint": "$1 + 0{,}05 = 1{,}05$"
+                },
+                {
+                  "prompt": "Calcular $1{,}05^3$",
+                  "correctParts": ["1{,}157625"],
+                  "distractors": ["1{,}15", "1{,}1025", "3{,}15"],
+                  "hint": "$1{,}05 \\times 1{,}05 = 1{,}1025$, luego $1{,}1025 \\times 1{,}05 = 1{,}157625$"
+                },
+                {
+                  "prompt": "Calcular $2000 \\times 1{,}157625$",
+                  "correctParts": ["2315{,}25€"],
+                  "distractors": ["2300€", "2150€", "2357{,}95€"],
+                  "hint": "Multiplica el capital por el factor: $2000 \\times 1{,}157625 = 2315{,}25$"
+                }
+              ],
+              "finalAnswer": "2315{,}25€"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "12 obreros construyen un muro en 15 días. Si se añaden 6 obreros más, ¿cuántos días tardarán?",
+              "options": ["12 días", "10 días", "8 días", "9 días"],
+              "correctIndex": 1,
+              "explanation": "Proporcionalidad inversa: $12 \\times 15 = 18 \\times x \\Rightarrow x = \\frac{180}{18} = 10$ días."
+            }
+          }
+        ]
+      }
     }
   ]
 }

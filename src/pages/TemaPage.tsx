@@ -24,6 +24,7 @@ function activityIcon(type: ActivityType) {
   if (type === 'fill_blank') return <Type size={18} />
   if (type === 'writing_mission') return <PenLine size={18} />
   if (type === 'equation_builder') return <BookOpen size={18} />
+  if (type === 'exam') return <Star size={18} />
   return <BookOpen size={18} />
 }
 
@@ -40,6 +41,7 @@ function activityTypeLabel(type: ActivityType): string {
     paragraph_template: 'Párrafo',
     writing_mission: 'Misión escrita',
     equation_builder: 'Construye ecuacion',
+    exam: 'Examen Final',
     source_analysis: 'Análisis de fuente',
     compare_contrast: 'Comparar',
   }

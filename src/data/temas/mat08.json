@@ -440,84 +440,152 @@
     {
       "id": "mat08-exam",
       "lessonId": "mat08-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Ecuaciones",
       "description": "10 preguntas difíciles sobre ecuaciones lineales, con fracciones, cuadráticas y análisis del discriminante",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "Resuelve: $\\frac{2x+1}{5} - \\frac{x-3}{4} = 2$",
-          "options": ["$x = 11$", "$x = 9$", "$x = \\frac{43}{3}$", "$x = 7$"],
-          "correctIndex": 3,
-          "explanation": "m.c.m.(5,4)=20. $4(2x+1) - 5(x-3) = 40 \\Rightarrow 8x+4-5x+15 = 40 \\Rightarrow 3x+19 = 40 \\Rightarrow 3x = 21 \\Rightarrow x = 7$."
-        },
-        {
-          "question": "Resuelve: $\\frac{3(x-1)}{2} + \\frac{x+4}{6} = 5$",
-          "options": ["$x = 3$", "$x = \\frac{7}{2}$", "$x = \\frac{19}{5}$", "$x = 2$"],
-          "correctIndex": 1,
-          "explanation": "m.c.m.(2,6)=6. $9(x-1) + (x+4) = 30 \\Rightarrow 9x-9+x+4 = 30 \\Rightarrow 10x-5 = 30 \\Rightarrow 10x = 35 \\Rightarrow x = \\frac{7}{2}$."
-        },
-        {
-          "question": "¿Cuántas soluciones reales tiene $x^2 + 6x + 9 = 0$?",
-          "options": ["Ninguna", "Una (doble)", "Dos distintas", "Infinitas"],
-          "correctIndex": 1,
-          "explanation": "$\\Delta = 36 - 36 = 0$. Cuando el discriminante es cero, hay exactamente una solución doble: $x = \\frac{-6}{2} = -3$."
-        },
-        {
-          "question": "¿Cuál es el valor del discriminante de $2x^2 - 3x + 5 = 0$?",
-          "options": ["$\\Delta = -31$", "$\\Delta = 49$", "$\\Delta = 31$", "$\\Delta = -49$"],
-          "correctIndex": 0,
-          "explanation": "$\\Delta = (-3)^2 - 4(2)(5) = 9 - 40 = -31 < 0$. No tiene soluciones reales."
-        },
-        {
-          "question": "Resuelve: $x^2 - 7x + 10 = 0$",
-          "options": ["$x = 1$ y $x = 10$", "$x = 2$ y $x = 5$", "$x = -2$ y $x = -5$", "$x = 7$ y $x = 10$"],
-          "correctIndex": 1,
-          "explanation": "$\\Delta = 49 - 40 = 9$. $x = \\frac{7 \\pm 3}{2}$. Soluciones: $x_1 = 5$ y $x_2 = 2$."
-        },
-        {
-          "question": "Una ecuación de segundo grado tiene $\\Delta = 0$. ¿Qué significa?",
-          "options": [
-            "No tiene soluciones reales",
-            "Tiene dos soluciones distintas",
-            "Tiene una única solución (raíz doble)",
-            "Tiene infinitas soluciones"
-          ],
-          "correctIndex": 2,
-          "explanation": "Cuando $\\Delta = b^2 - 4ac = 0$, la fórmula da una sola solución: $x = \\frac{-b}{2a}$."
-        },
-        {
-          "question": "Resuelve: $5x^2 - 20 = 0$",
-          "options": ["$x = \\pm 4$", "$x = \\pm 2$", "$x = 4$", "$x = 2$"],
-          "correctIndex": 1,
-          "explanation": "$5x^2 = 20 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$. Ecuación incompleta sin término en $x$."
-        },
-        {
-          "question": "Resuelve: $\\frac{x}{3} + \\frac{x}{4} = 7$",
-          "options": ["$x = 12$", "$x = 21$", "$x = 84$", "$x = \\frac{84}{7}$"],
-          "correctIndex": 0,
-          "explanation": "m.c.m.(3,4)=12. $4x + 3x = 84 \\Rightarrow 7x = 84 \\Rightarrow x = 12$."
-        },
-        {
-          "question": "¿Para qué valores de $k$ la ecuación $x^2 + 4x + k = 0$ NO tiene soluciones reales?",
-          "options": ["$k < 4$", "$k = 4$", "$k > 4$", "$k > 0$"],
-          "correctIndex": 2,
-          "explanation": "$\\Delta = 16 - 4k < 0 \\Rightarrow 4k > 16 \\Rightarrow k > 4$. Si $k > 4$, el discriminante es negativo."
-        },
-        {
-          "question": "Un número y su cuadrado suman 42. ¿Cuáles son las soluciones de la ecuación?",
-          "options": [
-            "$x = 6$ y $x = -7$",
-            "$x = 7$ y $x = 6$",
-            "$x = 6$ y $x = 7$",
-            "$x = -6$ y $x = 7$"
-          ],
-          "correctIndex": 0,
-          "explanation": "$x + x^2 = 42 \\Rightarrow x^2 + x - 42 = 0$. $\\Delta = 1 + 168 = 169$. $x = \\frac{-1 \\pm 13}{2}$. Soluciones: $x = 6$ y $x = -7$."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Resuelve: $\\frac{2x+1}{5} - \\frac{x-3}{4} = 2$",
+              "options": ["$x = 11$", "$x = 9$", "$x = \\frac{43}{3}$", "$x = 7$"],
+              "correctIndex": 3,
+              "explanation": "m.c.m.(5,4)=20. $4(2x+1) - 5(x-3) = 40 \\Rightarrow 8x+4-5x+15 = 40 \\Rightarrow 3x+19 = 40 \\Rightarrow 3x = 21 \\Rightarrow x = 7$."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Resuelve: $\\frac{3(x-1)}{2} + \\frac{x+4}{6} = 5$",
+              "options": ["$x = 3$", "$x = \\frac{7}{2}$", "$x = \\frac{19}{5}$", "$x = 2$"],
+              "correctIndex": 1,
+              "explanation": "m.c.m.(2,6)=6. $9(x-1) + (x+4) = 30 \\Rightarrow 9x-9+x+4 = 30 \\Rightarrow 10x-5 = 30 \\Rightarrow 10x = 35 \\Rightarrow x = \\frac{7}{2}$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Para resolver una ecuación de primer grado con denominadores, el primer paso es multiplicar ambos miembros por el ___ de los denominadores. Después se quitan los ___ aplicando la propiedad distributiva. A continuación se agrupan los términos con la incógnita en un ___ y los números en el otro. Finalmente se ___ la incógnita dividiendo ambos miembros por su coeficiente.",
+              "blanks": ["m.c.m.", "paréntesis", "miembro", "despeja"],
+              "wordBank": ["m.c.m.", "paréntesis", "miembro", "despeja", "máximo", "corchetes", "denominador", "multiplica"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el valor del discriminante de $2x^2 - 3x + 5 = 0$?",
+              "options": ["$\\Delta = -31$", "$\\Delta = 49$", "$\\Delta = 31$", "$\\Delta = -49$"],
+              "correctIndex": 0,
+              "explanation": "$\\Delta = (-3)^2 - 4(2)(5) = 9 - 40 = -31 < 0$. No tiene soluciones reales."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "$4(x + 3) - 2(x - 1) = 18$",
+              "steps": [
+                {
+                  "prompt": "Distribuye los paréntesis: $4(x + 3) - 2(x - 1) = 18$",
+                  "correctParts": ["4x + 12", "-2x + 2", "=", "18"],
+                  "distractors": ["4x + 3", "4x - 12", "-2x - 2"],
+                  "hint": "$4 \\cdot x = 4x$, $4 \\cdot 3 = 12$, $-2 \\cdot x = -2x$, $-2 \\cdot (-1) = +2$"
+                },
+                {
+                  "prompt": "Simplifica el lado izquierdo: $4x + 12 - 2x + 2 = 18$",
+                  "correctParts": ["2x + 14", "=", "18"],
+                  "distractors": ["6x + 10 = 18", "2x + 10 = 18", "6x + 14 = 18"],
+                  "hint": "$4x - 2x = 2x$ y $12 + 2 = 14$"
+                },
+                {
+                  "prompt": "Despeja los números: $2x + 14 = 18$",
+                  "correctParts": ["2x", "=", "4"],
+                  "distractors": ["2x = 32", "2x = -4", "2x = 14"],
+                  "hint": "Resta 14 de ambos miembros: $18 - 14 = 4$"
+                },
+                {
+                  "prompt": "Divide entre el coeficiente: $2x = 4$",
+                  "correctParts": ["x = 2"],
+                  "distractors": ["x = 4", "x = 8", "x = -2"],
+                  "hint": "$x = \\frac{4}{2} = 2$"
+                }
+              ],
+              "finalAnswer": "x = 2"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Resuelve: $x^2 - 7x + 10 = 0$",
+              "options": ["$x = 1$ y $x = 10$", "$x = 2$ y $x = 5$", "$x = -2$ y $x = -5$", "$x = 7$ y $x = 10$"],
+              "correctIndex": 1,
+              "explanation": "$\\Delta = 49 - 40 = 9$. $x = \\frac{7 \\pm 3}{2}$. Soluciones: $x_1 = 5$ y $x_2 = 2$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Una ecuación de segundo grado tiene la forma $ax^2 + bx + c = 0$. El ___ es $\\Delta = b^2 - 4ac$. Si $\\Delta > 0$ hay ___ soluciones distintas. Si $\\Delta = 0$ hay una solución ___. Si $\\Delta < 0$ la ecuación no tiene soluciones ___.",
+              "blanks": ["discriminante", "dos", "doble", "reales"],
+              "wordBank": ["discriminante", "dos", "doble", "reales", "coeficiente", "tres", "única", "enteras"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Resuelve: $\\frac{x}{3} + \\frac{x}{4} = 7$",
+              "options": ["$x = 12$", "$x = 21$", "$x = 84$", "$x = \\frac{84}{7}$"],
+              "correctIndex": 0,
+              "explanation": "m.c.m.(3,4)=12. $4x + 3x = 84 \\Rightarrow 7x = 84 \\Rightarrow x = 12$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "$x^2 + 2x - 15 = 0$",
+              "steps": [
+                {
+                  "prompt": "Identifica $a$, $b$, $c$ y calcula el discriminante $\\Delta = b^2 - 4ac$.",
+                  "correctParts": ["a = 1", "b = 2", "c = -15", "Δ = 4 + 60 = 64"],
+                  "distractors": ["c = 15", "Δ = 4 - 60 = -56", "Δ = 4 + 15 = 19"],
+                  "hint": "$a = 1$, $b = 2$, $c = -15$. $\\Delta = 2^2 - 4(1)(-15) = 4 + 60 = 64$"
+                },
+                {
+                  "prompt": "Aplica la fórmula: $x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{-2 \\pm \\sqrt{64}}{2}$",
+                  "correctParts": ["$x = \\frac{-2 \\pm 8}{2}$"],
+                  "distractors": ["$x = \\frac{2 \\pm 8}{2}$", "$x = \\frac{-2 \\pm 8}{4}$", "$x = \\frac{-2 \\pm 4}{2}$"],
+                  "hint": "$-b = -2$, $\\sqrt{64} = 8$, y $2a = 2$"
+                },
+                {
+                  "prompt": "Calcula $x_1 = \\frac{-2 + 8}{2}$ y $x_2 = \\frac{-2 - 8}{2}$",
+                  "correctParts": ["$x_1 = 3$", "$x_2 = -5$"],
+                  "distractors": ["$x_1 = 5$, $x_2 = -3$", "$x_1 = 4$, $x_2 = -6$", "$x_1 = 3$, $x_2 = 5$"],
+                  "hint": "$\\frac{6}{2} = 3$ y $\\frac{-10}{2} = -5$"
+                }
+              ],
+              "finalAnswer": "x = 3, x = -5"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Un número y su cuadrado suman 42. ¿Cuáles son las soluciones de la ecuación?",
+              "options": [
+                "$x = 6$ y $x = -7$",
+                "$x = 7$ y $x = 6$",
+                "$x = 6$ y $x = 7$",
+                "$x = -6$ y $x = 7$"
+              ],
+              "correctIndex": 0,
+              "explanation": "$x + x^2 = 42 \\Rightarrow x^2 + x - 42 = 0$. $\\Delta = 1 + 168 = 169$. $x = \\frac{-1 \\pm 13}{2}$. Soluciones: $x = 6$ y $x = -7$."
+            }
+          }
+        ]
+      }
     }
   ]
 }

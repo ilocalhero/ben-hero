@@ -447,124 +447,177 @@
     {
       "id": "mat07-exam",
       "lessonId": "mat07-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Expresiones algebraicas",
       "description": "10 preguntas de nivel avanzado sobre monomios, polinomios, identidades notables y factorización",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 15,
-      "data": [
-        {
-          "question": "El monomio $(-3x^2y)^3$ es igual a:",
-          "options": [
-            "$-27x^6y^3$",
-            "$27x^6y^3$",
-            "$-9x^6y^3$",
-            "$-27x^5y^3$"
-          ],
-          "correctIndex": 0,
-          "explanation": "$(-3)^3 = -27$, $(x^2)^3 = x^6$, $y^3 = y^3$. Resultado: $-27x^6y^3$."
-        },
-        {
-          "question": "¿Cuánto es $(4x^3y^2) : (-2xy)$?",
-          "options": [
-            "$-2x^2y$",
-            "$2x^2y$",
-            "$-2x^3y^2$",
-            "$-8x^4y^3$"
-          ],
-          "correctIndex": 0,
-          "explanation": "$\\frac{4}{-2} = -2$, $x^{3-1} = x^2$, $y^{2-1} = y$. Resultado: $-2x^2y$."
-        },
-        {
-          "question": "Suma los polinomios $(3x^3 - 2x + 5)$ y $(-x^3 + 4x^2 - 3)$:",
-          "options": [
-            "$2x^3 + 4x^2 - 2x + 2$",
-            "$2x^3 + 4x^2 + 2x + 2$",
-            "$4x^3 + 4x^2 - 2x + 2$",
-            "$2x^3 - 4x^2 - 2x + 2$"
-          ],
-          "correctIndex": 0,
-          "explanation": "$3x^3 - x^3 = 2x^3$, $0 + 4x^2 = 4x^2$, $-2x$, $5 - 3 = 2$."
-        },
-        {
-          "question": "¿Cuál es el desarrollo de $(3x + 2y)^2$?",
-          "options": [
-            "$9x^2 + 4y^2$",
-            "$9x^2 + 6xy + 4y^2$",
-            "$9x^2 + 12xy + 4y^2$",
-            "$6x^2 + 12xy + 4y^2$"
-          ],
-          "correctIndex": 2,
-          "explanation": "$(3x)^2 + 2(3x)(2y) + (2y)^2 = 9x^2 + 12xy + 4y^2$."
-        },
-        {
-          "question": "Desarrolla $(5x - 1)(5x + 1)$:",
-          "options": [
-            "$25x^2 + 1$",
-            "$25x^2 - 1$",
-            "$25x^2 - 10x + 1$",
-            "$10x^2 - 1$"
-          ],
-          "correctIndex": 1,
-          "explanation": "Suma por diferencia: $(a+b)(a-b) = a^2 - b^2 = 25x^2 - 1$."
-        },
-        {
-          "question": "Extrae factor común de $10x^4 - 15x^3 + 5x^2$:",
-          "options": [
-            "$5x^2(2x^2 - 3x + 1)$",
-            "$5x(2x^3 - 3x^2 + x)$",
-            "$x^2(10x^2 - 15x + 5)$",
-            "$5x^2(2x^2 - 3x)$"
-          ],
-          "correctIndex": 0,
-          "explanation": "M.C.D. de coeficientes: 5. Menor potencia de $x$: $x^2$. Factor común: $5x^2$. Resultado: $5x^2(2x^2 - 3x + 1)$."
-        },
-        {
-          "question": "Factoriza $x^2 - 10x + 25$:",
-          "options": [
-            "$(x - 5)(x + 5)$",
-            "$(x + 5)^2$",
-            "$(x - 5)^2$",
-            "$(x - 25)^2$"
-          ],
-          "correctIndex": 2,
-          "explanation": "$x^2 - 10x + 25 = x^2 - 2 \\cdot x \\cdot 5 + 5^2 = (x - 5)^2$."
-        },
-        {
-          "question": "Simplifica $(x + 4)^2 - (x - 4)^2$:",
-          "options": [
-            "$8$",
-            "$16x$",
-            "$8x$",
-            "$32$"
-          ],
-          "correctIndex": 1,
-          "explanation": "$(x+4)^2 = x^2 + 8x + 16$, $(x-4)^2 = x^2 - 8x + 16$. Resta: $16x$."
-        },
-        {
-          "question": "¿Cuál es el producto $(2x - 1)(x^2 + 3x - 2)$?",
-          "options": [
-            "$2x^3 + 5x^2 - 7x + 2$",
-            "$2x^3 + 6x^2 - 4x + 2$",
-            "$2x^3 + 5x^2 + x - 2$",
-            "$2x^3 + 5x^2 - 7x - 2$"
-          ],
-          "correctIndex": 0,
-          "explanation": "$2x(x^2+3x-2) = 2x^3+6x^2-4x$ y $-1(x^2+3x-2) = -x^2-3x+2$. Suma: $2x^3+5x^2-7x+2$."
-        },
-        {
-          "question": "Factoriza $4x^2 - 9y^2$:",
-          "options": [
-            "$(2x - 3y)^2$",
-            "$(2x + 3y)^2$",
-            "$(4x + 9y)(4x - 9y)$",
-            "$(2x + 3y)(2x - 3y)$"
-          ],
-          "correctIndex": 3,
-          "explanation": "Es una diferencia de cuadrados: $(2x)^2 - (3y)^2 = (2x + 3y)(2x - 3y)$."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "El monomio $(-3x^2y)^3$ es igual a:",
+              "options": [
+                "$-27x^6y^3$",
+                "$27x^6y^3$",
+                "$-9x^6y^3$",
+                "$-27x^5y^3$"
+              ],
+              "correctIndex": 0,
+              "explanation": "$(-3)^3 = -27$, $(x^2)^3 = x^6$, $y^3 = y^3$. Resultado: $-27x^6y^3$."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuánto es $(4x^3y^2) : (-2xy)$?",
+              "options": [
+                "$-2x^2y$",
+                "$2x^2y$",
+                "$-2x^3y^2$",
+                "$-8x^4y^3$"
+              ],
+              "correctIndex": 0,
+              "explanation": "$\\frac{4}{-2} = -2$, $x^{3-1} = x^2$, $y^{2-1} = y$. Resultado: $-2x^2y$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Un monomio tiene dos partes: la parte numérica llamada ___ y las variables con sus exponentes llamada ___. El ___ de un monomio es la suma de los exponentes de todas sus variables. Dos monomios que tienen la misma parte literal se llaman monomios ___.",
+              "blanks": ["coeficiente", "parte literal", "grado", "semejantes"],
+              "wordBank": ["coeficiente", "parte literal", "grado", "semejantes", "término", "polinomio", "exponente"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el desarrollo de $(3x + 2y)^2$?",
+              "options": [
+                "$9x^2 + 4y^2$",
+                "$9x^2 + 6xy + 4y^2$",
+                "$9x^2 + 12xy + 4y^2$",
+                "$6x^2 + 12xy + 4y^2$"
+              ],
+              "correctIndex": 2,
+              "explanation": "$(3x)^2 + 2(3x)(2y) + (2y)^2 = 9x^2 + 12xy + 4y^2$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Extrae factor común y simplifica: $12x^3 - 8x^2 + 4x$",
+              "steps": [
+                {
+                  "prompt": "¿Cuál es el M.C.D. de los coeficientes 12, 8 y 4?",
+                  "correctParts": ["4"],
+                  "distractors": ["2", "8", "12", "6"],
+                  "hint": "Busca el mayor número que divide a 12, 8 y 4."
+                },
+                {
+                  "prompt": "¿Cuál es la menor potencia de $x$ presente en todos los términos?",
+                  "correctParts": ["x"],
+                  "distractors": ["x^2", "x^3", "1", "x^4"],
+                  "hint": "El término $4x$ solo tiene $x^1$."
+                },
+                {
+                  "prompt": "Escribe el factor común completo:",
+                  "correctParts": ["4x"],
+                  "distractors": ["4x^2", "2x", "8x", "4x^3"],
+                  "hint": "Multiplica el M.C.D. de coeficientes por la menor potencia de $x$."
+                },
+                {
+                  "prompt": "¿Cuál es el resultado dentro del paréntesis?",
+                  "correctParts": ["3x^2 - 2x + 1"],
+                  "distractors": ["3x^2 - 2x - 1", "3x^2 + 2x + 1", "6x^2 - 4x + 2"],
+                  "hint": "Divide cada término del polinomio por $4x$."
+                }
+              ],
+              "finalAnswer": "4x(3x^2 - 2x + 1)"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Desarrolla $(5x - 1)(5x + 1)$:",
+              "options": [
+                "$25x^2 + 1$",
+                "$25x^2 - 1$",
+                "$25x^2 - 10x + 1$",
+                "$10x^2 - 1$"
+              ],
+              "correctIndex": 1,
+              "explanation": "Suma por diferencia: $(a+b)(a-b) = a^2 - b^2 = 25x^2 - 1$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Las tres identidades notables son: el ___ de una suma $(a+b)^2 = a^2 + 2ab + b^2$, el cuadrado de una ___ $(a-b)^2 = a^2 - 2ab + b^2$, y la suma por ___ $(a+b)(a-b) = a^2 - b^2$. Para factorizar $x^2 - 9$ usamos la identidad de suma por diferencia, obteniendo $(x+3)(x-___)$.",
+              "blanks": ["cuadrado", "diferencia", "diferencia", "3"],
+              "wordBank": ["cuadrado", "diferencia", "3", "suma", "producto", "9", "raíz"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Factoriza $x^2 - 10x + 25$:",
+              "options": [
+                "$(x - 5)(x + 5)$",
+                "$(x + 5)^2$",
+                "$(x - 5)^2$",
+                "$(x - 25)^2$"
+              ],
+              "correctIndex": 2,
+              "explanation": "$x^2 - 10x + 25 = x^2 - 2 \\cdot x \\cdot 5 + 5^2 = (x - 5)^2$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Desarrolla y simplifica: $(2x + 3)^2 - (2x - 3)^2$",
+              "steps": [
+                {
+                  "prompt": "Desarrolla $(2x + 3)^2$ usando la identidad $(a+b)^2 = a^2 + 2ab + b^2$:",
+                  "correctParts": ["4x^2 + 12x + 9"],
+                  "distractors": ["4x^2 + 6x + 9", "4x^2 + 12x + 6", "2x^2 + 12x + 9"],
+                  "hint": "$(2x)^2 = 4x^2$, $2(2x)(3) = 12x$, $3^2 = 9$."
+                },
+                {
+                  "prompt": "Desarrolla $(2x - 3)^2$ usando la identidad $(a-b)^2 = a^2 - 2ab + b^2$:",
+                  "correctParts": ["4x^2 - 12x + 9"],
+                  "distractors": ["4x^2 - 6x + 9", "4x^2 - 12x - 9", "4x^2 + 12x - 9"],
+                  "hint": "$(2x)^2 = 4x^2$, $-2(2x)(3) = -12x$, $(-3)^2 = 9$."
+                },
+                {
+                  "prompt": "Resta los dos desarrollos: $(4x^2 + 12x + 9) - (4x^2 - 12x + 9)$:",
+                  "correctParts": ["24x"],
+                  "distractors": ["0", "8x^2 + 18", "16x", "12x"],
+                  "hint": "$4x^2 - 4x^2 = 0$, $12x - (-12x) = 24x$, $9 - 9 = 0$."
+                }
+              ],
+              "finalAnswer": "24x"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Factoriza $4x^2 - 9y^2$:",
+              "options": [
+                "$(2x - 3y)^2$",
+                "$(2x + 3y)^2$",
+                "$(4x + 9y)(4x - 9y)$",
+                "$(2x + 3y)(2x - 3y)$"
+              ],
+              "correctIndex": 3,
+              "explanation": "Es una diferencia de cuadrados: $(2x)^2 - (3y)^2 = (2x + 3y)(2x - 3y)$."
+            }
+          }
+        ]
+      }
     }
   ]
 }

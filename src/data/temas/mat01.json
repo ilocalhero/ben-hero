@@ -408,74 +408,153 @@
     },
     {
       "id": "mat01-exam",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Números enteros",
       "description": "Demuestra todo lo que sabes sobre números enteros, valor absoluto, operaciones y divisibilidad",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 15,
-      "data": [
-        {
-          "question": "Calcula: $|{-15}| - |{-7}| + |{3 - 10}|$",
-          "options": ["1", "15", "22", "8"],
-          "correctIndex": 1,
-          "explanation": "$|{-15}| = 15$, $|{-7}| = 7$, $|{3-10}| = |{-7}| = 7$. Entonces $15 - 7 + 7 = 15$."
-        },
-        {
-          "question": "¿Cuál es el resultado de $(-3)^3$?",
-          "options": ["27", "−27", "9", "−9"],
-          "correctIndex": 1,
-          "explanation": "$(-3)^3 = (-3) \\times (-3) \\times (-3) = 9 \\times (-3) = -27$. Exponente impar conserva el signo negativo."
-        },
-        {
-          "question": "Simplifica: $(-2) \\times (-3) \\times (-4) \\times (-1)$",
-          "options": ["−24", "24", "−12", "12"],
-          "correctIndex": 1,
-          "explanation": "Hay 4 signos negativos (par), así que el resultado es positivo. $2 \\times 3 \\times 4 \\times 1 = 24$."
-        },
-        {
-          "question": "Calcula: $(-48) \\div (-8) + (-3) \\times 5 - (-7)$",
-          "options": ["−2", "−22", "−1", "1"],
-          "correctIndex": 0,
-          "explanation": "Primero $\\times$ y $\\div$: $(-48)\\div(-8) = 6$ y $(-3)\\times 5 = -15$. Luego $6 + (-15) - (-7) = 6 - 15 + 7 = -2$."
-        },
-        {
-          "question": "Si $\\text{op}(a) = 9$ y $|b| = 4$, ¿cuáles son los posibles valores de $a + b$?",
-          "options": ["−5 o −13", "−13 o 13", "13 o 5", "5 o −5"],
-          "correctIndex": 0,
-          "explanation": "$\\text{op}(a) = 9$ significa $a = -9$. $|b| = 4$ significa $b = 4$ o $b = -4$. Entonces $a+b = -9+4 = -5$ o $a+b = -9+(-4) = -13$."
-        },
-        {
-          "question": "¿Cuál es la descomposición en factores primos de 180?",
-          "options": ["$2^2 \\times 3^2 \\times 5$", "$2 \\times 3^2 \\times 10$", "$2^2 \\times 45$", "$4 \\times 9 \\times 5$"],
-          "correctIndex": 0,
-          "explanation": "$180 = 2 \\times 90 = 2 \\times 2 \\times 45 = 2^2 \\times 9 \\times 5 = 2^2 \\times 3^2 \\times 5$. Solo la primera opción usa factores primos."
-        },
-        {
-          "question": "Calcula el m.c.d. de 84 y 120.",
-          "options": ["6", "12", "24", "840"],
-          "correctIndex": 1,
-          "explanation": "$84 = 2^2 \\times 3 \\times 7$ y $120 = 2^3 \\times 3 \\times 5$. m.c.d. = factores comunes con menor exponente: $2^2 \\times 3 = 12$."
-        },
-        {
-          "question": "Calcula el m.c.m. de 15, 20 y 12.",
-          "options": ["60", "120", "180", "300"],
-          "correctIndex": 0,
-          "explanation": "$15 = 3 \\times 5$, $20 = 2^2 \\times 5$, $12 = 2^2 \\times 3$. m.c.m. = $2^2 \\times 3 \\times 5 = 60$."
-        },
-        {
-          "question": "¿Cuántos números primos hay entre 30 y 50?",
-          "options": ["3", "4", "5", "6"],
-          "correctIndex": 2,
-          "explanation": "Los primos entre 30 y 50 son: 31, 37, 41, 43, 47. Son 5 números primos."
-        },
-        {
-          "question": "Un grupo de 36 alumnos y otro de 48 se reparten en equipos iguales del mayor tamaño posible. ¿Cuántos alumnos tiene cada equipo y cuántos equipos hay en total?",
-          "options": ["12 por equipo, 7 equipos", "6 por equipo, 14 equipos", "4 por equipo, 21 equipos", "8 por equipo, 10 equipos"],
-          "correctIndex": 0,
-          "explanation": "m.c.d.(36, 48) = 12 alumnos por equipo. Equipos: $36 \\div 12 + 48 \\div 12 = 3 + 4 = 7$ equipos."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Calcula: $|{-15}| - |{-7}| + |{3 - 10}|$",
+              "options": ["1", "15", "22", "8"],
+              "correctIndex": 1,
+              "explanation": "$|{-15}| = 15$, $|{-7}| = 7$, $|{3-10}| = |{-7}| = 7$. Entonces $15 - 7 + 7 = 15$."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el resultado de $(-3)^3$?",
+              "options": ["27", "−27", "9", "−9"],
+              "correctIndex": 1,
+              "explanation": "$(-3)^3 = (-3) \\times (-3) \\times (-3) = 9 \\times (-3) = -27$. Exponente impar conserva el signo negativo."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Para sumar dos números enteros con el mismo signo, se suman sus ___ y se mantiene el ___. Para sumar dos enteros con distinto signo, se restan sus valores absolutos y se pone el signo del número de mayor ___. El opuesto de un número sumado al propio número siempre da ___.",
+              "blanks": ["valores absolutos", "signo", "valor absoluto", "cero"],
+              "wordBank": ["valores absolutos", "signo", "valor absoluto", "cero", "exponentes", "resultado", "uno", "positivo"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Calcula: $(-48) \\div (-8) + (-3) \\times 5 - (-7)$",
+              "options": ["−2", "−22", "−1", "1"],
+              "correctIndex": 0,
+              "explanation": "Primero $\\times$ y $\\div$: $(-48)\\div(-8) = 6$ y $(-3)\\times 5 = -15$. Luego $6 + (-15) - (-7) = 6 - 15 + 7 = -2$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "(-5) \\times 3 + (-18) \\div (-6) - (-4)",
+              "steps": [
+                {
+                  "prompt": "(-5) \\times 3 + (-18) \\div (-6) - (-4)",
+                  "correctParts": ["(-15)", "+", "3", "-", "(-4)"],
+                  "distractors": ["+15", "-3", "+18"],
+                  "hint": "Resuelve primero multiplicaciones y divisiones: $(-5) \\times 3 = -15$ y $(-18) \\div (-6) = 3$"
+                },
+                {
+                  "prompt": "(-15) + 3 - (-4)",
+                  "correctParts": ["-15", "+3", "+4"],
+                  "distractors": ["-4", "-3", "+15"],
+                  "hint": "Restar un negativo es sumar: $-(-4) = +4$"
+                },
+                {
+                  "prompt": "-15 + 3 + 4",
+                  "correctParts": ["-15", "+7"],
+                  "distractors": ["+15", "-7", "+12"],
+                  "hint": "Suma los positivos: $3 + 4 = 7$"
+                },
+                {
+                  "prompt": "-15 + 7",
+                  "correctParts": ["-8"],
+                  "distractors": ["-22", "+8", "-12"],
+                  "hint": "Resta: $15 - 7 = 8$, el signo mayor es negativo"
+                }
+              ],
+              "finalAnswer": "-8"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Si $\\text{op}(a) = 9$ y $|b| = 4$, ¿cuáles son los posibles valores de $a + b$?",
+              "options": ["−5 o −13", "−13 o 13", "13 o 5", "5 o −5"],
+              "correctIndex": 0,
+              "explanation": "$\\text{op}(a) = 9$ significa $a = -9$. $|b| = 4$ significa $b = 4$ o $b = -4$. Entonces $a+b = -9+4 = -5$ o $a+b = -9+(-4) = -13$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Un número es ___ si solo tiene dos divisores: 1 y él mismo. Para hallar el m.c.d. de dos números, tomamos los factores ___ con el menor exponente. Para hallar el m.c.m., tomamos ___ los factores con el mayor ___. El número 1 no se considera primo ni ___.",
+              "blanks": ["primo", "comunes", "todos", "exponente", "compuesto"],
+              "wordBank": ["primo", "comunes", "todos", "exponente", "compuesto", "diferentes", "menor", "divisor", "múltiplo"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es la descomposición en factores primos de 180?",
+              "options": ["$2^2 \\times 3^2 \\times 5$", "$2 \\times 3^2 \\times 10$", "$2^2 \\times 45$", "$4 \\times 9 \\times 5$"],
+              "correctIndex": 0,
+              "explanation": "$180 = 2 \\times 90 = 2 \\times 2 \\times 45 = 2^2 \\times 9 \\times 5 = 2^2 \\times 3^2 \\times 5$. Solo la primera opción usa factores primos."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "(-2)^3 + |{-10}| \\div 2 - 3 \\times (-4)",
+              "steps": [
+                {
+                  "prompt": "(-2)^3 + |{-10}| \\div 2 - 3 \\times (-4)",
+                  "correctParts": ["(-8)", "+", "5", "-", "(-12)"],
+                  "distractors": ["+8", "-5", "+12"],
+                  "hint": "Resuelve potencias, valor absoluto, multiplicaciones y divisiones: $(-2)^3 = -8$, $|{-10}| \\div 2 = 5$, $3 \\times (-4) = -12$"
+                },
+                {
+                  "prompt": "(-8) + 5 - (-12)",
+                  "correctParts": ["-8", "+5", "+12"],
+                  "distractors": ["-12", "-5", "+8"],
+                  "hint": "Restar un negativo es sumar: $-(-12) = +12$"
+                },
+                {
+                  "prompt": "-8 + 5 + 12",
+                  "correctParts": ["-8", "+17"],
+                  "distractors": ["-17", "+8", "+3"],
+                  "hint": "Suma los positivos: $5 + 12 = 17$"
+                },
+                {
+                  "prompt": "-8 + 17",
+                  "correctParts": ["9"],
+                  "distractors": ["-9", "25", "-25"],
+                  "hint": "Resta: $17 - 8 = 9$, el signo mayor es positivo"
+                }
+              ],
+              "finalAnswer": "9"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Un grupo de 36 alumnos y otro de 48 se reparten en equipos iguales del mayor tamaño posible. ¿Cuántos alumnos tiene cada equipo y cuántos equipos hay en total?",
+              "options": ["12 por equipo, 7 equipos", "6 por equipo, 14 equipos", "4 por equipo, 21 equipos", "8 por equipo, 10 equipos"],
+              "correctIndex": 0,
+              "explanation": "m.c.d.(36, 48) = 12 alumnos por equipo. Equipos: $36 \\div 12 + 48 \\div 12 = 3 + 4 = 7$ equipos."
+            }
+          }
+        ]
+      }
     }
   ]
 }

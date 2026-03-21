@@ -394,74 +394,153 @@
     {
       "id": "mat03-exam",
       "lessonId": "mat03-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Potencias, raíces y notación científica",
       "description": "Demuestra tu dominio completo del tema con 10 preguntas de nivel avanzado",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "Simplifica $\\frac{(2^3)^4 \\cdot 2^{-5}}{2^3}$.",
-          "options": ["$2^4$", "$2^7$", "$2^{-4}$", "$2^{10}$"],
-          "correctIndex": 0,
-          "explanation": "$(2^3)^4 = 2^{12}$. Luego $\\frac{2^{12} \\cdot 2^{-5}}{2^3} = \\frac{2^{7}}{2^3} = 2^4 = 16$."
-        },
-        {
-          "question": "¿Cuánto es $(-5)^{-2}$?",
-          "options": ["$-\\frac{1}{25}$", "$\\frac{1}{25}$", "$-25$", "$25$"],
-          "correctIndex": 1,
-          "explanation": "$(-5)^{-2} = \\frac{1}{(-5)^2} = \\frac{1}{25}$. El exponente es par, así que el resultado es positivo."
-        },
-        {
-          "question": "Expresa $0{,}0000073$ en notación científica.",
-          "options": ["$73 \\cdot 10^{-7}$", "$7{,}3 \\cdot 10^{-6}$", "$7{,}3 \\cdot 10^{6}$", "$0{,}73 \\cdot 10^{-5}$"],
-          "correctIndex": 1,
-          "explanation": "Movemos la coma 6 posiciones a la derecha: $0{,}0000073 = 7{,}3 \\cdot 10^{-6}$."
-        },
-        {
-          "question": "Calcula $(3{,}0 \\cdot 10^{8})^2$ en notación científica.",
-          "options": ["$9 \\cdot 10^{16}$", "$6 \\cdot 10^{16}$", "$9 \\cdot 10^{64}$", "$3 \\cdot 10^{16}$"],
-          "correctIndex": 0,
-          "explanation": "$(3{,}0)^2 = 9$ y $(10^8)^2 = 10^{16}$, así que el resultado es $9 \\cdot 10^{16}$."
-        },
-        {
-          "question": "¿Cuál es la raíz cuadrada entera de 200 y su resto?",
-          "options": ["Raíz 13, resto 31", "Raíz 14, resto 4", "Raíz 15, resto 25", "Raíz 14, resto 8"],
-          "correctIndex": 1,
-          "explanation": "$14^2 = 196 < 200 < 225 = 15^2$. Raíz entera = 14, resto = $200 - 196 = 4$."
-        },
-        {
-          "question": "Simplifica $\\frac{6^5 \\cdot 6^{-2}}{6^{-1}}$.",
-          "options": ["$6^2$", "$6^4$", "$6^6$", "$6^{-4}$"],
-          "correctIndex": 1,
-          "explanation": "$\\frac{6^{5+(-2)}}{6^{-1}} = \\frac{6^3}{6^{-1}} = 6^{3-(-1)} = 6^4$."
-        },
-        {
-          "question": "¿Cuánto es $\\left(\\frac{2}{3}\\right)^{-3}$?",
-          "options": ["$\\frac{8}{27}$", "$\\frac{27}{8}$", "$-\\frac{8}{27}$", "$\\frac{6}{9}$"],
-          "correctIndex": 1,
-          "explanation": "$\\left(\\frac{2}{3}\\right)^{-3} = \\left(\\frac{3}{2}\\right)^3 = \\frac{27}{8}$."
-        },
-        {
-          "question": "Calcula $\\frac{4{,}8 \\cdot 10^{12}}{1{,}6 \\cdot 10^{-3}}$ en notación científica.",
-          "options": ["$3 \\cdot 10^{9}$", "$3 \\cdot 10^{15}$", "$3 \\cdot 10^{4}$", "$3 \\cdot 10^{-4}$"],
-          "correctIndex": 1,
-          "explanation": "$\\frac{4{,}8}{1{,}6} = 3$ y $10^{12-(-3)} = 10^{15}$, así que el resultado es $3 \\cdot 10^{15}$."
-        },
-        {
-          "question": "¿Cuál de estas expresiones es IGUAL a $\\sqrt{\\frac{16}{81}}$?",
-          "options": ["$\\frac{16}{81}$", "$\\frac{4}{9}$", "$\\frac{8}{41}$", "$\\frac{2}{9}$"],
-          "correctIndex": 1,
-          "explanation": "$\\sqrt{\\frac{16}{81}} = \\frac{\\sqrt{16}}{\\sqrt{81}} = \\frac{4}{9}$."
-        },
-        {
-          "question": "Si $a = 3 \\cdot 10^4$ y $b = 5 \\cdot 10^3$, ¿cuánto es $a \\cdot b$ en notación científica?",
-          "options": ["$15 \\cdot 10^{7}$", "$1{,}5 \\cdot 10^{8}$", "$1{,}5 \\cdot 10^{7}$", "$8 \\cdot 10^{7}$"],
-          "correctIndex": 1,
-          "explanation": "$3 \\cdot 5 = 15$ y $10^4 \\cdot 10^3 = 10^7$, luego $15 \\cdot 10^7 = 1{,}5 \\cdot 10^8$ (ajustamos para notación científica correcta)."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Simplifica $\\frac{(2^3)^4 \\cdot 2^{-5}}{2^3}$.",
+              "options": ["$2^4$", "$2^7$", "$2^{-4}$", "$2^{10}$"],
+              "correctIndex": 0,
+              "explanation": "$(2^3)^4 = 2^{12}$. Luego $\\frac{2^{12} \\cdot 2^{-5}}{2^3} = \\frac{2^{7}}{2^3} = 2^4 = 16$."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuánto es $(-5)^{-2}$?",
+              "options": ["$-\\frac{1}{25}$", "$\\frac{1}{25}$", "$-25$", "$25$"],
+              "correctIndex": 1,
+              "explanation": "$(-5)^{-2} = \\frac{1}{(-5)^2} = \\frac{1}{25}$. El exponente es par, así que el resultado es positivo."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Para expresar un número en notación científica, lo escribimos como $a \\cdot 10^p$ donde $a$ es un número entre ___ y ___. Si el número original es muy grande, el exponente $p$ es ___. Si el número original es muy pequeño (menor que 1), el exponente $p$ es ___. El exponente $p$ se llama orden de ___.",
+              "blanks": ["1", "10", "positivo", "negativo", "magnitud"],
+              "wordBank": ["1", "10", "100", "positivo", "negativo", "cero", "magnitud", "potencia", "científica"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Expresa $0{,}0000073$ en notación científica.",
+              "options": ["$73 \\cdot 10^{-7}$", "$7{,}3 \\cdot 10^{-6}$", "$7{,}3 \\cdot 10^{6}$", "$0{,}73 \\cdot 10^{-5}$"],
+              "correctIndex": 1,
+              "explanation": "Movemos la coma 6 posiciones a la derecha: $0{,}0000073 = 7{,}3 \\cdot 10^{-6}$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "\\frac{(5^2)^3 \\cdot 5^{-4}}{5^{-1}}",
+              "steps": [
+                {
+                  "prompt": "Aplica la potencia de potencia: $(5^2)^3 = ?$",
+                  "correctParts": ["5^{6}"],
+                  "distractors": ["5^{5}", "5^{8}", "25^3"],
+                  "hint": "Potencia de potencia: se multiplican los exponentes. $(5^2)^3 = 5^{2 \\times 3}$"
+                },
+                {
+                  "prompt": "Multiplica en el numerador: $5^6 \\cdot 5^{-4} = ?$",
+                  "correctParts": ["5^{2}"],
+                  "distractors": ["5^{10}", "5^{-24}", "5^{3}"],
+                  "hint": "Producto de potencias de la misma base: se suman los exponentes. $5^{6+(-4)}$"
+                },
+                {
+                  "prompt": "Divide: $\\frac{5^2}{5^{-1}} = ?$",
+                  "correctParts": ["5^{3}"],
+                  "distractors": ["5^{1}", "5^{-3}", "5^{2}"],
+                  "hint": "División de potencias: se restan los exponentes. $5^{2-(-1)} = 5^{2+1}$"
+                },
+                {
+                  "prompt": "Calcula $5^3 = ?$",
+                  "correctParts": ["125"],
+                  "distractors": ["75", "243", "15"],
+                  "hint": "$5 \\times 5 \\times 5 = 125$"
+                }
+              ],
+              "finalAnswer": "125"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es la raíz cuadrada entera de 200 y su resto?",
+              "options": ["Raíz 13, resto 31", "Raíz 14, resto 4", "Raíz 15, resto 25", "Raíz 14, resto 8"],
+              "correctIndex": 1,
+              "explanation": "$14^2 = 196 < 200 < 225 = 15^2$. Raíz entera = 14, resto = $200 - 196 = 4$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "La raíz cuadrada de un número $b$ es el número ___ $a$ tal que $a^2 = b$. Un número cuya raíz cuadrada es exacta se llama cuadrado ___. Para calcular la raíz cuadrada de una fracción, se calcula la raíz del ___ y del ___ por separado. Por ejemplo, $\\sqrt{\\frac{49}{25}} = \\frac{7}{___}$.",
+              "blanks": ["positivo", "perfecto", "numerador", "denominador", "5"],
+              "wordBank": ["positivo", "negativo", "perfecto", "imperfecto", "numerador", "denominador", "5", "7", "base"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuánto es $\\left(\\frac{2}{3}\\right)^{-3}$?",
+              "options": ["$\\frac{8}{27}$", "$\\frac{27}{8}$", "$-\\frac{8}{27}$", "$\\frac{6}{9}$"],
+              "correctIndex": 1,
+              "explanation": "$\\left(\\frac{2}{3}\\right)^{-3} = \\left(\\frac{3}{2}\\right)^3 = \\frac{27}{8}$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "\\text{Expresa } 56\\,000\\,000 \\text{ en notación científica y elévalo al cuadrado}",
+              "steps": [
+                {
+                  "prompt": "Escribe $56\\,000\\,000$ en notación científica:",
+                  "correctParts": ["5{,}6 \\cdot 10^{7}"],
+                  "distractors": ["56 \\cdot 10^{6}", "5{,}6 \\cdot 10^{6}", "0{,}56 \\cdot 10^{8}"],
+                  "hint": "Mueve la coma 7 posiciones a la izquierda para obtener un número entre 1 y 10."
+                },
+                {
+                  "prompt": "Calcula $(5{,}6 \\cdot 10^7)^2$: primero $(5{,}6)^2 = ?$",
+                  "correctParts": ["31{,}36"],
+                  "distractors": ["11{,}2", "28{,}0", "25{,}6"],
+                  "hint": "$5{,}6 \\times 5{,}6 = 31{,}36$"
+                },
+                {
+                  "prompt": "Ahora $(10^7)^2 = ?$ y combina: $31{,}36 \\cdot 10^{?}$",
+                  "correctParts": ["31{,}36 \\cdot 10^{14}"],
+                  "distractors": ["31{,}36 \\cdot 10^{9}", "31{,}36 \\cdot 10^{49}", "31{,}36 \\cdot 10^{7}"],
+                  "hint": "Potencia de potencia: $(10^7)^2 = 10^{14}$"
+                },
+                {
+                  "prompt": "Ajusta a notación científica correcta: $31{,}36 \\cdot 10^{14} = ?$",
+                  "correctParts": ["3{,}136 \\cdot 10^{15}"],
+                  "distractors": ["3{,}136 \\cdot 10^{13}", "31{,}36 \\cdot 10^{14}", "3{,}136 \\cdot 10^{16}"],
+                  "hint": "$31{,}36 = 3{,}136 \\cdot 10^1$, así que $31{,}36 \\cdot 10^{14} = 3{,}136 \\cdot 10^{15}$"
+                }
+              ],
+              "finalAnswer": "3{,}136 \\cdot 10^{15}"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Si $a = 3 \\cdot 10^4$ y $b = 5 \\cdot 10^3$, ¿cuánto es $a \\cdot b$ en notación científica?",
+              "options": ["$15 \\cdot 10^{7}$", "$1{,}5 \\cdot 10^{8}$", "$1{,}5 \\cdot 10^{7}$", "$8 \\cdot 10^{7}$"],
+              "correctIndex": 1,
+              "explanation": "$3 \\cdot 5 = 15$ y $10^4 \\cdot 10^3 = 10^7$, luego $15 \\cdot 10^7 = 1{,}5 \\cdot 10^8$ (ajustamos para notación científica correcta)."
+            }
+          }
+        ]
+      }
     }
   ]
 }

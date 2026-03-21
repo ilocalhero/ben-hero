@@ -423,74 +423,153 @@
     {
       "id": "mat05-exam",
       "lessonId": "mat05-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Geometría completa",
       "description": "10 preguntas difíciles sobre perímetros, áreas, volúmenes, Pitágoras y poliedros",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "Un triángulo rectángulo tiene catetos de 5 cm y 12 cm. ¿Cuánto mide la hipotenusa?",
-          "options": ["17 cm", "13 cm", "15 cm", "11 cm"],
-          "correctIndex": 1,
-          "explanation": "$h = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$ cm"
-        },
-        {
-          "question": "Calcula el área de un trapecio con bases 14 cm y 8 cm, y altura 5 cm.",
-          "options": ["55 cm²", "70 cm²", "45 cm²", "110 cm²"],
-          "correctIndex": 0,
-          "explanation": "$A = \\frac{(14 + 8) \\times 5}{2} = \\frac{110}{2} = 55$ cm²"
-        },
-        {
-          "question": "¿Cuál es el perímetro de un hexágono regular de lado 7 cm?",
-          "options": ["35 cm", "49 cm", "42 cm", "56 cm"],
-          "correctIndex": 2,
-          "explanation": "Un hexágono tiene 6 lados: $P = 6 \\times 7 = 42$ cm"
-        },
-        {
-          "question": "Calcula el volumen de un cilindro con radio 4 cm y altura 10 cm.",
-          "options": ["160π cm³", "80π cm³", "40π cm³", "320π cm³"],
-          "correctIndex": 0,
-          "explanation": "$V = \\pi r^2 h = \\pi \\times 16 \\times 10 = 160\\pi$ cm³"
-        },
-        {
-          "question": "¿Cuántas aristas tiene un icosaedro?",
-          "options": ["12", "20", "30", "60"],
-          "correctIndex": 2,
-          "explanation": "El icosaedro tiene 20 caras triangulares, 12 vértices y 30 aristas. Se cumple la fórmula de Euler: $V - A + C = 12 - 30 + 20 = 2$."
-        },
-        {
-          "question": "¿Cuál es el volumen de una pirámide cuadrangular con base de lado 6 cm y altura 9 cm?",
-          "options": ["108 cm³", "324 cm³", "162 cm³", "54 cm³"],
-          "correctIndex": 0,
-          "explanation": "$V = \\frac{A_{\\text{base}} \\cdot h}{3} = \\frac{36 \\cdot 9}{3} = 108$ cm³"
-        },
-        {
-          "question": "Una esfera tiene radio 3 cm. ¿Cuál es su volumen?",
-          "options": ["36π cm³", "27π cm³", "108π cm³", "12π cm³"],
-          "correctIndex": 0,
-          "explanation": "$V = \\frac{4\\pi r^3}{3} = \\frac{4\\pi \\cdot 27}{3} = 36\\pi$ cm³"
-        },
-        {
-          "question": "Un cono tiene radio 3 cm y altura 4 cm. ¿Cuánto mide su generatriz?",
-          "options": ["7 cm", "5 cm", "6 cm", "√7 cm"],
-          "correctIndex": 1,
-          "explanation": "$g = \\sqrt{h^2 + r^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$ cm"
-        },
-        {
-          "question": "Calcula el área total de un cubo de arista 8 cm.",
-          "options": ["384 cm²", "512 cm²", "256 cm²", "192 cm²"],
-          "correctIndex": 0,
-          "explanation": "$A_T = 6 \\cdot l^2 = 6 \\cdot 64 = 384$ cm²"
-        },
-        {
-          "question": "¿Cuál es el área de un sector circular de radio 10 cm y ángulo central 90°?",
-          "options": ["25π cm²", "50π cm²", "100π cm²", "10π cm²"],
-          "correctIndex": 0,
-          "explanation": "$A = \\frac{\\pi r^2 \\cdot \\theta}{360} = \\frac{\\pi \\cdot 100 \\cdot 90}{360} = 25\\pi$ cm²"
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Un triángulo rectángulo tiene catetos de 5 cm y 12 cm. ¿Cuánto mide la hipotenusa?",
+              "options": ["17 cm", "13 cm", "15 cm", "11 cm"],
+              "correctIndex": 1,
+              "explanation": "$h = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$ cm"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Calcula el área de un trapecio con bases 14 cm y 8 cm, y altura 5 cm.",
+              "options": ["55 cm²", "70 cm²", "45 cm²", "110 cm²"],
+              "correctIndex": 0,
+              "explanation": "$A = \\frac{(14 + 8) \\times 5}{2} = \\frac{110}{2} = 55$ cm²"
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Para calcular el perímetro de un polígono regular, multiplicamos el número de ___ por la longitud del lado. El área de un polígono regular se calcula con la fórmula $A = \\frac{p \\cdot a}{2}$, donde $p$ es el perímetro y $a$ es la ___. En un triángulo rectángulo, la hipotenusa se calcula aplicando el ___ de Pitágoras: $a^2 = b^2 + c^2$. Los números naturales que cumplen esta relación forman una ___ pitagórica.",
+              "blanks": ["lados", "apotema", "teorema", "terna"],
+              "wordBank": ["lados", "apotema", "teorema", "terna", "vértices", "diagonal", "axioma", "serie"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Calcula el volumen de un cilindro con radio 4 cm y altura 10 cm.",
+              "options": ["160π cm³", "80π cm³", "40π cm³", "320π cm³"],
+              "correctIndex": 0,
+              "explanation": "$V = \\pi r^2 h = \\pi \\times 16 \\times 10 = 160\\pi$ cm³"
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Calcula el volumen de un cono con radio $r = 6$ cm y altura $h = 9$ cm",
+              "steps": [
+                {
+                  "prompt": "Escribe la fórmula del volumen del cono",
+                  "correctParts": ["V = \\frac{\\pi r^2 \\cdot h}{3}"],
+                  "distractors": ["V = \\pi r^2 \\cdot h", "V = \\frac{\\pi r \\cdot h}{3}", "V = \\frac{4\\pi r^3}{3}"],
+                  "hint": "El volumen del cono es un tercio del volumen del cilindro con la misma base y altura"
+                },
+                {
+                  "prompt": "Sustituye $r = 6$ y $h = 9$",
+                  "correctParts": ["\\frac{\\pi \\cdot 6^2 \\cdot 9}{3}"],
+                  "distractors": ["\\frac{\\pi \\cdot 6 \\cdot 9}{3}", "\\frac{\\pi \\cdot 9^2 \\cdot 6}{3}", "\\pi \\cdot 6^2 \\cdot 9"],
+                  "hint": "Reemplaza los valores: $V = \\frac{\\pi \\cdot 6^2 \\cdot 9}{3}$"
+                },
+                {
+                  "prompt": "Calcula $6^2 = 36$ y multiplica por 9",
+                  "correctParts": ["\\frac{\\pi \\cdot 324}{3}"],
+                  "distractors": ["\\frac{\\pi \\cdot 216}{3}", "\\frac{\\pi \\cdot 54}{3}", "\\frac{\\pi \\cdot 162}{3}"],
+                  "hint": "$36 \\times 9 = 324$"
+                },
+                {
+                  "prompt": "Divide $324 \\div 3$",
+                  "correctParts": ["108\\pi \\text{ cm}^3"],
+                  "distractors": ["162\\pi \\text{ cm}^3", "54\\pi \\text{ cm}^3", "324\\pi \\text{ cm}^3"],
+                  "hint": "$324 \\div 3 = 108$"
+                }
+              ],
+              "finalAnswer": "108\\pi \\text{ cm}^3"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuántas aristas tiene un icosaedro?",
+              "options": ["12", "20", "30", "60"],
+              "correctIndex": 2,
+              "explanation": "El icosaedro tiene 20 caras triangulares, 12 vértices y 30 aristas. Se cumple la fórmula de Euler: $V - A + C = 12 - 30 + 20 = 2$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Un ___ es un poliedro con dos bases paralelas e iguales y caras laterales que son paralelogramos. Su volumen se calcula como $V = A_{\\text{base}} \\cdot h$. En cambio, una pirámide tiene solo ___ base y su volumen es un ___ del volumen del prisma con la misma base y altura. Los cinco poliedros regulares se llaman sólidos ___.",
+              "blanks": ["prisma", "una", "tercio", "platónicos"],
+              "wordBank": ["prisma", "una", "tercio", "platónicos", "cilindro", "dos", "mitad", "arquimedianos"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Una esfera tiene radio 3 cm. ¿Cuál es su volumen?",
+              "options": ["36π cm³", "27π cm³", "108π cm³", "12π cm³"],
+              "correctIndex": 0,
+              "explanation": "$V = \\frac{4\\pi r^3}{3} = \\frac{4\\pi \\cdot 27}{3} = 36\\pi$ cm³"
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Calcula la superficie total de una esfera con diámetro $d = 14$ cm",
+              "steps": [
+                {
+                  "prompt": "Determina el radio a partir del diámetro",
+                  "correctParts": ["r = \\frac{d}{2} = \\frac{14}{2} = 7 \\text{ cm}"],
+                  "distractors": ["r = d = 14 \\text{ cm}", "r = 2d = 28 \\text{ cm}", "r = \\frac{14}{4} = 3{,}5 \\text{ cm}"],
+                  "hint": "El radio es la mitad del diámetro: $r = \\frac{14}{2}$"
+                },
+                {
+                  "prompt": "Escribe la fórmula de la superficie de la esfera y sustituye",
+                  "correctParts": ["A = 4\\pi r^2 = 4\\pi \\cdot 7^2"],
+                  "distractors": ["A = \\pi r^2 = \\pi \\cdot 7^2", "A = 2\\pi r^2 = 2\\pi \\cdot 7^2", "A = 4\\pi r^3 = 4\\pi \\cdot 7^3"],
+                  "hint": "La superficie de una esfera es $A = 4\\pi r^2$"
+                },
+                {
+                  "prompt": "Calcula $7^2$ y multiplica",
+                  "correctParts": ["4\\pi \\cdot 49 = 196\\pi"],
+                  "distractors": ["4\\pi \\cdot 14 = 56\\pi", "4\\pi \\cdot 42 = 168\\pi", "4\\pi \\cdot 7 = 28\\pi"],
+                  "hint": "$7^2 = 49$ y $4 \\times 49 = 196$"
+                },
+                {
+                  "prompt": "Expresa el resultado final",
+                  "correctParts": ["196\\pi \\approx 615{,}75 \\text{ cm}^2"],
+                  "distractors": ["49\\pi \\approx 153{,}94 \\text{ cm}^2", "392\\pi \\approx 1231{,}50 \\text{ cm}^2", "98\\pi \\approx 307{,}88 \\text{ cm}^2"],
+                  "hint": "$196 \\times 3{,}1416 \\approx 615{,}75$"
+                }
+              ],
+              "finalAnswer": "196\\pi \\text{ cm}^2"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el área de un sector circular de radio 10 cm y ángulo central 90°?",
+              "options": ["25π cm²", "50π cm²", "100π cm²", "10π cm²"],
+              "correctIndex": 0,
+              "explanation": "$A = \\frac{\\pi r^2 \\cdot \\theta}{360} = \\frac{\\pi \\cdot 100 \\cdot 90}{360} = 25\\pi$ cm²"
+            }
+          }
+        ]
+      }
     }
   ]
 }

@@ -10,6 +10,7 @@ export type ActivityType =
   | 'paragraph_template'
   | 'writing_mission'
   | 'equation_builder'
+  | 'exam'
   | 'source_analysis'
   | 'compare_contrast'
 
@@ -86,6 +87,16 @@ export interface EquationBuilderData {
   problems: EquationBuilderProblem[]  // Multiple problems per activity
 }
 
+export type ExamQuestion =
+  | { type: 'quiz'; data: QuizQuestion }
+  | { type: 'fill_blank'; data: FillBlankData }
+  | { type: 'equation_builder'; data: EquationBuilderProblem }
+
+export interface ExamData {
+  timePerQuestion: number   // seconds for quiz/fill_blank (equation_builder = no limit)
+  questions: ExamQuestion[]
+}
+
 export interface Activity {
   id: string
   lessonId?: string
@@ -95,7 +106,7 @@ export interface Activity {
   difficulty: 1 | 2 | 3
   xpReward: number
   estimatedMinutes: number
-  data: QuizQuestion[] | FillBlankData | WritingMissionData | EquationBuilderData | Record<string, unknown>
+  data: QuizQuestion[] | FillBlankData | WritingMissionData | EquationBuilderData | ExamData | Record<string, unknown>
 }
 
 export interface Tema {

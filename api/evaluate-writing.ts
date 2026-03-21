@@ -26,10 +26,10 @@ function countWords(text: string): number {
 }
 
 function scoreToStarsAndXP(score: number): { stars: number; xpBonus: number } {
-  if (score >= 85) return { stars: 5, xpBonus: 50 }
-  if (score >= 75) return { stars: 4, xpBonus: 30 }
-  if (score >= 65) return { stars: 3, xpBonus: 15 }
-  if (score >= 50) return { stars: 2, xpBonus: 0 }
+  if (score >= 80) return { stars: 5, xpBonus: 50 }
+  if (score >= 65) return { stars: 4, xpBonus: 30 }
+  if (score >= 55) return { stars: 3, xpBonus: 15 }
+  if (score >= 40) return { stars: 2, xpBonus: 5 }
   return { stars: 1, xpBonus: 0 }
 }
 
@@ -57,11 +57,11 @@ export async function evaluateWritingHandler(req: Request, res: Response) {
     const result: EvaluationResult = {
       score,
       stars,
-      strengths: [],
-      improvements: [`Necesitas desarrollar más tu respuesta. Llevas ${wordCount} palabras, el mínimo es ${minimumWords}.`],
+      strengths: wordCount > 0 ? ['Has empezado a escribir — ¡buen comienzo!'] : [],
+      improvements: [`Intenta escribir un poco más — llevas ${wordCount} palabras y necesitas ${minimumWords}. ¡Usa los iniciadores de frases para ayudarte!`],
       encouragement: mode === 'show_work'
-        ? '¡Necesitas explicar más tu solución! Muestra cada paso con detalle.'
-        : '¡Sigue practicando! Los grandes historiadores nunca se rinden. ¡Escribe más y subirás de nivel!',
+        ? '¡Buen intento! Prueba a mostrar cada paso — vas por buen camino.'
+        : '¡Buen intento! Usa los iniciadores de frases y el vocabulario — están ahí para ayudarte. ¡Cada palabra cuenta!',
       xpBonus,
       wordCount,
     }
@@ -129,48 +129,50 @@ Devuelve EXACTAMENTE este JSON:
 PUNTOS CLAVE A CUBRIR:
 ${keyPointsList}
 
-TÉRMINOS CLAVE DEL RÚBRICA: ${rubricKeyTerms.join(', ')}
+TÉRMINOS CLAVE: ${rubricKeyTerms.join(', ')}
 
 RESPUESTA DEL ALUMNO:
 ${answer}
 
 INSTRUCCIONES DE EVALUACIÓN:
-Sé exigente pero justo. Ben tiene 13 años y necesita aprender a escribir bien. No regales puntos.
+Ben tiene 13 años y está aprendiendo a escribir textos de historia. La app le ofrece iniciadores de frases, vocabulario y conectores para ayudarle — usar esas herramientas es BUENO y debe ser recompensado, no penalizado. Evalúa con generosidad el esfuerzo.
 
 RÚBRICA (100 puntos):
-1. CONTENIDO (40 pts): ¿Cubre TODOS los puntos clave con detalle? No basta con mencionarlos — debe EXPLICARLOS.
-   - Todos cubiertos con explicación = 35-40 pts
-   - Algunos cubiertos bien = 20-34 pts
-   - Solo menciona sin explicar = 10-19 pts
-   - Falta la mayoría = 0-9 pts
+1. CONTENIDO (35 pts): ¿Menciona los puntos clave? Mencionar + añadir un breve comentario propio = puntuación alta.
+   - Toca todos o casi todos los puntos con algo de desarrollo = 28-35 pts
+   - Cubre la mayoría de puntos = 18-27 pts
+   - Menciona algunos puntos = 10-17 pts
+   - Apenas toca el tema = 0-9 pts
 
-2. VOCABULARIO (25 pts): ¿Usa los términos clave de forma contextual y correcta?
-   - Todos usados correctamente en contexto = 20-25 pts
-   - Algunos usados bien = 10-19 pts
-   - Solo los menciona sin contexto = 5-9 pts
-   - No usa vocabulario específico = 0-4 pts
+2. VOCABULARIO (25 pts): ¿Usa los términos clave? Usarlos en una frase = genial. Solo mencionarlos = aceptable.
+   - La mayoría de términos usados en frases = 20-25 pts
+   - Varios términos usados = 12-19 pts
+   - Algunos términos mencionados = 5-11 pts
+   - Ningún término = 0-4 pts
 
-3. ESTRUCTURA Y CONECTORES (20 pts): ¿Tiene introducción, desarrollo y conclusión? ¿Usa conectores?
-   - Estructura clara con conectores variados = 16-20 pts
-   - Estructura básica con algunos conectores = 8-15 pts
-   - Sin estructura clara = 0-7 pts
+3. ESFUERZO Y DESARROLLO (25 pts): ¿Se nota que lo intentó? ¿Usó los iniciadores Y añadió algo propio? ¿Usó conectores? ¿Escribió más del mínimo?
+   - Usó iniciadores + añadió contenido propio + conectores = 20-25 pts
+   - Usó iniciadores + algo de contenido propio = 12-19 pts
+   - Usó iniciadores con añadidos mínimos = 6-11 pts
+   - Solo pegó texto sin ningún esfuerzo = 0-5 pts
 
-4. EXPRESIÓN ESCRITA (15 pts): ¿Las frases tienen sentido? ¿Son propias o solo copian los iniciadores?
-   - Frases propias, bien construidas = 12-15 pts
-   - Mezcla de frases propias y copiadas = 6-11 pts
-   - Solo copia iniciadores sin añadir nada = 0-5 pts
+4. ESTRUCTURA (15 pts): ¿Tiene algún orden? No necesita ser perfecto — solo que fluya.
+   - Se nota alguna organización (intro, cuerpo, cierre) = 12-15 pts
+   - Flujo básico = 6-11 pts
+   - Sin ningún orden = 0-5 pts
 
-IMPORTANTE:
-- Si el alumno solo pega los iniciadores de frases sin desarrollarlos, la puntuación máxima es 30.
-- Si no explica los puntos clave (solo los lista), máximo 50.
-- Una respuesta de 65+ requiere explicaciones reales y vocabulario en contexto.
+GUÍA DE PUNTUACIÓN:
+- Si usó los iniciadores y añadió CUALQUIER cosa propia → mínimo 50 pts.
+- Si menciona los puntos clave y usa vocabulario → mínimo 60 pts.
+- Una respuesta de 55+ significa que Ben se esforzó y aprendió algo.
+- Sé generoso: estamos motivando a un chico de 13 años a que le guste escribir.
 
-- strengths: 2 cosas específicas que hizo bien (en español)
-- improvements: 2 áreas concretas donde debe mejorar (en español, con ejemplo de qué podría escribir)
-- encouragement: mensaje motivador estilo videojuego en español — reconoce el esfuerzo pero empújale a mejorar
+- strengths: 2 cosas específicas que hizo bien (celebra el esfuerzo, en español)
+- improvements: 1 sugerencia concreta y alcanzable (NO "desarrolla más" — di exactamente qué añadir, ej: "Prueba añadir por qué los visigodos estaban débiles")
+- encouragement: mensaje celebratorio estilo videojuego en español — hazle sentir que lo está logrando
 
 Devuelve EXACTAMENTE este JSON:
-{"score": <0-100>, "strengths": ["..."], "improvements": ["..."], "encouragement": "..."}`
+{"score": <0-100>, "strengths": ["...", "..."], "improvements": ["..."], "encouragement": "..."}`
 
   try {
     const message = await client.messages.create({
@@ -181,10 +183,10 @@ Devuelve EXACTAMENTE este JSON:
 Evalúa la solución del alumno con rigor matemático — no regales puntos. Devuelve ÚNICAMENTE JSON válido, sin texto adicional.
 El alumno se llama Ben. Necesita aprender a mostrar su trabajo y explicar su razonamiento matemático paso a paso.
 El tono debe ser motivador pero exigente — como un entrenador que sabe que Ben puede dar más.`
-        : `Eres un profesor exigente pero motivador de Historia de España para estudiantes de 2.º ESO (13 años).
-Evalúa la respuesta del alumno con rigor académico — no regales puntos. Devuelve ÚNICAMENTE JSON válido, sin texto adicional.
-El alumno se llama Ben. Necesita mejorar su escritura, así que sé honesto en el feedback: señala exactamente qué falta y cómo mejorarlo.
-El tono debe ser motivador pero exigente — como un entrenador que sabe que Ben puede dar más.`,
+        : `Eres un profesor amable y motivador de Historia de España para un estudiante de 2.º ESO (13 años).
+Evalúa la respuesta del alumno con generosidad — premia el esfuerzo. Devuelve ÚNICAMENTE JSON válido, sin texto adicional.
+El alumno se llama Ben. Le cuesta escribir, así que cada intento es un logro. La app le da iniciadores de frases, vocabulario y conectores — usarlos bien es positivo.
+Tu tono debe ser como un mentor que celebra cada paso adelante. Si Ben se esforzó, que se note en la puntuación.`,
       messages: [{ role: 'user', content: userPrompt }],
     })
 

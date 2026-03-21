@@ -402,74 +402,147 @@
     {
       "id": "mat06-exam",
       "lessonId": "mat06-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: A escala",
       "description": "10 preguntas difíciles sobre escalas, semejanza, teorema de Tales y segmentos proporcionales",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "Dos triángulos semejantes tienen razón de semejanza k = 5/3. Si el perímetro del menor es 27 cm, ¿cuál es el perímetro del mayor?",
-          "options": ["16,2 cm", "32 cm", "45 cm", "75 cm"],
-          "correctIndex": 2,
-          "explanation": "La razón de perímetros es igual a k. Perímetro mayor = 27 × 5/3 = 45 cm."
-        },
-        {
-          "question": "En un mapa de escala 1:25 000, la distancia entre dos puntos mide 6,4 cm. ¿Cuál es la distancia real en metros?",
-          "options": ["160 m", "640 m", "1600 m", "6400 m"],
-          "correctIndex": 2,
-          "explanation": "Distancia real = 6,4 × 25 000 = 160 000 cm = 1600 m."
-        },
-        {
-          "question": "Dos figuras semejantes tienen razón de semejanza k = 4. Si el área de la figura pequeña es 12 cm², ¿cuánto vale el área de la grande?",
-          "options": ["48 cm²", "96 cm²", "144 cm²", "192 cm²"],
-          "correctIndex": 3,
-          "explanation": "Razón de áreas = k² = 16. Área grande = 12 × 16 = 192 cm²."
-        },
-        {
-          "question": "Rectas paralelas cortan dos secantes. En una, los segmentos miden 5 y 8. En la otra, el primer segmento mide 15. ¿Cuánto mide el segundo?",
-          "options": ["9,375", "18", "24", "40"],
-          "correctIndex": 2,
-          "explanation": "Por Tales: 5/8 = 15/x → 5x = 120 → x = 24."
-        },
-        {
-          "question": "Una maqueta de un edificio se ha construido a escala 1:200. Si la maqueta mide 15 cm de alto, ¿cuántos metros mide el edificio real?",
-          "options": ["15 m", "30 m", "300 m", "3000 m"],
-          "correctIndex": 1,
-          "explanation": "Altura real = 15 × 200 = 3000 cm = 30 m."
-        },
-        {
-          "question": "Un triángulo de lados 6, 8 y 10 cm es semejante a otro cuyo lado menor mide 9 cm. ¿Cuánto mide el lado mayor del segundo?",
-          "options": ["12 cm", "13,5 cm", "15 cm", "18 cm"],
-          "correctIndex": 2,
-          "explanation": "k = 9/6 = 1,5. Lado mayor = 10 × 1,5 = 15 cm."
-        },
-        {
-          "question": "Dos cubos semejantes tienen razón de semejanza k = 3. Si el volumen del pequeño es 8 cm³, ¿cuál es el volumen del grande?",
-          "options": ["24 cm³", "72 cm³", "192 cm³", "216 cm³"],
-          "correctIndex": 3,
-          "explanation": "Razón de volúmenes = k³ = 27. Volumen grande = 8 × 27 = 216 cm³."
-        },
-        {
-          "question": "En un plano a escala 1:500, una habitación mide 1,2 cm × 0,8 cm. ¿Cuál es el área real de la habitación en m²?",
-          "options": ["2,4 m²", "4,8 m²", "24 m²", "48 m²"],
-          "correctIndex": 2,
-          "explanation": "Largo real = 1,2 × 500 = 600 cm = 6 m. Ancho real = 0,8 × 500 = 400 cm = 4 m. Área = 6 × 4 = 24 m²."
-        },
-        {
-          "question": "Un poste de 2 m proyecta una sombra de 3 m. Un árbol cercano proyecta una sombra de 10,5 m. ¿Cuánto mide el árbol?",
-          "options": ["5,25 m", "7 m", "15,75 m", "21 m"],
-          "correctIndex": 1,
-          "explanation": "Triángulos semejantes: h/2 = 10,5/3 → h = 2 × 3,5 = 7 m."
-        },
-        {
-          "question": "Dos triángulos están en posición de Tales con bases paralelas. Los lados de uno miden 4, 5 y 7. Si la base del mayor mide 14, ¿cuánto suman los otros dos lados del mayor?",
-          "options": ["9", "14", "18", "28"],
-          "correctIndex": 2,
-          "explanation": "k = 14/7 = 2. Los otros lados miden 4 × 2 = 8 y 5 × 2 = 10. Suma = 8 + 10 = 18."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Dos triángulos semejantes tienen razón de semejanza k = 5/3. Si el perímetro del menor es 27 cm, ¿cuál es el perímetro del mayor?",
+              "options": ["16,2 cm", "32 cm", "45 cm", "75 cm"],
+              "correctIndex": 2,
+              "explanation": "La razón de perímetros es igual a k. Perímetro mayor = 27 × 5/3 = 45 cm."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "En un mapa de escala 1:25 000, la distancia entre dos puntos mide 6,4 cm. ¿Cuál es la distancia real en metros?",
+              "options": ["160 m", "640 m", "1600 m", "6400 m"],
+              "correctIndex": 2,
+              "explanation": "Distancia real = 6,4 × 25 000 = 160 000 cm = 1600 m."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "El teorema de ___ establece que si varias rectas ___ cortan a dos rectas secantes, los segmentos determinados son ___. La constante que relaciona los lados de dos figuras semejantes se llama razón de ___. Si la razón de semejanza es $k$, la razón de áreas es ___ y la de volúmenes es ___.",
+              "blanks": ["Tales", "paralelas", "proporcionales", "semejanza", "k²", "k³"],
+              "wordBank": ["Tales", "Pitágoras", "paralelas", "perpendiculares", "proporcionales", "iguales", "semejanza", "escala", "k²", "k³", "2k", "3k"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Dos figuras semejantes tienen razón de semejanza k = 4. Si el área de la figura pequeña es 12 cm², ¿cuánto vale el área de la grande?",
+              "options": ["48 cm²", "96 cm²", "144 cm²", "192 cm²"],
+              "correctIndex": 3,
+              "explanation": "Razón de áreas = k² = 16. Área grande = 12 × 16 = 192 cm²."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "En un plano a escala 1:500, una habitación mide 1{,}2\\text{ cm} \\times 0{,}8\\text{ cm}. ¿Cuál es el área real en m²?",
+              "steps": [
+                {
+                  "prompt": "\\text{Calcula el largo real}",
+                  "correctParts": ["1{,}2 \\times 500", "=", "600 \\text{ cm}"],
+                  "distractors": ["1{,}2 \\times 50", "1{,}2 + 500", "600 \\text{ m}"],
+                  "hint": "Multiplica la medida del plano por la escala: $1{,}2 \\times 500$"
+                },
+                {
+                  "prompt": "\\text{Calcula el ancho real}",
+                  "correctParts": ["0{,}8 \\times 500", "=", "400 \\text{ cm}"],
+                  "distractors": ["0{,}8 \\times 50", "0{,}8 + 500", "400 \\text{ m}"],
+                  "hint": "Multiplica: $0{,}8 \\times 500 = 400$ cm"
+                },
+                {
+                  "prompt": "\\text{Convierte a metros}",
+                  "correctParts": ["600 \\text{ cm} = 6 \\text{ m}", "400 \\text{ cm} = 4 \\text{ m}"],
+                  "distractors": ["600 \\text{ cm} = 60 \\text{ m}", "400 \\text{ cm} = 40 \\text{ m}", "600 \\text{ cm} = 0{,}6 \\text{ m}"],
+                  "hint": "Divide entre 100 para pasar de cm a m"
+                },
+                {
+                  "prompt": "\\text{Calcula el área real}",
+                  "correctParts": ["6 \\times 4", "=", "24 \\text{ m}^2"],
+                  "distractors": ["6 + 4 = 10 \\text{ m}^2", "6 \\times 4 = 48 \\text{ m}^2", "2{,}4 \\text{ m}^2"],
+                  "hint": "Área = largo × ancho = $6 \\times 4$"
+                }
+              ],
+              "finalAnswer": "24 \\text{ m}^2"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Rectas paralelas cortan dos secantes. En una, los segmentos miden 5 y 8. En la otra, el primer segmento mide 15. ¿Cuánto mide el segundo?",
+              "options": ["9,375", "18", "24", "40"],
+              "correctIndex": 2,
+              "explanation": "Por Tales: 5/8 = 15/x → 5x = 120 → x = 24."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "La escala de un mapa se expresa como la fracción entre la distancia en la ___ y la distancia en la ___. Un mapa a escala 1:50 000 significa que 1 cm en el mapa equivale a ___ metros reales. Si ampliamos una foto un 25%, multiplicamos sus dimensiones por ___. En una maqueta a escala 1:200, un edificio real de 30 m se representa con ___ cm de altura.",
+              "blanks": ["representación", "realidad", "500", "1,25", "15"],
+              "wordBank": ["representación", "realidad", "maqueta", "500", "5000", "50", "1,25", "0,25", "25", "15", "150", "1,5"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Una maqueta de un edificio se ha construido a escala 1:200. Si la maqueta mide 15 cm de alto, ¿cuántos metros mide el edificio real?",
+              "options": ["15 m", "30 m", "300 m", "3000 m"],
+              "correctIndex": 1,
+              "explanation": "Altura real = 15 × 200 = 3000 cm = 30 m."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Un poste de 2\\text{ m} proyecta una sombra de 3\\text{ m}. Un árbol cercano proyecta una sombra de 10{,}5\\text{ m}. ¿Cuánto mide el árbol?",
+              "steps": [
+                {
+                  "prompt": "\\text{Plantea la proporción (triángulos semejantes)}",
+                  "correctParts": ["\\frac{h}{2}", "=", "\\frac{10{,}5}{3}"],
+                  "distractors": ["\\frac{2}{h} = \\frac{10{,}5}{3}", "\\frac{h}{3} = \\frac{2}{10{,}5}", "\\frac{h}{10{,}5} = \\frac{3}{2}"],
+                  "hint": "La altura es al poste como la sombra del árbol es a la sombra del poste"
+                },
+                {
+                  "prompt": "\\text{Multiplica en cruz}",
+                  "correctParts": ["3h", "=", "2 \\times 10{,}5", "=", "21"],
+                  "distractors": ["2h = 31{,}5", "3h = 12{,}5", "h = 10{,}5 - 3"],
+                  "hint": "Multiplica en cruz: $3 \\cdot h = 2 \\times 10{,}5$"
+                },
+                {
+                  "prompt": "\\text{Despeja } h",
+                  "correctParts": ["h", "=", "\\frac{21}{3}", "=", "7 \\text{ m}"],
+                  "distractors": ["h = \\frac{21}{2} = 10{,}5 \\text{ m}", "h = \\frac{21}{10{,}5} = 2 \\text{ m}", "h = 21 - 3 = 18 \\text{ m}"],
+                  "hint": "Divide ambos lados entre 3: $h = 21 / 3$"
+                }
+              ],
+              "finalAnswer": "7 \\text{ m}"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Dos triángulos están en posición de Tales con bases paralelas. Los lados de uno miden 4, 5 y 7. Si la base del mayor mide 14, ¿cuánto suman los otros dos lados del mayor?",
+              "options": ["9", "14", "18", "28"],
+              "correctIndex": 2,
+              "explanation": "k = 14/7 = 2. Los otros lados miden 4 × 2 = 8 y 5 × 2 = 10. Suma = 8 + 10 = 18."
+            }
+          }
+        ]
+      }
     }
   ]
 }

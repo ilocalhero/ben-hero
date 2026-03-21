@@ -8,6 +8,7 @@ import { QuizActivity } from '../components/activities/QuizActivity'
 import { FillBlankActivity } from '../components/activities/FillBlankActivity'
 import { WritingMission } from '../components/activities/WritingMission'
 import { EquationBuilderActivity } from '../components/activities/EquationBuilderActivity'
+import { ExamActivity } from '../components/activities/ExamActivity'
 import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { useXPAnimation } from '../stores/useXPAnimation'
@@ -27,6 +28,7 @@ const activityTypeLabel: Record<string, string> = {
   paragraph_template: 'Parrafo guiado',
   writing_mission: 'Mision escrita',
   equation_builder: 'Construye la ecuacion',
+  exam: 'Examen Final',
   source_analysis: 'Analisis de fuente',
   compare_contrast: 'Comparar y contrastar',
 }
@@ -443,7 +445,8 @@ export function ActivityPage() {
         {(activity.type === 'quiz' ||
           activity.type === 'fill_blank' ||
           activity.type === 'writing_mission' ||
-          activity.type === 'equation_builder') ? (
+          activity.type === 'equation_builder' ||
+          activity.type === 'exam') ? (
           <div className="flex justify-center">
             <Button
               onClick={() => setStarted(true)}
@@ -461,7 +464,8 @@ export function ActivityPage() {
         {activity.type !== 'quiz' &&
           activity.type !== 'fill_blank' &&
           activity.type !== 'writing_mission' &&
-          activity.type !== 'equation_builder' && (
+          activity.type !== 'equation_builder' &&
+          activity.type !== 'exam' && (
           <div className="flex justify-center">
             <Link to={`/temas/${temaId}`}>
               <Button variant="secondary">
@@ -539,10 +543,20 @@ export function ActivityPage() {
         />
       )}
 
+      {activity.type === 'exam' && (
+        <ExamActivity
+          key={activityKey}
+          activity={activity}
+          temaId={temaId!}
+          onComplete={handleComplete}
+        />
+      )}
+
       {activity.type !== 'quiz' &&
         activity.type !== 'fill_blank' &&
         activity.type !== 'writing_mission' &&
-        activity.type !== 'equation_builder' && (
+        activity.type !== 'equation_builder' &&
+        activity.type !== 'exam' && (
           <ComingSoon xpReward={activity.xpReward} />
         )}
     </motion.div>

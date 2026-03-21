@@ -1,8 +1,9 @@
 export const PASSING_SCORES = {
   quiz: 60,
   fill_blank: 60,
-  writing_mission: 65,
+  writing_mission: 55,
   equation_builder: 55,
+  exam: 60,
 } as const
 
 export function isPassing(type: string, score: number): boolean {

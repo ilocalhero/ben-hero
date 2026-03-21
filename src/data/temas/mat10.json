@@ -417,74 +417,153 @@
     {
       "id": "mat10-exam",
       "lessonId": "mat10-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final: Funciones y rectas",
       "description": "10 preguntas avanzadas sobre funciones, dominio, recorrido, pendiente, ecuación de la recta y rectas paralelas/perpendiculares",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 12,
-      "data": [
-        {
-          "question": "La función $f(x) = \\frac{1}{x - 3}$ no está definida para:",
-          "options": ["$x = 0$", "$x = 1$", "$x = 3$", "$x = -3$"],
-          "correctIndex": 2,
-          "explanation": "El denominador se anula cuando $x - 3 = 0$, es decir $x = 3$. Ese valor no pertenece al dominio."
-        },
-        {
-          "question": "¿Cuál es el dominio de la función representada por un segmento que va de $(-5, 2)$ a $(3, -4)$?",
-          "options": ["$[-4, 2]$", "$[-5, 3]$", "$[-5, -4]$", "$[2, 3]$"],
-          "correctIndex": 1,
-          "explanation": "El dominio son los valores de $x$: desde $-5$ hasta $3$, es decir $[-5, 3]$."
-        },
-        {
-          "question": "¿Cuál es la pendiente de la recta que pasa por $(-2, 5)$ y $(4, -7)$?",
-          "options": ["$2$", "$-2$", "$\\frac{1}{2}$", "$-\\frac{1}{2}$"],
-          "correctIndex": 1,
-          "explanation": "$m = \\frac{-7 - 5}{4 - (-2)} = \\frac{-12}{6} = -2$"
-        },
-        {
-          "question": "La recta $y = -\\frac{1}{2}x + 4$ corta al eje X en:",
-          "options": ["$(4, 0)$", "$(8, 0)$", "$(-8, 0)$", "$(0, 4)$"],
-          "correctIndex": 1,
-          "explanation": "Hacemos $y = 0$: $0 = -\\frac{1}{2}x + 4 \\Rightarrow \\frac{1}{2}x = 4 \\Rightarrow x = 8$. El punto es $(8, 0)$."
-        },
-        {
-          "question": "¿Cuál de estas rectas es perpendicular a $y = 2x - 5$?",
-          "options": ["$y = 2x + 3$", "$y = -2x + 1$", "$y = -\\frac{1}{2}x + 7$", "$y = \\frac{1}{2}x - 5$"],
-          "correctIndex": 2,
-          "explanation": "Dos rectas son perpendiculares si $m_1 \\cdot m_2 = -1$. Como $2 \\cdot (-\\frac{1}{2}) = -1$, la recta con $m = -\\frac{1}{2}$ es perpendicular."
-        },
-        {
-          "question": "Si una función tiene un máximo en $(3, 7)$ y un mínimo en $(6, 1)$, ¿en qué intervalo es decreciente?",
-          "options": ["$(-\\infty, 3)$", "$(3, 6)$", "$(6, +\\infty)$", "$(1, 7)$"],
-          "correctIndex": 1,
-          "explanation": "La función pasa de un máximo ($x = 3$) a un mínimo ($x = 6$), por lo que decrece en el intervalo $(3, 6)$."
-        },
-        {
-          "question": "¿Cuál es la ecuación de la recta paralela a $y = 3x - 2$ que pasa por $(0, 5)$?",
-          "options": ["$y = 3x + 5$", "$y = 5x + 3$", "$y = -3x + 5$", "$y = 3x - 5$"],
-          "correctIndex": 0,
-          "explanation": "Paralela significa misma pendiente $m = 3$. Pasa por $(0, 5)$, así que $n = 5$. La ecuación es $y = 3x + 5$."
-        },
-        {
-          "question": "Las rectas $y = 4x - 1$ e $y = 4x + 6$ son:",
-          "options": ["Secantes", "Perpendiculares", "Paralelas", "La misma recta"],
-          "correctIndex": 2,
-          "explanation": "Ambas tienen pendiente $m = 4$ pero distinta ordenada en el origen, por lo que son paralelas."
-        },
-        {
-          "question": "¿Dónde se cortan las rectas $y = x + 2$ e $y = 3x - 4$?",
-          "options": ["$(3, 5)$", "$(2, 4)$", "$(1, 3)$", "$(4, 8)$"],
-          "correctIndex": 0,
-          "explanation": "Igualamos: $x + 2 = 3x - 4 \\Rightarrow 6 = 2x \\Rightarrow x = 3$. Luego $y = 3 + 2 = 5$. Se cortan en $(3, 5)$."
-        },
-        {
-          "question": "Una función tiene recorrido $[0, +\\infty)$. ¿Cuál puede ser?",
-          "options": ["$f(x) = 2x - 1$", "$f(x) = x^2$", "$f(x) = -x^2$", "$f(x) = x + 5$"],
-          "correctIndex": 1,
-          "explanation": "$f(x) = x^2$ siempre da valores $\\geq 0$, así que su recorrido es $[0, +\\infty)$. Las funciones lineales tienen recorrido $(-\\infty, +\\infty)$."
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "La función $f(x) = \\frac{1}{x - 3}$ no está definida para:",
+              "options": ["$x = 0$", "$x = 1$", "$x = 3$", "$x = -3$"],
+              "correctIndex": 2,
+              "explanation": "El denominador se anula cuando $x - 3 = 0$, es decir $x = 3$. Ese valor no pertenece al dominio."
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el dominio de la función representada por un segmento que va de $(-5, 2)$ a $(3, -4)$?",
+              "options": ["$[-4, 2]$", "$[-5, 3]$", "$[-5, -4]$", "$[2, 3]$"],
+              "correctIndex": 1,
+              "explanation": "El dominio son los valores de $x$: desde $-5$ hasta $3$, es decir $[-5, 3]$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "El ___ de una función es el conjunto de valores que puede tomar la variable independiente $x$. El ___ es el conjunto de valores que toma $y$. Si la gráfica no presenta saltos, la función es ___. Un punto donde la función pasa de crecer a decrecer se llama ___.",
+              "blanks": ["dominio", "recorrido", "continua", "máximo"],
+              "wordBank": ["dominio", "recorrido", "continua", "máximo", "mínimo", "discontinua", "pendiente", "creciente"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es la pendiente de la recta que pasa por $(-2, 5)$ y $(4, -7)$?",
+              "options": ["$2$", "$-2$", "$\\frac{1}{2}$", "$-\\frac{1}{2}$"],
+              "correctIndex": 1,
+              "explanation": "$m = \\frac{-7 - 5}{4 - (-2)} = \\frac{-12}{6} = -2$"
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Halla la ecuación de la recta que pasa por los puntos $A(1, 2)$ y $B(3, 8)$",
+              "steps": [
+                {
+                  "prompt": "Calcula la pendiente $m$ usando la fórmula",
+                  "correctParts": ["m = \\frac{8 - 2}{3 - 1}"],
+                  "distractors": ["m = \\frac{3 - 1}{8 - 2}", "m = \\frac{8 + 2}{3 + 1}", "m = 8 - 2"],
+                  "hint": "Pendiente: $m = \\frac{y_2 - y_1}{x_2 - x_1}$"
+                },
+                {
+                  "prompt": "Simplifica $m = \\frac{8 - 2}{3 - 1}$",
+                  "correctParts": ["m = \\frac{6}{2} = 3"],
+                  "distractors": ["m = \\frac{2}{6}", "m = \\frac{6}{3} = 2", "m = \\frac{10}{4}"],
+                  "hint": "$8 - 2 = 6$ y $3 - 1 = 2$, luego $\\frac{6}{2} = 3$"
+                },
+                {
+                  "prompt": "Sustituye $m = 3$ y el punto $A(1, 2)$ en $y = mx + n$ para hallar $n$",
+                  "correctParts": ["2 = 3 \\cdot 1 + n"],
+                  "distractors": ["8 = 3 \\cdot 3 + n", "2 = 1 \\cdot 3 + n", "n = 3 + 2"],
+                  "hint": "Sustituye $x = 1$ e $y = 2$: $2 = 3(1) + n$"
+                },
+                {
+                  "prompt": "Despeja $n$ de $2 = 3 + n$ y escribe la ecuación final",
+                  "correctParts": ["n = -1", "y = 3x - 1"],
+                  "distractors": ["n = 1", "y = 3x + 1", "y = -x + 3"],
+                  "hint": "$n = 2 - 3 = -1$, así que $y = 3x - 1$"
+                }
+              ],
+              "finalAnswer": "y = 3x - 1"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "La recta $y = -\\frac{1}{2}x + 4$ corta al eje X en:",
+              "options": ["$(4, 0)$", "$(8, 0)$", "$(-8, 0)$", "$(0, 4)$"],
+              "correctIndex": 1,
+              "explanation": "Hacemos $y = 0$: $0 = -\\frac{1}{2}x + 4 \\Rightarrow \\frac{1}{2}x = 4 \\Rightarrow x = 8$. El punto es $(8, 0)$."
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "En la ecuación $y = mx + n$, la letra $m$ representa la ___ y la letra $n$ es la ___. Dos rectas con la misma pendiente pero distinta ordenada en el origen son ___. Dos rectas con distinta pendiente se llaman ___.",
+              "blanks": ["pendiente", "ordenada en el origen", "paralelas", "secantes"],
+              "wordBank": ["pendiente", "ordenada en el origen", "paralelas", "secantes", "perpendiculares", "dominio", "crecientes", "continuas"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es la ecuación de la recta paralela a $y = 3x - 2$ que pasa por $(0, 5)$?",
+              "options": ["$y = 3x + 5$", "$y = 5x + 3$", "$y = -3x + 5$", "$y = 3x - 5$"],
+              "correctIndex": 0,
+              "explanation": "Paralela significa misma pendiente $m = 3$. Pasa por $(0, 5)$, así que $n = 5$. La ecuación es $y = 3x + 5$."
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "Halla el punto de intersección de las rectas $y = 2x - 1$ e $y = -x + 5$",
+              "steps": [
+                {
+                  "prompt": "Iguala las dos ecuaciones para encontrar $x$",
+                  "correctParts": ["2x - 1 = -x + 5"],
+                  "distractors": ["2x + 1 = -x - 5", "2x - 1 = x + 5", "2x = -x + 5 - 1"],
+                  "hint": "En el punto de corte ambas rectas dan el mismo $y$: $2x - 1 = -x + 5$"
+                },
+                {
+                  "prompt": "Agrupa las $x$ a un lado: $2x - 1 = -x + 5$",
+                  "correctParts": ["3x = 6"],
+                  "distractors": ["x = 6", "2x = 4", "3x = 4"],
+                  "hint": "Suma $x$ a ambos lados y suma $1$: $2x + x = 5 + 1$"
+                },
+                {
+                  "prompt": "Resuelve $3x = 6$ y halla $x$",
+                  "correctParts": ["x = 2"],
+                  "distractors": ["x = 3", "x = 6", "x = \\frac{3}{6}"],
+                  "hint": "Divide entre 3: $x = \\frac{6}{3} = 2$"
+                },
+                {
+                  "prompt": "Sustituye $x = 2$ en $y = 2x - 1$ para hallar $y$",
+                  "correctParts": ["y = 2(2) - 1 = 3"],
+                  "distractors": ["y = 2 + 5 = 7", "y = 2(2) + 1 = 5", "y = -2 + 5 = 3"],
+                  "hint": "$y = 2 \\cdot 2 - 1 = 4 - 1 = 3$"
+                }
+              ],
+              "finalAnswer": "(2, 3)"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Una función tiene recorrido $[0, +\\infty)$. ¿Cuál puede ser?",
+              "options": ["$f(x) = 2x - 1$", "$f(x) = x^2$", "$f(x) = -x^2$", "$f(x) = x + 5$"],
+              "correctIndex": 1,
+              "explanation": "$f(x) = x^2$ siempre da valores $\\geq 0$, así que su recorrido es $[0, +\\infty)$. Las funciones lineales tienen recorrido $(-\\infty, +\\infty)$."
+            }
+          }
+        ]
+      }
     }
   ]
 }

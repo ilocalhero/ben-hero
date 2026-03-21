@@ -42,17 +42,20 @@ export function evaluateWriting(
   const strengths: string[] = []
   const improvements: string[] = []
 
-  // 1. Word count (30 points)
+  // 1. Word count (30 points) — generous: reward effort
   const minWords = missionData.minimumWords
   if (wordCount >= minWords) {
     score += 30
     strengths.push(`Escribiste ${wordCount} palabras — ¡cumpliste el mínimo!`)
   } else if (wordCount >= minWords * 0.7) {
-    score += 15
-    improvements.push(`Intenta escribir al menos ${minWords} palabras. Llevas ${wordCount}.`)
+    score += 20
+    strengths.push(`Escribiste ${wordCount} palabras — ¡casi llegas al mínimo!`)
+  } else if (wordCount >= minWords * 0.4) {
+    score += 10
+    improvements.push(`Intenta escribir un poco más — llevas ${wordCount} de ${minWords} palabras. ¡Usa los iniciadores!`)
   } else {
     score += 5
-    improvements.push(`Necesitas desarrollar más tu respuesta. Mínimo ${minWords} palabras.`)
+    improvements.push(`Intenta escribir un poco más — usa los iniciadores de frases para ayudarte.`)
   }
 
   // 2. Key terms (35 points)
@@ -69,17 +72,18 @@ export function evaluateWriting(
     improvements.push(`Intenta incluir: ${missingTerms.slice(0, 2).join(', ')}`)
   }
 
-  // 3. Connectors (20 points)
+  // 3. Connectors (20 points) — generous: any connector use is good
   const usedConnectors = SPANISH_CONNECTORS.filter(c => lowerResponse.includes(c))
   if (usedConnectors.length >= 3) {
     score += 20
     strengths.push(`Excelente uso de conectores: "${usedConnectors.slice(0, 2).join('", "')}"`)
   } else if (usedConnectors.length >= 1) {
-    score += 10
+    score += 14
     strengths.push(`Usaste conectores: "${usedConnectors[0]}" — ¡bien!`)
-    if (improvements.length < 2) improvements.push('Añade más conectores como: además, sin embargo, por lo tanto')
+    if (improvements.length < 2) improvements.push('Prueba añadir un conector más como: además, sin embargo, por lo tanto')
   } else {
-    if (improvements.length < 2) improvements.push('Usa conectores para enlazar tus ideas: porque, además, sin embargo...')
+    score += 4
+    if (improvements.length < 2) improvements.push('Prueba usar un conector como "porque" o "además" para conectar tus ideas')
   }
 
   // 4. Sentence structure (15 points)
@@ -90,13 +94,13 @@ export function evaluateWriting(
     score += 8
   }
 
-  // Stars
-  const stars = score >= 85 ? 5 : score >= 70 ? 4 : score >= 55 ? 3 : score >= 35 ? 2 : 1
+  // Stars — aligned with API breakpoints
+  const stars = score >= 80 ? 5 : score >= 65 ? 4 : score >= 55 ? 3 : score >= 40 ? 2 : 1
 
   // Encouragement
   let encouragement: string
   let xpBonus = 0
-  if (score >= 80) {
+  if (score >= 70) {
     encouragement = ENCOURAGING_MESSAGES[Math.floor(Math.random() * ENCOURAGING_MESSAGES.length)]
     xpBonus = 30
   } else if (score >= 55) {
@@ -104,7 +108,7 @@ export function evaluateWriting(
     xpBonus = 15
   } else {
     encouragement = KEEP_GOING_MESSAGES[Math.floor(Math.random() * KEEP_GOING_MESSAGES.length)]
-    xpBonus = 0
+    xpBonus = 5
   }
 
   return { score, stars, strengths, improvements, encouragement, xpBonus, wordCount }

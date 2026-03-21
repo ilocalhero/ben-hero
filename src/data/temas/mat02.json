@@ -335,79 +335,141 @@
     {
       "id": "mat02-exam",
       "lessonId": "mat02-l3",
-      "type": "quiz",
+      "type": "exam",
       "title": "Examen Final",
       "description": "Demuestra todo lo que sabes sobre fracciones y decimales",
       "difficulty": 3,
       "xpReward": 200,
       "estimatedMinutes": 15,
-      "data": [
-        {
-          "question": "¿Cuánto es $\\frac{3}{5} + \\frac{7}{10} - \\frac{1}{2}$?",
-          "options": ["$\\frac{4}{5}$", "$\\frac{7}{10}$", "$\\frac{3}{10}$", "$\\frac{9}{10}$"],
-          "correctIndex": 0,
-          "explanation": "Denominador común 10: 6/10 + 7/10 - 5/10 = 8/10 = 4/5"
-        },
-        {
-          "question": "¿Cuál es el resultado de $\\frac{4}{9} \\times \\frac{3}{8}$?",
-          "options": ["$\\frac{12}{72}$", "$\\frac{1}{6}$", "$\\frac{7}{17}$", "$\\frac{2}{3}$"],
-          "correctIndex": 1,
-          "explanation": "(4×3)/(9×8) = 12/72. Simplificamos entre 12: 1/6"
-        },
-        {
-          "question": "¿Cuánto es $\\frac{5}{6} \\div \\frac{10}{3}$?",
-          "options": ["$\\frac{50}{18}$", "$\\frac{1}{4}$", "$\\frac{5}{2}$", "$\\frac{15}{60}$"],
-          "correctIndex": 1,
-          "explanation": "5/6 × 3/10 = 15/60 = 1/4"
-        },
-        {
-          "question": "¿Qué fracción irreducible equivale a $\\frac{36}{48}$?",
-          "options": ["$\\frac{9}{12}$", "$\\frac{6}{8}$", "$\\frac{3}{4}$", "$\\frac{18}{24}$"],
-          "correctIndex": 2,
-          "explanation": "MCD(36,48) = 12. 36÷12 = 3, 48÷12 = 4. Irreducible = 3/4"
-        },
-        {
-          "question": "¿Qué tipo de decimal es $\\frac{5}{12}$?",
-          "options": ["Decimal exacto", "Decimal periódico puro", "Decimal periódico mixto", "Número irracional"],
-          "correctIndex": 2,
-          "explanation": "5/12 = 0.41666... = 0.41̄6. Tiene parte no periódica (41) y parte periódica (6): periódico mixto"
-        },
-        {
-          "question": "Ordena de mayor a menor: $\\frac{2}{3}$, $\\frac{5}{8}$, $\\frac{7}{12}$",
-          "options": [
-            "$\\frac{7}{12} > \\frac{5}{8} > \\frac{2}{3}$",
-            "$\\frac{2}{3} > \\frac{5}{8} > \\frac{7}{12}$",
-            "$\\frac{5}{8} > \\frac{2}{3} > \\frac{7}{12}$",
-            "$\\frac{2}{3} > \\frac{7}{12} > \\frac{5}{8}$"
-          ],
-          "correctIndex": 1,
-          "explanation": "Denominador común 24: 16/24 > 15/24 > 14/24, es decir 2/3 > 5/8 > 7/12"
-        },
-        {
-          "question": "¿Cuánto es $\\frac{2}{5}$ de 350?",
-          "options": ["70", "140", "175", "100"],
-          "correctIndex": 1,
-          "explanation": "(2 × 350) / 5 = 700 / 5 = 140"
-        },
-        {
-          "question": "¿Qué fracción equivale al decimal $0.\\overline{27}$?",
-          "options": ["$\\frac{27}{100}$", "$\\frac{3}{11}$", "$\\frac{27}{99}$", "$\\frac{27}{90}$"],
-          "correctIndex": 1,
-          "explanation": "0.272727... = 27/99. Simplificamos entre 9: 3/11"
-        },
-        {
-          "question": "¿Cuánto es $\\frac{3}{4} - \\frac{2}{3} \\times \\frac{1}{2}$?",
-          "options": ["$\\frac{1}{12}$", "$\\frac{5}{12}$", "$\\frac{1}{24}$", "$\\frac{7}{12}$"],
-          "correctIndex": 1,
-          "explanation": "Primero la multiplicación: 2/3 × 1/2 = 2/6 = 1/3. Luego: 3/4 - 1/3 = 9/12 - 4/12 = 5/12"
-        },
-        {
-          "question": "Si $\\frac{x}{15} = \\frac{12}{20}$, ¿cuánto vale $x$?",
-          "options": ["8", "9", "10", "12"],
-          "correctIndex": 1,
-          "explanation": "Productos cruzados: 20x = 15×12 = 180. Entonces x = 180/20 = 9"
-        }
-      ]
+      "data": {
+        "timePerQuestion": 45,
+        "questions": [
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuánto es $\\frac{3}{5} + \\frac{7}{10} - \\frac{1}{2}$?",
+              "options": ["$\\frac{4}{5}$", "$\\frac{7}{10}$", "$\\frac{3}{10}$", "$\\frac{9}{10}$"],
+              "correctIndex": 0,
+              "explanation": "Denominador común 10: 6/10 + 7/10 - 5/10 = 8/10 = 4/5"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Cuál es el resultado de $\\frac{4}{9} \\times \\frac{3}{8}$?",
+              "options": ["$\\frac{12}{72}$", "$\\frac{1}{6}$", "$\\frac{7}{17}$", "$\\frac{2}{3}$"],
+              "correctIndex": 1,
+              "explanation": "(4×3)/(9×8) = 12/72. Simplificamos entre 12: 1/6"
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "Para sumar $\\frac{2}{3} + \\frac{1}{4}$, primero buscamos el ___ común, que es ___. Convertimos: $\\frac{2}{3} = \\frac{8}{12}$ y $\\frac{1}{4} = \\frac{3}{12}$. El resultado es $\\frac{___}{12}$, que simplificado no cambia porque 11 y 12 son ___.",
+              "blanks": ["denominador", "12", "11", "coprimos"],
+              "wordBank": ["denominador", "12", "11", "coprimos", "numerador", "24", "7", "equivalentes"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Qué fracción irreducible equivale a $\\frac{36}{48}$?",
+              "options": ["$\\frac{9}{12}$", "$\\frac{6}{8}$", "$\\frac{3}{4}$", "$\\frac{18}{24}$"],
+              "correctIndex": 2,
+              "explanation": "MCD(36,48) = 12. 36÷12 = 3, 48÷12 = 4. Irreducible = 3/4"
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "\\frac{3}{4} + \\frac{5}{6}",
+              "steps": [
+                {
+                  "prompt": "Encuentra el denominador común de 4 y 6",
+                  "correctParts": ["\\text{m.c.m.}(4, 6)", "=", "12"],
+                  "distractors": ["24", "10", "8"],
+                  "hint": "Busca el mínimo común múltiplo de 4 y 6"
+                },
+                {
+                  "prompt": "Convierte ambas fracciones a denominador 12",
+                  "correctParts": ["\\frac{9}{12}", "+", "\\frac{10}{12}"],
+                  "distractors": ["\\frac{6}{12}", "\\frac{3}{12}", "\\frac{5}{12}"],
+                  "hint": "Multiplica numerador y denominador: 3×3=9, 5×2=10"
+                },
+                {
+                  "prompt": "\\frac{9}{12} + \\frac{10}{12}",
+                  "correctParts": ["\\frac{19}{12}"],
+                  "distractors": ["\\frac{19}{24}", "\\frac{15}{12}", "\\frac{9}{12}"],
+                  "hint": "Suma los numeradores y mantén el denominador: 9+10 = 19"
+                }
+              ],
+              "finalAnswer": "\\frac{19}{12}"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Qué tipo de decimal es $\\frac{5}{12}$?",
+              "options": ["Decimal exacto", "Decimal periódico puro", "Decimal periódico mixto", "Número irracional"],
+              "correctIndex": 2,
+              "explanation": "5/12 = 0.41666... = 0.41̄6. Tiene parte no periódica (41) y parte periódica (6): periódico mixto"
+            }
+          },
+          {
+            "type": "fill_blank",
+            "data": {
+              "paragraph": "El decimal $0.\\overline{27}$ es un decimal periódico ___. Para convertirlo en fracción, escribimos $\\frac{27}{___}$, que simplificado da $\\frac{3}{___}$. En cambio, $\\frac{1}{4} = 0.25$ es un decimal ___ porque la división es exacta.",
+              "blanks": ["puro", "99", "11", "exacto"],
+              "wordBank": ["puro", "99", "11", "exacto", "mixto", "100", "9", "periódico"]
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "¿Qué fracción equivale al decimal $0.\\overline{27}$?",
+              "options": ["$\\frac{27}{100}$", "$\\frac{3}{11}$", "$\\frac{27}{99}$", "$\\frac{27}{90}$"],
+              "correctIndex": 1,
+              "explanation": "0.272727... = 27/99. Simplificamos entre 9: 3/11"
+            }
+          },
+          {
+            "type": "equation_builder",
+            "data": {
+              "problem": "\\frac{5}{6} \\div \\frac{10}{3}",
+              "steps": [
+                {
+                  "prompt": "Convierte la división en multiplicación",
+                  "correctParts": ["\\frac{5}{6}", "\\times", "\\frac{3}{10}"],
+                  "distractors": ["\\frac{10}{3}", "\\frac{6}{5}", "\\frac{3}{5}"],
+                  "hint": "Dividir = multiplicar por la fracción inversa. La inversa de 10/3 es 3/10"
+                },
+                {
+                  "prompt": "\\frac{5}{6} \\times \\frac{3}{10}",
+                  "correctParts": ["\\frac{15}{60}"],
+                  "distractors": ["\\frac{50}{18}", "\\frac{8}{16}", "\\frac{15}{16}"],
+                  "hint": "Multiplica numeradores (5×3) y denominadores (6×10)"
+                },
+                {
+                  "prompt": "Simplifica $\\frac{15}{60}$",
+                  "correctParts": ["\\frac{1}{4}"],
+                  "distractors": ["\\frac{3}{12}", "\\frac{5}{20}", "\\frac{1}{3}"],
+                  "hint": "MCD(15,60) = 15. Divide ambos entre 15"
+                }
+              ],
+              "finalAnswer": "\\frac{1}{4}"
+            }
+          },
+          {
+            "type": "quiz",
+            "data": {
+              "question": "Si $\\frac{x}{15} = \\frac{12}{20}$, ¿cuánto vale $x$?",
+              "options": ["8", "9", "10", "12"],
+              "correctIndex": 1,
+              "explanation": "Productos cruzados: 20x = 15×12 = 180. Entonces x = 180/20 = 9"
+            }
+          }
+        ]
+      }
     }
   ]
 }
