@@ -62,6 +62,20 @@ export function AppShell() {
           sendTemaReport(tema, freshProgress.activityScores, freshProgress.completedLessons, player)
         }
       }
+
+      // Third pass: retroactive bonus check for completed temas with 80%+ average
+      const latestProgress = useProgressStore.getState()
+      for (const tema of TEMAS) {
+        if (!latestProgress.completedTemas[tema.id]) continue
+        if (latestProgress.temaBonuses?.[tema.id]) continue
+        if (tema.activities.length === 0) continue
+        const scores = tema.activities.map(a => latestProgress.activityScores[a.id] ?? 0)
+        const avg = scores.reduce((s, v) => s + v, 0) / scores.length
+        if (avg >= 80) {
+          useProgressStore.getState().awardTemaBonus(tema.id)
+          usePlayerStore.getState().addXP(250)
+        }
+      }
     }, 2000)
     return () => clearTimeout(timer)
   }, [])

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { Zap, ChevronRight, BookOpen, Flame, Trophy, Target, Check, Clock } from 'lucide-react'
+import { Zap, ChevronRight, BookOpen, Flame, Trophy, Target, Check, Clock, Star } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { TEMAS } from '../data'
 import { NeonText, Badge, ProgressBar, StatCard } from '../components/ui'
@@ -8,6 +8,7 @@ import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { getLevelTitle } from '../lib/xpCalculator'
 import { getTemaEmoji } from '../lib/temaIcons'
+import { isPassing } from '../lib/passingThresholds'
 
 const categoryColor = (cat: string) => cat === 'historia' ? 'orange' : 'green' as const
 
@@ -27,7 +28,7 @@ function SectionHeader({ icon, label, color }: { icon: React.ReactNode; label: s
 
 export function HomePage() {
   const navigate = useNavigate()
-  const { dailyMissionsToday, completedActivities, activityScores, completedTemas, getTemaProgress } = useProgressStore()
+  const { dailyMissionsToday, completedActivities, activityScores, completedTemas, temaBonuses, getTemaProgress } = useProgressStore()
   const { name, streak, level, totalXP } = usePlayerStore()
   const levelTitle = getLevelTitle(level)
 
@@ -59,6 +60,31 @@ export function HomePage() {
     }
     return activities.slice(-5).reverse()
   }, [completedActivities, activityScores])
+
+  // Find best tema to show bonus opportunity
+  const bonusOpportunity = useMemo(() => {
+    for (const tema of TEMAS) {
+      if (temaBonuses?.[tema.id]) continue // already earned
+      const allDone = tema.activities.length > 0 && tema.activities.every(
+        a => completedActivities[a.id] && isPassing(a.type, activityScores[a.id] ?? 0)
+      )
+      if (!allDone && tema.activities.length > 0) {
+        // Check partially done temas too — show the closest one
+        const doneCount = tema.activities.filter(a => completedActivities[a.id]).length
+        if (doneCount === 0) continue
+      }
+      const scores = tema.activities.map(a => activityScores[a.id] ?? 0)
+      const avg = scores.length > 0 ? Math.round(scores.reduce((s, v) => s + v, 0) / scores.length) : 0
+      if (allDone && avg < 80) {
+        // This is the best opportunity — tema is done but below 80%
+        const lowestActivity = tema.activities.reduce((low, a) =>
+          (activityScores[a.id] ?? 0) < (activityScores[low.id] ?? 0) ? a : low
+        )
+        return { tema, avg, lowestActivity, lowestScore: activityScores[lowestActivity.id] ?? 0, allDone: true }
+      }
+    }
+    return null
+  }, [completedActivities, activityScores, temaBonuses])
 
   return (
     <div className="space-y-8 lg:space-y-10">
@@ -166,6 +192,58 @@ export function HomePage() {
           <StatCard icon={<Target size={22} />} label="Completados" value={`${completedTemasCount}/${TEMAS.length}`} color="#00ff88" />
         </div>
       </motion.div>
+
+      {/* ── Bonus XP Card ── */}
+      {bonusOpportunity && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.18 }}
+        >
+          <Link
+            to={`/temas/${bonusOpportunity.tema.id}/activities/${bonusOpportunity.lowestActivity.id}`}
+            className="block group"
+          >
+            <div
+              className="rounded-2xl p-5 lg:p-6 relative overflow-hidden transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,215,0,0.06) 0%, rgba(255,107,53,0.04) 50%, #111425 100%)',
+                border: '1px solid rgba(255,215,0,0.2)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.3), 0 0 40px rgba(255,215,0,0.05)',
+              }}
+            >
+              {/* Shimmer accent */}
+              <div
+                className="absolute top-0 left-8 right-8 h-px"
+                style={{ background: 'linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent)' }}
+              />
+
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: 'rgba(255,215,0,0.1)',
+                    border: '1px solid rgba(255,215,0,0.25)',
+                    boxShadow: '0 0 20px rgba(255,215,0,0.15)',
+                  }}
+                >
+                  <Star size={26} className="text-neon-yellow fill-neon-yellow" style={{ filter: 'drop-shadow(0 0 6px #ffd700)' }} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-neon-yellow font-black text-sm uppercase tracking-wider">Bonus +250 XP</p>
+                  <p className="text-text-primary font-semibold text-base mt-0.5">
+                    Mejora tu media en {bonusOpportunity.tema.title}
+                  </p>
+                  <p className="text-text-secondary text-xs mt-1">
+                    Media: {bonusOpportunity.avg}% → necesitas 80% · Repite {bonusOpportunity.lowestActivity.title} ({bonusOpportunity.lowestScore}%)
+                  </p>
+                </div>
+                <ChevronRight size={18} className="text-text-muted group-hover:text-neon-yellow transition-colors flex-shrink-0" />
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+      )}
 
       {/* ── Continue Learning ── */}
       {currentTema && (

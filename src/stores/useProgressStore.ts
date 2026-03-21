@@ -7,6 +7,7 @@ interface ProgressActions {
   uncompleteActivity: (activityId: string) => void
   completeLesson: (lessonId: string) => void
   completeTema: (temaId: string) => void
+  awardTemaBonus: (temaId: string) => void
   completeDailyMission: (temaId: string, lessonIndex: number) => void
   isActivityDone: (activityId: string) => boolean
   isLessonDone: (lessonId: string) => boolean
@@ -22,6 +23,7 @@ const DEFAULT_STATE: ProgressState = {
   activityScores: {},
   completedLessons: {},
   completedTemas: {},
+  temaBonuses: {},
   dailyMissionsToday: 0,
   dailyMissionDate: null,
   lastDailyMissionTemaId: null,
@@ -90,6 +92,14 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
   completeTema: (temaId: string) => {
     const state = get()
     const update = { completedTemas: { ...state.completedTemas, [temaId]: true } }
+    set(update)
+    saveToStorage('progress', { ...state, ...update })
+  },
+
+  awardTemaBonus: (temaId: string) => {
+    const state = get()
+    if (state.temaBonuses[temaId]) return
+    const update = { temaBonuses: { ...state.temaBonuses, [temaId]: true } }
     set(update)
     saveToStorage('progress', { ...state, ...update })
   },

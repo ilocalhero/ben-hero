@@ -106,6 +106,7 @@ export function ActivityPage() {
 
   const completeActivity = useProgressStore((s) => s.completeActivity)
   const completeTema = useProgressStore((s) => s.completeTema)
+  const awardTemaBonus = useProgressStore((s) => s.awardTemaBonus)
   const addXP = usePlayerStore((s) => s.addXP)
   const addWritingRecord = usePlayerStore((s) => s.addWritingRecord)
   const addGain = useXPAnimation((s) => s.addGain)
@@ -136,12 +137,33 @@ export function ActivityPage() {
 
   const typeLabel = activityTypeLabel[activity.type] ?? activity.type
 
+  // Check if the tema qualifies for the 80% average bonus (250 XP)
+  const checkTemaBonus = () => {
+    if (!tema || !temaId) return
+    const store = useProgressStore.getState()
+    if (store.temaBonuses[temaId]) return // already awarded
+    if (!store.completedTemas[temaId]) return // tema not complete yet
+    const scores = tema.activities.map(a => store.activityScores[a.id] ?? 0)
+    const avg = scores.reduce((sum, s) => sum + s, 0) / scores.length
+    if (avg >= 80) {
+      awardTemaBonus(temaId)
+      const { newLevel, leveledUp } = addXP(250)
+      addGain(250)
+      // Update completion display to show bonus
+      setCompletion(prev => prev ? { ...prev, xpEarned: prev.xpEarned + 250, leveledUp: leveledUp || prev.leveledUp, newLevel: leveledUp ? newLevel : prev.newLevel } : null)
+    }
+  }
+
   // Check if completing this activity finishes the entire tema
   const checkTemaCompletion = (justCompletedId: string) => {
     if (!tema || !temaId) return
     // Read fresh state directly from stores (not React snapshot)
     const store = useProgressStore.getState()
-    if (store.completedTemas[temaId]) return
+    if (store.completedTemas[temaId]) {
+      // Tema already complete — check if retake improved average enough for bonus
+      checkTemaBonus()
+      return
+    }
     const allDone = tema.activities.every(
       a => a.id === justCompletedId ||
         (store.completedActivities[a.id] && isPassing(a.type, store.activityScores[a.id] ?? 0))
@@ -150,6 +172,7 @@ export function ActivityPage() {
       completeTema(temaId)
       const currentPlayer = usePlayerStore.getState()
       sendTemaReport(tema, store.activityScores, store.completedLessons, currentPlayer)
+      checkTemaBonus()
     }
   }
 

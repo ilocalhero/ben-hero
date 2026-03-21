@@ -28,6 +28,7 @@ export interface ProgressState {
   activityScores: Record<string, number>
   completedLessons: Record<string, boolean>
   completedTemas: Record<string, boolean>
+  temaBonuses: Record<string, boolean>
   dailyMissionsToday: number
   dailyMissionDate: string | null
   lastDailyMissionTemaId: string | null

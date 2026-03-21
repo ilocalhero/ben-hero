@@ -45,7 +45,7 @@ function activityTypeLabel(type: ActivityType): string {
 
 export function TemaPage() {
   const { temaId } = useParams<{ temaId: string }>()
-  const { isLessonDone, isActivityDone, getTemaProgress } = useProgressStore()
+  const { isLessonDone, isActivityDone, getActivityScore, getTemaProgress, activityScores, temaBonuses } = useProgressStore()
   const [termsOpen, setTermsOpen] = useState(false)
 
   const tema = temaId ? getTema(temaId) : undefined
@@ -210,59 +210,120 @@ export function TemaPage() {
       )}
 
       {/* Activities section */}
-      {tema.activities.length > 0 && (
-        <div className="space-y-2.5">
-          <h2 className="text-base font-black uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            {tema.activities.map((activity, i) => {
-              const done = isActivityDone(activity.id)
-              return (
-                <motion.div
-                  key={activity.id}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.04 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Link
-                    to={`/temas/${tema.id}/activities/${activity.id}`}
-                    className="block p-4 lg:p-5 rounded-xl transition-all duration-150"
-                    style={{
-                      background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
-                      border: done ? '1px solid rgba(0,255,136,0.2)' : '1px solid rgba(255,255,255,0.07)',
-                    }}
+      {tema.activities.length > 0 && (() => {
+        const scores = tema.activities.map(a => activityScores[a.id] ?? 0)
+        const completedCount = tema.activities.filter(a => isActivityDone(a.id)).length
+        const allDone = completedCount === tema.activities.length
+        const avg = completedCount > 0 ? Math.round(scores.reduce((s, v) => s + v, 0) / tema.activities.length) : 0
+        const bonusEarned = temaBonuses?.[tema.id] === true
+
+        return (
+          <div className="space-y-2.5">
+            <h2 className="text-base font-black uppercase tracking-widest text-text-muted px-0.5">Actividades</h2>
+
+            {/* Bonus XP banner */}
+            {allDone && bonusEarned ? (
+              <div
+                className="rounded-xl p-4 flex items-center gap-3"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(0,255,136,0.08) 0%, rgba(0,212,255,0.06) 100%)',
+                  border: '1px solid rgba(0,255,136,0.25)',
+                }}
+              >
+                <span className="text-2xl">🏆</span>
+                <div className="flex-1">
+                  <p className="text-neon-green font-bold text-sm">Bonus conseguido — +250 XP</p>
+                  <p className="text-text-secondary text-xs">Media: {avg}%</p>
+                </div>
+              </div>
+            ) : (
+              <div
+                className="rounded-xl p-4 flex items-center gap-3"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,215,0,0.06) 0%, rgba(255,107,53,0.04) 100%)',
+                  border: '1px solid rgba(255,215,0,0.2)',
+                }}
+              >
+                <span className="text-2xl">⭐</span>
+                <div className="flex-1">
+                  <p className="text-neon-yellow font-bold text-sm">Bonus: +250 XP si tu media es 80%+</p>
+                  <p className="text-text-secondary text-xs">
+                    Media actual: {avg}% · {allDone ? 'Repite actividades para mejorar' : `${completedCount}/${tema.activities.length} completadas`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {tema.activities.map((activity, i) => {
+                const done = isActivityDone(activity.id)
+                const score = getActivityScore(activity.id)
+                return (
+                  <motion.div
+                    key={activity.id}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.04 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <div className="flex items-center gap-2">
-                        <span style={{ color: done ? '#00ff88' : '#b24bff' }}>
-                          {done ? <Check size={16} /> : activityIcon(activity.type)}
-                        </span>
-                        <span className="text-text-muted text-sm">{activityTypeLabel(activity.type)}</span>
+                    <Link
+                      to={`/temas/${tema.id}/activities/${activity.id}`}
+                      className="block p-4 lg:p-5 rounded-xl transition-all duration-150"
+                      style={{
+                        background: 'linear-gradient(135deg, #141729 0%, #111425 100%)',
+                        border: done ? '1px solid rgba(0,255,136,0.2)' : '1px solid rgba(255,255,255,0.07)',
+                      }}
+                    >
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <div className="flex items-center gap-2">
+                          <span style={{ color: done ? '#00ff88' : '#b24bff' }}>
+                            {done ? <Check size={16} /> : activityIcon(activity.type)}
+                          </span>
+                          <span className="text-text-muted text-sm">{activityTypeLabel(activity.type)}</span>
+                        </div>
+                        {done ? (
+                          <span
+                            className="text-xs font-bold px-2 py-0.5 rounded-md"
+                            style={{
+                              color: score >= 80 ? '#00ff88' : score >= 60 ? '#ffd700' : '#ff6b35',
+                              background: score >= 80 ? 'rgba(0,255,136,0.1)' : score >= 60 ? 'rgba(255,215,0,0.1)' : 'rgba(255,107,53,0.1)',
+                              border: `1px solid ${score >= 80 ? 'rgba(0,255,136,0.25)' : score >= 60 ? 'rgba(255,215,0,0.25)' : 'rgba(255,107,53,0.25)'}`,
+                            }}
+                          >
+                            {score}%
+                          </span>
+                        ) : (
+                          <Badge color="yellow" size="sm">+{activity.xpReward} XP</Badge>
+                        )}
                       </div>
-                      <Badge color="yellow" size="sm">+{activity.xpReward} XP</Badge>
-                    </div>
 
-                    <p className={`font-semibold text-base leading-snug mb-2.5 ${done ? 'text-neon-green' : 'text-text-primary'}`}>
-                      {activity.title}
-                    </p>
+                      <p className={`font-semibold text-base leading-snug mb-2.5 ${done ? 'text-neon-green' : 'text-text-primary'}`}>
+                        {activity.title}
+                      </p>
 
-                    <div className="flex items-center gap-0.5">
-                      {Array.from({ length: 3 }).map((_, j) => (
-                        <Star
-                          key={j}
-                          size={11}
-                          className={j < activity.difficulty ? 'text-neon-yellow fill-neon-yellow' : 'text-text-muted'}
-                        />
-                      ))}
-                    </div>
-                  </Link>
-                </motion.div>
-              )
-            })}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-0.5">
+                          {Array.from({ length: 3 }).map((_, j) => (
+                            <Star
+                              key={j}
+                              size={11}
+                              className={j < activity.difficulty ? 'text-neon-yellow fill-neon-yellow' : 'text-text-muted'}
+                            />
+                          ))}
+                        </div>
+                        {done && score < 80 && (
+                          <span className="text-[10px] text-neon-blue font-semibold">Repetir para mejorar</span>
+                        )}
+                      </div>
+                    </Link>
+                  </motion.div>
+                )
+              })}
+            </div>
           </div>
-        </div>
-      )}
+        )
+      })()}
 
       {/* Key Terms collapsible */}
       {tema.keyTerms.length > 0 && (
