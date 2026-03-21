@@ -310,6 +310,31 @@
           "explanation": "$\\left(\\frac{2}{5}\\right)^3 = \\frac{2^3}{5^3} = \\frac{8}{125}$"
         }
       ]
+    },
+    {
+      "id": "mat03-showwork",
+      "lessonId": "mat03-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "Simplifica usando las propiedades de las potencias: $\\frac{2^5 \\times 2^3}{2^4}$. Explica qué propiedad usas en cada paso y calcula el resultado final.",
+        "expectedAnswer": "16",
+        "hints": [
+          "Para multiplicar potencias de la misma base, se suman los exponentes: $a^m \\cdot a^n = a^{m+n}$.",
+          "Para dividir potencias de la misma base, se restan los exponentes: $a^m \\div a^n = a^{m-n}$."
+        ],
+        "solutionSteps": [
+          "En el numerador aplicamos la propiedad del producto de potencias de la misma base: $2^5 \\times 2^3 = 2^{5+3} = 2^8$.",
+          "Ahora dividimos: $\\frac{2^8}{2^4} = 2^{8-4} = 2^4$, aplicando la propiedad del cociente de potencias de la misma base.",
+          "Calculamos el resultado: $2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$."
+        ],
+        "rubricKeyTerms": ["potencia", "base", "exponente", "propiedad"],
+        "minimumWords": 30
+      }
     }
   ]
 }

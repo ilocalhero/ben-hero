@@ -227,6 +227,31 @@
         "blanks": ["numerador", "denominador", "común", "inversa", "periódico"],
         "wordBank": ["numerador", "denominador", "común", "inversa", "periódico", "exacto", "primo", "equivalente"]
       }
+    },
+    {
+      "id": "mat02-showwork",
+      "lessonId": "mat02-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "Calcula y simplifica: $\\frac{3}{4} + \\frac{2}{3} - \\frac{1}{6}$. Muestra cómo encuentras el denominador común y cómo conviertes cada fracción.",
+        "expectedAnswer": "5/4",
+        "hints": [
+          "Para sumar y restar fracciones con distinto denominador, necesitas encontrar el mínimo común múltiplo (m.c.m.) de 4, 3 y 6.",
+          "El m.c.m. de 4, 3 y 6 es 12. Convierte cada fracción a una equivalente con denominador 12."
+        ],
+        "solutionSteps": [
+          "Encontramos el m.c.m. de los denominadores: m.c.m.(4, 3, 6) = 12.",
+          "Convertimos cada fracción: $\\frac{3}{4} = \\frac{9}{12}$, $\\frac{2}{3} = \\frac{8}{12}$, $\\frac{1}{6} = \\frac{2}{12}$.",
+          "Operamos los numeradores: $\\frac{9}{12} + \\frac{8}{12} - \\frac{2}{12} = \\frac{9 + 8 - 2}{12} = \\frac{15}{12}$. Simplificamos dividiendo entre 3: $\\frac{15}{12} = \\frac{5}{4} = 1\\frac{1}{4}$."
+        ],
+        "rubricKeyTerms": ["denominador común", "fracción equivalente", "simplificar", "m.c.m."],
+        "minimumWords": 30
+      }
     }
   ]
 }

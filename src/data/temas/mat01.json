@@ -307,6 +307,31 @@
           "explanation": "Criterio del 3: sumamos las cifras 2+3+1=6. Como 6 es múltiplo de 3, 231 es divisible por 3."
         }
       ]
+    },
+    {
+      "id": "mat01-showwork",
+      "lessonId": "mat01-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "Calcula paso a paso: $(-8) + 5 \\times (-3) - (-12) \\div 4$. Explica el orden de operaciones y la regla de signos en cada paso.",
+        "expectedAnswer": "-11",
+        "hints": [
+          "Recuerda: primero se hacen las multiplicaciones y divisiones, y después las sumas y restas.",
+          "Para la regla de signos: signos iguales dan positivo, signos distintos dan negativo."
+        ],
+        "solutionSteps": [
+          "Identificamos las operaciones y su orden de prioridad: primero $5 \\times (-3)$ y $(-12) \\div 4$, después las sumas y restas.",
+          "Calculamos $5 \\times (-3) = -15$ (positivo × negativo = negativo) y $(-12) \\div 4 = -3$ (negativo ÷ positivo = negativo).",
+          "Sustituimos en la expresión: $(-8) + (-15) - (-3) = -8 - 15 + 3 = -23 + 3 = -20$. ¡Ojo! Restar un negativo es sumar: $-(-3) = +3$. Resultado: $-20$."
+        ],
+        "rubricKeyTerms": ["orden de operaciones", "regla de signos", "valor absoluto", "entero"],
+        "minimumWords": 30
+      }
     }
   ]
 }

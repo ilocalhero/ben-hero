@@ -306,6 +306,32 @@
           "explanation": "Distancia real = 4 × 50 000 = 200 000 cm. En el otro mapa: 200 000 / 120 000 ≈ 1,67 cm."
         }
       ]
+    },
+    {
+      "id": "mat06-showwork",
+      "lessonId": "mat06-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "En un mapa a escala 1:50.000, la distancia entre dos ciudades es 8 cm. ¿Cuál es la distancia real en kilómetros? Explica qué es la escala y cómo la usas.",
+        "expectedAnswer": "4 km",
+        "hints": [
+          "La escala 1:50.000 significa que 1 cm en el mapa equivale a 50.000 cm en la realidad",
+          "Recuerda las conversiones: 100 cm = 1 m, 1000 m = 1 km"
+        ],
+        "solutionSteps": [
+          "Entender la escala: 1:50.000 significa que cada centímetro en el mapa representa 50.000 cm reales",
+          "Multiplicar la distancia del mapa por el factor de escala: $8 \\times 50.000 = 400.000$ cm",
+          "Convertir centímetros a metros: $\\frac{400.000}{100} = 4.000$ m",
+          "Convertir metros a kilómetros: $\\frac{4.000}{1.000} = 4$ km"
+        ],
+        "rubricKeyTerms": ["escala", "razón", "distancia real", "conversión"],
+        "minimumWords": 30
+      }
     }
   ]
 }

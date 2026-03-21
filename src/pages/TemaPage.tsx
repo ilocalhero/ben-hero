@@ -23,6 +23,7 @@ function activityIcon(type: ActivityType) {
   if (type === 'quiz') return <HelpCircle size={18} />
   if (type === 'fill_blank') return <Type size={18} />
   if (type === 'writing_mission') return <PenLine size={18} />
+  if (type === 'show_work') return <PenLine size={18} />
   return <BookOpen size={18} />
 }
 
@@ -38,6 +39,7 @@ function activityTypeLabel(type: ActivityType): string {
     sentence_builder: 'Construir frases',
     paragraph_template: 'Párrafo',
     writing_mission: 'Misión escrita',
+    show_work: 'Muestra tu trabajo',
     source_analysis: 'Análisis de fuente',
     compare_contrast: 'Comparar',
   }

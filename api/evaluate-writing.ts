@@ -2,11 +2,13 @@ import Anthropic from '@anthropic-ai/sdk'
 import type { Request, Response } from 'express'
 
 interface RequestBody {
+  mode?: 'writing' | 'show_work'
   answer: string
   prompt: string
   keyPoints: string[]
   rubricKeyTerms: string[]
   minimumWords: number
+  expectedAnswer?: string
 }
 
 interface EvaluationResult {
@@ -44,7 +46,7 @@ export async function evaluateWritingHandler(req: Request, res: Response) {
     return
   }
 
-  const { answer, prompt, keyPoints, rubricKeyTerms = [], minimumWords = 50 } = body
+  const { answer, prompt, keyPoints, rubricKeyTerms = [], minimumWords = 50, mode = 'writing', expectedAnswer = '' } = body
 
   const wordCount = countWords(answer)
 
@@ -57,7 +59,9 @@ export async function evaluateWritingHandler(req: Request, res: Response) {
       stars,
       strengths: [],
       improvements: [`Necesitas desarrollar más tu respuesta. Llevas ${wordCount} palabras, el mínimo es ${minimumWords}.`],
-      encouragement: '¡Sigue practicando! Los grandes historiadores nunca se rinden. ¡Escribe más y subirás de nivel!',
+      encouragement: mode === 'show_work'
+        ? '¡Necesitas explicar más tu solución! Muestra cada paso con detalle.'
+        : '¡Sigue practicando! Los grandes historiadores nunca se rinden. ¡Escribe más y subirás de nivel!',
       xpBonus,
       wordCount,
     }
@@ -69,7 +73,58 @@ export async function evaluateWritingHandler(req: Request, res: Response) {
 
   const keyPointsList = keyPoints.map((p, i) => `${i + 1}. ${p}`).join('\n')
 
-  const userPrompt = `PREGUNTA: ${prompt}
+  const isShowWork = mode === 'show_work'
+
+  const userPrompt = isShowWork
+    ? `PROBLEMA: ${prompt}
+
+PASOS ESPERADOS EN LA SOLUCIÓN:
+${keyPointsList}
+
+RESPUESTA CORRECTA: ${expectedAnswer}
+
+TÉRMINOS MATEMÁTICOS CLAVE: ${rubricKeyTerms.join(', ')}
+
+SOLUCIÓN DEL ALUMNO:
+${answer}
+
+INSTRUCCIONES DE EVALUACIÓN:
+Sé exigente pero justo. Ben tiene 13 años y necesita aprender a resolver problemas paso a paso. No regales puntos.
+
+RÚBRICA (100 puntos):
+1. PROCEDIMIENTO (40 pts): ¿Muestra TODOS los pasos de la solución? ¿Están en orden lógico?
+   - Todos los pasos correctos y ordenados = 35-40 pts
+   - La mayoría de pasos correctos = 20-34 pts
+   - Solo algunos pasos o desordenados = 10-19 pts
+   - Falta la mayoría de pasos = 0-9 pts
+
+2. RESULTADO (20 pts): ¿Llega a la respuesta correcta?
+   - Resultado correcto y bien expresado = 18-20 pts
+   - Resultado cercano o con error menor = 10-17 pts
+   - Resultado incorrecto = 0-9 pts
+
+3. EXPLICACIÓN (25 pts): ¿Explica POR QUÉ hace cada operación? No basta con escribir números — debe razonar.
+   - Explica cada paso con claridad = 20-25 pts
+   - Explica algunos pasos = 10-19 pts
+   - Solo escribe operaciones sin explicar = 0-9 pts
+
+4. VOCABULARIO MATEMÁTICO (15 pts): ¿Usa términos matemáticos correctamente?
+   - Usa términos clave en contexto = 12-15 pts
+   - Algunos términos usados = 6-11 pts
+   - No usa vocabulario específico = 0-5 pts
+
+IMPORTANTE:
+- Si solo escribe el resultado sin mostrar pasos, máximo 25.
+- Si copia los pasos sin explicarlos con sus palabras, máximo 45.
+- Una respuesta de 65+ requiere pasos claros, resultado correcto, y explicación del razonamiento.
+
+- strengths: 2 cosas específicas que hizo bien (en español)
+- improvements: 2 áreas concretas donde debe mejorar (en español, con ejemplo concreto)
+- encouragement: mensaje motivador estilo videojuego en español
+
+Devuelve EXACTAMENTE este JSON:
+{"score": <0-100>, "strengths": ["..."], "improvements": ["..."], "encouragement": "..."}`
+    : `PREGUNTA: ${prompt}
 
 PUNTOS CLAVE A CUBRIR:
 ${keyPointsList}
@@ -121,7 +176,12 @@ Devuelve EXACTAMENTE este JSON:
     const message = await client.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 768,
-      system: `Eres un profesor exigente pero motivador de Historia de España para estudiantes de 2.º ESO (13 años).
+      system: isShowWork
+        ? `Eres un profesor exigente pero motivador de Matemáticas para estudiantes de 2.º ESO (13 años).
+Evalúa la solución del alumno con rigor matemático — no regales puntos. Devuelve ÚNICAMENTE JSON válido, sin texto adicional.
+El alumno se llama Ben. Necesita aprender a mostrar su trabajo y explicar su razonamiento matemático paso a paso.
+El tono debe ser motivador pero exigente — como un entrenador que sabe que Ben puede dar más.`
+        : `Eres un profesor exigente pero motivador de Historia de España para estudiantes de 2.º ESO (13 años).
 Evalúa la respuesta del alumno con rigor académico — no regales puntos. Devuelve ÚNICAMENTE JSON válido, sin texto adicional.
 El alumno se llama Ben. Necesita mejorar su escritura, así que sé honesto en el feedback: señala exactamente qué falta y cómo mejorarlo.
 El tono debe ser motivador pero exigente — como un entrenador que sabe que Ben puede dar más.`,

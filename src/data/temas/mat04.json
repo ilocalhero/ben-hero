@@ -301,6 +301,31 @@
           "explanation": "El total es $8 \\times 12 = 96$ €. Entre 10 amigos: $\\frac{96}{10} = 9{,}60$ € cada uno. Es proporcionalidad inversa."
         }
       ]
+    },
+    {
+      "id": "mat04-showwork",
+      "lessonId": "mat04-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "En una tienda hay un descuento del 25% sobre un precio de 80 €. Después, aplican un 10% adicional sobre el precio ya rebajado. ¿Cuál es el precio final? Explica por qué no se puede sumar directamente 25% + 10%.",
+        "expectedAnswer": "54 €",
+        "hints": [
+          "Primero calcula el precio tras el descuento del 25%: multiplica 80 por el índice de variación 0,75.",
+          "Después aplica el segundo descuento del 10% sobre el precio ya rebajado, no sobre el original."
+        ],
+        "solutionSteps": [
+          "Calculamos el primer descuento: 25% de 80 € = $80 \\times 0{,}25 = 20$ €. Precio intermedio: $80 - 20 = 60$ € (o directamente $80 \\times 0{,}75 = 60$ €).",
+          "Aplicamos el segundo descuento sobre 60 €: 10% de 60 € = $60 \\times 0{,}10 = 6$ €. Precio final: $60 - 6 = 54$ € (o directamente $60 \\times 0{,}90 = 54$ €).",
+          "No se puede sumar 25% + 10% = 35% porque el segundo descuento se aplica sobre el precio ya rebajado (60 €), no sobre el original (80 €). Si sumáramos: $80 \\times 0{,}65 = 52$ €, que es incorrecto."
+        ],
+        "rubricKeyTerms": ["porcentaje", "descuento", "índice de variación", "precio final"],
+        "minimumWords": 30
+      }
     }
   ]
 }

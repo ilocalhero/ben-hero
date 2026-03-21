@@ -9,6 +9,7 @@ import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { getLevelTitle } from '../lib/xpCalculator'
 import { QuizActivity, FillBlankActivity, WritingMission } from '../components/activities'
+import { ShowWorkActivity } from '../components/activities/ShowWorkActivity'
 import { isPassing, getThreshold } from '../lib/passingThresholds'
 import { MathRenderer } from '../components/ui/MathRenderer'
 import type { LessonSection } from '../types/tema'
@@ -284,7 +285,7 @@ export function DailyMissionPage() {
 
   const warmupActivity = tema.activities.find(a => a.type === 'quiz') ?? tema.activities[0]
   const practiceActivity = tema.activities.find(a => a.type === 'fill_blank') ?? tema.activities[1]
-  const writeActivity = tema.activities.find(a => a.type === 'writing_mission') ?? tema.activities[2]
+  const writeActivity = tema.activities.find(a => a.type === 'writing_mission' || a.type === 'show_work') ?? tema.activities[2]
 
   const [step, setStep] = useState<DailyStep>('subject_pick')
   const [missionXP, setMissionXP] = useState(0)
@@ -737,7 +738,7 @@ export function DailyMissionPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#00ff88' }}>
-                    Paso 4 — Mision escrita
+                    Paso 4 — {writeActivity.type === 'show_work' ? 'Muestra tu trabajo' : 'Mision escrita'}
                   </p>
                   <p className="text-white font-semibold text-base">{writeActivity.title}</p>
                 </div>
@@ -748,6 +749,33 @@ export function DailyMissionPage() {
                   score={failedStep.score}
                   threshold={failedStep.threshold}
                   onRetry={() => handleRetry('write')}
+                />
+              ) : writeActivity.type === 'show_work' ? (
+                <ShowWorkActivity
+                  key={stepKeys.write}
+                  activity={writeActivity}
+                  temaId={tema.id}
+                  onEvaluated={(result: EvaluationResult) => {
+                    setPendingWritingResult(result)
+                  }}
+                  onComplete={(score, xpEarned) => {
+                    if (isPassing(writeActivity.type, score)) {
+                      addXP(xpEarned)
+                      setMissionXP(prev => prev + xpEarned)
+                      if (pendingWritingResult) {
+                        completeActivity(writeActivity.id, score)
+                        addWritingRecord(tema.id, {
+                          activityId: writeActivity.id,
+                          score: pendingWritingResult.score,
+                          wordCount: pendingWritingResult.wordCount,
+                          completedAt: new Date().toISOString(),
+                        })
+                      }
+                      setStep('victory')
+                    } else {
+                      setFailedStep({ step: 'write', score, threshold: getThreshold(writeActivity.type) })
+                    }
+                  }}
                 />
               ) : (
                 <WritingMission
@@ -761,7 +789,6 @@ export function DailyMissionPage() {
                     if (isPassing(writeActivity.type, score)) {
                       addXP(xpEarned)
                       setMissionXP(prev => prev + xpEarned)
-                      // Persist writing data
                       if (pendingWritingResult) {
                         completeActivity(writeActivity.id, score)
                         addWritingRecord(tema.id, {

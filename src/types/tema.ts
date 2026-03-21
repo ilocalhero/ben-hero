@@ -9,6 +9,7 @@ export type ActivityType =
   | 'sentence_builder'
   | 'paragraph_template'
   | 'writing_mission'
+  | 'show_work'
   | 'source_analysis'
   | 'compare_contrast'
 
@@ -68,6 +69,15 @@ export interface WritingMissionData {
   rubricConnectors?: string[]
 }
 
+export interface ShowWorkData {
+  problem: string              // The problem to solve (supports LaTeX)
+  expectedAnswer: string       // Correct final answer (for fallback evaluator)
+  hints?: string[]             // Optional hints shown to the student
+  solutionSteps: string[]      // Key steps the AI checks for (supports LaTeX)
+  rubricKeyTerms: string[]     // Math terms to look for in the response
+  minimumWords: number         // Minimum words required to submit
+}
+
 export interface Activity {
   id: string
   lessonId?: string
@@ -77,7 +87,7 @@ export interface Activity {
   difficulty: 1 | 2 | 3
   xpReward: number
   estimatedMinutes: number
-  data: QuizQuestion[] | FillBlankData | WritingMissionData | Record<string, unknown>
+  data: QuizQuestion[] | FillBlankData | WritingMissionData | ShowWorkData | Record<string, unknown>
 }
 
 export interface Tema {

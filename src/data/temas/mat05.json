@@ -333,6 +333,32 @@
           "explanation": "$V_{\\text{cono}} = \\frac{\\pi r^2 h}{3}$ es exactamente un tercio de $V_{\\text{cilindro}} = \\pi r^2 h$."
         }
       ]
+    },
+    {
+      "id": "mat05-showwork",
+      "lessonId": "mat05-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "Calcula el volumen total de un cilindro de radio 5 cm y altura 10 cm. Después, calcula cuántos litros de agua caben dentro. Muestra todos los pasos.",
+        "expectedAnswer": "785.4 cm³ ≈ 0.785 litros",
+        "hints": [
+          "Recuerda la fórmula del volumen del cilindro: $V = \\pi r^2 \\cdot h$",
+          "Para convertir cm³ a litros, recuerda que 1 litro = 1000 cm³"
+        ],
+        "solutionSteps": [
+          "Escribir la fórmula del volumen del cilindro: $V = \\pi r^2 \\cdot h$",
+          "Sustituir los valores: $V = \\pi \\cdot 5^2 \\cdot 10 = \\pi \\cdot 25 \\cdot 10 = 250\\pi$",
+          "Calcular el resultado numérico: $V = 250 \\times 3{,}1416 \\approx 785{,}4$ cm³",
+          "Convertir a litros dividiendo entre 1000: $\\frac{785{,}4}{1000} \\approx 0{,}785$ litros"
+        ],
+        "rubricKeyTerms": ["volumen", "cilindro", "radio", "altura", "pi", "litro"],
+        "minimumWords": 30
+      }
     }
   ]
 }

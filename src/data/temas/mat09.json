@@ -327,6 +327,31 @@
           "explanation": "Sumando ambas ecuaciones: $2x = 90 \\Rightarrow x = 45$. Sustituyendo: $45 + y = 57 \\Rightarrow y = 12$."
         }
       ]
+    },
+    {
+      "id": "mat09-showwork",
+      "lessonId": "mat09-l2",
+      "type": "show_work",
+      "title": "Muestra tu trabajo",
+      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "difficulty": 2,
+      "xpReward": 65,
+      "estimatedMinutes": 8,
+      "data": {
+        "problem": "Resuelve el siguiente sistema de ecuaciones por el método de sustitución: $\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}$. Explica cada paso del método.",
+        "expectedAnswer": "x = 3, y = 1",
+        "hints": [
+          "Empieza despejando una incógnita en la segunda ecuación, ya que $x$ tiene coeficiente 1",
+          "Una vez sustituyas en la primera ecuación, te quedará una ecuación con una sola incógnita"
+        ],
+        "solutionSteps": [
+          "Despejamos $x$ en la segunda ecuación: $x = 2 + y$",
+          "Sustituimos en la primera ecuación: $2(2 + y) + y = 7 \\Rightarrow 4 + 2y + y = 7 \\Rightarrow 3y = 3 \\Rightarrow y = 1$",
+          "Calculamos $x$ sustituyendo $y = 1$: $x = 2 + 1 = 3$. La solución es $(3, 1)$"
+        ],
+        "rubricKeyTerms": ["sistema de ecuaciones", "sustitución", "incógnita", "solución", "despejar"],
+        "minimumWords": 30
+      }
     }
   ]
 }
