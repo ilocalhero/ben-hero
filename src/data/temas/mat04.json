@@ -1,0 +1,306 @@
+{
+  "id": "mat04",
+  "subject": "matematicas",
+  "number": 4,
+  "title": "La medida apropiada",
+  "subtitle": "Razones, proporciones, porcentajes e interés",
+  "category": "numeros",
+  "color": "#ff6b35",
+  "icon": "percent",
+  "heroImage": "/2ESO_Matematicas/1_4_La_medida_apropiada/images/078_01.png",
+  "iconImage": "/2ESO_Matematicas/1_4_La_medida_apropiada/images/085_01.png",
+  "description": "Aprenderás a identificar razones y proporciones, a reconocer magnitudes directa e inversamente proporcionales, a calcular porcentajes y variaciones porcentuales, y a aplicar el interés simple y compuesto. Todo ello con ejemplos del mundo real como la huella ecológica y el consumo responsable.",
+  "textbookPages": "Págs. 78–95",
+  "keyTerms": [
+    {
+      "term": "Razón",
+      "definition": "El cociente entre dos números $a$ y $b$, escrito $\\frac{a}{b}$.",
+      "example": "La razón entre 4 huevos y 3 personas es $\\frac{4}{3} \\approx 1{,}33$"
+    },
+    {
+      "term": "Proporción",
+      "definition": "Igualdad entre dos razones: $\\frac{a}{b} = \\frac{c}{d}$. Se cumple que el producto de extremos es igual al de medios.",
+      "example": "$\\frac{3}{12} = \\frac{4}{16}$ porque $3 \\cdot 16 = 4 \\cdot 12 = 48$"
+    },
+    {
+      "term": "Proporcionalidad directa",
+      "definition": "Dos magnitudes son directamente proporcionales si al multiplicar una por un número, la otra queda multiplicada por el mismo.",
+      "example": "Si 1 noche cuesta 45 €, 7 noches cuestan $45 \\times 7 = 315$ €"
+    },
+    {
+      "term": "Proporcionalidad inversa",
+      "definition": "Dos magnitudes son inversamente proporcionales si al multiplicar una, la otra queda dividida por el mismo número. Su producto es constante.",
+      "example": "A 300 MB/s se tarda 2 h; a 500 MB/s se tarda 1 h 12 min"
+    },
+    {
+      "term": "Porcentaje",
+      "definition": "Razón que indica la cantidad que corresponde cuando el total es 100. Se puede expresar como fracción o tanto por uno.",
+      "example": "$\\frac{3}{5} = 0{,}6 = 60\\,\\%$"
+    },
+    {
+      "term": "Índice de variación",
+      "definition": "Factor por el que se multiplica la cantidad inicial para obtener la final tras un aumento o disminución porcentual.",
+      "example": "Un aumento del 21 % tiene índice $1{,}21$; una rebaja del 10 % tiene índice $0{,}9$"
+    },
+    {
+      "term": "Interés simple",
+      "definition": "Los intereses se calculan siempre sobre el capital inicial: $I = \\frac{C_I \\cdot r \\cdot t}{100}$",
+      "example": "1000 € al 6 % durante 2 años: $I = \\frac{1000 \\cdot 6 \\cdot 2}{100} = 120$ €"
+    },
+    {
+      "term": "Interés compuesto",
+      "definition": "Los intereses de cada período se acumulan al capital: $C_F = C_I \\cdot \\left(1 + \\frac{r}{100}\\right)^t$",
+      "example": "1000 € al 5 % durante 3 años: $C_F = 1000 \\cdot 1{,}05^3 = 1157{,}63$ €"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat04-l1",
+      "order": 1,
+      "title": "Razones y proporciones",
+      "subtitle": "Comparar cantidades y encontrar el término desconocido",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Razón entre dos números",
+          "content": "La razón entre dos números $a$ y $b$ es el cociente $\\frac{a}{b}$. Los números $a$ y $b$ pueden ser enteros o decimales.\n\nLas razones nos permiten comparar dos cantidades. Por ejemplo, si una receta para 3 personas lleva 4 huevos, la razón huevos/personas es $\\frac{4}{3} \\approx 1{,}33$. Para adaptar la receta a otra cantidad de personas, basta multiplicar esa razón por el nuevo número de comensales."
+        },
+        {
+          "type": "math",
+          "title": "Proporción y propiedad fundamental",
+          "content": "Una **proporción** es la igualdad entre dos razones:\n\n$$\\frac{a}{b} = \\frac{c}{d}$$\n\nLos términos $a$ y $d$ se llaman **extremos**, y $b$ y $c$ se llaman **medios**.\n\n**Propiedad fundamental:** En toda proporción, el producto de los extremos es igual al producto de los medios:\n\n$$a \\cdot d = b \\cdot c$$\n\nEjemplo: $\\frac{3}{12} = \\frac{4}{16}$ porque $3 \\cdot 16 = 4 \\cdot 12 = 48$."
+        },
+        {
+          "type": "math",
+          "title": "Calcular el término desconocido",
+          "content": "Si falta un término en una proporción, usamos la propiedad fundamental para hallarlo:\n\n$$\\frac{3}{x} = \\frac{15}{35} \\Rightarrow 3 \\cdot 35 = x \\cdot 15 \\Rightarrow x = \\frac{105}{15} = 7$$\n\n$$\\frac{8}{6} = \\frac{x+2}{3} \\Rightarrow 8 \\cdot 3 = 6 \\cdot (x+2) \\Rightarrow x+2 = 4 \\Rightarrow x = 2$$\n\n$$\\frac{12}{x} = \\frac{x}{3} \\Rightarrow 12 \\cdot 3 = x^2 \\Rightarrow x^2 = 36 \\Rightarrow x = 6 \\text{ o } x = -6$$"
+        },
+        {
+          "type": "callout",
+          "title": "¿Forman proporción?",
+          "content": "Para comprobar si dos razones forman proporción, hay dos métodos:",
+          "highlights": [
+            "Calcular el valor decimal de cada razón y ver si son iguales",
+            "Comprobar que el producto de extremos es igual al de medios",
+            "Si $\\frac{15}{20} = 0{,}75$ y $\\frac{20}{25} = 0{,}8$, NO forman proporción porque $0{,}75 \\neq 0{,}8$"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat04-l2",
+      "order": 2,
+      "title": "Proporcionalidad y porcentajes",
+      "subtitle": "Magnitudes proporcionales, repartos y cálculo de porcentajes",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Proporcionalidad directa",
+          "content": "Dos magnitudes son **directamente proporcionales** cuando al multiplicar o dividir una por un número, la otra queda multiplicada o dividida por el mismo número.\n\nEjemplo: El número de noches de hotel y el precio son directamente proporcionales. Si 1 noche cuesta 45 €, entonces 7 noches cuestan $45 \\times 7 = 315$ €.\n\nLa **razón de proporcionalidad** es el cociente constante entre pares de valores: $\\frac{45}{1} = \\frac{90}{2} = \\frac{315}{7} = 45$."
+        },
+        {
+          "type": "math",
+          "title": "Repartos directamente proporcionales",
+          "content": "Para repartir una cantidad $N$ de forma directamente proporcional a $a$, $b$ y $c$:\n\n1. Calculamos la razón de proporcionalidad: $r = \\frac{N}{a + b + c}$\n2. Multiplicamos cada parte por $r$.\n\n**Ejemplo:** David invierte 10 €, Emma 40 € y Fran 150 €. Si ganan 3000 €:\n\n$$r = \\frac{3000}{10 + 40 + 150} = \\frac{3000}{200} = 15$$\n\nDavid: $15 \\times 10 = 150$ € · Emma: $15 \\times 40 = 600$ € · Fran: $15 \\times 150 = 2250$ €"
+        },
+        {
+          "type": "math",
+          "title": "Porcentajes",
+          "content": "Un porcentaje expresa la razón entre dos magnitudes directamente proporcionales, indicando la cantidad correspondiente cuando el total es 100.\n\n$$\\frac{3}{5} = 0{,}6 = 60\\,\\% = 600\\,‰$$\n\nPara calcular un porcentaje usamos una proporción:\n\n$$\\frac{15}{100} = \\frac{x}{556} \\Rightarrow x = \\frac{15 \\cdot 556}{100} = 83{,}40 \\text{ €}$$\n\n**Truco:** Los porcentajes son reversibles. El 4 % de 50 es lo mismo que el 50 % de 4, es decir, 2."
+        },
+        {
+          "type": "callout",
+          "title": "Cuidado con los porcentajes encadenados",
+          "content": "Cuando se aplican varios porcentajes seguidos, NO se pueden sumar directamente. Cada porcentaje se aplica sobre la cantidad resultante del anterior.",
+          "highlights": [
+            "Un videojuego de 40 € con 10 % de rebaja y luego 21 % de IVA: $40 \\times 0{,}9 \\times 1{,}21 = 43{,}56$ €",
+            "No se puede hacer $100 - 10 + 21 = 111\\,\\%$ porque el IVA se aplica al precio rebajado",
+            "El índice de variación para un aumento del $r\\,\\%$ es $1 + \\frac{r}{100}$; para una disminución es $1 - \\frac{r}{100}$"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat04-l3",
+      "order": 3,
+      "title": "Interés y proporcionalidad inversa",
+      "subtitle": "Interés simple, compuesto y magnitudes inversas",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Interés simple",
+          "content": "Cuando un capital se coloca a **interés simple**, los intereses de cada período NO se acumulan al capital.\n\n**Fórmula de los intereses:**\n$$I = \\frac{C_I \\cdot r \\cdot t}{100}$$\n\n**Capital final:**\n$$C_F = C_I + I = C_I + \\frac{C_I \\cdot r \\cdot t}{100}$$\n\nDonde $C_I$ = capital inicial, $r$ = tipo de interés anual (%), $t$ = tiempo en años.\n\n**Ejemplo:** 1000 € al 6 % durante 2 años: $C_F = 1000 + \\frac{1000 \\cdot 6 \\cdot 2}{100} = 1000 + 120 = 1120$ €"
+        },
+        {
+          "type": "math",
+          "title": "Interés compuesto",
+          "content": "En el **interés compuesto**, los intereses de cada período se acumulan al capital y generan nuevos intereses.\n\n**Fórmula:**\n$$C_F = C_I \\cdot \\left(1 + \\frac{r}{100}\\right)^t$$\n\n**Ejemplo:** 1000 € al 5 % durante 3 años:\n$$C_F = 1000 \\cdot \\left(1 + \\frac{5}{100}\\right)^3 = 1000 \\cdot 1{,}05^3 = 1157{,}63 \\text{ €}$$\n\nCon interés simple serían solo $1000 + \\frac{1000 \\cdot 5 \\cdot 3}{100} = 1150$ €. La diferencia crece con el tiempo."
+        },
+        {
+          "type": "text",
+          "title": "Proporcionalidad inversa",
+          "content": "Dos magnitudes son **inversamente proporcionales** cuando al multiplicar una por un número, la otra queda dividida por ese mismo número. El producto de las cantidades correspondientes es siempre constante.\n\nEjemplo: Un ordenador con 300 MB/s tarda 2 h en descargar un archivo. A 500 MB/s:\n\n$300 \\cdot 2 = 500 \\cdot x \\Rightarrow x = \\frac{600}{500} = 1{,}2$ horas = 1 hora 12 minutos.\n\nLa constante de proporcionalidad inversa es $k = 300 \\cdot 2 = 600$."
+        },
+        {
+          "type": "callout",
+          "title": "Repartos inversamente proporcionales",
+          "content": "Para repartir $N$ de forma inversamente proporcional a $a$, $b$ y $c$, se reparte de forma directamente proporcional a sus inversos $\\frac{1}{a}$, $\\frac{1}{b}$ y $\\frac{1}{c}$.",
+          "highlights": [
+            "Calculamos $k = \\frac{N}{\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}}$",
+            "La parte de cada uno es $\\frac{1}{a} \\cdot k$, $\\frac{1}{b} \\cdot k$, $\\frac{1}{c} \\cdot k$",
+            "Ejemplo: 960 árboles inversamente proporcional a 120, 150 y 200 → se plantan 400, 320 y 240"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat04-quiz1",
+      "lessonId": "mat04-l1",
+      "type": "quiz",
+      "title": "Razones y proporciones",
+      "description": "Comprueba si dominas razones, proporciones y la propiedad fundamental",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuál es la razón entre 24 y 42?",
+          "options": ["$\\frac{24}{42} = \\frac{4}{7}$", "$\\frac{42}{24} = \\frac{7}{4}$", "$\\frac{24}{42} = \\frac{3}{7}$", "$\\frac{24}{42} = \\frac{2}{7}$"],
+          "correctIndex": 0,
+          "explanation": "La razón entre 24 y 42 es $\\frac{24}{42}$. Simplificando entre 6: $\\frac{4}{7}$."
+        },
+        {
+          "question": "¿Las razones $\\frac{3}{12}$ y $\\frac{4}{16}$ forman proporción?",
+          "options": ["No, porque 3 × 16 ≠ 4 × 12", "Sí, porque ambas valen 0,25", "No, porque son fracciones distintas", "Sí, porque 3 + 16 = 4 + 15"],
+          "correctIndex": 1,
+          "explanation": "$\\frac{3}{12} = 0{,}25$ y $\\frac{4}{16} = 0{,}25$. Como son iguales, forman proporción. Además $3 \\cdot 16 = 4 \\cdot 12 = 48$."
+        },
+        {
+          "question": "En la proporción $\\frac{3}{x} = \\frac{15}{35}$, ¿cuánto vale $x$?",
+          "options": ["5", "7", "9", "21"],
+          "correctIndex": 1,
+          "explanation": "Por la propiedad fundamental: $3 \\cdot 35 = x \\cdot 15$, así que $x = \\frac{105}{15} = 7$."
+        },
+        {
+          "question": "En una proporción $\\frac{a}{b} = \\frac{c}{d}$, ¿qué se cumple siempre?",
+          "options": ["$a + d = b + c$", "$a \\cdot d = b \\cdot c$", "$a \\cdot b = c \\cdot d$", "$a - d = b - c$"],
+          "correctIndex": 1,
+          "explanation": "La propiedad fundamental de las proporciones dice que el producto de los extremos ($a \\cdot d$) es igual al de los medios ($b \\cdot c$)."
+        },
+        {
+          "question": "¿Cuál de estos pares de razones NO forma proporción?",
+          "options": ["$\\frac{2}{6}$ y $\\frac{3}{9}$", "$\\frac{5}{10}$ y $\\frac{7}{14}$", "$\\frac{15}{20}$ y $\\frac{20}{25}$", "$\\frac{4}{12}$ y $\\frac{5}{15}$"],
+          "correctIndex": 2,
+          "explanation": "$\\frac{15}{20} = 0{,}75$ pero $\\frac{20}{25} = 0{,}8$. Como $0{,}75 \\neq 0{,}8$, no forman proporción."
+        }
+      ]
+    },
+    {
+      "id": "mat04-quiz2",
+      "lessonId": "mat04-l2",
+      "type": "quiz",
+      "title": "Proporcionalidad y porcentajes",
+      "description": "Practica con magnitudes proporcionales, repartos y porcentajes",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "Si 1 noche de hotel cuesta 45 €, ¿cuánto cuestan 7 noches?",
+          "options": ["270 €", "315 €", "360 €", "405 €"],
+          "correctIndex": 1,
+          "explanation": "Proporcionalidad directa: $45 \\times 7 = 315$ €. La razón de proporcionalidad es 45."
+        },
+        {
+          "question": "¿Cuál es el 15 % de 556?",
+          "options": ["55,60", "83,40", "111,20", "78,00"],
+          "correctIndex": 1,
+          "explanation": "$\\frac{15}{100} = \\frac{x}{556} \\Rightarrow x = \\frac{15 \\cdot 556}{100} = 83{,}40$"
+        },
+        {
+          "question": "Se reparten 3000 € proporcionalmente a 10, 40 y 150. ¿Cuánto recibe quien aportó 40?",
+          "options": ["150 €", "400 €", "600 €", "2250 €"],
+          "correctIndex": 2,
+          "explanation": "$r = \\frac{3000}{10+40+150} = 15$. La parte de 40 es $15 \\times 40 = 600$ €."
+        },
+        {
+          "question": "Un producto de 40 € se rebaja un 10 % y luego se le aplica un 21 % de IVA. ¿Cuál es el precio final?",
+          "options": ["44,40 €", "43,56 €", "40,00 €", "44,00 €"],
+          "correctIndex": 1,
+          "explanation": "$40 \\times 0{,}9 \\times 1{,}21 = 43{,}56$ €. No se pueden sumar los porcentajes directamente."
+        },
+        {
+          "question": "El 4 % de 50 es igual a...",
+          "options": ["el 50 % de 4", "el 50 % de 40", "el 40 % de 5", "el 25 % de 8"],
+          "correctIndex": 0,
+          "explanation": "Los porcentajes son reversibles: el 4 % de 50 = $\\frac{4 \\times 50}{100} = 2$ = el 50 % de 4."
+        },
+        {
+          "question": "¿Qué índice de variación corresponde a una disminución del 5 %?",
+          "options": ["1,05", "0,95", "0,05", "5,00"],
+          "correctIndex": 1,
+          "explanation": "Una disminución del 5 % tiene índice $1 - \\frac{5}{100} = 0{,}95$."
+        }
+      ]
+    },
+    {
+      "id": "mat04-fill1",
+      "lessonId": "mat04-l1",
+      "type": "fill_blank",
+      "title": "Conceptos de proporcionalidad",
+      "description": "Completa las frases clave sobre razones, proporciones y magnitudes",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "La razón entre dos números es el ___ entre ellos. Una proporción es la ___ entre dos razones. En toda proporción, el producto de los ___ es igual al producto de los medios. Dos magnitudes son directamente proporcionales si al multiplicar una, la otra queda ___ por el mismo número. Dos magnitudes son inversamente proporcionales si su ___ es constante.",
+        "blanks": ["cociente", "igualdad", "extremos", "multiplicada", "producto"],
+        "wordBank": ["cociente", "igualdad", "extremos", "multiplicada", "producto", "suma", "medios", "dividida", "diferencia", "razón"]
+      }
+    },
+    {
+      "id": "mat04-quiz3",
+      "lessonId": "mat04-l3",
+      "type": "quiz",
+      "title": "Interés y proporcionalidad inversa",
+      "description": "Pon a prueba tus conocimientos de interés simple, compuesto y proporcionalidad inversa",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál es el capital final de 1000 € al 6 % de interés simple durante 2 años?",
+          "options": ["1060 €", "1120 €", "1123,60 €", "1200 €"],
+          "correctIndex": 1,
+          "explanation": "$C_F = 1000 + \\frac{1000 \\cdot 6 \\cdot 2}{100} = 1000 + 120 = 1120$ €"
+        },
+        {
+          "question": "¿Cuál es el capital final de 1000 € al 5 % de interés compuesto durante 3 años?",
+          "options": ["1150,00 €", "1157,63 €", "1166,38 €", "1215,00 €"],
+          "correctIndex": 1,
+          "explanation": "$C_F = 1000 \\cdot 1{,}05^3 = 1000 \\cdot 1{,}157625 = 1157{,}63$ €"
+        },
+        {
+          "question": "Un ordenador a 300 MB/s tarda 2 horas en descargar un archivo. ¿Cuánto tardará a 500 MB/s?",
+          "options": ["1 h", "1 h 12 min", "1 h 30 min", "2 h 30 min"],
+          "correctIndex": 1,
+          "explanation": "$300 \\cdot 2 = 500 \\cdot x \\Rightarrow x = \\frac{600}{500} = 1{,}2$ h = 1 hora 12 minutos."
+        },
+        {
+          "question": "En el interés simple, los intereses de cada período...",
+          "options": ["se acumulan al capital", "no se acumulan al capital", "se restan del capital", "se duplican cada año"],
+          "correctIndex": 1,
+          "explanation": "En el interés simple, los intereses NO se acumulan al capital. Solo en el interés compuesto se acumulan."
+        },
+        {
+          "question": "8 amigos compran un regalo pagando 12 € cada uno. Si se unen 2 más, ¿cuánto paga cada amigo?",
+          "options": ["10,00 €", "9,60 €", "12,00 €", "8,00 €"],
+          "correctIndex": 1,
+          "explanation": "El total es $8 \\times 12 = 96$ €. Entre 10 amigos: $\\frac{96}{10} = 9{,}60$ € cada uno. Es proporcionalidad inversa."
+        }
+      ]
+    }
+  ]
+}

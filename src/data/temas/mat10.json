@@ -1,0 +1,326 @@
+{
+  "id": "mat10",
+  "subject": "matematicas",
+  "number": 10,
+  "title": "Cada oveja con su pareja",
+  "subtitle": "Funciones, gráficas y ecuación de la recta",
+  "category": "algebra",
+  "color": "#00d4ff",
+  "icon": "functions",
+  "heroImage": "/2ESO_Matematicas/3_4_Cada_oveja_con_su_pareja/images/222_01.jpg",
+  "iconImage": "/2ESO_Matematicas/3_4_Cada_oveja_con_su_pareja/images/227_05.jpg",
+  "description": "Aprenderás qué es una función, cómo representarla mediante tablas, fórmulas y gráficas, y a estudiar sus propiedades: dominio, recorrido, continuidad, crecimiento y máximos/mínimos. Dominarás la función lineal y = mx + n, la pendiente, la ordenada en el origen y la ecuación de la recta.",
+  "textbookPages": "Págs. 214–231",
+  "keyTerms": [
+    {
+      "term": "Función",
+      "definition": "Correspondencia entre dos conjuntos donde a cada elemento del conjunto inicial le corresponde un único valor del conjunto final.",
+      "example": "$f(x) = 150x$ asigna a cada $x$ m² de placa solar una producción de $150x$ vatios"
+    },
+    {
+      "term": "Variable independiente",
+      "definition": "Elemento del conjunto inicial de una función, representado habitualmente por $x$.",
+      "example": "En $y = 2x - 3$, la variable independiente es $x$"
+    },
+    {
+      "term": "Variable dependiente",
+      "definition": "Elemento del conjunto final, representado por $y$ o $f(x)$, cuyo valor depende de la variable independiente.",
+      "example": "En $y = 2x - 3$, la variable dependiente es $y$"
+    },
+    {
+      "term": "Dominio",
+      "definition": "Conjunto de valores que puede tomar la variable independiente de una función. Se escribe $D(f)$.",
+      "example": "Si la gráfica va de $x = -2$ a $x = 4$, el dominio es $[-2, 4]$"
+    },
+    {
+      "term": "Recorrido",
+      "definition": "Conjunto de valores que puede tomar la variable dependiente. Se escribe $R(f)$.",
+      "example": "Si $y$ varía entre $-1$ y $3$, el recorrido es $[-1, 3]$"
+    },
+    {
+      "term": "Pendiente",
+      "definition": "Número $m$ que indica la inclinación de una recta. Se calcula como $m = \\frac{y_2 - y_1}{x_2 - x_1}$.",
+      "example": "La recta que pasa por $(0, 3)$ y $(2, 1)$ tiene pendiente $m = \\frac{1-3}{2-0} = -1$"
+    },
+    {
+      "term": "Ordenada en el origen",
+      "definition": "Valor $n$ donde la recta corta al eje $Y$. Es el punto $(0, n)$.",
+      "example": "En $y = 3x + 5$, la ordenada en el origen es $n = 5$"
+    },
+    {
+      "term": "Función lineal",
+      "definition": "Función de la forma $y = mx + n$ cuya gráfica es una línea recta.",
+      "example": "$y = 0{,}13x + 6{,}24$ representa el coste de la luz según el consumo"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat10-l1",
+      "order": 1,
+      "title": "Correspondencias y funciones",
+      "subtitle": "Qué es una función, tablas, fórmulas y gráficas",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Correspondencias y funciones",
+          "content": "Una **correspondencia** es cualquier relación que establezcamos entre los elementos de dos conjuntos. El conjunto de partida se llama **conjunto inicial** y el de llegada, **conjunto final**.\n\nUna **función** $f$ es una correspondencia entre dos conjuntos tal que a cada elemento del conjunto inicial le corresponde **un único** valor del conjunto final.\n\nSi a un elemento del conjunto inicial le corresponden varios valores del final, NO es una función."
+        },
+        {
+          "type": "math",
+          "title": "Variables y representación",
+          "content": "En una función:\n\n- La **variable independiente** ($x$) son los elementos del conjunto inicial.\n- La **variable dependiente** ($y$ o $f(x)$) son los elementos del conjunto final.\n\nUna función se puede representar de cuatro formas:\n\n**1. Enunciado:** «Una placa fotovoltaica genera 150 W por cada m²».\n**2. Fórmula:** $y = 150x$\n**3. Tabla de valores:**\n| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $y$ | 0 | 150 | 300 | 450 |\n\n**4. Gráfica:** representación en ejes cartesianos."
+        },
+        {
+          "type": "callout",
+          "title": "Coordenadas cartesianas",
+          "content": "Los **ejes cartesianos** son dos rectas perpendiculares que dividen el plano en cuatro cuadrantes. Cada punto se identifica con un par $(x, y)$.",
+          "highlights": [
+            "El eje horizontal es el **eje X** (abscisas)",
+            "El eje vertical es el **eje Y** (ordenadas)",
+            "El punto $(0, 0)$ es el **origen de coordenadas**",
+            "Cuadrante I: $x > 0, y > 0$ — Cuadrante II: $x < 0, y > 0$ — etc."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat10-l2",
+      "order": 2,
+      "title": "Estudio de una función",
+      "subtitle": "Dominio, recorrido, continuidad, crecimiento y extremos",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Dominio y recorrido",
+          "content": "El **dominio** $D(f)$ es el conjunto de valores que puede tomar $x$.\nEl **recorrido** $R(f)$ es el conjunto de valores que puede tomar $y$.\n\n**Ejemplo:** En un trayecto en bicicleta de 20 minutos recorriendo hasta 5 km:\n- Dominio: $[0, 20]$ (minutos)\n- Recorrido: $[0, 5]$ (kilómetros)"
+        },
+        {
+          "type": "text",
+          "title": "Continuidad y discontinuidad",
+          "content": "Una función es **continua** en un intervalo si su gráfica no presenta saltos — puedes dibujarla sin levantar el lápiz del papel.\n\nUna función es **discontinua** si presenta saltos para algún valor de $x$. Los puntos donde ocurren los saltos se llaman **discontinuidades**.\n\nEjemplo: una tarifa eléctrica que cobra por hora completa presenta saltos en $x = 1, 2, 3, \\ldots$"
+        },
+        {
+          "type": "callout",
+          "title": "Crecimiento, decrecimiento y extremos",
+          "content": "Al estudiar una función de izquierda a derecha:",
+          "highlights": [
+            "**Creciente:** al aumentar $x$, aumenta $y$",
+            "**Decreciente:** al aumentar $x$, disminuye $y$",
+            "**Constante:** al aumentar $x$, $y$ no cambia",
+            "**Máximo:** punto donde la función pasa de crecer a decrecer",
+            "**Mínimo:** punto donde la función pasa de decrecer a crecer"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Puntos de corte con los ejes",
+          "content": "Los **puntos de corte con el eje X** tienen coordenada $y = 0$: son de la forma $(x, 0)$.\n\nLos **puntos de corte con el eje Y** tienen coordenada $x = 0$: son de la forma $(0, y)$.\n\n**Ejemplo:** Si una gráfica corta al eje X en $(-3, 0)$ y $(2, 0)$, y al eje Y en $(0, 1)$, esos son sus puntos de corte."
+        }
+      ]
+    },
+    {
+      "id": "mat10-l3",
+      "order": 3,
+      "title": "La función lineal y la ecuación de la recta",
+      "subtitle": "Pendiente, ordenada en el origen, rectas paralelas y secantes",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Función lineal: $y = mx + n$",
+          "content": "Una **función lineal** tiene la forma $y = mx + n$, donde:\n\n- $m$ es la **pendiente** (inclinación de la recta)\n- $n$ es la **ordenada en el origen** (punto de corte con el eje Y)\n\nSegún el signo de $m$:\n- $m > 0$: la recta es **creciente**\n- $m = 0$: la recta es **constante** (horizontal)\n- $m < 0$: la recta es **decreciente**"
+        },
+        {
+          "type": "math",
+          "title": "Cálculo de la pendiente",
+          "content": "La pendiente de la recta que pasa por dos puntos $P(x_1, y_1)$ y $Q(x_2, y_2)$ es:\n\n$$m = \\frac{y_2 - y_1}{x_2 - x_1}$$\n\n**Ejemplo:** La recta por $P(0, 3)$ y $Q(2, 1)$:\n$$m = \\frac{1 - 3}{2 - 0} = \\frac{-2}{2} = -1$$\nComo $m < 0$, la recta es decreciente."
+        },
+        {
+          "type": "callout",
+          "title": "Hallar la ecuación de una recta",
+          "content": "Hay varias formas de encontrar la ecuación $y = mx + n$:",
+          "highlights": [
+            "**Dados $m$ y $n$:** se escribe directamente $y = mx + n$",
+            "**Dados dos puntos:** se calcula $m$ con la fórmula y luego se sustituye un punto para hallar $n$",
+            "**Dado un punto y $m$:** se sustituye el punto en $y = mx + n$ y se despeja $n$",
+            "**Ejemplo:** Recta por $(3, 4)$ con $m = 5$: $4 = 5 \\cdot 3 + n \\Rightarrow n = -11 \\Rightarrow y = 5x - 11$"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Rectas paralelas y secantes",
+          "content": "Dos rectas son **paralelas** si tienen la **misma pendiente** ($m_1 = m_2$). No tienen ningún punto en común.\n\nDos rectas son **secantes** si tienen **distinta pendiente** ($m_1 \\neq m_2$). Se cortan en un único punto.\n\n**Ejemplo:**\n$r: y = 2x + 3$ y $t: y = 2x - 1$ son paralelas ($m = 2$).\n$r: y = 2x + 3$ y $s: y = -x + 1$ son secantes ($m = 2 \\neq -1$)."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat10-quiz1",
+      "lessonId": "mat10-l1",
+      "type": "quiz",
+      "title": "Funciones, tablas y gráficas",
+      "description": "Comprueba lo que sabes sobre correspondencias y funciones",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué condición debe cumplir una correspondencia para ser función?",
+          "options": [
+            "Que todos los elementos del conjunto final tengan imagen",
+            "Que a cada elemento del conjunto inicial le corresponda un único valor del final",
+            "Que tenga el mismo número de elementos en ambos conjuntos",
+            "Que sea continua en todo su dominio"
+          ],
+          "correctIndex": 1,
+          "explanation": "Una función asigna a cada elemento del conjunto inicial exactamente un valor del conjunto final."
+        },
+        {
+          "question": "En la función $y = 150x$, ¿cuál es la variable dependiente?",
+          "options": ["$x$", "$150$", "$y$", "$150x$"],
+          "correctIndex": 2,
+          "explanation": "La variable dependiente es $y$ (o $f(x)$), cuyo valor depende de $x$."
+        },
+        {
+          "question": "¿En qué cuadrante se encuentra el punto $(-3, 5)$?",
+          "options": ["Cuadrante I", "Cuadrante II", "Cuadrante III", "Cuadrante IV"],
+          "correctIndex": 1,
+          "explanation": "El cuadrante II tiene $x < 0$ e $y > 0$. Como $-3 < 0$ y $5 > 0$, está en el II."
+        },
+        {
+          "question": "Si $f(x) = 2x - 3$, ¿cuánto vale $f(4)$?",
+          "options": ["5", "8", "11", "1"],
+          "correctIndex": 0,
+          "explanation": "$f(4) = 2 \\cdot 4 - 3 = 8 - 3 = 5$"
+        },
+        {
+          "question": "¿De cuántas formas distintas se puede representar una función?",
+          "options": ["2: fórmula y gráfica", "3: tabla, fórmula y gráfica", "4: enunciado, fórmula, tabla y gráfica", "1: solo gráfica"],
+          "correctIndex": 2,
+          "explanation": "Una función se puede representar mediante enunciado, fórmula, tabla de valores y gráfica."
+        }
+      ]
+    },
+    {
+      "id": "mat10-quiz2",
+      "lessonId": "mat10-l2",
+      "type": "quiz",
+      "title": "Estudio de funciones",
+      "description": "Dominio, recorrido, continuidad y crecimiento",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "Si la gráfica de una función va de $x = -2$ a $x = 4$ y de $y = -1$ a $y = 3$, ¿cuál es su dominio?",
+          "options": ["$[-1, 3]$", "$[-2, 4]$", "$[-2, 3]$", "$[-1, 4]$"],
+          "correctIndex": 1,
+          "explanation": "El dominio es el conjunto de valores de $x$: desde $-2$ hasta $4$, es decir $[-2, 4]$."
+        },
+        {
+          "question": "¿Cuándo decimos que una función es continua?",
+          "options": [
+            "Cuando siempre es creciente",
+            "Cuando su gráfica no presenta saltos",
+            "Cuando pasa por el origen",
+            "Cuando su dominio es todo $\\mathbb{R}$"
+          ],
+          "correctIndex": 1,
+          "explanation": "Una función es continua si su gráfica no tiene saltos — se puede dibujar sin levantar el lápiz."
+        },
+        {
+          "question": "¿Qué coordenada tienen siempre los puntos de corte con el eje X?",
+          "options": ["$x = 0$", "$y = 0$", "$x = y$", "$x + y = 0$"],
+          "correctIndex": 1,
+          "explanation": "Los puntos de corte con el eje X tienen la forma $(x, 0)$, es decir, $y = 0$."
+        },
+        {
+          "question": "Si una función crece a la izquierda de un punto y decrece a la derecha, ese punto es un:",
+          "options": ["Mínimo", "Punto de corte", "Máximo", "Punto de discontinuidad"],
+          "correctIndex": 2,
+          "explanation": "Un máximo ocurre donde la función pasa de crecer a decrecer."
+        },
+        {
+          "question": "Una función es decreciente en un intervalo cuando:",
+          "options": [
+            "Al aumentar $x$, aumenta $y$",
+            "Al aumentar $x$, disminuye $y$",
+            "Al aumentar $x$, $y$ no cambia",
+            "Tiene una discontinuidad"
+          ],
+          "correctIndex": 1,
+          "explanation": "Decreciente significa que al aumentar la variable independiente, la dependiente disminuye."
+        },
+        {
+          "question": "¿Cuál es el recorrido de una función cuya gráfica tiene valores de $y$ entre $-1$ y $3$?",
+          "options": ["$[-2, 4]$", "$[0, 3]$", "$[-1, 3]$", "$[-1, 4]$"],
+          "correctIndex": 2,
+          "explanation": "El recorrido es el conjunto de valores de $y$: desde $-1$ hasta $3$, es decir $[-1, 3]$."
+        }
+      ]
+    },
+    {
+      "id": "mat10-fill1",
+      "lessonId": "mat10-l3",
+      "type": "fill_blank",
+      "title": "La función lineal y la recta",
+      "description": "Completa las frases sobre la función lineal y la ecuación de la recta",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Una función lineal tiene la forma $y = mx + n$. La letra $m$ representa la ___ de la recta y la letra $n$ es la ___. Si $m > 0$, la recta es ___. Si $m < 0$, la recta es ___. Dos rectas con la misma pendiente son ___.",
+        "blanks": ["pendiente", "ordenada en el origen", "creciente", "decreciente", "paralelas"],
+        "wordBank": ["pendiente", "ordenada en el origen", "creciente", "decreciente", "paralelas", "secantes", "constante", "dominio"]
+      }
+    },
+    {
+      "id": "mat10-quiz3",
+      "lessonId": "mat10-l3",
+      "type": "quiz",
+      "title": "Ecuación de la recta y pendiente",
+      "description": "Calcula pendientes y ecuaciones de rectas",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál es la pendiente de la recta que pasa por $P(0, 3)$ y $Q(2, 1)$?",
+          "options": ["$2$", "$-1$", "$1$", "$-2$"],
+          "correctIndex": 1,
+          "explanation": "$m = \\frac{1 - 3}{2 - 0} = \\frac{-2}{2} = -1$"
+        },
+        {
+          "question": "¿Cuál es la ordenada en el origen de la recta $y = 3x - 8$?",
+          "options": ["$3$", "$-3$", "$8$", "$-8$"],
+          "correctIndex": 3,
+          "explanation": "En $y = mx + n$, la ordenada en el origen es $n$. Aquí $n = -8$."
+        },
+        {
+          "question": "La recta $y = 5x - 11$ pasa por el punto $(3, 4)$. ¿Es correcto?",
+          "options": ["Sí, porque $5 \\cdot 3 - 11 = 4$", "No, porque $5 \\cdot 3 - 11 = 6$", "Sí, porque $5 + 3 = 8$", "No, porque $3 - 11 = -8$"],
+          "correctIndex": 0,
+          "explanation": "Sustituimos: $y = 5 \\cdot 3 - 11 = 15 - 11 = 4$. Sí, el punto $(3, 4)$ pertenece a la recta."
+        },
+        {
+          "question": "¿Cuál de estas rectas es paralela a $y = -3x + 6$?",
+          "options": ["$y = 3x + 6$", "$y = -3x - 2$", "$y = -6x + 3$", "$y = \\frac{1}{3}x + 6$"],
+          "correctIndex": 1,
+          "explanation": "Dos rectas son paralelas si tienen la misma pendiente. La pendiente es $-3$, y $y = -3x - 2$ también tiene $m = -3$."
+        },
+        {
+          "question": "¿Cuál es la ecuación de la recta con pendiente $m = 2$ que pasa por $(1, 5)$?",
+          "options": ["$y = 2x + 5$", "$y = 2x + 3$", "$y = 5x + 2$", "$y = 2x - 3$"],
+          "correctIndex": 1,
+          "explanation": "Sustituimos: $5 = 2 \\cdot 1 + n \\Rightarrow n = 3$. La ecuación es $y = 2x + 3$."
+        },
+        {
+          "question": "Las rectas $y = 4x + 1$ e $y = -2x + 7$ son:",
+          "options": ["Paralelas", "Secantes", "Iguales", "Perpendiculares"],
+          "correctIndex": 1,
+          "explanation": "Tienen pendientes distintas ($4 \\neq -2$), por lo que son secantes y se cortan en un punto."
+        }
+      ]
+    }
+  ]
+}

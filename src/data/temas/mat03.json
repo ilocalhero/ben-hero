@@ -1,0 +1,315 @@
+{
+  "id": "mat03",
+  "subject": "matematicas",
+  "number": 3,
+  "title": "Crecemos más rápido",
+  "subtitle": "Potencias, raíces y notación científica",
+  "category": "numeros",
+  "color": "#b24bff",
+  "icon": "zap",
+  "heroImage": "/2ESO_Matematicas/1_3_Crecemos_ms_rpido/images/56_02.png",
+  "iconImage": "/2ESO_Matematicas/1_3_Crecemos_ms_rpido/images/73_01.jpg",
+  "description": "Aprenderás a calcular potencias de exponente entero (positivo, negativo y cero), a operar con potencias de la misma base y del mismo exponente, a expresar números en notación científica y a calcular raíces cuadradas. También trabajarás con potencias y raíces de fracciones.",
+  "textbookPages": "Págs. 56–76",
+  "keyTerms": [
+    {
+      "term": "Potencia",
+      "definition": "Forma abreviada de escribir un producto de factores iguales: $a^n = a \\cdot a \\cdot \\ldots \\cdot a$ ($n$ veces).",
+      "example": "$2^5 = 2 \\cdot 2 \\cdot 2 \\cdot 2 \\cdot 2 = 32$"
+    },
+    {
+      "term": "Base y exponente",
+      "definition": "En $a^n$, la base $a$ es el factor que se repite y el exponente $n$ indica cuántas veces se multiplica.",
+      "example": "En $3^4$, la base es 3 y el exponente es 4"
+    },
+    {
+      "term": "Exponente negativo",
+      "definition": "Una potencia con exponente negativo es la inversa de la potencia con exponente positivo: $a^{-n} = \\frac{1}{a^n}$.",
+      "example": "$2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$"
+    },
+    {
+      "term": "Notación científica",
+      "definition": "Forma de expresar números muy grandes o muy pequeños como $a \\cdot 10^p$, donde $1 \\leq a < 10$ y $p$ es entero.",
+      "example": "$4{,}27 \\cdot 10^{10}$ km representa 42 700 000 000 km"
+    },
+    {
+      "term": "Orden de magnitud",
+      "definition": "El exponente $p$ de la potencia de 10 en la notación científica de un número.",
+      "example": "En $3{,}6 \\cdot 10^{14}$, el orden de magnitud es 14"
+    },
+    {
+      "term": "Raíz cuadrada",
+      "definition": "$\\sqrt{b} = a$ si $a^2 = b$, con $b \\geq 0$. Es la operación inversa de elevar al cuadrado.",
+      "example": "$\\sqrt{81} = 9$ porque $9^2 = 81$"
+    },
+    {
+      "term": "Cuadrado perfecto",
+      "definition": "Número cuya raíz cuadrada es exacta, es decir, es el cuadrado de un número entero.",
+      "example": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100..."
+    },
+    {
+      "term": "Raíz cuadrada entera",
+      "definition": "El mayor entero $a$ tal que $a^2 < b < (a+1)^2$. El resto es $r = b - a^2$.",
+      "example": "$\\sqrt{29}$: raíz entera = 5, resto = 4, pues $5^2 = 25 < 29 < 36 = 6^2$"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat03-l1",
+      "order": 1,
+      "title": "Potencias de exponente entero",
+      "subtitle": "Base, exponente, signo y propiedades",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es una potencia?",
+          "content": "Una potencia es una forma abreviada de escribir un producto de factores iguales.\n\n$a^n = \\underbrace{a \\cdot a \\cdot \\ldots \\cdot a}_{n \\text{ veces}}$\n\nPor ejemplo: $4^4 = 4 \\cdot 4 \\cdot 4 \\cdot 4 = 256$\n\nEl número $a$ se llama **base** y el número $n$ se llama **exponente**."
+        },
+        {
+          "type": "callout",
+          "title": "Regla de signos en las potencias",
+          "content": "El signo del resultado de una potencia depende de la base y del exponente:",
+          "highlights": [
+            "Base positiva → resultado siempre positivo",
+            "Base negativa y exponente par → resultado positivo: $(-4)^4 = 256$",
+            "Base negativa y exponente impar → resultado negativo: $(-4)^3 = -64$",
+            "Cuidado: $(-2)^4 = 16$ pero $-2^4 = -16$ (¡no es lo mismo!)"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Exponente cero y exponente negativo",
+          "content": "**Exponente cero:** Cualquier número distinto de 0 elevado a 0 es 1.\n$a^0 = 1 \\quad (a \\neq 0)$\n\n**Exponente negativo:** Una potencia de exponente negativo es la inversa de la potencia con exponente positivo.\n$a^{-n} = \\frac{1}{a^n} = \\left(\\frac{1}{a}\\right)^n$\n\nEjemplos:\n$2^{-2} = \\frac{1}{2^2} = \\frac{1}{4}$\n$(-2)^{-3} = \\frac{1}{(-2)^3} = \\frac{1}{-8} = -\\frac{1}{8}$"
+        },
+        {
+          "type": "math",
+          "title": "Propiedades de potencias de la misma base",
+          "content": "**Producto:** $a^m \\cdot a^n = a^{m+n}$\nEjemplo: $2^3 \\cdot 2^5 = 2^{3+5} = 2^8$\n\n**Cociente:** $a^m : a^n = a^{m-n}$\nEjemplo: $7^{23} : 7^8 = 7^{15}$\n\n**Potencia de potencia:** $(a^m)^n = a^{m \\cdot n}$\nEjemplo: $(3^4)^2 = 3^{4 \\cdot 2} = 3^8$"
+        }
+      ]
+    },
+    {
+      "id": "mat03-l2",
+      "order": 2,
+      "title": "Notación científica",
+      "subtitle": "Expresar y operar con números muy grandes y muy pequeños",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es la notación científica?",
+          "content": "La notación científica sirve para expresar números muy grandes o muy pequeños de forma compacta mediante potencias de base 10.\n\nUn número está en notación científica si tiene la forma:\n$a \\cdot 10^p$\ndonde $1 \\leq a < 10$ y $p$ es un número entero.\n\nEl exponente $p$ se llama **orden de magnitud**."
+        },
+        {
+          "type": "math",
+          "title": "De notación decimal a científica",
+          "content": "**Paso 1:** Identificamos las cifras significativas.\n**Paso 2:** Movemos la coma hasta tener un número entre 1 y 10. El exponente $p$ es el número de posiciones desplazadas: positivo si vamos a la izquierda, negativo a la derecha.\n\nEjemplos:\n$42\\,700\\,000\\,000 = 4{,}27 \\cdot 10^{10}$\n$0{,}000\\,000\\,000\\,000\\,001 = 1 \\cdot 10^{-15}$"
+        },
+        {
+          "type": "math",
+          "title": "Operaciones en notación científica",
+          "content": "Se opera con los números y las potencias de 10 por separado:\n\n**Multiplicación:**\n$(2{,}4 \\cdot 10^6) \\cdot (1{,}5 \\cdot 10^8) = 3{,}6 \\cdot 10^{14}$\n\n**División:**\n$(6{,}5 \\cdot 10^4) : (2{,}5 \\cdot 10^{-2}) = 2{,}6 \\cdot 10^{6}$\n\n**Potencia:**\n$(1{,}25 \\cdot 10^4)^{-2} = 0{,}64 \\cdot 10^{-8} = 6{,}4 \\cdot 10^{-9}$\n\nRecuerda: si el resultado no cumple $1 \\leq a < 10$, hay que ajustarlo."
+        },
+        {
+          "type": "callout",
+          "title": "Aplicaciones de la notación científica",
+          "content": "La notación científica se usa constantemente en ciencia para expresar medidas extremas:",
+          "highlights": [
+            "Diámetro de un protón: $1 \\cdot 10^{-15}$ m",
+            "Superficie de Saturno: $4{,}27 \\cdot 10^{10}$ km²",
+            "Diámetro del Sol: $1{,}4 \\cdot 10^{9}$ m",
+            "Masa de una hormiga: $2 \\cdot 10^{-6}$ kg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat03-l3",
+      "order": 3,
+      "title": "Raíces y potencias de fracciones",
+      "subtitle": "Raíz cuadrada, cuadrados perfectos y fracciones con exponente",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Raíz cuadrada y cuadrados perfectos",
+          "content": "$\\sqrt{b} = a$ si $a^2 = b$, con $b \\geq 0$.\n\nUn número es un **cuadrado perfecto** si su raíz cuadrada es exacta.\nEjemplos de cuadrados perfectos: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100.\n\nLa raíz cuadrada de 9: $\\sqrt{9} = 3$ porque $3^2 = 9$.\nSu opuesta: $-\\sqrt{9} = -3$ porque $(-3)^2 = 9$."
+        },
+        {
+          "type": "math",
+          "title": "Raíz cuadrada entera",
+          "content": "Cuando un número no es cuadrado perfecto, calculamos la **raíz cuadrada entera**: el mayor entero $a$ tal que $a^2 < b$.\n\n$\\sqrt{b} = a \\quad \\text{si} \\quad a^2 < b < (a+1)^2$\n\nEl **resto** es $r = b - a^2$ y cumple que $r < 2a + 1$.\n\nEjemplo: $\\sqrt{29}$: como $5^2 = 25 < 29 < 36 = 6^2$, la raíz entera es 5 y el resto es $29 - 25 = 4$."
+        },
+        {
+          "type": "math",
+          "title": "Potencias de fracciones",
+          "content": "**Exponente positivo:** se eleva el numerador y el denominador.\n$\\left(\\frac{a}{b}\\right)^n = \\frac{a^n}{b^n}$\n\nEjemplo: $\\left(\\frac{2}{5}\\right)^3 = \\frac{2^3}{5^3} = \\frac{8}{125}$\n\n**Exponente negativo:** se invierte la fracción y se eleva con exponente positivo.\n$\\left(\\frac{a}{b}\\right)^{-n} = \\left(\\frac{b}{a}\\right)^n = \\frac{b^n}{a^n}$\n\nEjemplo: $\\left(\\frac{2}{5}\\right)^{-3} = \\left(\\frac{5}{2}\\right)^3 = \\frac{125}{8}$"
+        },
+        {
+          "type": "callout",
+          "title": "Raíz cuadrada de fracciones",
+          "content": "La raíz cuadrada de una fracción se calcula haciendo la raíz del numerador y del denominador por separado:",
+          "highlights": [
+            "$\\sqrt{\\frac{a}{b}} = \\frac{\\sqrt{a}}{\\sqrt{b}}$ con $a \\geq 0$ y $b > 0$",
+            "Ejemplo: $\\sqrt{\\frac{49}{25}} = \\frac{\\sqrt{49}}{\\sqrt{25}} = \\frac{7}{5}$",
+            "Truco: simplifica la fracción antes de calcular la raíz si es posible",
+            "Ejemplo: $\\sqrt{\\frac{2}{8}} = \\sqrt{\\frac{1}{4}} = \\frac{1}{2}$"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat03-quiz1",
+      "lessonId": "mat03-l1",
+      "type": "quiz",
+      "title": "Potencias: base, exponente y signo",
+      "description": "Demuestra lo que sabes sobre potencias de exponente entero",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuánto es $(-3)^4$?",
+          "options": ["−81", "81", "−12", "12"],
+          "correctIndex": 1,
+          "explanation": "Base negativa con exponente par → resultado positivo: (−3)⁴ = 81"
+        },
+        {
+          "question": "¿Cuánto es $(-2)^5$?",
+          "options": ["32", "−32", "−10", "10"],
+          "correctIndex": 1,
+          "explanation": "Base negativa con exponente impar → resultado negativo: (−2)⁵ = −32"
+        },
+        {
+          "question": "¿Cuál es el valor de $7^0$?",
+          "options": ["0", "7", "1", "70"],
+          "correctIndex": 2,
+          "explanation": "Cualquier número distinto de 0 elevado a 0 es igual a 1."
+        },
+        {
+          "question": "¿Cuánto es $2^{-3}$?",
+          "options": ["−8", "−6", "1/8", "8"],
+          "correctIndex": 2,
+          "explanation": "$2^{-3} = \\frac{1}{2^3} = \\frac{1}{8}$"
+        },
+        {
+          "question": "Simplifica $5^3 \\cdot 5^4$ como una única potencia.",
+          "options": ["$5^{12}$", "$5^7$", "$25^7$", "$5^1$"],
+          "correctIndex": 1,
+          "explanation": "Producto de potencias de la misma base: se suman los exponentes. $5^3 \\cdot 5^4 = 5^{3+4} = 5^7$"
+        },
+        {
+          "question": "¿Cuánto es $(2^3)^4$ expresado como una sola potencia?",
+          "options": ["$2^7$", "$2^{12}$", "$2^{64}$", "$8^4$"],
+          "correctIndex": 1,
+          "explanation": "Potencia de potencia: se multiplican los exponentes. $(2^3)^4 = 2^{3 \\cdot 4} = 2^{12}$"
+        }
+      ]
+    },
+    {
+      "id": "mat03-fill1",
+      "lessonId": "mat03-l1",
+      "type": "fill_blank",
+      "title": "Propiedades de las potencias",
+      "description": "Completa las reglas de las operaciones con potencias",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Para multiplicar potencias de la misma base, se ___ los exponentes. Para dividir potencias de la misma base, se ___ los exponentes. Para calcular la potencia de una potencia, se ___ los exponentes. Cualquier número distinto de cero elevado a ___ es igual a 1. Una potencia de exponente negativo es la ___ de la potencia con exponente positivo.",
+        "blanks": ["suman", "restan", "multiplican", "cero", "inversa"],
+        "wordBank": ["suman", "restan", "multiplican", "dividen", "cero", "uno", "inversa", "opuesta", "base", "exponente"]
+      }
+    },
+    {
+      "id": "mat03-quiz2",
+      "lessonId": "mat03-l2",
+      "type": "quiz",
+      "title": "Notación científica",
+      "description": "Practica la conversión y operaciones en notación científica",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuál es la notación científica de 42 700 000 000?",
+          "options": ["$42{,}7 \\cdot 10^{9}$", "$4{,}27 \\cdot 10^{10}$", "$4{,}27 \\cdot 10^{9}$", "$427 \\cdot 10^{8}$"],
+          "correctIndex": 1,
+          "explanation": "Movemos la coma 10 posiciones a la izquierda: $42\\,700\\,000\\,000 = 4{,}27 \\cdot 10^{10}$"
+        },
+        {
+          "question": "¿Cuál es la notación científica de 0,000 012?",
+          "options": ["$1{,}2 \\cdot 10^{-5}$", "$12 \\cdot 10^{-6}$", "$1{,}2 \\cdot 10^{-4}$", "$0{,}12 \\cdot 10^{-4}$"],
+          "correctIndex": 0,
+          "explanation": "Movemos la coma 5 posiciones a la derecha: $0{,}000012 = 1{,}2 \\cdot 10^{-5}$"
+        },
+        {
+          "question": "Calcula $(2{,}5 \\cdot 10^{20}) \\cdot (3{,}6 \\cdot 10^{-15})$",
+          "options": ["$9 \\cdot 10^{5}$", "$6{,}1 \\cdot 10^{5}$", "$9 \\cdot 10^{35}$", "$9 \\cdot 10^{-35}$"],
+          "correctIndex": 0,
+          "explanation": "$(2{,}5 \\cdot 3{,}6) \\cdot 10^{20+(-15)} = 9 \\cdot 10^5$"
+        },
+        {
+          "question": "¿Cuál es el orden de magnitud de $5{,}8 \\cdot 10^{-7}$?",
+          "options": ["5,8", "−7", "7", "10"],
+          "correctIndex": 1,
+          "explanation": "El orden de magnitud es el exponente de la potencia de 10, en este caso −7."
+        },
+        {
+          "question": "Expresa $334{,}25 \\cdot 10^9$ en notación científica correcta.",
+          "options": ["$334{,}25 \\cdot 10^{9}$", "$3{,}3425 \\cdot 10^{11}$", "$33{,}425 \\cdot 10^{10}$", "$3{,}3425 \\cdot 10^{10}$"],
+          "correctIndex": 1,
+          "explanation": "$334{,}25 = 3{,}3425 \\cdot 10^2$, así que $334{,}25 \\cdot 10^9 = 3{,}3425 \\cdot 10^{2+9} = 3{,}3425 \\cdot 10^{11}$"
+        }
+      ]
+    },
+    {
+      "id": "mat03-quiz3",
+      "lessonId": "mat03-l3",
+      "type": "quiz",
+      "title": "Raíces y potencias de fracciones",
+      "description": "Pon a prueba tus conocimientos sobre raíces cuadradas y fracciones",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál es $\\sqrt{144}$?",
+          "options": ["11", "12", "13", "14"],
+          "correctIndex": 1,
+          "explanation": "$12^2 = 144$, por lo tanto $\\sqrt{144} = 12$."
+        },
+        {
+          "question": "¿Cuál es la raíz cuadrada entera de 50?",
+          "options": ["6", "7", "8", "5"],
+          "correctIndex": 1,
+          "explanation": "$7^2 = 49 < 50 < 64 = 8^2$, así que la raíz entera de 50 es 7 (resto 1)."
+        },
+        {
+          "question": "¿Cuánto es $\\left(\\frac{3}{2}\\right)^{-2}$?",
+          "options": ["$\\frac{9}{4}$", "$\\frac{4}{9}$", "$-\\frac{9}{4}$", "$\\frac{2}{3}$"],
+          "correctIndex": 1,
+          "explanation": "$\\left(\\frac{3}{2}\\right)^{-2} = \\left(\\frac{2}{3}\\right)^2 = \\frac{4}{9}$"
+        },
+        {
+          "question": "Calcula $\\sqrt{\\frac{49}{25}}$.",
+          "options": ["$\\frac{49}{25}$", "$\\frac{7}{5}$", "$\\frac{25}{49}$", "$\\frac{5}{7}$"],
+          "correctIndex": 1,
+          "explanation": "$\\sqrt{\\frac{49}{25}} = \\frac{\\sqrt{49}}{\\sqrt{25}} = \\frac{7}{5}$"
+        },
+        {
+          "question": "¿Cuál de estos números NO es un cuadrado perfecto?",
+          "options": ["36", "48", "64", "81"],
+          "correctIndex": 1,
+          "explanation": "$36 = 6^2$, $64 = 8^2$, $81 = 9^2$, pero 48 no es el cuadrado de ningún entero."
+        },
+        {
+          "question": "¿Cuánto es $\\left(\\frac{2}{5}\\right)^3$?",
+          "options": ["$\\frac{6}{15}$", "$\\frac{8}{125}$", "$\\frac{6}{125}$", "$\\frac{8}{15}$"],
+          "correctIndex": 1,
+          "explanation": "$\\left(\\frac{2}{5}\\right)^3 = \\frac{2^3}{5^3} = \\frac{8}{125}$"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "id": "mat06",
+  "subject": "matematicas",
+  "number": 6,
+  "title": "A escala",
+  "subtitle": "Semejanza, teorema de Tales y escalas",
+  "category": "geometria",
+  "color": "#b24bff",
+  "icon": "ruler",
+  "heroImage": "/2ESO_Matematicas/2_2_A_escala/images/136_03.jpg",
+  "iconImage": "/2ESO_Matematicas/2_2_A_escala/images/146_01.jpg",
+  "description": "Descubrirás los movimientos en el plano (traslaciones, giros y simetrías), aprenderás qué son las figuras semejantes y el teorema de Tales, y dominarás las escalas para interpretar mapas, planos y maquetas.",
+  "textbookPages": "Págs. 130–151",
+  "keyTerms": [
+    {
+      "term": "Movimiento en el plano",
+      "definition": "Transformación geométrica que conserva ángulos y distancias. Los cuatro básicos son: traslación, giro, simetría central y simetría axial.",
+      "example": "Desplazar un barco siguiendo una flecha es una traslación"
+    },
+    {
+      "term": "Figuras semejantes",
+      "definition": "Dos figuras con la misma forma pero distinto tamaño. Sus ángulos correspondientes son iguales y sus lados proporcionales.",
+      "example": "Un triángulo de lados 2, 3 y 4 cm es semejante a uno de 4, 6 y 8 cm"
+    },
+    {
+      "term": "Razón de semejanza",
+      "definition": "Constante $k$ que resulta de dividir la distancia entre dos puntos de una figura entre la distancia correspondiente de la otra.",
+      "example": "Si $k = 2$, cada lado de la figura grande mide el doble que el de la pequeña"
+    },
+    {
+      "term": "Teorema de Tales",
+      "definition": "Si varias rectas paralelas cortan a dos rectas secantes, los segmentos determinados sobre ellas son proporcionales.",
+      "example": "$\\frac{\\overline{AB}}{\\overline{A'B'}} = \\frac{\\overline{BC}}{\\overline{B'C'}}$"
+    },
+    {
+      "term": "Posición de Tales",
+      "definition": "Dos triángulos están en posición de Tales cuando comparten un ángulo y los lados opuestos a ese ángulo son paralelos.",
+      "example": "Dos triángulos con vértice común y bases paralelas"
+    },
+    {
+      "term": "Escala",
+      "definition": "Razón de semejanza entre la representación (mapa, plano o maqueta) y la realidad: $E = \\frac{\\text{distancia en representación}}{\\text{distancia real}}$.",
+      "example": "Escala 1:30 000 significa que 1 cm en el mapa son 30 000 cm (300 m) reales"
+    },
+    {
+      "term": "Razón de áreas",
+      "definition": "En figuras semejantes con razón de semejanza $k$, la razón entre sus áreas es $k^2$.",
+      "example": "Si $k = 3$, el área de la figura grande es $3^2 = 9$ veces mayor"
+    },
+    {
+      "term": "Razón de volúmenes",
+      "definition": "En cuerpos semejantes con razón de semejanza $k$, la razón entre sus volúmenes es $k^3$.",
+      "example": "Si $k = 2$, el volumen del cuerpo grande es $2^3 = 8$ veces mayor"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat06-l1",
+      "order": 1,
+      "title": "Movimientos en el plano",
+      "subtitle": "Traslaciones, giros y simetrías",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Movimientos en el plano",
+          "content": "Un **movimiento en el plano** es cualquier transformación geométrica que produce una nueva figura conservando los ángulos y las distancias de la original. Existen cuatro movimientos básicos:\n\n1. **Traslaciones**: cada punto se desplaza siguiendo una dirección, sentido y longitud fijos (un vector $\\vec{F}$).\n2. **Giros**: cada punto rota alrededor de un centro $O$ un ángulo $\\alpha$ en un sentido determinado.\n3. **Simetría central**: cada punto $P$ se transforma en $P'$ de modo que $O$ es el punto medio de $\\overline{PP'}$.\n4. **Simetría axial**: cada punto $P$ se transforma en $P'$ de modo que el segmento $\\overline{PP'}$ es perpendicular al eje $e$ y equidistante de él."
+        },
+        {
+          "type": "callout",
+          "title": "Ejemplo: la estrella tartesia",
+          "content": "La estrella tartesia (o estrella mudéjar) se forma aplicando un giro a un cuadrado. Un cuadrado girado 45° sobre su centro produce la típica estrella de ocho puntas del arte árabe.",
+          "highlights": [
+            "El centro de giro es el centro del cuadrado",
+            "La amplitud del giro es 45°",
+            "Son posibles dos amplitudes: 45° y 315° (sentido contrario)"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Simetrías en cuerpos geométricos",
+          "content": "Los cuerpos geométricos en 3D también presentan simetrías, pero respecto de **planos de simetría** (no ejes).\n\n• En un **prisma regular**, el plano paralelo a las bases que pasa por el centro es un plano de simetría. También lo son los planos que contienen ejes de simetría de ambas bases.\n• En una **pirámide regular**, el plano que pasa por el vértice y un eje de simetría de la base es un plano de simetría.\n• Un **cubo** tiene 9 planos de simetría: 3 paralelos a las caras y 6 diagonales."
+        }
+      ]
+    },
+    {
+      "id": "mat06-l2",
+      "order": 2,
+      "title": "Semejanza y teorema de Tales",
+      "subtitle": "Figuras semejantes, criterios y proporcionalidad",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Figuras semejantes",
+          "content": "Dos figuras son **semejantes** cuando tienen la misma forma, aunque sus dimensiones sean diferentes.\n\nDos polígonos son semejantes si:\n• Sus ángulos correspondientes son iguales.\n• Sus lados correspondientes son proporcionales.\n\nLa constante de proporcionalidad se llama **razón de semejanza** ($k$)."
+        },
+        {
+          "type": "math",
+          "title": "Ejemplo de razón de semejanza",
+          "content": "Los triángulos $ABC$ y $A'B'C'$ son semejantes con razón $k = 2$ si:\n\n$\\frac{\\overline{A'B'}}{\\overline{AB}} = \\frac{\\overline{B'C'}}{\\overline{BC}} = \\frac{\\overline{A'C'}}{\\overline{AC}} = 2$\n\nSi un triángulo tiene lados 2, 3 y 4 cm, otro semejante con $k = 7$ tendrá lados:\n$2 \\times 7 = 14$ cm, $3 \\times 7 = 21$ cm, $4 \\times 7 = 28$ cm."
+        },
+        {
+          "type": "math",
+          "title": "Teorema de Tales",
+          "content": "Si varias rectas paralelas cortan a dos rectas secantes $r$ y $s$, los segmentos que determinan son proporcionales:\n\n$\\frac{\\overline{AB}}{\\overline{A'B'}} = \\frac{\\overline{BC}}{\\overline{B'C'}} = \\frac{\\overline{AC}}{\\overline{A'C'}}$\n\n**Aplicación:** Dividir un segmento en partes iguales o proporcionales trazando paralelas con ayuda de una semirrecta auxiliar y un compás."
+        },
+        {
+          "type": "callout",
+          "title": "Criterios de semejanza de triángulos",
+          "content": "Para demostrar que dos triángulos son semejantes basta comprobar uno de estos criterios:",
+          "highlights": [
+            "1.er criterio: Tienen dos ángulos correspondientes iguales",
+            "2.º criterio: Tienen un ángulo igual y los lados que lo forman son proporcionales",
+            "3.er criterio: Los tres lados de uno son proporcionales a los del otro"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat06-l3",
+      "order": 3,
+      "title": "Razones, escalas y problemas",
+      "subtitle": "Longitudes, áreas, volúmenes y mapas",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Razón de longitudes, áreas y volúmenes",
+          "content": "Para dos figuras semejantes con razón de semejanza $k$:\n\n• **Razón de longitudes** (perímetros, lados): $k$\n• **Razón de áreas**: $k^2$\n• **Razón de volúmenes**: $k^3$\n\nEjemplo: Si $k = 2{,}5$ y el área de la figura pequeña es $3\\text{ cm}^2$:\n$A_{\\text{grande}} = 3 \\times 2{,}5^2 = 3 \\times 6{,}25 = 18{,}75\\text{ cm}^2$"
+        },
+        {
+          "type": "callout",
+          "title": "Cuidado con las unidades",
+          "content": "Al trabajar con razones de áreas y volúmenes, es muy común confundir $k$ con $k^2$ o $k^3$.",
+          "highlights": [
+            "Si duplicas el lado ($k = 2$), el área se multiplica por 4, no por 2",
+            "Si duplicas el lado ($k = 2$), el volumen se multiplica por 8, no por 2",
+            "Ejemplo: un cubo de lado 2 tiene volumen 8; uno de lado 4 tiene volumen 64 ($= 8 \\times 8$)"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Escalas: mapas, planos y maquetas",
+          "content": "La **escala** es la razón de semejanza entre la representación y la realidad:\n\n$E = \\frac{\\text{distancia en la representación}}{\\text{distancia en la realidad}}$\n\nEscala 1:30 000 significa que 1 cm en el mapa equivale a 30 000 cm (300 m) en la realidad.\n\n**Ejemplo:** Si dos refugios están a 2,7 cm en un mapa a escala 1:30 000:\n$2{,}7 \\times 30\\,000 = 81\\,000\\text{ cm} = 810\\text{ m}$"
+        },
+        {
+          "type": "text",
+          "title": "Resolver problemas de semejanza",
+          "content": "Pasos para resolver un problema con figuras semejantes:\n\n**Paso 1:** Identifica los datos y las incógnitas. Haz un dibujo o esquema.\n**Paso 2:** Comprueba qué criterio de semejanza se cumple y plantea la proporción.\n**Paso 3:** Resuelve la proporción y comprueba que la respuesta tiene sentido.\n\nEjemplo: Un laurel de 1,2 m proyecta una sombra de 2 m. Un aguacatero proyecta una sombra de 5 m. Los triángulos formados son semejantes (rayos paralelos), así que:\n$\\frac{h}{1{,}2} = \\frac{5}{2} \\Rightarrow h = \\frac{5 \\times 1{,}2}{2} = 3\\text{ m}$"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat06-quiz1",
+      "lessonId": "mat06-l1",
+      "type": "quiz",
+      "title": "Movimientos en el plano",
+      "description": "Demuestra lo que sabes sobre traslaciones, giros y simetrías",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué movimiento en el plano desplaza cada punto siguiendo la misma dirección, sentido y longitud?",
+          "options": ["Giro", "Traslación", "Simetría central", "Simetría axial"],
+          "correctIndex": 1,
+          "explanation": "En una traslación, cada punto se desplaza según un vector fijo (misma dirección, sentido y longitud)."
+        },
+        {
+          "question": "En un giro de centro O y amplitud 90°, ¿qué se conserva entre el punto original P y su imagen P'?",
+          "options": ["La distancia PP'", "La dirección de OP", "La distancia OP = OP'", "El ángulo con el eje horizontal"],
+          "correctIndex": 2,
+          "explanation": "En un giro, todos los puntos mantienen la misma distancia al centro: OP = OP'."
+        },
+        {
+          "question": "¿Qué tipo de simetría transforma cada punto P en P' de modo que el eje e es la mediatriz de PP'?",
+          "options": ["Simetría central", "Simetría axial", "Traslación", "Giro de 180°"],
+          "correctIndex": 1,
+          "explanation": "En la simetría axial, el eje e es perpendicular a PP' y equidistante de P y P'."
+        },
+        {
+          "question": "¿Qué amplitud de giro se aplica a un cuadrado para obtener la estrella tartesia (mudéjar)?",
+          "options": ["30°", "45°", "60°", "90°"],
+          "correctIndex": 1,
+          "explanation": "La estrella tartesia se forma girando un cuadrado 45° sobre su centro."
+        },
+        {
+          "question": "¿Cuántos planos de simetría tiene un cubo?",
+          "options": ["3", "6", "9", "12"],
+          "correctIndex": 2,
+          "explanation": "Un cubo tiene 9 planos de simetría: 3 paralelos a las caras y 6 diagonales."
+        }
+      ]
+    },
+    {
+      "id": "mat06-quiz2",
+      "lessonId": "mat06-l2",
+      "type": "quiz",
+      "title": "Semejanza y teorema de Tales",
+      "description": "Practica con figuras semejantes y proporcionalidad",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "Un triángulo tiene lados de 2, 3 y 4 cm. ¿Cuánto mide el lado mayor de un triángulo semejante cuyo lado menor mide 14 cm?",
+          "options": ["21 cm", "28 cm", "42 cm", "56 cm"],
+          "correctIndex": 1,
+          "explanation": "La razón de semejanza es k = 14/2 = 7. El lado mayor mide 4 × 7 = 28 cm."
+        },
+        {
+          "question": "Dos triángulos tienen dos ángulos correspondientes iguales (100° y 40°). ¿Qué criterio de semejanza se cumple?",
+          "options": ["3.er criterio (lados proporcionales)", "2.º criterio (ángulo + lados)", "1.er criterio (dos ángulos iguales)", "Ninguno, no son semejantes"],
+          "correctIndex": 2,
+          "explanation": "El 1.er criterio dice que dos triángulos son semejantes si tienen dos ángulos correspondientes iguales."
+        },
+        {
+          "question": "Según el teorema de Tales, si rectas paralelas cortan a dos secantes y en una determinan segmentos de 1,8 cm y 4 cm, y en la otra el segundo segmento mide 3,9 cm, ¿cuánto mide el primero?",
+          "options": ["1,755 cm", "2,5 cm", "3,2 cm", "4,68 cm"],
+          "correctIndex": 0,
+          "explanation": "Por Tales: 1,8/x = 4/3,9 → x = (1,8 × 3,9)/4 = 1,755 cm."
+        },
+        {
+          "question": "¿Cuándo están dos triángulos en posición de Tales?",
+          "options": [
+            "Cuando tienen los tres lados iguales",
+            "Cuando comparten un ángulo y los lados opuestos son paralelos",
+            "Cuando tienen la misma área",
+            "Cuando comparten una altura"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dos triángulos están en posición de Tales cuando comparten un ángulo y los lados opuestos a ese ángulo son paralelos."
+        },
+        {
+          "question": "Dos rectángulos semejantes tienen razón de semejanza k = 3/2. Si los lados del menor miden 4 cm y 2 cm, ¿cuál es el perímetro del mayor?",
+          "options": ["12 cm", "15 cm", "18 cm", "24 cm"],
+          "correctIndex": 2,
+          "explanation": "Perímetro del menor = 2×4 + 2×2 = 12 cm. La razón de perímetros es k = 3/2. Perímetro mayor = 12 × 3/2 = 18 cm."
+        },
+        {
+          "question": "Para construir un polígono semejante con razón 3/4, ¿qué se traza desde un vértice?",
+          "options": [
+            "Un círculo de radio 3/4 del lado",
+            "Todas las diagonales, luego paralelas al 3/4 del lado",
+            "Una perpendicular al lado opuesto",
+            "Una bisectriz del ángulo"
+          ],
+          "correctIndex": 1,
+          "explanation": "Se trazan las diagonales desde un vértice, se marca 3/4 del lado en una semirrecta auxiliar y se trazan paralelas."
+        }
+      ]
+    },
+    {
+      "id": "mat06-fill1",
+      "lessonId": "mat06-l3",
+      "type": "fill_blank",
+      "title": "Razones y escalas",
+      "description": "Completa las frases sobre semejanza y escalas",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "En dos figuras semejantes con razón de semejanza $k$, la razón de sus perímetros es ___ y la razón de sus áreas es ___. Si duplicamos el lado de un cubo ($k = 2$), su volumen se multiplica por ___. La escala de un mapa se calcula dividiendo la distancia en la ___ entre la distancia en la ___. En un mapa de escala 1:50 000, un centímetro equivale a ___ metros reales.",
+        "blanks": ["k", "k²", "8", "representación", "realidad", "500"],
+        "wordBank": ["k", "k²", "k³", "2", "4", "8", "representación", "realidad", "maqueta", "500", "5000", "50"]
+      }
+    },
+    {
+      "id": "mat06-quiz3",
+      "lessonId": "mat06-l3",
+      "type": "quiz",
+      "title": "Problemas de semejanza y escalas",
+      "description": "Resuelve problemas aplicando semejanza, razones y escalas",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "Si la razón de semejanza entre dos pirámides es k = 2,5 y el volumen de la pequeña es 125 cm³, ¿cuál es el volumen de la grande?",
+          "options": ["312,5 cm³", "781,25 cm³", "1953,125 cm³", "3125 cm³"],
+          "correctIndex": 2,
+          "explanation": "Razón de volúmenes = k³ = 2,5³ = 15,625. Volumen grande = 125 × 15,625 = 1953,125 cm³."
+        },
+        {
+          "question": "En un mapa de escala 1:30 000, dos refugios están a 2,7 cm. ¿Cuál es la distancia real?",
+          "options": ["81 m", "270 m", "810 m", "8100 m"],
+          "correctIndex": 2,
+          "explanation": "Distancia real = 2,7 × 30 000 = 81 000 cm = 810 m."
+        },
+        {
+          "question": "Un cartel de 40 cm × 25 cm se amplía un 25%. ¿Cuáles son las nuevas dimensiones?",
+          "options": ["45 cm × 30 cm", "50 cm × 31,25 cm", "48 cm × 30 cm", "50 cm × 37,5 cm"],
+          "correctIndex": 1,
+          "explanation": "Ampliar un 25% significa multiplicar por 1,25: 40 × 1,25 = 50 cm y 25 × 1,25 = 31,25 cm."
+        },
+        {
+          "question": "Un laurel de 1,2 m tiene sombra de 2 m. Un aguacatero tiene sombra de 5 m. ¿Cuánto mide el aguacatero?",
+          "options": ["2 m", "2,5 m", "3 m", "4,2 m"],
+          "correctIndex": 2,
+          "explanation": "Triángulos semejantes: h/1,2 = 5/2 → h = (5 × 1,2)/2 = 3 m."
+        },
+        {
+          "question": "La distancia entre dos ciudades en un mapa de escala 1:50 000 es 4 cm. ¿Cuánto miden esos 4 cm en un mapa de escala 1:120 000?",
+          "options": ["1,67 cm", "2 cm", "9,6 cm", "0,6 cm"],
+          "correctIndex": 0,
+          "explanation": "Distancia real = 4 × 50 000 = 200 000 cm. En el otro mapa: 200 000 / 120 000 ≈ 1,67 cm."
+        }
+      ]
+    }
+  ]
+}

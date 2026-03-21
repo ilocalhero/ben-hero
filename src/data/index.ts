@@ -8,6 +8,15 @@ import tema07 from './temas/tema07.json'
 import tema08 from './temas/tema08.json'
 import mat01 from './temas/mat01.json'
 import mat02 from './temas/mat02.json'
+import mat03 from './temas/mat03.json'
+import mat04 from './temas/mat04.json'
+import mat05 from './temas/mat05.json'
+import mat06 from './temas/mat06.json'
+import mat07 from './temas/mat07.json'
+import mat08 from './temas/mat08.json'
+import mat09 from './temas/mat09.json'
+import mat10 from './temas/mat10.json'
+import mat11 from './temas/mat11.json'
 import type { Tema } from '../types/tema'
 
 export const TEMAS: Tema[] = [
@@ -21,6 +30,15 @@ export const TEMAS: Tema[] = [
   tema08,
   mat01,
   mat02,
+  mat03,
+  mat04,
+  mat05,
+  mat06,
+  mat07,
+  mat08,
+  mat09,
+  mat10,
+  mat11,
 ].sort((a, b) => (a as unknown as Tema).number - (b as unknown as Tema).number) as unknown as Tema[]
 
 export function getTema(id: string): Tema | undefined {

@@ -1,0 +1,338 @@
+{
+  "id": "mat05",
+  "subject": "matematicas",
+  "number": 5,
+  "title": "¡Sal del papel!",
+  "subtitle": "Geometría plana, poliedros y cuerpos de revolución",
+  "category": "geometria",
+  "color": "#ff6b35",
+  "icon": "shapes",
+  "heroImage": "/2ESO_Matematicas/2_1_Sal_del_papel/images/109_01.jpg",
+  "iconImage": "/2ESO_Matematicas/2_1_Sal_del_papel/images/115_01.jpg",
+  "description": "Aprenderás a calcular perímetros y áreas de polígonos y figuras circulares, a componer y descomponer figuras planas, y a trabajar con poliedros y cuerpos de revolución (cilindro, cono y esfera), calculando sus áreas y volúmenes.",
+  "textbookPages": "Págs. 102–129",
+  "keyTerms": [
+    {
+      "term": "Perímetro",
+      "definition": "Longitud de la línea cerrada que delimita una figura plana.",
+      "example": "El perímetro de un cuadrado de lado 5 cm es $P = 4 \\times 5 = 20$ cm"
+    },
+    {
+      "term": "Teorema de Pitágoras",
+      "definition": "En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos: $a^2 = b^2 + c^2$.",
+      "example": "Si los catetos miden 3 y 4, la hipotenusa mide $\\sqrt{9+16} = 5$"
+    },
+    {
+      "term": "Apotema",
+      "definition": "Distancia perpendicular desde el centro de un polígono regular hasta el punto medio de uno de sus lados.",
+      "example": "En un hexágono regular de lado 6 cm, la apotema mide aproximadamente 5,2 cm"
+    },
+    {
+      "term": "Poliedro",
+      "definition": "Cuerpo geométrico limitado por cuatro o más polígonos llamados caras.",
+      "example": "Un cubo es un poliedro regular con 6 caras cuadradas"
+    },
+    {
+      "term": "Prisma",
+      "definition": "Poliedro con dos bases paralelas e iguales y caras laterales que son paralelogramos.",
+      "example": "Una caja de zapatos tiene forma de prisma cuadrangular (ortoedro)"
+    },
+    {
+      "term": "Pirámide",
+      "definition": "Poliedro con una base poligonal y caras laterales triangulares que concurren en un vértice (cúspide).",
+      "example": "Las pirámides de Egipto son pirámides cuadrangulares"
+    },
+    {
+      "term": "Cuerpo de revolución",
+      "definition": "Figura que se obtiene al hacer girar una figura plana alrededor de un eje. La línea que genera el cuerpo se llama generatriz.",
+      "example": "Al girar un rectángulo alrededor de un lado se genera un cilindro"
+    },
+    {
+      "term": "Esfera",
+      "definition": "Cuerpo de revolución generado al girar un semicírculo sobre su diámetro. Su superficie es $A = 4\\pi r^2$ y su volumen $V = \\frac{4}{3}\\pi r^3$.",
+      "example": "Una bola de billar con radio 3,08 cm tiene un volumen de unos 122,33 cm³"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat05-l1",
+      "order": 1,
+      "title": "Perímetros y áreas de figuras planas",
+      "subtitle": "Polígonos, figuras circulares y composición de figuras",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Perímetros de polígonos",
+          "content": "Todas las figuras planas están delimitadas por una línea cerrada. La longitud de esa línea se llama **perímetro**.\n\nEl **teorema de Pitágoras** establece que en un triángulo rectángulo:\n$a^2 = b^2 + c^2$\n\nEn un polígono regular, el radio, la apotema y la mitad del lado forman un triángulo rectángulo:\n$(\\text{radio})^2 = (\\text{apotema})^2 + \\left(\\frac{\\text{lado}}{2}\\right)^2$\n\nSi tres números naturales cumplen el teorema de Pitágoras se les denomina **terna pitagórica** (por ejemplo: 3, 4 y 5)."
+        },
+        {
+          "type": "callout",
+          "title": "Fórmulas de áreas de polígonos",
+          "content": "Recuerda las fórmulas de área para las figuras más comunes:",
+          "highlights": [
+            "Triángulo: $A = \\frac{b \\cdot h}{2}$",
+            "Cuadrado: $A = l^2$ · Rectángulo: $A = b \\cdot h$ · Rombo: $A = \\frac{D \\cdot d}{2}$",
+            "Trapecio: $A = \\frac{(B + b) \\cdot h}{2}$",
+            "Polígono regular: $A = \\frac{p \\cdot a}{2}$ (p = perímetro, a = apotema)"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Figuras circulares",
+          "content": "La **circunferencia** y el **círculo** son las figuras circulares básicas:\n\n**Longitud de la circunferencia:** $l = \\pi \\cdot d = 2\\pi r$\n**Área del círculo:** $A = \\pi r^2$\n\n**Arco y sector circular** de ángulo $\\hat{A}$:\nLongitud del arco: $\\frac{\\overset{\\frown}{A}}{\\hat{A}} = \\frac{2\\pi r}{360}$\nÁrea del sector: $\\frac{A}{\\hat{A}} = \\frac{\\pi r^2}{360}$\n\n**Corona circular:** $A = \\pi(R^2 - r^2)$"
+        },
+        {
+          "type": "text",
+          "title": "Composición y descomposición de figuras",
+          "content": "Para calcular el área de figuras complejas que no son polígonos ni figuras circulares conocidas, usamos la técnica de **descomposición y composición**:\n\n1. **Descomponer:** dividir la figura en partes más sencillas cuyas áreas sabemos calcular y luego sumarlas.\n2. **Componer:** completar la figura con formas conocidas y luego restar las partes que sobran.\n\n**Ejemplo:** Una figura compuesta por un semicírculo de radio 2 cm sobre un rectángulo de 4 × 8 cm con dos semicírculos recortados de radio 1 cm:\n$A = A_{\\text{rectángulo}} - A_{\\text{círculo }r=1} + A_{\\text{semicírculo }r=2}$\n$A = 32 - \\pi \\cdot 1^2 + \\frac{\\pi \\cdot 2^2}{2} = 32 - 3{,}14 + 6{,}28 \\approx 35{,}14 \\text{ cm}^2$"
+        }
+      ]
+    },
+    {
+      "id": "mat05-l2",
+      "order": 2,
+      "title": "Poliedros: prismas y pirámides",
+      "subtitle": "Elementos, clasificación, áreas y volúmenes",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Elementos de la geometría del espacio",
+          "content": "En el espacio existen tres elementos geométricos básicos: **puntos**, **rectas** y **planos**.\n\nPosiciones relativas de dos rectas: paralelas, secantes o que se cruzan.\nPosiciones de recta y plano: paralela, contenida o secante.\nPosiciones de dos planos: paralelos o secantes.\n\nUn **ángulo diedro** es la región del espacio determinada por dos semiplanos que comparten una recta (arista). Su medida coincide con la del ángulo formado por dos semirrectas perpendiculares a la arista."
+        },
+        {
+          "type": "callout",
+          "title": "Poliedros regulares (platónicos)",
+          "content": "Un poliedro es regular cuando es convexo, todas sus caras son polígonos regulares iguales y en cada vértice concurre el mismo número de aristas. Solo existen cinco:",
+          "highlights": [
+            "Tetraedro (4 triángulos), Hexaedro o cubo (6 cuadrados), Octaedro (8 triángulos)",
+            "Dodecaedro (12 pentágonos), Icosaedro (20 triángulos)",
+            "Los poliedros semirregulares (arquimedianos) tienen caras regulares no todas iguales"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Áreas y volúmenes de prismas",
+          "content": "Un **prisma** tiene dos bases paralelas e iguales y caras laterales que son paralelogramos.\n\n**Área lateral:** $A_L = p \\cdot h$ (p = perímetro de la base, h = altura)\n**Área total:** $A_T = A_L + 2 \\cdot A_{\\text{base}} = p \\cdot (h + a_b)$\n**Volumen:** $V = A_{\\text{base}} \\cdot h$\n\n**Ejemplo:** Prisma pentagonal recto, h = 4 cm, lado = 3 cm, apotema = 2,06 cm:\n$A_L = 15 \\cdot 4 = 60 \\text{ cm}^2$\n$A_{\\text{base}} = \\frac{15 \\cdot 2{,}06}{2} = 15{,}48 \\text{ cm}^2$\n$A_T = 60 + 2 \\cdot 15{,}48 = 90{,}96 \\text{ cm}^2$\n$V = 15{,}48 \\cdot 4 = 61{,}92 \\text{ cm}^3$"
+        },
+        {
+          "type": "math",
+          "title": "Áreas y volúmenes de pirámides",
+          "content": "Una **pirámide** tiene una base poligonal y caras laterales triangulares que concurren en la cúspide.\n\n**Área lateral:** $A_L = \\frac{1}{2} \\cdot p \\cdot a_p$ ($a_p$ = apotema de la pirámide)\n**Área total:** $A_T = \\frac{1}{2} \\cdot p \\cdot (a_p + a_b)$\n**Volumen:** $V = \\frac{A_{\\text{base}} \\cdot h}{3}$\n\n**Ejemplo:** Pirámide hexagonal regular, h = 7,24 cm, lado = 8 cm, $a_b$ = 6,9 cm:\n$a_p = \\sqrt{7{,}24^2 + 6{,}9^2} = \\sqrt{100} = 10$ cm\n$A_L = \\frac{1}{2} \\cdot 48 \\cdot 10 = 240 \\text{ cm}^2$\n$V = \\frac{165{,}6 \\cdot 7{,}24}{3} = 399{,}6 \\text{ cm}^3$"
+        }
+      ]
+    },
+    {
+      "id": "mat05-l3",
+      "order": 3,
+      "title": "Cuerpos de revolución",
+      "subtitle": "Cilindro, cono y esfera",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es un cuerpo de revolución?",
+          "content": "Un **cuerpo de revolución** es la figura que se obtiene al hacer girar una figura plana alrededor de una recta (eje) situada en su mismo plano.\n\nLa **generatriz** es la línea de la figura plana que genera el cuerpo redondo. Los cuerpos de revolución más conocidos son el **cilindro**, el **cono** y la **esfera**."
+        },
+        {
+          "type": "math",
+          "title": "Cilindro",
+          "content": "Un **cilindro recto** se genera al girar un rectángulo alrededor de uno de sus lados. Tiene dos bases circulares paralelas.\n\n**Área lateral:** $A_L = 2\\pi r \\cdot h$\n**Área total:** $A_T = 2\\pi r \\cdot h + 2\\pi r^2$\n**Volumen:** $V = \\pi r^2 \\cdot h$\n\n**Ejemplo:** Lata cilíndrica con r = 4 cm y h = 15 cm:\n$A_L = 2 \\cdot \\pi \\cdot 4 \\cdot 15 = 376{,}8 \\text{ cm}^2$\n$A_T = 376{,}8 + 2 \\cdot \\pi \\cdot 16 = 477{,}28 \\text{ cm}^2$\n$V = \\pi \\cdot 16 \\cdot 15 = 753{,}6 \\text{ cm}^3 \\approx 0{,}75 \\text{ L}$"
+        },
+        {
+          "type": "math",
+          "title": "Cono",
+          "content": "Un **cono recto** se genera al girar un triángulo rectángulo alrededor de uno de sus catetos. Se cumple: $g^2 = h^2 + r^2$ (generatriz, altura, radio).\n\n**Área lateral:** $A_L = \\pi r \\cdot g$\n**Área total:** $A_T = \\pi r \\cdot (g + r)$\n**Volumen:** $V = \\frac{\\pi r^2 \\cdot h}{3}$\n\n**Ejemplo:** Cono con r = 5 cm y g = 13 cm:\n$h = \\sqrt{13^2 - 5^2} = \\sqrt{144} = 12$ cm\n$A_T = \\pi \\cdot 5 \\cdot (13 + 5) = 282{,}6 \\text{ cm}^2$\n$V = \\frac{\\pi \\cdot 25 \\cdot 12}{3} = 314 \\text{ cm}^3$"
+        },
+        {
+          "type": "callout",
+          "title": "Esfera",
+          "content": "Una esfera se genera al girar un semicírculo sobre su diámetro. Sus fórmulas son las más sencillas de los cuerpos de revolución:",
+          "highlights": [
+            "Superficie: $A = 4\\pi r^2$",
+            "Volumen: $V = \\frac{4\\pi r^3}{3}$",
+            "Ejemplo: bola de radio 3,08 cm → $A = 4\\pi \\cdot 3{,}08^2 \\approx 119{,}15$ cm², $V \\approx 122{,}33$ cm³"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat05-quiz1",
+      "lessonId": "mat05-l1",
+      "type": "quiz",
+      "title": "Áreas de figuras planas",
+      "description": "Demuestra lo que sabes sobre perímetros y áreas",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuál es el área de un triángulo de base 10 cm y altura 6 cm?",
+          "options": ["60 cm²", "30 cm²", "16 cm²", "36 cm²"],
+          "correctIndex": 1,
+          "explanation": "Área del triángulo: $A = \\frac{b \\cdot h}{2} = \\frac{10 \\cdot 6}{2} = 30$ cm²"
+        },
+        {
+          "question": "¿Cuál es el área de un rombo cuyas diagonales miden 8 cm y 6 cm?",
+          "options": ["48 cm²", "14 cm²", "24 cm²", "28 cm²"],
+          "correctIndex": 2,
+          "explanation": "Área del rombo: $A = \\frac{D \\cdot d}{2} = \\frac{8 \\cdot 6}{2} = 24$ cm²"
+        },
+        {
+          "question": "¿Cuál es la fórmula del área de un polígono regular?",
+          "options": [
+            "$A = l^2$",
+            "$A = \\frac{p \\cdot a}{2}$",
+            "$A = \\pi r^2$",
+            "$A = b \\cdot h$"
+          ],
+          "correctIndex": 1,
+          "explanation": "El área de un polígono regular es la mitad del producto de su perímetro (p) por su apotema (a)."
+        },
+        {
+          "question": "Un círculo tiene radio 5 cm. ¿Cuál es su área aproximada?",
+          "options": ["31,4 cm²", "78,5 cm²", "15,7 cm²", "50 cm²"],
+          "correctIndex": 1,
+          "explanation": "$A = \\pi r^2 = 3{,}14 \\cdot 25 = 78{,}5$ cm²"
+        },
+        {
+          "question": "¿Cuál es el área de una corona circular con radio exterior 6 cm e interior 4 cm?",
+          "options": ["62,8 cm²", "20π cm²", "12π cm²", "36π cm²"],
+          "correctIndex": 0,
+          "explanation": "$A = \\pi(R^2 - r^2) = \\pi(36 - 16) = 20\\pi \\approx 62{,}8$ cm²"
+        },
+        {
+          "question": "Para hallar el área de una figura compleja, ¿qué técnica usamos?",
+          "options": [
+            "Multiplicar largo por ancho",
+            "Descomposición y composición de figuras",
+            "Usar siempre la fórmula del círculo",
+            "Medir con regla directamente"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dividimos la figura en partes sencillas (descomposición) o completamos y restamos (composición)."
+        }
+      ]
+    },
+    {
+      "id": "mat05-quiz2",
+      "lessonId": "mat05-l2",
+      "type": "quiz",
+      "title": "Poliedros, prismas y pirámides",
+      "description": "Pon a prueba tus conocimientos de geometría del espacio",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuántos poliedros regulares (platónicos) existen?",
+          "options": ["3", "4", "5", "6"],
+          "correctIndex": 2,
+          "explanation": "Existen exactamente 5: tetraedro, hexaedro (cubo), octaedro, dodecaedro e icosaedro."
+        },
+        {
+          "question": "¿Cuál es el volumen de un prisma de base 20 cm² y altura 8 cm?",
+          "options": ["160 cm³", "28 cm³", "80 cm³", "320 cm³"],
+          "correctIndex": 0,
+          "explanation": "$V = A_{\\text{base}} \\cdot h = 20 \\cdot 8 = 160$ cm³"
+        },
+        {
+          "question": "¿Cuál es la fórmula del volumen de una pirámide?",
+          "options": [
+            "$V = A_{\\text{base}} \\cdot h$",
+            "$V = \\frac{A_{\\text{base}} \\cdot h}{3}$",
+            "$V = \\frac{A_{\\text{base}} \\cdot h}{2}$",
+            "$V = \\pi r^2 \\cdot h$"
+          ],
+          "correctIndex": 1,
+          "explanation": "El volumen de una pirámide es un tercio del producto del área de la base por la altura."
+        },
+        {
+          "question": "Un cubo tiene arista de 5 cm. ¿Cuál es su área total?",
+          "options": ["25 cm²", "125 cm²", "150 cm²", "100 cm²"],
+          "correctIndex": 2,
+          "explanation": "El cubo tiene 6 caras cuadradas: $A_T = 6 \\cdot l^2 = 6 \\cdot 25 = 150$ cm²"
+        },
+        {
+          "question": "¿Qué es un ortoedro?",
+          "options": [
+            "Un prisma oblicuo",
+            "Un paralelepípedo recto formado por 6 rectángulos",
+            "Una pirámide truncada",
+            "Un poliedro cóncavo"
+          ],
+          "correctIndex": 1,
+          "explanation": "Un ortoedro es un paralelepípedo recto, es decir, un prisma cuyas 6 caras son rectángulos paralelos dos a dos."
+        }
+      ]
+    },
+    {
+      "id": "mat05-fill1",
+      "lessonId": "mat05-l3",
+      "type": "fill_blank",
+      "title": "Cuerpos de revolución",
+      "description": "Completa las frases sobre cilindros, conos y esferas",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Un cuerpo de revolución se genera al girar una figura plana alrededor de un ___. El cilindro se genera al girar un ___ alrededor de uno de sus lados. El volumen del cilindro es $V = \\pi r^2 \\cdot h$ y el del cono es ___ del volumen del cilindro con la misma base y altura. La superficie de una esfera es $A = 4\\pi r^2$ y su volumen es $V = \\frac{4}{3}\\pi ___$.",
+        "blanks": ["eje", "rectángulo", "un tercio", "r³"],
+        "wordBank": ["eje", "rectángulo", "triángulo", "un tercio", "la mitad", "r³", "r²", "diámetro"]
+      }
+    },
+    {
+      "id": "mat05-quiz3",
+      "lessonId": "mat05-l3",
+      "type": "quiz",
+      "title": "Áreas y volúmenes de cuerpos redondos",
+      "description": "Calcula áreas y volúmenes de cilindros, conos y esferas",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál es el volumen de un cilindro de radio 3 cm y altura 10 cm?",
+          "options": ["90π cm³", "30π cm³", "60π cm³", "9π cm³"],
+          "correctIndex": 0,
+          "explanation": "$V = \\pi r^2 \\cdot h = \\pi \\cdot 9 \\cdot 10 = 90\\pi$ cm³"
+        },
+        {
+          "question": "Un cono tiene radio 6 cm y altura 8 cm. ¿Cuánto mide su generatriz?",
+          "options": ["14 cm", "10 cm", "12 cm", "2 cm"],
+          "correctIndex": 1,
+          "explanation": "$g = \\sqrt{h^2 + r^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$ cm"
+        },
+        {
+          "question": "¿Cuál es el área lateral de un cono con radio 5 cm y generatriz 13 cm?",
+          "options": ["65π cm²", "25π cm²", "90π cm²", "130π cm²"],
+          "correctIndex": 0,
+          "explanation": "$A_L = \\pi r \\cdot g = \\pi \\cdot 5 \\cdot 13 = 65\\pi$ cm²"
+        },
+        {
+          "question": "¿Cuál es el volumen de una esfera de radio 6 cm?",
+          "options": ["288π cm³", "144π cm³", "48π cm³", "36π cm³"],
+          "correctIndex": 0,
+          "explanation": "$V = \\frac{4\\pi r^3}{3} = \\frac{4\\pi \\cdot 216}{3} = 288\\pi$ cm³"
+        },
+        {
+          "question": "¿Cuál es la superficie de una esfera de diámetro 10 cm?",
+          "options": ["100π cm²", "400π cm²", "25π cm²", "50π cm²"],
+          "correctIndex": 0,
+          "explanation": "Radio = 5 cm. $A = 4\\pi r^2 = 4\\pi \\cdot 25 = 100\\pi$ cm²"
+        },
+        {
+          "question": "Si un cilindro y un cono tienen la misma base y altura, ¿qué relación hay entre sus volúmenes?",
+          "options": [
+            "Son iguales",
+            "El del cono es la mitad del cilindro",
+            "El del cono es un tercio del cilindro",
+            "El del cilindro es un tercio del cono"
+          ],
+          "correctIndex": 2,
+          "explanation": "$V_{\\text{cono}} = \\frac{\\pi r^2 h}{3}$ es exactamente un tercio de $V_{\\text{cilindro}} = \\pi r^2 h$."
+        }
+      ]
+    }
+  ]
+}

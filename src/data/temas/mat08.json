@@ -1,0 +1,343 @@
+{
+  "id": "mat08",
+  "subject": "matematicas",
+  "number": 8,
+  "title": "Despejando incógnitas",
+  "subtitle": "Ecuaciones de primer y segundo grado",
+  "category": "algebra",
+  "color": "#b24bff",
+  "icon": "algebra",
+  "heroImage": "/2ESO_Matematicas/3_2_Despejando_incgnitas/images/184_01.jpg",
+  "iconImage": "/2ESO_Matematicas/3_2_Despejando_incgnitas/images/formula.png",
+  "description": "Aprenderás a distinguir identidades de ecuaciones, resolver ecuaciones de primer y segundo grado, y aplicar las reglas de equivalencia para despejar incógnitas. Dominarás la fórmula general de las ecuaciones cuadráticas y resolverás problemas reales con ecuaciones.",
+  "textbookPages": "Págs. 174–248",
+  "keyTerms": [
+    {
+      "term": "Ecuación",
+      "definition": "Igualdad algebraica que se verifica solo para ciertos valores de las variables (incógnitas).",
+      "example": "$3x + 5 = 7x - 3$ solo se cumple para $x = 2$"
+    },
+    {
+      "term": "Identidad",
+      "definition": "Igualdad algebraica que se verifica para cualquier valor de las variables.",
+      "example": "$(a + b)^2 = a^2 + 2ab + b^2$ se cumple siempre"
+    },
+    {
+      "term": "Ecuaciones equivalentes",
+      "definition": "Dos ecuaciones son equivalentes cuando tienen las mismas soluciones.",
+      "example": "$3x + 2 = 11$ y $2x + 5 = 11$ son equivalentes porque ambas tienen solución $x = 3$"
+    },
+    {
+      "term": "Regla de la suma",
+      "definition": "Si sumamos o restamos el mismo valor en ambos miembros, obtenemos una ecuación equivalente.",
+      "example": "$5x = 2x + 12 \\Rightarrow 5x - 2x = 12 \\Rightarrow 3x = 12$"
+    },
+    {
+      "term": "Regla del producto",
+      "definition": "Si multiplicamos o dividimos ambos miembros por un mismo número distinto de cero, obtenemos una ecuación equivalente.",
+      "example": "$3x = 12 \\Rightarrow \\frac{3x}{3} = \\frac{12}{3} \\Rightarrow x = 4$"
+    },
+    {
+      "term": "Ecuación de primer grado",
+      "definition": "Ecuación equivalente a la forma $ax + b = 0$, donde el mayor grado es 1. Su solución es $x = -\\frac{b}{a}$.",
+      "example": "$3x - 5 = 7 \\Rightarrow x = 4$"
+    },
+    {
+      "term": "Ecuación de segundo grado",
+      "definition": "Ecuación de la forma $ax^2 + bx + c = 0$ con $a \\neq 0$. Puede ser completa o incompleta.",
+      "example": "$x^2 - 9x + 14 = 0$ tiene soluciones $x = 2$ y $x = 7$"
+    },
+    {
+      "term": "Discriminante",
+      "definition": "El valor $\\Delta = b^2 - 4ac$ determina el número de soluciones de una ecuación de segundo grado.",
+      "example": "Si $\\Delta > 0$: 2 soluciones; si $\\Delta = 0$: 1 solución; si $\\Delta < 0$: ninguna"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat08-l1",
+      "order": 1,
+      "title": "Identidades, ecuaciones y equivalencia",
+      "subtitle": "Igualdades algebraicas y reglas de equivalencia",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Identidades y ecuaciones",
+          "content": "Al igualar dos expresiones algebraicas se obtiene una **igualdad algebraica**. Hay dos tipos:\n\n**Identidad:** se verifica para cualquier valor de las variables.\nEjemplo: $(a + b)^2 = a^2 + 2ab + b^2$ se cumple siempre.\n\n**Ecuación:** se verifica solo para ciertos valores de las variables (las **incógnitas**).\nEjemplo: $3x + 5 = 7x - 3$ solo se cumple para $x = 2$.\n\nEl **grado** de una ecuación es el mayor grado de los monomios que contiene."
+        },
+        {
+          "type": "math",
+          "title": "Soluciones de una ecuación",
+          "content": "Resolver una ecuación es encontrar los valores de la incógnita que cumplen la igualdad. Una ecuación puede tener:\n\n• **Ninguna solución:** $x + 1 = x + 2$ (imposible)\n• **Una solución:** $3x - 5 = 7 \\Rightarrow x = 4$\n• **Varias soluciones:** $x^2 = 9 \\Rightarrow x = 3$ o $x = -3$\n• **Infinitas soluciones:** $x + y = 3$ (para cada $x$ hay un $y$)"
+        },
+        {
+          "type": "callout",
+          "title": "Ecuaciones equivalentes",
+          "content": "Dos ecuaciones son **equivalentes** cuando tienen las mismas soluciones. Para obtener ecuaciones equivalentes usamos dos reglas:",
+          "highlights": [
+            "Regla de la suma: sumar o restar lo mismo en ambos miembros. $5x = 2x + 12 \\Rightarrow 3x = 12$",
+            "Regla del producto: multiplicar o dividir ambos miembros por un número $\\neq 0$. $3x = 12 \\Rightarrow x = 4$",
+            "Consecuencia: los términos que suman pasan restando al otro miembro, y viceversa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat08-l2",
+      "order": 2,
+      "title": "Ecuaciones de primer grado",
+      "subtitle": "Resolución paso a paso con paréntesis y denominadores",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Forma general",
+          "content": "Una ecuación de **primer grado** (o lineal) tiene la forma general:\n\n$ax + b = 0$\n\nSu solución es $x = -\\frac{b}{a}$.\n\nPara resolver ecuaciones más complejas, seguimos un proceso ordenado de simplificación hasta llegar a esta forma."
+        },
+        {
+          "type": "math",
+          "title": "Pasos para resolver ecuaciones de primer grado",
+          "content": "Ejemplo: $\\frac{2x - 5}{3} - \\frac{3(x + 1)}{5} = x - 6$\n\n**Paso 1:** Quitar paréntesis y reducir a común denominador.\n$\\frac{2x - 5}{3} - \\frac{3x + 3}{5} = x - 6$\n\n**Paso 2:** Eliminar denominadores multiplicando por el m.c.m. (aquí 15).\n$5(2x - 5) - 3(3x + 3) = 15(x - 6)$\n$10x - 25 - 9x - 9 = 15x - 90$\n\n**Paso 3:** Simplificar términos semejantes.\n$x - 34 = 15x - 90$\n\n**Paso 4:** Despejar $x$ con las reglas de equivalencia.\n$x - 15x = -90 + 34 \\Rightarrow -14x = -56 \\Rightarrow x = 4$\n\n**Paso 5:** Verificar sustituyendo en la ecuación original."
+        },
+        {
+          "type": "callout",
+          "title": "Problemas con ecuaciones de primer grado",
+          "content": "Para resolver problemas con ecuaciones, sigue estos pasos:",
+          "highlights": [
+            "Paso 1: Comprender el problema. Identifica datos e incógnitas y tradúcelos a lenguaje algebraico",
+            "Paso 2: Plantear la ecuación que relaciona los datos con la incógnita",
+            "Paso 3: Resolver la ecuación paso a paso",
+            "Paso 4: Comprobar que la solución tiene sentido en el contexto del problema"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Ejemplo de problema",
+          "content": "Víctor tiene la cuarta parte de la edad de su padre y dentro de 10 años sus edades sumarán 75 años. ¿Cuántos años tiene cada uno?\n\nSea $x$ la edad de Víctor, entonces su padre tiene $4x$ años.\n\n$x + 10 + 4x + 10 = 75$\n$5x + 20 = 75$\n$5x = 55$\n$x = 11$\n\nVíctor tiene 11 años y su padre 44 años. Comprobación: dentro de 10 años tendrán 21 + 54 = 75 años. ✓"
+        }
+      ]
+    },
+    {
+      "id": "mat08-l3",
+      "order": 3,
+      "title": "Ecuaciones de segundo grado",
+      "subtitle": "Ecuaciones completas, incompletas y la fórmula general",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Forma general y tipos",
+          "content": "Una ecuación de **segundo grado** tiene la forma:\n\n$ax^2 + bx + c = 0$ con $a \\neq 0$\n\ndonde $a$ es el coeficiente principal y $c$ es el término independiente.\n\n• **Completa:** $a \\neq 0$, $b \\neq 0$ y $c \\neq 0$\n• **Incompleta:** falta $b$, $c$ o ambos ($ax^2 + c = 0$ o $ax^2 + bx = 0$)"
+        },
+        {
+          "type": "math",
+          "title": "Ecuaciones incompletas",
+          "content": "**Tipo $ax^2 + c = 0$:** se despeja $x$ directamente.\n$3x^2 - 75 = 0 \\Rightarrow x^2 = 25 \\Rightarrow x = \\pm\\sqrt{25} \\Rightarrow x = \\pm 5$\n\nSi $-\\frac{c}{a} < 0$, no tiene solución (no existe raíz cuadrada de un negativo).\n\n**Tipo $ax^2 + bx = 0$:** se extrae factor común.\n$3x^2 - 5x = 0 \\Rightarrow x(3x - 5) = 0$\nSoluciones: $x = 0$ o $3x - 5 = 0 \\Rightarrow x = \\frac{5}{3}$"
+        },
+        {
+          "type": "callout",
+          "title": "La fórmula general",
+          "content": "Para ecuaciones completas $ax^2 + bx + c = 0$, las soluciones se obtienen con la fórmula:\n\n$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$",
+          "highlights": [
+            "Si $\\Delta = b^2 - 4ac > 0$: dos soluciones distintas",
+            "Si $\\Delta = b^2 - 4ac = 0$: una única solución $x = \\frac{-b}{2a}$",
+            "Si $\\Delta = b^2 - 4ac < 0$: no tiene solución real"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Ejemplo completo",
+          "content": "Resolvemos $3x^2 - 5x + 2 = 0$ con $a = 3$, $b = -5$, $c = 2$:\n\n$x = \\frac{-(-5) \\pm \\sqrt{(-5)^2 - 4 \\cdot 3 \\cdot 2}}{2 \\cdot 3} = \\frac{5 \\pm \\sqrt{25 - 24}}{6} = \\frac{5 \\pm 1}{6}$\n\n$x_1 = \\frac{5 + 1}{6} = 1 \\qquad x_2 = \\frac{5 - 1}{6} = \\frac{2}{3}$\n\nLas soluciones son $x = 1$ y $x = \\frac{2}{3}$."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat08-quiz1",
+      "lessonId": "mat08-l1",
+      "type": "quiz",
+      "title": "Identidades, ecuaciones y equivalencia",
+      "description": "Demuestra que distingues identidades de ecuaciones y dominas la equivalencia",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuál de estas expresiones es una identidad?",
+          "options": [
+            "$3x + 5 = 7x - 3$",
+            "$(a + b)^2 = a^2 + 2ab + b^2$",
+            "$x^2 = 9$",
+            "$2x - 8 = 0$"
+          ],
+          "correctIndex": 1,
+          "explanation": "Una identidad se cumple para cualquier valor de las variables. $(a + b)^2 = a^2 + 2ab + b^2$ es siempre cierta."
+        },
+        {
+          "question": "¿Cuántas soluciones tiene la ecuación $x + 1 = x + 2$?",
+          "options": ["Una", "Dos", "Infinitas", "Ninguna"],
+          "correctIndex": 3,
+          "explanation": "Si restas $x$ en ambos miembros, queda $1 = 2$, que es falso. No existe ningún valor que la cumpla."
+        },
+        {
+          "question": "¿Cuáles de estas ecuaciones son equivalentes?",
+          "options": [
+            "$2x = 6$ y $x^2 = 9$",
+            "$x + 1 = 4$ y $2x + 2 = 8$",
+            "$x = 3$ y $x^2 = 9$",
+            "$x + 5 = 8$ y $x - 1 = 0$"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ambas tienen la misma solución $x = 3$. La segunda se obtiene multiplicando la primera por 2 (regla del producto)."
+        },
+        {
+          "question": "Si aplicamos la regla de la suma a $5x = 2x + 12$, restando $2x$ en ambos miembros, obtenemos:",
+          "options": ["$5x = 12$", "$3x = 12$", "$7x = 12$", "$3x = 2x + 12$"],
+          "correctIndex": 1,
+          "explanation": "$5x - 2x = 2x + 12 - 2x \\Rightarrow 3x = 12$. Se resta $2x$ de ambos lados."
+        },
+        {
+          "question": "¿Cuál es el grado de la ecuación $3x^2 - 5x + 2 = 0$?",
+          "options": ["1", "2", "3", "5"],
+          "correctIndex": 1,
+          "explanation": "El grado es el mayor exponente de la incógnita, que es 2 en el término $3x^2$."
+        }
+      ]
+    },
+    {
+      "id": "mat08-quiz2",
+      "lessonId": "mat08-l2",
+      "type": "quiz",
+      "title": "Ecuaciones de primer grado",
+      "description": "Resuelve ecuaciones lineales con paréntesis y denominadores",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuál es la solución de $5x + 4 = 49$?",
+          "options": ["$x = 9$", "$x = 10$", "$x = 45$", "$x = 8$"],
+          "correctIndex": 0,
+          "explanation": "$5x = 49 - 4 = 45 \\Rightarrow x = \\frac{45}{5} = 9$"
+        },
+        {
+          "question": "Resuelve: $2(x - 1) + 3 = 9$",
+          "options": ["$x = 3$", "$x = 4$", "$x = 5$", "$x = 2$"],
+          "correctIndex": 1,
+          "explanation": "$2x - 2 + 3 = 9 \\Rightarrow 2x + 1 = 9 \\Rightarrow 2x = 8 \\Rightarrow x = 4$"
+        },
+        {
+          "question": "¿Cuál es el primer paso para resolver $\\frac{x+1}{4} - \\frac{x-2}{6} = 1$?",
+          "options": [
+            "Despejar $x$ directamente",
+            "Multiplicar ambos miembros por el m.c.m. de 4 y 6, que es 12",
+            "Sumar las fracciones sin más",
+            "Elevar al cuadrado ambos miembros"
+          ],
+          "correctIndex": 1,
+          "explanation": "Para eliminar denominadores, multiplicamos toda la ecuación por el m.c.m.(4, 6) = 12."
+        },
+        {
+          "question": "Resuelve: $4x - 5 = 7x + 15$",
+          "options": ["$x = \\frac{20}{3}$", "$x = -\\frac{20}{3}$", "$x = \\frac{10}{3}$", "$x = -\\frac{10}{3}$"],
+          "correctIndex": 1,
+          "explanation": "$4x - 7x = 15 + 5 \\Rightarrow -3x = 20 \\Rightarrow x = -\\frac{20}{3}$"
+        },
+        {
+          "question": "Alberto pagó 7 € por 5 refrescos y 3 bocadillos. Cada bocadillo vale 1 € más que el refresco. Si $x$ es el precio del refresco, ¿cuál es la ecuación correcta?",
+          "options": [
+            "$5x + 3x = 7$",
+            "$5x + 3(x + 1) = 7$",
+            "$5(x + 1) + 3x = 7$",
+            "$8x + 1 = 7$"
+          ],
+          "correctIndex": 1,
+          "explanation": "5 refrescos a $x$ euros más 3 bocadillos a $(x + 1)$ euros: $5x + 3(x + 1) = 7$."
+        },
+        {
+          "question": "Resuelve: $3(5x - 1) - 7x = 2x + 9$",
+          "options": ["$x = 1$", "$x = 2$", "$x = \\frac{12}{6}$", "$x = 3$"],
+          "correctIndex": 1,
+          "explanation": "$15x - 3 - 7x = 2x + 9 \\Rightarrow 8x - 3 = 2x + 9 \\Rightarrow 6x = 12 \\Rightarrow x = 2$"
+        }
+      ]
+    },
+    {
+      "id": "mat08-fill1",
+      "lessonId": "mat08-l2",
+      "type": "fill_blank",
+      "title": "Conceptos clave de ecuaciones",
+      "description": "Completa las frases sobre ecuaciones de primer y segundo grado",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Una ___ es una igualdad que se cumple solo para ciertos valores, mientras que una ___ se cumple siempre. Dos ecuaciones con las mismas soluciones se llaman ___. Para resolver ecuaciones usamos la regla de la ___ y la regla del ___. La forma general de una ecuación lineal es $ax + b = 0$, y su solución es $x = -\\frac{b}{a}$.",
+        "blanks": ["ecuación", "identidad", "equivalentes", "suma", "producto"],
+        "wordBank": ["ecuación", "identidad", "equivalentes", "iguales", "suma", "producto", "resta", "cociente"]
+      }
+    },
+    {
+      "id": "mat08-quiz3",
+      "lessonId": "mat08-l3",
+      "type": "quiz",
+      "title": "Ecuaciones de segundo grado",
+      "description": "Domina la fórmula general y las ecuaciones incompletas",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuáles son las soluciones de $x^2 - 16 = 0$?",
+          "options": ["$x = 4$", "$x = \\pm 4$", "$x = 16$", "No tiene solución"],
+          "correctIndex": 1,
+          "explanation": "$x^2 = 16 \\Rightarrow x = \\pm\\sqrt{16} = \\pm 4$. Dos soluciones opuestas."
+        },
+        {
+          "question": "¿Cuáles son las soluciones de $3x^2 - 5x = 0$?",
+          "options": [
+            "$x = 0$ y $x = \\frac{5}{3}$",
+            "$x = 5$ y $x = 3$",
+            "$x = 0$ y $x = -\\frac{5}{3}$",
+            "$x = \\frac{3}{5}$"
+          ],
+          "correctIndex": 0,
+          "explanation": "Factor común: $x(3x - 5) = 0$. Entonces $x = 0$ o $3x - 5 = 0 \\Rightarrow x = \\frac{5}{3}$."
+        },
+        {
+          "question": "¿Cuántas soluciones tiene $x^2 + 4 = 0$?",
+          "options": ["Dos", "Una", "Ninguna", "Infinitas"],
+          "correctIndex": 2,
+          "explanation": "$x^2 = -4$. No existe raíz cuadrada real de un número negativo, así que no tiene solución."
+        },
+        {
+          "question": "Para la ecuación $x^2 - 9x + 14 = 0$, el discriminante vale:",
+          "options": ["$\\Delta = 25$", "$\\Delta = -25$", "$\\Delta = 0$", "$\\Delta = 81$"],
+          "correctIndex": 0,
+          "explanation": "$\\Delta = (-9)^2 - 4 \\cdot 1 \\cdot 14 = 81 - 56 = 25 > 0$. Tiene dos soluciones."
+        },
+        {
+          "question": "Resuelve: $2x^2 - 12x - 14 = 0$",
+          "options": [
+            "$x = 7$ y $x = -1$",
+            "$x = -7$ y $x = 1$",
+            "$x = 7$ y $x = 1$",
+            "$x = -7$ y $x = -1$"
+          ],
+          "correctIndex": 0,
+          "explanation": "Dividimos entre 2: $x^2 - 6x - 7 = 0$. Con la fórmula: $x = \\frac{6 \\pm \\sqrt{36 + 28}}{2} = \\frac{6 \\pm 8}{2}$. Soluciones: $x = 7$ y $x = -1$."
+        },
+        {
+          "question": "Un rectángulo tiene 28 cm² de área y su base mide 3 cm más que su altura. Si $x$ es la altura, ¿cuál es la ecuación?",
+          "options": [
+            "$x^2 + 3x - 28 = 0$",
+            "$x^2 - 3x - 28 = 0$",
+            "$x^2 + 3x + 28 = 0$",
+            "$2x + 3 = 28$"
+          ],
+          "correctIndex": 0,
+          "explanation": "Área = base × altura = $(x + 3) \\cdot x = 28 \\Rightarrow x^2 + 3x - 28 = 0$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "id": "mat07",
+  "subject": "matematicas",
+  "number": 7,
+  "title": "¡Esto va de letras!",
+  "subtitle": "Expresiones algebraicas, monomios, polinomios e identidades notables",
+  "category": "algebra",
+  "color": "#b24bff",
+  "icon": "variable",
+  "heroImage": "/2ESO_Matematicas/3_1_Esto_va_de_letras/images/154_01.png",
+  "iconImage": "/2ESO_Matematicas/3_1_Esto_va_de_letras/images/170_01.png",
+  "description": "Aprenderás a trabajar con expresiones algebraicas: desde los monomios y sus operaciones hasta los polinomios, la extracción de factor común y las identidades notables. Descubrirás cómo las letras representan cantidades desconocidas y permiten generalizar fórmulas y relaciones.",
+  "textbookPages": "Págs. 154–178",
+  "keyTerms": [
+    {
+      "term": "Expresión algebraica",
+      "definition": "Expresión matemática en la que intervienen letras (variables o incógnitas), números y signos de operaciones aritméticas.",
+      "example": "$3x + 5$, $\\frac{D \\cdot d}{2}$"
+    },
+    {
+      "term": "Valor numérico",
+      "definition": "Resultado de sustituir cada variable de una expresión algebraica por un número determinado.",
+      "example": "Si $A(x) = 6x - 7$, entonces $A(-1) = 6 \\cdot (-1) - 7 = -13$"
+    },
+    {
+      "term": "Monomio",
+      "definition": "Expresión algebraica formada por el producto de un número (coeficiente) por una o varias variables elevadas a exponentes naturales.",
+      "example": "$-7x^4y$ tiene coeficiente $-7$, parte literal $x^4y$ y grado 5"
+    },
+    {
+      "term": "Monomios semejantes",
+      "definition": "Dos monomios que tienen la misma parte literal (mismas variables con los mismos exponentes).",
+      "example": "$-8x^3y^2$ y $3x^3y^2$ son semejantes"
+    },
+    {
+      "term": "Polinomio",
+      "definition": "Expresión algebraica formada por la suma de varios monomios no semejantes. Cada sumando se llama término.",
+      "example": "$3x^5 - 2x^2 - 7$ es un polinomio de grado 5"
+    },
+    {
+      "term": "Factor común",
+      "definition": "Monomio que es factor de todos los términos de un polinomio y que se puede extraer para simplificar la expresión.",
+      "example": "$6x^4 + 12x^3 = 6x^3(x + 2)$"
+    },
+    {
+      "term": "Identidad notable",
+      "definition": "Igualdad algebraica que se cumple siempre, usada para desarrollar o factorizar expresiones de forma rápida.",
+      "example": "$(a+b)^2 = a^2 + 2ab + b^2$"
+    },
+    {
+      "term": "Grado de un polinomio",
+      "definition": "El mayor de los grados de los monomios que forman el polinomio.",
+      "example": "El grado de $3x^5 - 2x^2 - 7$ es 5"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat07-l1",
+      "order": 1,
+      "title": "Expresiones algebraicas",
+      "subtitle": "Variables, fórmulas y valor numérico",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es una expresión algebraica?",
+          "content": "Una expresión algebraica es una expresión matemática en la que intervienen letras, números y los signos de las operaciones aritméticas.\n\nLas letras reciben el nombre de **variables** o **incógnitas** y representan números o cantidades desconocidas.\n\nLas expresiones algebraicas permiten:\n• Definir propiedades generales: $a \\cdot b = b \\cdot a$\n• Escribir fórmulas: Área de un rombo = $\\frac{D \\cdot d}{2}$\n• Expresar relaciones: si la edad de Bea es $x$, dentro de 5 años tendrá $x + 5$\n• Plantear igualdades o desigualdades: $2x + 5 = 14$"
+        },
+        {
+          "type": "math",
+          "title": "Valor numérico de una expresión algebraica",
+          "content": "El **valor numérico** de una expresión algebraica es el resultado de sustituir cada variable por un número determinado.\n\nLas expresiones se nombran con una letra mayúscula y las variables entre paréntesis.\n\n**Ejemplo 1:** $A(x) = 6x - 7$ para $x = -1$\n$A(-1) = 6 \\cdot (-1) - 7 = -6 - 7 = -13$\n\n**Ejemplo 2:** $P(x, y) = 3(x - 1)^2 + \\frac{y}{3}$ para $x = -1$, $y = 6$\n$P(-1, 6) = 3(-1 - 1)^2 + \\frac{6}{3} = 3 \\cdot 4 + 2 = 14$"
+        },
+        {
+          "type": "callout",
+          "title": "Números poligonales",
+          "content": "Un término general es una expresión algebraica que permite calcular cualquier término de una sucesión numérica.",
+          "highlights": [
+            "Números triangulares: $T(n) = \\frac{n(n+1)}{2}$",
+            "Números cuadrados: $C(n) = n^2$",
+            "Ejemplo: $T(4) = \\frac{4 \\cdot 5}{2} = 10$ y $C(4) = 16$"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat07-l2",
+      "order": 2,
+      "title": "Monomios y sus operaciones",
+      "subtitle": "Coeficiente, parte literal, grado y operaciones",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es un monomio?",
+          "content": "Un **monomio** es una expresión algebraica formada por el producto de un número por una o varias variables elevadas a exponentes naturales.\n\nConsta de dos partes:\n• **Coeficiente** (parte numérica): el número que multiplica a la parte literal.\n• **Parte literal**: las variables y sus exponentes.\n\nEl **grado** de un monomio es la suma de todos los exponentes de sus variables.\n\nEjemplo: En $-7x^4y$, el coeficiente es $-7$, la parte literal es $x^4y$ y el grado es $4 + 1 = 5$.\n\nDos monomios son **semejantes** si tienen la misma parte literal."
+        },
+        {
+          "type": "math",
+          "title": "Suma, resta y producto de monomios",
+          "content": "**Suma y resta:** Solo se pueden sumar o restar monomios semejantes. Se suman o restan los coeficientes y se mantiene la parte literal.\n$-3x^2 + 4x^2 = (-3 + 4)x^2 = x^2$\n\n**Producto de monomios:** Se multiplican los coeficientes y las partes literales (sumando exponentes).\n$-2x^2y \\cdot 5x^3y^2 = -10x^{5}y^{3}$\n\n**Producto de un número por un monomio:**\n$-4 \\cdot 3x^2y = -12x^2y$"
+        },
+        {
+          "type": "math",
+          "title": "Potencia y división de monomios",
+          "content": "**Potencia:** Se eleva el coeficiente al exponente y se multiplica cada exponente de la parte literal.\n$(-2x^2y^3)^2 = (-2)^2 \\cdot (x^2)^2 \\cdot (y^3)^2 = 4x^4y^6$\n\n**División:** Se dividen los coeficientes y las partes literales (restando exponentes). El resultado no siempre es un monomio.\n$(12x^8) : (3x^5) = \\frac{12}{3} \\cdot \\frac{x^8}{x^5} = 4x^3$\n\n$(6x^2) : (-3x^4) = \\frac{6}{-3} \\cdot \\frac{x^2}{x^4} = -2x^{-2}$ (no es monomio)"
+        },
+        {
+          "type": "callout",
+          "title": "Recuerda: propiedades de las potencias",
+          "content": "Para operar con monomios, necesitas dominar las propiedades de las potencias:",
+          "highlights": [
+            "$a^m \\cdot a^n = a^{m+n}$ (producto → se suman exponentes)",
+            "$a^m : a^n = a^{m-n}$ (cociente → se restan exponentes)",
+            "$(a^m)^n = a^{m \\cdot n}$ (potencia de potencia → se multiplican exponentes)",
+            "$(a \\cdot b)^n = a^n \\cdot b^n$ (potencia de un producto)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat07-l3",
+      "order": 3,
+      "title": "Polinomios e identidades notables",
+      "subtitle": "Operaciones con polinomios, factor común e identidades",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Polinomios: conceptos básicos",
+          "content": "Un **polinomio** es una expresión algebraica formada por la suma de varios monomios no semejantes. Cada sumando se llama **término**.\n\n• **Término principal:** monomio de mayor grado. Su coeficiente es el **coeficiente principal**.\n• **Término independiente:** monomio sin parte literal.\n• **Grado:** el mayor de los grados de sus monomios.\n\nEjemplo: $3x^5 - 2x^2 - 7$ → término principal: $3x^5$, coeficiente principal: 3, grado: 5, término independiente: $-7$.\n\nUn polinomio es **completo** si tiene términos de todos los grados, desde el mayor hasta el término independiente."
+        },
+        {
+          "type": "math",
+          "title": "Operaciones con polinomios",
+          "content": "**Suma y resta:** Se suman o restan los monomios semejantes (reducir términos).\n$P(x) + Q(x) = (3x^2 - 6x + 7) + (-2x^2 + 8x) = x^2 + 2x + 7$\n\n**Producto de polinomios:** Se multiplica cada monomio del primero por cada monomio del segundo.\n$(x^2 - 6)(2x + 1) = 2x^3 + x^2 - 12x - 6$\n\n**División de un polinomio entre un monomio:** Se divide cada término entre el monomio.\n$(6x^4 - 8x^3 + 3x^2) : (2x^2) = 3x^2 - 4x + \\frac{3}{2}$"
+        },
+        {
+          "type": "math",
+          "title": "Extracción del factor común",
+          "content": "Si los monomios de un polinomio tienen factores comunes, se puede expresar como el producto de un monomio (**factor común**) por otro polinomio de grado menor.\n\n**Ejemplo:**\n$-6x^4 - 12x^3 + 18x^4 = x^3(-6x - 12 + 18x) = x^3(12x - 12)$\n\n**Pasos:**\n1. Encuentra el m.c.d. de los coeficientes.\n2. Toma cada variable con el menor exponente que aparezca.\n3. Divide cada término entre el factor común."
+        },
+        {
+          "type": "callout",
+          "title": "Las tres identidades notables",
+          "content": "Son igualdades algebraicas fundamentales que permiten desarrollar y factorizar expresiones rápidamente:",
+          "highlights": [
+            "Cuadrado de una suma: $(a + b)^2 = a^2 + 2ab + b^2$",
+            "Cuadrado de una diferencia: $(a - b)^2 = a^2 - 2ab + b^2$",
+            "Suma por diferencia: $(a + b)(a - b) = a^2 - b^2$",
+            "Ejemplo: $(5x^2 + 4x)^2 = 25x^4 + 40x^3 + 16x^2$"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat07-quiz1",
+      "lessonId": "mat07-l1",
+      "type": "quiz",
+      "title": "Expresiones algebraicas y valor numérico",
+      "description": "Demuestra lo que sabes sobre expresiones algebraicas",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué es una expresión algebraica?",
+          "options": [
+            "Una operación solo con números",
+            "Una expresión con letras, números y signos de operaciones",
+            "Una ecuación que siempre tiene solución",
+            "Un número escrito en letras"
+          ],
+          "correctIndex": 1,
+          "explanation": "Una expresión algebraica combina letras (variables), números y signos de operaciones aritméticas."
+        },
+        {
+          "question": "Si $A(x) = 3x^2 - 5$, ¿cuánto vale $A(2)$?",
+          "options": ["1", "7", "11", "−1"],
+          "correctIndex": 1,
+          "explanation": "$A(2) = 3 \\cdot 2^2 - 5 = 3 \\cdot 4 - 5 = 12 - 5 = 7$"
+        },
+        {
+          "question": "Si la edad de Ana es $x$, ¿cómo se expresa que Luis tiene el triple de su edad más 2 años?",
+          "options": ["$3 + 2x$", "$3x + 2$", "$x^3 + 2$", "$2x + 3$"],
+          "correctIndex": 1,
+          "explanation": "El triple de $x$ es $3x$, y sumarle 2 años da $3x + 2$."
+        },
+        {
+          "question": "¿Cuál es el quinto número triangular $T(5)$ usando $T(n) = \\frac{n(n+1)}{2}$?",
+          "options": ["10", "15", "21", "25"],
+          "correctIndex": 1,
+          "explanation": "$T(5) = \\frac{5 \\cdot 6}{2} = \\frac{30}{2} = 15$"
+        },
+        {
+          "question": "Si $B(m, n) = n^2(m - 1)$, ¿cuánto vale $B(6, -2)$?",
+          "options": ["−20", "20", "28", "−28"],
+          "correctIndex": 1,
+          "explanation": "$B(6, -2) = (-2)^2 \\cdot (6 - 1) = 4 \\cdot 5 = 20$"
+        }
+      ]
+    },
+    {
+      "id": "mat07-quiz2",
+      "lessonId": "mat07-l2",
+      "type": "quiz",
+      "title": "Operaciones con monomios",
+      "description": "Practica sumas, productos, potencias y divisiones de monomios",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuál es el grado del monomio $-5x^3y^2z$?",
+          "options": ["3", "5", "6", "2"],
+          "correctIndex": 2,
+          "explanation": "El grado es la suma de los exponentes: $3 + 2 + 1 = 6$."
+        },
+        {
+          "question": "¿Cuánto es $-3x^2 + 7x^2 - 2x^2$?",
+          "options": ["$2x^2$", "$-2x^2$", "$12x^2$", "$2x^6$"],
+          "correctIndex": 0,
+          "explanation": "Sumamos coeficientes de monomios semejantes: $(-3 + 7 - 2)x^2 = 2x^2$."
+        },
+        {
+          "question": "¿Cuál es el resultado de $(-2x^3) \\cdot (5x^4)$?",
+          "options": ["$-10x^{12}$", "$-10x^7$", "$10x^7$", "$-7x^7$"],
+          "correctIndex": 1,
+          "explanation": "Se multiplican coeficientes ($-2 \\cdot 5 = -10$) y se suman exponentes ($3 + 4 = 7$): $-10x^7$."
+        },
+        {
+          "question": "¿Cuánto es $(-3x^2y)^2$?",
+          "options": ["$-9x^4y^2$", "$9x^4y^2$", "$-6x^4y^2$", "$6x^4y^2$"],
+          "correctIndex": 1,
+          "explanation": "$(-3)^2 = 9$, $(x^2)^2 = x^4$, $y^2 = y^2$. Resultado: $9x^4y^2$."
+        },
+        {
+          "question": "¿Cuál es el resultado de $(12x^8) : (3x^5)$?",
+          "options": ["$4x^3$", "$4x^{13}$", "$9x^3$", "$\\frac{1}{4}x^3$"],
+          "correctIndex": 0,
+          "explanation": "Dividimos coeficientes ($12 : 3 = 4$) y restamos exponentes ($8 - 5 = 3$): $4x^3$."
+        },
+        {
+          "question": "¿Son semejantes los monomios $5x^2y^3$ y $-2y^3x^2$?",
+          "options": [
+            "No, porque tienen distinto coeficiente",
+            "No, porque las variables están en distinto orden",
+            "Sí, porque tienen la misma parte literal $x^2y^3$",
+            "Sí, porque ambos tienen grado 5"
+          ],
+          "correctIndex": 2,
+          "explanation": "Son semejantes si tienen la misma parte literal. El orden no importa: ambos tienen $x^2y^3$."
+        }
+      ]
+    },
+    {
+      "id": "mat07-fill1",
+      "lessonId": "mat07-l3",
+      "type": "fill_blank",
+      "title": "Polinomios y sus elementos",
+      "description": "Completa las frases sobre polinomios",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Un polinomio es una expresión formada por la ___ de varios monomios no semejantes. El monomio de mayor grado se llama término ___. El monomio sin parte literal es el término ___. Un polinomio es ___ si tiene términos de todos los grados intermedios. Un polinomio de dos términos se llama ___.",
+        "blanks": ["suma", "principal", "independiente", "completo", "binomio"],
+        "wordBank": ["suma", "resta", "principal", "mayor", "independiente", "constante", "completo", "incompleto", "binomio", "trinomio"]
+      }
+    },
+    {
+      "id": "mat07-quiz3",
+      "lessonId": "mat07-l3",
+      "type": "quiz",
+      "title": "Identidades notables y factor común",
+      "description": "Pon a prueba tus conocimientos de identidades notables",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál es el desarrollo de $(a + b)^2$?",
+          "options": [
+            "$a^2 + b^2$",
+            "$a^2 + 2ab + b^2$",
+            "$a^2 - 2ab + b^2$",
+            "$2a + 2b$"
+          ],
+          "correctIndex": 1,
+          "explanation": "El cuadrado de una suma: $(a + b)^2 = a^2 + 2ab + b^2$. ¡No olvides el doble producto!"
+        },
+        {
+          "question": "¿Cuánto es $(x + 3)(x - 3)$?",
+          "options": ["$x^2 + 9$", "$x^2 - 9$", "$x^2 - 6x + 9$", "$2x$"],
+          "correctIndex": 1,
+          "explanation": "Suma por diferencia: $(a + b)(a - b) = a^2 - b^2$. Aquí: $x^2 - 9$."
+        },
+        {
+          "question": "¿Cuál es el desarrollo de $(2x - 5)^2$?",
+          "options": [
+            "$4x^2 - 25$",
+            "$4x^2 + 20x + 25$",
+            "$4x^2 - 20x + 25$",
+            "$4x^2 - 10x + 25$"
+          ],
+          "correctIndex": 2,
+          "explanation": "$(2x - 5)^2 = (2x)^2 - 2 \\cdot 2x \\cdot 5 + 5^2 = 4x^2 - 20x + 25$."
+        },
+        {
+          "question": "Al extraer factor común de $6x^3 - 12x^2 + 18x$, obtenemos:",
+          "options": [
+            "$6x(x^2 - 2x + 3)$",
+            "$6(x^3 - 2x^2 + 3x)$",
+            "$3x(2x^2 - 4x + 6)$",
+            "$x(6x^2 - 12x + 18)$"
+          ],
+          "correctIndex": 0,
+          "explanation": "El factor común es $6x$ (m.c.d. de coeficientes y menor potencia de $x$): $6x(x^2 - 2x + 3)$."
+        },
+        {
+          "question": "¿Qué identidad notable corresponde al polinomio $16x^2 + 8x + 1$?",
+          "options": [
+            "$(4x + 1)(4x - 1)$",
+            "$(4x + 1)^2$",
+            "$(4x - 1)^2$",
+            "$(8x + 1)^2$"
+          ],
+          "correctIndex": 1,
+          "explanation": "$16x^2 + 8x + 1 = (4x)^2 + 2 \\cdot 4x \\cdot 1 + 1^2 = (4x + 1)^2$."
+        },
+        {
+          "question": "Simplifica: $(x + 2)^2 - (x + 2)(x - 2)$",
+          "options": [
+            "$4x$",
+            "$4x + 8$",
+            "$8$",
+            "$2x^2 + 4$"
+          ],
+          "correctIndex": 1,
+          "explanation": "$(x+2)^2 = x^2 + 4x + 4$ y $(x+2)(x-2) = x^2 - 4$. Restando: $x^2 + 4x + 4 - x^2 + 4 = 4x + 8$."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "id": "mat09",
+  "subject": "matematicas",
+  "number": 9,
+  "title": "¡Qué llega la y!",
+  "subtitle": "Ecuaciones lineales con dos incógnitas y sistemas de ecuaciones",
+  "category": "algebra",
+  "color": "#b24bff",
+  "icon": "variable",
+  "heroImage": "/2ESO_Matematicas/3_3_Qu_llega_la_y/images/200_04.jpg",
+  "iconImage": "/2ESO_Matematicas/3_3_Qu_llega_la_y/images/195_02.jpg",
+  "description": "Aprenderás a trabajar con ecuaciones lineales de dos incógnitas, a representarlas gráficamente y a resolver sistemas de ecuaciones mediante los métodos gráfico, de reducción, sustitución e igualación. También resolverás problemas contextualizados con sistemas.",
+  "textbookPages": "Págs. 194–213",
+  "keyTerms": [
+    {
+      "term": "Ecuación lineal con dos incógnitas",
+      "definition": "Ecuación de primer grado de la forma $ax + by = c$, donde $a$, $b$ y $c$ son números conocidos y $x$, $y$ son las incógnitas.",
+      "example": "$2x + 4y = 32$ es una ecuación lineal con dos incógnitas"
+    },
+    {
+      "term": "Sistema de ecuaciones",
+      "definition": "Par de ecuaciones lineales con dos incógnitas que deben cumplirse a la vez.",
+      "example": "$\\left\\{\\begin{array}{l} x + y = 57 \\\\ x - y = 33 \\end{array}\\right.$"
+    },
+    {
+      "term": "Solución de un sistema",
+      "definition": "Par de valores $(x, y)$ que verifica las dos ecuaciones del sistema simultáneamente.",
+      "example": "$(45, 12)$ es solución de $x + y = 57$ y $x - y = 33$"
+    },
+    {
+      "term": "Sistemas equivalentes",
+      "definition": "Dos sistemas que tienen exactamente las mismas soluciones.",
+      "example": "Multiplicar ambos miembros de una ecuación por 2 da un sistema equivalente"
+    },
+    {
+      "term": "Método gráfico",
+      "definition": "Resolver un sistema representando las dos rectas y hallando su punto de intersección.",
+      "example": "Si las rectas se cortan en $(1, -1)$, esa es la solución"
+    },
+    {
+      "term": "Método de reducción",
+      "definition": "Sumar o restar las ecuaciones (multiplicadas por constantes) para eliminar una incógnita.",
+      "example": "Multiplicar para que los coeficientes de $y$ sean opuestos y sumar"
+    },
+    {
+      "term": "Método de sustitución",
+      "definition": "Despejar una incógnita en una ecuación y sustituir su expresión en la otra.",
+      "example": "De $7x + y = 10$ despejamos $y = 10 - 7x$ y sustituimos"
+    },
+    {
+      "term": "Método de igualación",
+      "definition": "Despejar la misma incógnita en ambas ecuaciones e igualar las expresiones obtenidas.",
+      "example": "Si $x = \\frac{23+4y}{5}$ y $x = \\frac{-4-5y}{2}$, igualamos ambas"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat09-l1",
+      "order": 1,
+      "title": "Ecuaciones lineales con dos incógnitas",
+      "subtitle": "Definición, soluciones y representación gráfica",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es una ecuación lineal con dos incógnitas?",
+          "content": "Una ecuación lineal con dos incógnitas es una ecuación de primer grado de la forma:\n\n$ax + by = c$\n\ndonde $a$, $b$ y $c$ son números conocidos (coeficientes y término independiente) y $x$ e $y$ son las incógnitas.\n\nLas soluciones son los pares de valores $(x, y)$ que cumplen la igualdad. Una ecuación lineal con dos incógnitas tiene **infinitas soluciones**."
+        },
+        {
+          "type": "math",
+          "title": "Comprobar soluciones",
+          "content": "Para comprobar si un par $(x, y)$ es solución, sustituimos los valores en la ecuación.\n\n**Ejemplo:** ¿Es $(12, 2)$ solución de $2x + 4y = 32$?\n\n$2 \\cdot 12 + 4 \\cdot 2 = 24 + 8 = 32$ ✓ Sí es solución.\n\n¿Y $(5, -3)$?\n\n$2 \\cdot 5 + 4 \\cdot (-3) = 10 - 12 = -2 \\neq 32$ ✗ No es solución."
+        },
+        {
+          "type": "math",
+          "title": "Tabla de valores y representación gráfica",
+          "content": "Para hallar soluciones de $2x + y = 30$:\n\n**Paso 1:** Despejamos $y$: $y = 30 - 2x$\n\n**Paso 2:** Damos valores a $x$ y calculamos $y$:\n- $x = -2 \\Rightarrow y = 34$\n- $x = 0 \\Rightarrow y = 30$\n- $x = 5 \\Rightarrow y = 20$\n- $x = 15 \\Rightarrow y = 0$\n\n**Paso 3:** Representamos los puntos en ejes cartesianos y trazamos la recta. Todos los puntos de esa recta son solución."
+        },
+        {
+          "type": "callout",
+          "title": "Recuerda",
+          "content": "La representación gráfica de una ecuación lineal con dos incógnitas es siempre una **recta**.",
+          "highlights": [
+            "Cada punto de la recta es una solución $(x, y)$ de la ecuación",
+            "Para trazar la recta basta con dos puntos, pero tres puntos permiten comprobar",
+            "Si despejas $y$, obtienes la forma $y = mx + n$ (pendiente y ordenada en el origen)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat09-l2",
+      "order": 2,
+      "title": "Sistemas de ecuaciones lineales",
+      "subtitle": "Definición, sistemas equivalentes y solución gráfica",
+      "sections": [
+        {
+          "type": "text",
+          "title": "¿Qué es un sistema de ecuaciones?",
+          "content": "Un sistema de dos ecuaciones lineales con dos incógnitas es un par de ecuaciones de primer grado:\n\n$\\left\\{\\begin{array}{l} a_1x + b_1y = c_1 \\\\ a_2x + b_2y = c_2 \\end{array}\\right.$\n\nUn par $(x, y)$ es solución del sistema cuando verifica **las dos ecuaciones a la vez**.\n\n**Ejemplo:** $(45, 12)$ es solución de $\\left\\{\\begin{array}{l} x + y = 57 \\\\ x - y = 33 \\end{array}\\right.$ porque $45 + 12 = 57$ y $45 - 12 = 33$."
+        },
+        {
+          "type": "math",
+          "title": "Sistemas equivalentes",
+          "content": "Dos sistemas son **equivalentes** si tienen las mismas soluciones. Obtenemos sistemas equivalentes:\n\n• Sumando o restando el mismo término a ambos miembros de una ecuación.\n• Multiplicando o dividiendo ambos miembros por un número $\\neq 0$.\n• Sustituyendo una ecuación por la suma o resta de ambas.\n\n**Ejemplo:** $\\left\\{\\begin{array}{l} 3x - 2y = 11 \\\\ x - y = 3 \\end{array}\\right.$ y $\\left\\{\\begin{array}{l} 6x - 4y = 22 \\\\ -3x + 3y = -9 \\end{array}\\right.$ son equivalentes (solución: $(5, 2)$)."
+        },
+        {
+          "type": "math",
+          "title": "Resolución gráfica",
+          "content": "Para resolver un sistema gráficamente:\n\n**Paso 1:** Despejamos $y$ en ambas ecuaciones y hacemos tablas de valores.\n**Paso 2:** Representamos las dos rectas en el mismo plano cartesiano.\n**Paso 3:** El punto de intersección es la solución.\n\n**Ejemplo:** $\\left\\{\\begin{array}{l} 4x - 2y = -6 \\\\ x + 2y = 1 \\end{array}\\right.$\n\nLas rectas se cortan en $(-1, 1)$, que es la solución."
+        },
+        {
+          "type": "callout",
+          "title": "Tipos de sistemas según sus soluciones",
+          "content": "La posición relativa de las dos rectas determina el número de soluciones:",
+          "highlights": [
+            "**Rectas secantes** (se cortan en un punto) → solución única",
+            "**Rectas coincidentes** (son la misma recta) → infinitas soluciones",
+            "**Rectas paralelas** (no se cortan) → sin solución"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat09-l3",
+      "order": 3,
+      "title": "Métodos algebraicos de resolución",
+      "subtitle": "Reducción, sustitución e igualación",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Método de reducción",
+          "content": "**Paso 1:** Multiplicamos las ecuaciones para que una incógnita tenga coeficientes opuestos.\n**Paso 2:** Sumamos las ecuaciones para eliminar esa incógnita.\n**Paso 3:** Despejamos la incógnita restante.\n**Paso 4:** Sustituimos en una ecuación original para hallar la otra.\n\n**Ejemplo:** $\\left\\{\\begin{array}{l} 5x - 4y = 22 \\\\ -7x - 6y = 4 \\end{array}\\right.$\n\nMultiplicamos: $\\times 3$ y $\\times (-2)$ → los coeficientes de $y$ se anulan.\nSumando: $29x = 58 \\Rightarrow x = 2$, luego $y = -3$. Solución: $(2, -3)$."
+        },
+        {
+          "type": "math",
+          "title": "Método de sustitución",
+          "content": "**Paso 1:** Despejamos una incógnita en una ecuación.\n**Paso 2:** Sustituimos esa expresión en la otra ecuación.\n**Paso 3:** Resolvemos la ecuación resultante.\n**Paso 4:** Calculamos la otra incógnita.\n\n**Ejemplo:** $\\left\\{\\begin{array}{l} 7x + y = 10 \\\\ 3x - 2y = 14 \\end{array}\\right.$\n\nDe la 1.ª: $y = 10 - 7x$. Sustituimos en la 2.ª:\n$3x - 2(10 - 7x) = 14 \\Rightarrow 17x = 34 \\Rightarrow x = 2$, $y = -4$."
+        },
+        {
+          "type": "math",
+          "title": "Método de igualación",
+          "content": "**Paso 1:** Despejamos la misma incógnita en ambas ecuaciones.\n**Paso 2:** Igualamos las expresiones obtenidas.\n**Paso 3:** Resolvemos y hallamos una incógnita.\n**Paso 4:** Sustituimos para hallar la otra.\n\n**Ejemplo:** $\\left\\{\\begin{array}{l} 5x - 4y = 23 \\\\ 2x + 5y = -4 \\end{array}\\right.$\n\n$x = \\frac{23 + 4y}{5} = \\frac{-4 - 5y}{2}$\n\n$2(23 + 4y) = 5(-4 - 5y) \\Rightarrow 33y = -66 \\Rightarrow y = -2$, $x = 3$."
+        },
+        {
+          "type": "callout",
+          "title": "¿Qué método elegir?",
+          "content": "Todos los métodos dan el mismo resultado. Elige el más cómodo según el sistema:",
+          "highlights": [
+            "**Reducción:** ideal cuando los coeficientes se cancelan fácilmente",
+            "**Sustitución:** ideal cuando una incógnita ya está despejada o tiene coeficiente 1",
+            "**Igualación:** ideal cuando es fácil despejar la misma incógnita en ambas ecuaciones",
+            "**Gráfico:** útil para visualizar, pero menos preciso con valores no enteros"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat09-quiz1",
+      "lessonId": "mat09-l1",
+      "type": "quiz",
+      "title": "Ecuaciones lineales con dos incógnitas",
+      "description": "Comprueba soluciones y comprende ecuaciones de dos variables",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuál de estos pares es solución de la ecuación $2x + 4y = 32$?",
+          "options": ["$(5, -3)$", "$(12, 2)$", "$(8, 3)$", "$(0, 6)$"],
+          "correctIndex": 1,
+          "explanation": "Sustituimos: $2 \\cdot 12 + 4 \\cdot 2 = 24 + 8 = 32$. Se verifica la igualdad."
+        },
+        {
+          "question": "Una ecuación lineal con dos incógnitas tiene...",
+          "options": ["Una única solución", "Dos soluciones", "Infinitas soluciones", "Ninguna solución"],
+          "correctIndex": 2,
+          "explanation": "Una sola ecuación lineal con dos incógnitas siempre tiene infinitas soluciones (forman una recta)."
+        },
+        {
+          "question": "Si $3x + y = 7$ y $x = 4$, ¿cuánto vale $y$?",
+          "options": ["$y = 5$", "$y = -5$", "$y = 19$", "$y = -19$"],
+          "correctIndex": 1,
+          "explanation": "$3 \\cdot 4 + y = 7 \\Rightarrow 12 + y = 7 \\Rightarrow y = -5$"
+        },
+        {
+          "question": "La representación gráfica de $ax + by = c$ es siempre...",
+          "options": ["Una parábola", "Una recta", "Un círculo", "Un punto"],
+          "correctIndex": 1,
+          "explanation": "Toda ecuación lineal con dos incógnitas se representa como una recta en el plano cartesiano."
+        },
+        {
+          "question": "¿Qué ecuación lineal representa «la resta de dos números es $-5$»?",
+          "options": ["$x + y = -5$", "$x - y = -5$", "$x \\cdot y = -5$", "$x / y = -5$"],
+          "correctIndex": 1,
+          "explanation": "Si los dos números son $x$ e $y$, su resta es $x - y = -5$."
+        }
+      ]
+    },
+    {
+      "id": "mat09-quiz2",
+      "lessonId": "mat09-l2",
+      "type": "quiz",
+      "title": "Sistemas de ecuaciones y solución gráfica",
+      "description": "Identifica sistemas, soluciones y tipos de sistemas",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuál de estos NO es un sistema de ecuaciones lineales?",
+          "options": [
+            "$\\left\\{\\begin{array}{l} 3x + 11y = 67 \\\\ 5x - 3y = 5 \\end{array}\\right.$",
+            "$\\left\\{\\begin{array}{l} -2x + y = 3 \\\\ x - 4y = 8 \\end{array}\\right.$",
+            "$\\left\\{\\begin{array}{l} x + 3\\sqrt{y} = 14 \\\\ 2x - 3y = 4 \\end{array}\\right.$",
+            "$\\left\\{\\begin{array}{l} -x - y = 7 \\\\ 2x + 3y = 9 \\end{array}\\right.$"
+          ],
+          "correctIndex": 2,
+          "explanation": "El término $3\\sqrt{y}$ no es lineal. En un sistema lineal, las incógnitas solo aparecen con exponente 1."
+        },
+        {
+          "question": "Si dos rectas son paralelas, el sistema tiene...",
+          "options": ["Una solución", "Dos soluciones", "Infinitas soluciones", "Ninguna solución"],
+          "correctIndex": 3,
+          "explanation": "Rectas paralelas no se cortan en ningún punto, así que el sistema no tiene solución."
+        },
+        {
+          "question": "¿Es $(3, 2)$ solución del sistema $\\left\\{\\begin{array}{l} 3x - y = 7 \\\\ 2x + 5y = 16 \\end{array}\\right.$?",
+          "options": ["Sí, cumple ambas", "No, solo cumple la primera", "No, solo cumple la segunda", "No cumple ninguna"],
+          "correctIndex": 0,
+          "explanation": "$3(3) - 2 = 7$ ✓ y $2(3) + 5(2) = 16$ ✓. Cumple las dos ecuaciones."
+        },
+        {
+          "question": "Dos sistemas son equivalentes cuando...",
+          "options": [
+            "Tienen las mismas ecuaciones",
+            "Tienen las mismas soluciones",
+            "Tienen los mismos coeficientes",
+            "Tienen el mismo número de ecuaciones"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dos sistemas son equivalentes si y solo si tienen exactamente las mismas soluciones."
+        },
+        {
+          "question": "Si las rectas de un sistema coinciden, el sistema tiene...",
+          "options": ["Ninguna solución", "Una solución", "Dos soluciones", "Infinitas soluciones"],
+          "correctIndex": 3,
+          "explanation": "Si las rectas coinciden, todos sus puntos son solución, por lo que hay infinitas soluciones."
+        },
+        {
+          "question": "¿Cuál es la solución gráfica de $\\left\\{\\begin{array}{l} 4x - 2y = -6 \\\\ x + 2y = 1 \\end{array}\\right.$?",
+          "options": ["$(1, -1)$", "$(-1, 1)$", "$(2, 5)$", "No tiene solución"],
+          "correctIndex": 1,
+          "explanation": "Las dos rectas se cortan en el punto $(-1, 1)$. Comprobación: $4(-1) - 2(1) = -6$ ✓ y $-1 + 2(1) = 1$ ✓."
+        }
+      ]
+    },
+    {
+      "id": "mat09-fill1",
+      "lessonId": "mat09-l2",
+      "type": "fill_blank",
+      "title": "Conceptos clave de sistemas",
+      "description": "Completa las frases sobre sistemas de ecuaciones",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Un sistema de ecuaciones lineales está formado por dos ecuaciones de primer ___. Un par $(x, y)$ es ___ del sistema si cumple las dos ecuaciones a la vez. Si las rectas son ___, el sistema no tiene solución. Si las rectas se cortan en un punto, hay una solución ___. Si las rectas ___, hay infinitas soluciones.",
+        "blanks": ["grado", "solución", "paralelas", "única", "coinciden"],
+        "wordBank": ["grado", "solución", "paralelas", "única", "coinciden", "segundo", "ecuación", "secantes", "doble", "divergen"]
+      }
+    },
+    {
+      "id": "mat09-quiz3",
+      "lessonId": "mat09-l3",
+      "type": "quiz",
+      "title": "Métodos de resolución algebraicos",
+      "description": "Practica reducción, sustitución e igualación",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "Resuelve por sustitución: $\\left\\{\\begin{array}{l} 7x + y = 10 \\\\ 3x - 2y = 14 \\end{array}\\right.$ ¿Cuál es la solución?",
+          "options": ["$(2, -4)$", "$(4, -2)$", "$(-2, 4)$", "$(1, 3)$"],
+          "correctIndex": 0,
+          "explanation": "Despejamos $y = 10 - 7x$. Sustituimos: $3x - 2(10-7x) = 14 \\Rightarrow 17x = 34 \\Rightarrow x = 2$, $y = -4$."
+        },
+        {
+          "question": "En el método de reducción, ¿qué hacemos primero?",
+          "options": [
+            "Despejar una incógnita en una ecuación",
+            "Igualar las dos expresiones",
+            "Multiplicar para que una incógnita tenga coeficientes opuestos",
+            "Representar las rectas"
+          ],
+          "correctIndex": 2,
+          "explanation": "En reducción, el primer paso es multiplicar las ecuaciones para obtener coeficientes opuestos en una incógnita y eliminarla al sumar."
+        },
+        {
+          "question": "Si al aplicar reducción obtenemos $0 = 34$, ¿qué significa?",
+          "options": [
+            "La solución es $(0, 34)$",
+            "El sistema tiene infinitas soluciones",
+            "El sistema no tiene solución",
+            "Hemos cometido un error"
+          ],
+          "correctIndex": 2,
+          "explanation": "Obtener una igualdad falsa como $0 = 34$ indica que las rectas son paralelas y el sistema no tiene solución."
+        },
+        {
+          "question": "Si al aplicar reducción obtenemos $0 = 0$, ¿qué significa?",
+          "options": [
+            "La solución es $(0, 0)$",
+            "El sistema tiene infinitas soluciones",
+            "El sistema no tiene solución",
+            "Hemos cometido un error"
+          ],
+          "correctIndex": 1,
+          "explanation": "Obtener $0 = 0$ (igualdad siempre cierta) indica que las rectas coinciden y hay infinitas soluciones."
+        },
+        {
+          "question": "Resuelve: $\\left\\{\\begin{array}{l} x + y = 57 \\\\ x - y = 33 \\end{array}\\right.$ ¿Cuál es la solución?",
+          "options": ["$(45, 12)$", "$(40, 17)$", "$(50, 7)$", "$(33, 24)$"],
+          "correctIndex": 0,
+          "explanation": "Sumando ambas ecuaciones: $2x = 90 \\Rightarrow x = 45$. Sustituyendo: $45 + y = 57 \\Rightarrow y = 12$."
+        }
+      ]
+    }
+  ]
+}

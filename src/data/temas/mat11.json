@@ -1,0 +1,404 @@
+{
+  "id": "mat11",
+  "subject": "matematicas",
+  "number": 11,
+  "title": "¿Y todos estos datos?",
+  "subtitle": "Estadística, tablas de frecuencias, parámetros y probabilidad",
+  "category": "estadistica",
+  "color": "#ff6b35",
+  "icon": "chart",
+  "heroImage": "/2ESO_Matematicas/4_1_Y_todos_estos_datos/images/234_01.png",
+  "iconImage": "/2ESO_Matematicas/4_1_Y_todos_estos_datos/images/grafico.png",
+  "description": "Aprenderás a planificar un estudio estadístico, organizar datos en tablas de frecuencias, representarlos con gráficos, calcular parámetros de centralización y dispersión, y utilizar la regla de Laplace para hallar probabilidades.",
+  "textbookPages": "Págs. 234–263",
+  "keyTerms": [
+    {
+      "term": "Población",
+      "definition": "Conjunto de todos los elementos sobre los que se realiza un estudio estadístico.",
+      "example": "Todos los estudiantes de un colegio"
+    },
+    {
+      "term": "Muestra",
+      "definition": "Parte de la población de la que se recogen los datos. Debe ser representativa.",
+      "example": "12 estudiantes de cada curso seleccionados para una encuesta"
+    },
+    {
+      "term": "Variable estadística",
+      "definition": "Característica o propiedad que se estudia. Puede ser cualitativa, cuantitativa discreta o cuantitativa continua.",
+      "example": "Color favorito (cualitativa), n.º de hermanos (discreta), altura (continua)"
+    },
+    {
+      "term": "Frecuencia absoluta",
+      "definition": "Número de veces que aparece un valor $x_i$ en el recuento. Se denota $f_i$.",
+      "example": "Si el valor 3 aparece 7 veces, $f_i = 7$"
+    },
+    {
+      "term": "Media aritmética",
+      "definition": "Resultado de dividir la suma de todos los datos entre el número total de datos: $\\bar{x} = \\frac{\\sum x_i}{n}$.",
+      "example": "$\\bar{x} = \\frac{6+7+6+6+8+9+7}{7} = 7$"
+    },
+    {
+      "term": "Desviación típica",
+      "definition": "Raíz cuadrada positiva de la varianza. Mide la dispersión de los datos respecto a la media: $s = \\sqrt{s^2}$.",
+      "example": "Si $s^2 = 18$, entonces $s = \\sqrt{18} \\approx 4{,}24$"
+    },
+    {
+      "term": "Espacio muestral",
+      "definition": "Conjunto de todos los resultados posibles de un experimento aleatorio. Se denota $E$.",
+      "example": "Al lanzar un dado: $E = \\{1, 2, 3, 4, 5, 6\\}$"
+    },
+    {
+      "term": "Regla de Laplace",
+      "definition": "Si los sucesos elementales son equiprobables: $P(A) = \\frac{\\text{n.º casos favorables}}{\\text{n.º casos posibles}}$.",
+      "example": "Probabilidad de par al lanzar un dado: $P = \\frac{3}{6} = 0{,}5$"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat11-l1",
+      "order": 1,
+      "title": "Estudio estadístico y tablas de frecuencias",
+      "subtitle": "Población, muestra, variables y organización de datos",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Población, muestra e individuo",
+          "content": "La **estadística** nos permite analizar propiedades y hacer previsiones sobre un número grande de individuos observando solo unos pocos.\n\n- **Población**: conjunto de todos los elementos sobre los que realizamos el estudio.\n- **Muestra**: parte de la población de la que recogemos los datos. Debe ser representativa.\n- **Individuo**: cada elemento que forma parte de la muestra o la población.\n\n**Ejemplo:** En un colegio se encuesta a 12 estudiantes de cada curso sobre su asignatura favorita. La población son todos los estudiantes del colegio, la muestra son los 12 de cada curso, y cada estudiante es un individuo."
+        },
+        {
+          "type": "callout",
+          "title": "Variables estadísticas",
+          "content": "Una variable estadística es la característica que se estudia. Se clasifica en:",
+          "highlights": [
+            "**Cualitativa**: no se expresa con un número (color favorito, deporte preferido).",
+            "**Cuantitativa discreta**: toma solo valores aislados (n.º de hermanos, talla de zapatos).",
+            "**Cuantitativa continua**: puede tomar cualquier valor en un intervalo (altura, peso)."
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Tabla de frecuencias",
+          "content": "Una tabla de frecuencias recoge los valores $x_i$ de menor a mayor con sus frecuencias:\n\n- **Frecuencia absoluta** $f_i$: n.º de veces que aparece $x_i$.\n- **Frecuencia relativa** $h_i = \\frac{f_i}{N}$, donde $N$ es el total de datos.\n- **Frecuencia absoluta acumulada** $F_i$: suma de las frecuencias absolutas hasta $x_i$.\n- **Frecuencia relativa acumulada** $H_i = \\frac{F_i}{N}$.\n\nLa suma de todas las $f_i$ es $N$ y la suma de todas las $h_i$ es 1."
+        },
+        {
+          "type": "math",
+          "title": "Datos agrupados en intervalos",
+          "content": "Cuando la variable toma muchos valores distintos, se agrupan los datos en **intervalos** (clases) de igual amplitud.\n\nLa **marca de clase** $x_i$ es el valor medio del intervalo y representa a todos los valores del mismo.\n\n**Ejemplo:** Intervalo $[145, 150)$ → marca de clase $x_i = 147{,}5$.\n\nLas frecuencias se calculan igual que en el caso discreto, contando cuántos datos caen en cada intervalo."
+        }
+      ]
+    },
+    {
+      "id": "mat11-l2",
+      "order": 2,
+      "title": "Gráficos y parámetros estadísticos",
+      "subtitle": "Representación gráfica, centralización y dispersión",
+      "sections": [
+        {
+          "type": "callout",
+          "title": "Gráficos estadísticos",
+          "content": "Los gráficos representan visualmente la información de las tablas de frecuencias:",
+          "highlights": [
+            "**Diagrama de barras**: cada valor se representa con una barra proporcional a su frecuencia.",
+            "**Polígono de frecuencias**: se unen los puntos medios de las barras.",
+            "**Diagrama de sectores**: cada valor es un sector con amplitud $h_i \\cdot 360°$.",
+            "**Histograma**: para datos agrupados; rectángulos cuya base es el intervalo y la altura la frecuencia."
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Parámetros de centralización",
+          "content": "Expresan el valor en torno al cual se sitúan los datos:\n\n- **Moda** ($M_o$): valor con mayor frecuencia.\n- **Media aritmética**: $\\bar{x} = \\frac{\\sum x_i \\cdot f_i}{N}$\n- **Mediana** ($M$): valor central al ordenar los datos. Si $N$ es impar, es el dato central; si es par, la media de los dos centrales.\n- **Media ponderada**: $\\bar{x}_p = \\frac{\\sum w_i \\cdot x_i}{\\sum w_i}$, donde $w_i$ son los pesos.\n\n**Ejemplo:** Puntuaciones de Clara: 6, 6, 6, 7, 7, 8, 9 → $M_o = 6$, $\\bar{x} = 7$, $M = 7$."
+        },
+        {
+          "type": "math",
+          "title": "Parámetros de dispersión",
+          "content": "Indican si los datos están próximos entre sí o dispersos:\n\n- **Recorrido (rango)**: diferencia entre el mayor y el menor valor.\n- **Desviación media**: $D_{\\bar{x}} = \\frac{\\sum |x_i - \\bar{x}|}{N}$\n- **Varianza**: $s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{N}$\n- **Desviación típica**: $s = \\sqrt{s^2}$\n\nCuanto mayor es la desviación típica, más dispersos están los datos respecto a la media."
+        },
+        {
+          "type": "callout",
+          "title": "Ejemplo comparativo",
+          "content": "Dos zonas con temperatura media de 19 °C durante una semana:",
+          "highlights": [
+            "Zona A: rango = 12, $s \\approx 4{,}24$ → temperaturas muy variables.",
+            "Zona B: rango = 3, $s \\approx 1{,}07$ → temperaturas estables.",
+            "La media sola no basta: los parámetros de dispersión nos dicen cuánto varían los datos."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat11-l3",
+      "order": 3,
+      "title": "Probabilidad",
+      "subtitle": "Experimentos aleatorios, sucesos y regla de Laplace",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Experimentos aleatorios y espacio muestral",
+          "content": "Un **experimento determinista** es aquel cuyo resultado podemos predecir. Un **experimento aleatorio** es aquel que podemos repetir y cuyo resultado no podemos predecir con certeza.\n\nEl **espacio muestral** $E$ es el conjunto de todos los resultados posibles.\n\n**Ejemplo:** Al lanzar un dado, $E = \\{1, 2, 3, 4, 5, 6\\}$."
+        },
+        {
+          "type": "callout",
+          "title": "Tipos de sucesos",
+          "content": "Un suceso es un subconjunto del espacio muestral:",
+          "highlights": [
+            "**Elemental**: un solo resultado posible ({3}).",
+            "**Compuesto**: formado por más de un suceso elemental ({2, 4, 6}).",
+            "**Seguro**: se cumple siempre, coincide con $E$.",
+            "**Imposible**: no se cumple nunca, se representa con $\\emptyset$."
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Frecuencia relativa y probabilidad",
+          "content": "La **frecuencia relativa** de un suceso $A$ es $h_i = \\frac{f_i}{N}$, donde $f_i$ es el número de veces que ocurre $A$ en $N$ repeticiones.\n\nLa **probabilidad** $P(A)$ es el número al que se aproxima la frecuencia relativa cuando repetimos el experimento muchas veces.\n\n$0 \\leq P(A) \\leq 1$\n\n$P(\\text{suceso imposible}) = 0$, $P(\\text{suceso seguro}) = 1$."
+        },
+        {
+          "type": "math",
+          "title": "Regla de Laplace",
+          "content": "Si todos los sucesos elementales son **equiprobables** (tienen la misma probabilidad), aplicamos la regla de Laplace:\n\n$$P(A) = \\frac{\\text{n.º de casos favorables}}{\\text{n.º de casos posibles}}$$\n\n**Ejemplo:** Al lanzar tres monedas, ¿probabilidad de obtener exactamente dos caras?\n- Casos posibles: $E = \\{CCC, CCX, CXC, CXX, XCC, XCX, XXC, XXX\\}$ → 8\n- Casos favorables: $\\{CCX, CXC, XCC\\}$ → 3\n- $P = \\frac{3}{8} = 0{,}375$"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat11-quiz1",
+      "lessonId": "mat11-l1",
+      "type": "quiz",
+      "title": "Población, muestra y variables",
+      "description": "Comprueba lo que sabes sobre los fundamentos de la estadística",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "En un estudio sobre las preferencias musicales de los 800 alumnos de un instituto, se encuesta a 50 de ellos. ¿Cuál es la muestra?",
+          "options": [
+            "Los 800 alumnos",
+            "Los 50 alumnos encuestados",
+            "Las preferencias musicales",
+            "El instituto"
+          ],
+          "correctIndex": 1,
+          "explanation": "La muestra es la parte de la población de la que se recogen los datos: los 50 alumnos encuestados."
+        },
+        {
+          "question": "¿Qué tipo de variable estadística es el «color de ojos»?",
+          "options": [
+            "Cuantitativa discreta",
+            "Cuantitativa continua",
+            "Cualitativa",
+            "Frecuencia relativa"
+          ],
+          "correctIndex": 2,
+          "explanation": "El color de ojos no se expresa con un número, por lo que es una variable cualitativa."
+        },
+        {
+          "question": "¿Qué tipo de variable es la «altura en centímetros»?",
+          "options": [
+            "Cualitativa",
+            "Cuantitativa discreta",
+            "Cuantitativa continua",
+            "Ninguna de las anteriores"
+          ],
+          "correctIndex": 2,
+          "explanation": "La altura puede tomar cualquier valor en un intervalo (152,3 cm; 160,7 cm…), así que es cuantitativa continua."
+        },
+        {
+          "question": "Si un valor $x_i$ aparece 5 veces en un conjunto de 20 datos, ¿cuál es su frecuencia relativa $h_i$?",
+          "options": [
+            "5",
+            "0,25",
+            "0,50",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "$h_i = \\frac{f_i}{N} = \\frac{5}{20} = 0{,}25$"
+        },
+        {
+          "question": "La suma de todas las frecuencias relativas de una distribución es siempre igual a:",
+          "options": [
+            "0",
+            "El número total de datos $N$",
+            "1",
+            "Depende de los datos"
+          ],
+          "correctIndex": 2,
+          "explanation": "La suma de todas las frecuencias relativas es siempre 1, ya que $\\sum h_i = \\sum \\frac{f_i}{N} = \\frac{N}{N} = 1$."
+        },
+        {
+          "question": "En una tabla de datos agrupados, el intervalo [10, 20) tiene marca de clase:",
+          "options": [
+            "10",
+            "20",
+            "15",
+            "30"
+          ],
+          "correctIndex": 2,
+          "explanation": "La marca de clase es el valor medio del intervalo: $\\frac{10 + 20}{2} = 15$."
+        }
+      ]
+    },
+    {
+      "id": "mat11-fill1",
+      "lessonId": "mat11-l1",
+      "type": "fill_blank",
+      "title": "Conceptos básicos de estadística",
+      "description": "Completa las frases sobre estadística descriptiva",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 4,
+      "data": {
+        "paragraph": "El conjunto de todos los elementos de un estudio estadístico se llama ___. La parte de la que recogemos datos es la ___. Una variable que no se expresa con un número es ___. La frecuencia ___ es el cociente entre la frecuencia absoluta y el total de datos. Cuando los datos toman muchos valores, se agrupan en ___.",
+        "blanks": ["población", "muestra", "cualitativa", "relativa", "intervalos"],
+        "wordBank": ["población", "muestra", "cualitativa", "cuantitativa", "relativa", "absoluta", "intervalos", "sectores", "individuo"]
+      }
+    },
+    {
+      "id": "mat11-quiz2",
+      "lessonId": "mat11-l2",
+      "type": "quiz",
+      "title": "Parámetros de centralización y dispersión",
+      "description": "Pon a prueba tu dominio de media, moda, mediana y dispersión",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "Las notas de un alumno son: 5, 7, 7, 8, 3. ¿Cuál es la moda?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "correctIndex": 2,
+          "explanation": "La moda es el valor que más se repite. El 7 aparece 2 veces, más que cualquier otro."
+        },
+        {
+          "question": "¿Cuál es la media aritmética de los datos 4, 5, 8, 10, 8?",
+          "options": [
+            "6",
+            "7",
+            "8",
+            "5"
+          ],
+          "correctIndex": 1,
+          "explanation": "$\\bar{x} = \\frac{4+5+8+10+8}{5} = \\frac{35}{5} = 7$"
+        },
+        {
+          "question": "Dados los valores ordenados: 2, 3, 5, 7, 9, 11, ¿cuál es la mediana?",
+          "options": [
+            "5",
+            "6",
+            "7",
+            "5,5"
+          ],
+          "correctIndex": 1,
+          "explanation": "Con 6 datos (par), la mediana es la media de los dos centrales: $M = \\frac{5+7}{2} = 6$."
+        },
+        {
+          "question": "El rango de los datos 12, 18, 24, 15, 20 es:",
+          "options": [
+            "6",
+            "18",
+            "12",
+            "24"
+          ],
+          "correctIndex": 2,
+          "explanation": "Rango = valor máximo − valor mínimo = 24 − 12 = 12."
+        },
+        {
+          "question": "Si la varianza de un conjunto de datos es $s^2 = 25$, ¿cuál es la desviación típica?",
+          "options": [
+            "25",
+            "5",
+            "12,5",
+            "625"
+          ],
+          "correctIndex": 1,
+          "explanation": "La desviación típica es la raíz cuadrada de la varianza: $s = \\sqrt{25} = 5$."
+        },
+        {
+          "question": "¿Qué tipo de gráfico se usa para representar datos agrupados en intervalos?",
+          "options": [
+            "Diagrama de sectores",
+            "Pictograma",
+            "Histograma",
+            "Diagrama de barras"
+          ],
+          "correctIndex": 2,
+          "explanation": "El histograma usa rectángulos cuya base es el intervalo y su altura es proporcional a la frecuencia."
+        }
+      ]
+    },
+    {
+      "id": "mat11-quiz3",
+      "lessonId": "mat11-l3",
+      "type": "quiz",
+      "title": "Probabilidad y regla de Laplace",
+      "description": "Demuestra lo que sabes sobre experimentos aleatorios y probabilidad",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál de estos es un experimento aleatorio?",
+          "options": [
+            "Calentar agua a 100 °C a nivel del mar y observar que hierve",
+            "Soltar un objeto y ver que cae",
+            "Lanzar una moneda y anotar el resultado",
+            "Sumar 2 + 2"
+          ],
+          "correctIndex": 2,
+          "explanation": "Lanzar una moneda es aleatorio porque no podemos predecir si saldrá cara o cruz."
+        },
+        {
+          "question": "El espacio muestral de lanzar un dado es E = {1,2,3,4,5,6}. El suceso «sacar número par» es:",
+          "options": [
+            "Elemental",
+            "Compuesto",
+            "Imposible",
+            "Seguro"
+          ],
+          "correctIndex": 1,
+          "explanation": "«Sacar par» = {2, 4, 6} tiene más de un resultado, así que es un suceso compuesto."
+        },
+        {
+          "question": "En una urna hay 3 bolas rojas, 2 verdes y 5 azules. ¿Cuál es la probabilidad de sacar una bola verde?",
+          "options": [
+            "$\\frac{1}{5}$",
+            "$\\frac{2}{10}$",
+            "$\\frac{3}{10}$",
+            "$\\frac{5}{10}$"
+          ],
+          "correctIndex": 1,
+          "explanation": "Casos favorables = 2 verdes, casos posibles = 10 bolas. $P = \\frac{2}{10} = \\frac{1}{5}$."
+        },
+        {
+          "question": "Se lanzan dos monedas. ¿Cuál es la probabilidad de obtener dos caras?",
+          "options": [
+            "$\\frac{1}{2}$",
+            "$\\frac{1}{3}$",
+            "$\\frac{1}{4}$",
+            "$\\frac{2}{4}$"
+          ],
+          "correctIndex": 2,
+          "explanation": "E = {CC, CX, XC, XX} → 4 casos. Solo 1 favorable (CC). $P = \\frac{1}{4}$."
+        },
+        {
+          "question": "La probabilidad de un suceso seguro es:",
+          "options": [
+            "0",
+            "0,5",
+            "1",
+            "Infinita"
+          ],
+          "correctIndex": 2,
+          "explanation": "Un suceso seguro ocurre siempre, por lo que su probabilidad es 1."
+        }
+      ]
+    }
+  ]
+}
