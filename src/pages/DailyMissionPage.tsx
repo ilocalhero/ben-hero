@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useNavigate, Link } from 'react-router-dom'
-import { Zap, BookOpen, PenLine, Star, ChevronRight, Flame, Trophy } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Zap, BookOpen, PenLine, Star, ChevronRight, Flame, Trophy, RotateCcw } from 'lucide-react'
 import { TEMAS } from '../data'
 import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { getLevelTitle } from '../lib/xpCalculator'
 import { QuizActivity, FillBlankActivity, WritingMission } from '../components/activities'
+import { isPassing, getThreshold } from '../lib/passingThresholds'
 import type { LessonSection } from '../types/tema'
+import type { EvaluationResult } from '../types/gamification'
 
 type DailyStep = 'intro' | 'warmup' | 'learn' | 'practice' | 'write' | 'victory'
 
@@ -70,6 +72,64 @@ function StepDots({ step }: { step: DailyStep }) {
         )
       })}
     </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Retry overlay for failed steps
+// ---------------------------------------------------------------------------
+function RetryOverlay({ score, threshold, onRetry }: { score: number; threshold: number; onRetry: () => void }) {
+  const messages = [
+    'Casi lo logras! Intentalo una vez mas.',
+    'No te preocupes, cada intento te hace mas fuerte!',
+    'Sigue adelante! La practica hace al maestro.',
+  ]
+  const msg = messages[Math.floor(Math.random() * messages.length)]
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.35 }}
+      className="space-y-5 py-6"
+    >
+      <div className="text-center space-y-2">
+        <div className="flex items-center justify-center gap-2">
+          {[0, 1, 2].map((i) => (
+            <Star key={i} size={36} className="text-[#2a2d50]" fill="transparent" />
+          ))}
+        </div>
+        <p className="text-2xl font-black text-white">Necesitas mas practica</p>
+        <p className="text-[#8b8fb0] text-base">{msg}</p>
+      </div>
+
+      <div
+        className="rounded-2xl p-5 space-y-3"
+        style={{ background: '#1a1d3a', border: '1px solid #ffffff10' }}
+      >
+        <div className="flex items-center justify-between">
+          <span className="text-[#8b8fb0] text-base">Tu puntuacion</span>
+          <span className="text-xl font-bold text-[#ff6b35]">{score}%</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-[#8b8fb0] text-base">Necesitas</span>
+          <span className="text-xl font-bold text-[#00ff88]">{threshold}%</span>
+        </div>
+      </div>
+
+      <motion.button
+        onClick={onRetry}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="w-full py-3.5 rounded-2xl font-bold text-base flex items-center justify-center gap-2 text-white"
+        style={{
+          background: 'linear-gradient(135deg, #ff6b35 0%, #ff3ea5 100%)',
+        }}
+      >
+        <RotateCcw size={18} />
+        Intentar de nuevo
+      </motion.button>
+    </motion.div>
   )
 }
 
@@ -191,9 +251,9 @@ function renderSection(section: LessonSection, index: number) {
 export function DailyMissionPage() {
   const navigate = useNavigate()
 
-  const { dailyMissionCompleted, getNextDailyLesson, completeDailyMission, completeLesson } =
+  const { dailyMissionsToday, getNextDailyLesson, completeDailyMission, completeLesson, completeActivity } =
     useProgressStore()
-  const { level, streak, addXP, incrementStreak } = usePlayerStore()
+  const { level, streak, addXP, incrementStreak, addWritingRecord } = usePlayerStore()
 
   const tema = TEMAS[0]
   const lessonIndex = getNextDailyLesson(tema.id)
@@ -208,6 +268,13 @@ export function DailyMissionPage() {
   const [lessonCompleted, setLessonCompleted] = useState(false)
   const [victoryTriggered, setVictoryTriggered] = useState(false)
 
+  // Failed step state for retry
+  const [failedStep, setFailedStep] = useState<{ step: DailyStep; score: number; threshold: number } | null>(null)
+  const [stepKeys, setStepKeys] = useState<Record<string, number>>({ warmup: 0, practice: 0, write: 0 })
+
+  // Pending writing evaluation for persistence on pass
+  const [pendingWritingResult, setPendingWritingResult] = useState<EvaluationResult | null>(null)
+
   // Trigger victory side-effects exactly once
   useEffect(() => {
     if (step === 'victory' && !victoryTriggered) {
@@ -217,13 +284,36 @@ export function DailyMissionPage() {
     }
   }, [step, victoryTriggered, incrementStreak, completeDailyMission, tema.id, lessonIndex])
 
+  // Scroll to top on step change
+  useEffect(() => {
+    const main = document.querySelector('main')
+    if (main) main.scrollTo(0, 0)
+  }, [step, failedStep])
+
+  function handleRetry(stepName: string) {
+    setFailedStep(null)
+    setPendingWritingResult(null)
+    setStepKeys(prev => ({ ...prev, [stepName]: (prev[stepName] ?? 0) + 1 }))
+  }
+
+  function startAnotherMission() {
+    // Reset state for a fresh mission
+    setStep('intro')
+    setMissionXP(0)
+    setLessonCompleted(false)
+    setVictoryTriggered(false)
+    setFailedStep(null)
+    setPendingWritingResult(null)
+    setStepKeys({ warmup: 0, practice: 0, write: 0 })
+  }
+
   return (
     <div className="min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className="max-w-4xl mx-auto px-0 py-8">
 
         {/* Step dots (shown during active steps) */}
         <AnimatePresence>
-          {['warmup', 'learn', 'practice', 'write'].includes(step) && (
+          {['warmup', 'learn', 'practice', 'write'].includes(step) && !failedStep && (
             <motion.div
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -259,10 +349,10 @@ export function DailyMissionPage() {
                     ],
                   }}
                   transition={{ repeat: Infinity, duration: 2.5 }}
-                  className="text-5xl font-black uppercase tracking-widest"
+                  className="text-3xl sm:text-5xl font-black uppercase tracking-widest"
                   style={{ color: '#b24bff' }}
                 >
-                  MISIÓN DEL DÍA
+                  MISION DEL DIA
                 </motion.div>
                 <p className="text-[#8b8fb0] text-base">Tema {tema.number}: {tema.title}</p>
                 <p
@@ -273,45 +363,38 @@ export function DailyMissionPage() {
                 </p>
               </div>
 
-              {/* Already completed notice */}
-              {dailyMissionCompleted && (
+              {/* Missions completed today badge */}
+              {dailyMissionsToday > 0 && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="rounded-2xl p-5 text-center space-y-3"
-                  style={{ background: '#00ff8810', border: '1px solid #00ff8840' }}
+                  className="rounded-2xl p-4 text-center"
+                  style={{ background: '#b24bff15', border: '1px solid #b24bff40' }}
                 >
-                  <p className="text-[#00ff88] font-bold text-xl">
-                    ¡Ya completaste la misión de hoy!
+                  <p className="text-[#b24bff] font-bold text-base">
+                    {dailyMissionsToday} {dailyMissionsToday === 1 ? 'mision completada' : 'misiones completadas'} hoy
                   </p>
-                  <p className="text-[#8b8fb0] text-base">Vuelve mañana para tu próxima misión.</p>
-                  <Link
-                    to="/temas"
-                    className="inline-flex items-center gap-1 text-sm font-semibold"
-                    style={{ color: '#00d4ff' }}
-                  >
-                    Ver progreso <ChevronRight size={14} />
-                  </Link>
+                  <p className="text-[#8b8fb0] text-sm mt-1">Sigue adelante para ganar mas XP!</p>
                 </motion.div>
               )}
 
               {/* Briefing card */}
               <div
-                className="rounded-2xl p-5 space-y-4"
+                className="rounded-2xl p-4 sm:p-5 space-y-4"
                 style={{
                   background: 'linear-gradient(135deg, #1a1d3a 0%, #1e1040 100%)',
                   border: '1px solid #b24bff44',
                 }}
               >
                 <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#b24bff' }}>
-                  Plan de misión
+                  Plan de mision
                 </p>
                 <div className="space-y-3">
                   {[
-                    { icon: '🔥', label: 'Calentamiento', desc: 'Quiz rápido para activar tu mente', color: '#ff6b35' },
+                    { icon: '🔥', label: 'Calentamiento', desc: 'Quiz rapido para activar tu mente', color: '#ff6b35' },
                     { icon: '📖', label: 'Aprender', desc: 'Lectura del contenido del tema', color: '#00d4ff' },
-                    { icon: '✏️', label: 'Práctica', desc: 'Completa los huecos', color: '#b24bff' },
-                    { icon: '🖊️', label: 'Misión escrita', desc: 'Escribe y demuestra lo aprendido', color: '#00ff88' },
+                    { icon: '✏️', label: 'Practica', desc: 'Completa los huecos', color: '#b24bff' },
+                    { icon: '🖊️', label: 'Mision escrita', desc: 'Escribe y demuestra lo aprendido', color: '#00ff88' },
                   ].map((item, i) => (
                     <motion.div
                       key={i}
@@ -338,30 +421,33 @@ export function DailyMissionPage() {
                   <Zap size={14} style={{ color: '#ffd700' }} />
                   <span className="text-sm text-[#8b8fb0]">Tiempo estimado: ~15-20 minutos</span>
                 </div>
+
+                <div className="pt-1 flex items-center gap-2">
+                  <Star size={14} style={{ color: '#ff6b35' }} />
+                  <span className="text-sm text-[#8b8fb0]">Necesitas aprobar cada paso para avanzar</span>
+                </div>
               </div>
 
               {/* Begin button */}
-              {!dailyMissionCompleted && (
-                <motion.button
-                  onClick={() => setStep('warmup')}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  animate={{
-                    boxShadow: [
-                      '0 0 0px #b24bff00',
-                      '0 0 24px #b24bff66',
-                      '0 0 0px #b24bff00',
-                    ],
-                  }}
-                  transition={{ boxShadow: { repeat: Infinity, duration: 2 } }}
-                  className="w-full py-4 rounded-2xl font-black text-lg uppercase tracking-widest text-white"
-                  style={{
-                    background: 'linear-gradient(135deg, #b24bff 0%, #00d4ff 100%)',
-                  }}
-                >
-                  ¡COMENZAR MISIÓN!
-                </motion.button>
-              )}
+              <motion.button
+                onClick={() => setStep('warmup')}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{
+                  boxShadow: [
+                    '0 0 0px #b24bff00',
+                    '0 0 24px #b24bff66',
+                    '0 0 0px #b24bff00',
+                  ],
+                }}
+                transition={{ boxShadow: { repeat: Infinity, duration: 2 } }}
+                className="w-full py-4 rounded-2xl font-black text-lg uppercase tracking-widest text-white"
+                style={{
+                  background: 'linear-gradient(135deg, #b24bff 0%, #00d4ff 100%)',
+                }}
+              >
+                COMENZAR MISION!
+              </motion.button>
             </motion.div>
           )}
 
@@ -393,15 +479,28 @@ export function DailyMissionPage() {
                 </div>
               </div>
 
-              <QuizActivity
-                activity={warmupActivity}
-                temaId={tema.id}
-                onComplete={(_score, xpEarned) => {
-                  addXP(xpEarned)
-                  setMissionXP(prev => prev + xpEarned)
-                  setStep('learn')
-                }}
-              />
+              {failedStep?.step === 'warmup' ? (
+                <RetryOverlay
+                  score={failedStep.score}
+                  threshold={failedStep.threshold}
+                  onRetry={() => handleRetry('warmup')}
+                />
+              ) : (
+                <QuizActivity
+                  key={stepKeys.warmup}
+                  activity={warmupActivity}
+                  temaId={tema.id}
+                  onComplete={(score, xpEarned) => {
+                    if (isPassing(warmupActivity.type, score)) {
+                      addXP(xpEarned)
+                      setMissionXP(prev => prev + xpEarned)
+                      setStep('learn')
+                    } else {
+                      setFailedStep({ step: 'warmup', score, threshold: getThreshold(warmupActivity.type) })
+                    }
+                  }}
+                />
+              )}
             </motion.div>
           )}
 
@@ -439,7 +538,7 @@ export function DailyMissionPage() {
 
               {/* Lesson sections */}
               <div
-                className="rounded-2xl p-5 space-y-5"
+                className="rounded-2xl p-4 sm:p-5 space-y-5"
                 style={{
                   background: '#1a1d3a',
                   border: '1px solid #ffffff10',
@@ -465,7 +564,7 @@ export function DailyMissionPage() {
                   color: '#0a0b1a',
                 }}
               >
-                Siguiente: Práctica
+                Siguiente: Practica
                 <ChevronRight size={16} />
               </motion.button>
             </motion.div>
@@ -493,21 +592,34 @@ export function DailyMissionPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#b24bff' }}>
-                    Paso 3 — Práctica
+                    Paso 3 — Practica
                   </p>
                   <p className="text-white font-semibold text-base">{practiceActivity.title}</p>
                 </div>
               </div>
 
-              <FillBlankActivity
-                activity={practiceActivity}
-                temaId={tema.id}
-                onComplete={(_score, xpEarned) => {
-                  addXP(xpEarned)
-                  setMissionXP(prev => prev + xpEarned)
-                  setStep('write')
-                }}
-              />
+              {failedStep?.step === 'practice' ? (
+                <RetryOverlay
+                  score={failedStep.score}
+                  threshold={failedStep.threshold}
+                  onRetry={() => handleRetry('practice')}
+                />
+              ) : (
+                <FillBlankActivity
+                  key={stepKeys.practice}
+                  activity={practiceActivity}
+                  temaId={tema.id}
+                  onComplete={(score, xpEarned) => {
+                    if (isPassing(practiceActivity.type, score)) {
+                      addXP(xpEarned)
+                      setMissionXP(prev => prev + xpEarned)
+                      setStep('write')
+                    } else {
+                      setFailedStep({ step: 'practice', score, threshold: getThreshold(practiceActivity.type) })
+                    }
+                  }}
+                />
+              )}
             </motion.div>
           )}
 
@@ -533,20 +645,47 @@ export function DailyMissionPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold uppercase tracking-wider" style={{ color: '#00ff88' }}>
-                    Paso 4 — Misión escrita
+                    Paso 4 — Mision escrita
                   </p>
                   <p className="text-white font-semibold text-base">{writeActivity.title}</p>
                 </div>
               </div>
 
-              <WritingMission
-                activity={writeActivity}
-                temaId={tema.id}
-                onComplete={(_score, xpEarned) => {
-                  setMissionXP(prev => prev + xpEarned)
-                  setStep('victory')
-                }}
-              />
+              {failedStep?.step === 'write' ? (
+                <RetryOverlay
+                  score={failedStep.score}
+                  threshold={failedStep.threshold}
+                  onRetry={() => handleRetry('write')}
+                />
+              ) : (
+                <WritingMission
+                  key={stepKeys.write}
+                  activity={writeActivity}
+                  temaId={tema.id}
+                  onEvaluated={(result: EvaluationResult) => {
+                    setPendingWritingResult(result)
+                  }}
+                  onComplete={(score, xpEarned) => {
+                    if (isPassing(writeActivity.type, score)) {
+                      addXP(xpEarned)
+                      setMissionXP(prev => prev + xpEarned)
+                      // Persist writing data
+                      if (pendingWritingResult) {
+                        completeActivity(writeActivity.id, score)
+                        addWritingRecord(tema.id, {
+                          activityId: writeActivity.id,
+                          score: pendingWritingResult.score,
+                          wordCount: pendingWritingResult.wordCount,
+                          completedAt: new Date().toISOString(),
+                        })
+                      }
+                      setStep('victory')
+                    } else {
+                      setFailedStep({ step: 'write', score, threshold: getThreshold(writeActivity.type) })
+                    }
+                  }}
+                />
+              )}
             </motion.div>
           )}
 
@@ -596,13 +735,13 @@ export function DailyMissionPage() {
                     ],
                   }}
                   transition={{ repeat: Infinity, duration: 2 }}
-                  className="text-5xl font-black uppercase tracking-widest"
+                  className="text-3xl sm:text-5xl font-black uppercase tracking-widest"
                   style={{ color: '#ffd700' }}
                 >
-                  ¡VICTORIA!
+                  VICTORIA!
                 </motion.h1>
                 <p className="text-[#8b8fb0] text-base uppercase tracking-widest font-semibold">
-                  Misión completada
+                  Mision completada
                 </p>
               </motion.div>
 
@@ -658,7 +797,7 @@ export function DailyMissionPage() {
                   },
                   {
                     label: 'Racha actual',
-                    value: `${streak} día${streak !== 1 ? 's' : ''}`,
+                    value: `${streak} dia${streak !== 1 ? 's' : ''}`,
                     color: '#ff6b35',
                     icon: <Flame size={16} />,
                   },
@@ -686,6 +825,21 @@ export function DailyMissionPage() {
                 ))}
               </motion.div>
 
+              {/* Mission count badge */}
+              {dailyMissionsToday > 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.0 }}
+                  className="rounded-xl px-4 py-2 inline-block"
+                  style={{ background: '#b24bff15', border: '1px solid #b24bff33' }}
+                >
+                  <p className="text-sm font-bold" style={{ color: '#b24bff' }}>
+                    {dailyMissionsToday} {dailyMissionsToday === 1 ? 'mision' : 'misiones'} hoy
+                  </p>
+                </motion.div>
+              )}
+
               {/* Level title */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -707,7 +861,7 @@ export function DailyMissionPage() {
                 transition={{ delay: 1.2 }}
                 className="text-[#8b8fb0] text-base italic"
               >
-                Mañana te espera otra misión. ¡Sigue conquistando la historia!
+                Puedes hacer otra mision o volver manana. Sigue conquistando la historia!
               </motion.p>
 
               {/* Action buttons */}
@@ -718,11 +872,22 @@ export function DailyMissionPage() {
                 className="space-y-3"
               >
                 <button
-                  onClick={() => navigate('/temas')}
+                  onClick={startAnotherMission}
                   className="w-full py-3.5 rounded-2xl font-bold text-base"
                   style={{
                     background: 'linear-gradient(135deg, #b24bff 0%, #00d4ff 100%)',
                     color: '#fff',
+                  }}
+                >
+                  Otra Mision
+                </button>
+                <button
+                  onClick={() => navigate('/temas')}
+                  className="w-full py-3 rounded-2xl font-semibold text-base"
+                  style={{
+                    background: '#1a1d3a',
+                    border: '1px solid #ffffff15',
+                    color: '#c0c4e0',
                   }}
                 >
                   Ver mis Temas
@@ -731,8 +896,7 @@ export function DailyMissionPage() {
                   onClick={() => navigate('/')}
                   className="w-full py-3 rounded-2xl font-semibold text-base"
                   style={{
-                    background: '#1a1d3a',
-                    border: '1px solid #ffffff15',
+                    background: 'transparent',
                     color: '#8b8fb0',
                   }}
                 >

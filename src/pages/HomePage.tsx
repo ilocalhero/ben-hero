@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { Zap, ChevronRight, BookOpen, Flame, CheckCircle, Trophy, Target, Check, Clock } from 'lucide-react'
+import { Zap, ChevronRight, BookOpen, Flame, Trophy, Target, Check, Clock } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { TEMAS } from '../data'
 import { NeonText, Badge, ProgressBar, StatCard } from '../components/ui'
@@ -27,7 +27,7 @@ function SectionHeader({ icon, label, color }: { icon: React.ReactNode; label: s
 
 export function HomePage() {
   const navigate = useNavigate()
-  const { dailyMissionCompleted, completedActivities, activityScores, completedTemas, getTemaProgress } = useProgressStore()
+  const { dailyMissionsToday, completedActivities, activityScores, completedTemas, getTemaProgress } = useProgressStore()
   const { name, streak, level, totalXP } = usePlayerStore()
   const levelTitle = getLevelTitle(level)
 
@@ -82,97 +82,73 @@ export function HomePage() {
         transition={{ duration: 0.4, delay: 0.1 }}
       >
         <button
-          onClick={() => !dailyMissionCompleted && navigate('/daily')}
-          disabled={dailyMissionCompleted}
-          className="w-full text-left rounded-3xl relative overflow-hidden group transition-transform duration-200 hover:scale-[1.005] active:scale-[0.995] disabled:scale-100 disabled:cursor-default"
+          onClick={() => navigate('/daily')}
+          className="w-full text-left rounded-3xl relative overflow-hidden group transition-transform duration-200 hover:scale-[1.005] active:scale-[0.995]"
           style={{
             minHeight: '160px',
-            background: dailyMissionCompleted
-              ? 'linear-gradient(135deg, #0d1a1a 0%, #0a1414 50%, #0f1818 100%)'
-              : 'linear-gradient(135deg, #1e0e38 0%, #180838 30%, #120828 60%, #0e0620 100%)',
-            border: dailyMissionCompleted ? '1px solid rgba(0,255,136,0.15)' : '1px solid rgba(178,75,255,0.25)',
-            boxShadow: dailyMissionCompleted
-              ? '0 16px 48px rgba(0,0,0,0.6)'
-              : '0 16px 80px rgba(0,0,0,0.7), 0 0 80px rgba(178,75,255,0.12)',
+            background: 'linear-gradient(135deg, #1e0e38 0%, #180838 30%, #120828 60%, #0e0620 100%)',
+            border: '1px solid rgba(178,75,255,0.25)',
+            boxShadow: '0 16px 80px rgba(0,0,0,0.7), 0 0 80px rgba(178,75,255,0.12)',
           }}
         >
           {/* Top accent line */}
           <div
             className="absolute top-0 left-8 right-8 h-px"
             style={{
-              background: dailyMissionCompleted
-                ? 'linear-gradient(90deg, transparent, rgba(0,255,136,0.6), transparent)'
-                : 'linear-gradient(90deg, transparent, rgba(178,75,255,0.8), transparent)',
+              background: 'linear-gradient(90deg, transparent, rgba(178,75,255,0.8), transparent)',
             }}
           />
 
           {/* Ambient glow blob */}
-          {!dailyMissionCompleted && (
-            <div
-              className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-20 pointer-events-none"
-              style={{ background: 'radial-gradient(circle, rgba(178,75,255,0.4) 0%, transparent 70%)' }}
-            />
-          )}
+          <div
+            className="absolute -top-10 -right-10 w-64 h-64 rounded-full opacity-20 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(178,75,255,0.4) 0%, transparent 70%)' }}
+          />
 
           {/* Shimmer on hover */}
-          {!dailyMissionCompleted && (
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shimmer rounded-3xl" />
-          )}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shimmer rounded-3xl" />
 
           <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 p-6 lg:p-8">
             {/* Large icon */}
             <div
               className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={
-                dailyMissionCompleted
-                  ? {
-                      background: 'rgba(0,255,136,0.1)',
-                      border: '1px solid rgba(0,255,136,0.25)',
-                      boxShadow: '0 0 40px rgba(0,255,136,0.2)',
-                    }
-                  : {
-                      background: 'rgba(178,75,255,0.15)',
-                      border: '1px solid rgba(178,75,255,0.35)',
-                      boxShadow: '0 0 48px rgba(178,75,255,0.3)',
-                    }
-              }
+              style={{
+                background: 'rgba(178,75,255,0.15)',
+                border: '1px solid rgba(178,75,255,0.35)',
+                boxShadow: '0 0 48px rgba(178,75,255,0.3)',
+              }}
             >
-              {dailyMissionCompleted
-                ? <CheckCircle size={40} className="text-neon-green" style={{ filter: 'drop-shadow(0 0 12px #00ff88)' }} />
-                : <Zap size={40} className="text-neon-purple" style={{ filter: 'drop-shadow(0 0 12px #b24bff)' }} />
-              }
+              <Zap size={40} className="text-neon-purple" style={{ filter: 'drop-shadow(0 0 12px #b24bff)' }} />
             </div>
 
             {/* Text content */}
             <div className="flex-1 min-w-0">
               <span
                 className="text-xs font-black uppercase tracking-widest"
-                style={{ color: dailyMissionCompleted ? '#00ff88' : '#b24bff' }}
+                style={{ color: '#b24bff' }}
               >
-                {dailyMissionCompleted ? '✓ Misión Completada' : 'Misión del Día'}
+                {dailyMissionsToday > 0 ? `${dailyMissionsToday} ${dailyMissionsToday === 1 ? 'mision' : 'misiones'} hoy` : 'Mision del Dia'}
               </span>
               <p className="font-black text-white text-2xl lg:text-4xl leading-tight mt-2">
-                {dailyMissionCompleted ? '¡Bien hecho! Vuelve mañana' : 'Completa tu lección de hoy'}
+                {dailyMissionsToday > 0 ? 'Continua tu aventura' : 'Completa tu leccion de hoy'}
               </p>
               <p className="text-text-secondary mt-2.5 text-sm lg:text-lg">
-                {dailyMissionCompleted ? 'Has ganado tu recompensa diaria' : '+150 XP de recompensa · ~15-20 minutos'}
+                {dailyMissionsToday > 0 ? 'Haz otra mision para ganar mas XP' : '+150 XP de recompensa · ~15-20 minutos'}
               </p>
             </div>
 
             {/* CTA Button */}
-            {!dailyMissionCompleted && (
-              <div className="flex-shrink-0">
-                <div
-                  className="px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider text-white"
-                  style={{
-                    background: 'linear-gradient(135deg, #b24bff 0%, #7a1bd2 100%)',
-                    boxShadow: '0 0 32px rgba(178,75,255,0.4), 0 4px 16px rgba(0,0,0,0.4)',
-                  }}
-                >
-                  Jugar Ahora
-                </div>
+            <div className="flex-shrink-0">
+              <div
+                className="px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider text-white"
+                style={{
+                  background: 'linear-gradient(135deg, #b24bff 0%, #7a1bd2 100%)',
+                  boxShadow: '0 0 32px rgba(178,75,255,0.4), 0 4px 16px rgba(0,0,0,0.4)',
+                }}
+              >
+                Jugar Ahora
               </div>
-            )}
+            </div>
           </div>
         </button>
       </motion.div>

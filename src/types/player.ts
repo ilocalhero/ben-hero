@@ -28,7 +28,7 @@ export interface ProgressState {
   activityScores: Record<string, number>
   completedLessons: Record<string, boolean>
   completedTemas: Record<string, boolean>
-  dailyMissionCompleted: boolean
+  dailyMissionsToday: number
   dailyMissionDate: string | null
   lastDailyMissionTemaId: string | null
   lastDailyMissionLessonIndex: number

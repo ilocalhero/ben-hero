@@ -5,15 +5,14 @@ import { NeonText } from '../ui/NeonText'
 import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
 import { evaluateWriting } from '../../lib/writingEvaluator'
+import { evaluateWritingAI } from '../../lib/aiWritingEvaluator'
 import type { EvaluationResult } from '../../types/gamification'
 import type { Activity, WritingMissionData } from '../../types/tema'
-import { usePlayerStore } from '../../stores/usePlayerStore'
-import { useProgressStore } from '../../stores/useProgressStore'
-
 interface WritingMissionProps {
   activity: Activity
-  temaId: string
+  temaId?: string
   onComplete: (score: number, xpEarned: number) => void
+  onEvaluated?: (result: EvaluationResult) => void
 }
 
 function countWords(text: string): number {
@@ -33,7 +32,7 @@ function Chip({ label, onClick }: { label: string; onClick: () => void }) {
       className="
         inline-block cursor-pointer select-none
         bg-[#00d4ff15] text-[#00d4ff] border border-[#00d4ff33]
-        rounded-full px-3 py-1 text-sm font-medium
+        rounded-full px-3 py-2 text-sm font-medium
         hover:bg-[#00d4ff25] hover:border-[#00d4ff66]
         transition-colors duration-150
       "
@@ -107,17 +106,14 @@ function XPCountUp({ target }: { target: number }) {
 // ---------------------------------------------------------------------------
 // Main component
 // ---------------------------------------------------------------------------
-export function WritingMission({ activity, temaId, onComplete }: WritingMissionProps) {
+export function WritingMission({ activity, onComplete, onEvaluated }: WritingMissionProps) {
   const data = activity.data as WritingMissionData
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   const [text, setText] = useState('')
   const [showReport, setShowReport] = useState(false)
   const [result, setResult] = useState<EvaluationResult | null>(null)
-
-  const addXP = usePlayerStore(s => s.addXP)
-  const addWritingRecord = usePlayerStore(s => s.addWritingRecord)
-  const completeActivity = useProgressStore(s => s.completeActivity)
+  const [isEvaluating, setIsEvaluating] = useState(false)
 
   const wordCount = countWords(text)
   const wordsNeeded = Math.max(0, data.minimumWords - wordCount)
@@ -146,20 +142,22 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
     })
   }
 
-  function handleSubmit() {
-    if (!canSubmit) return
-    const evaluation = evaluateWriting(text, data)
+  async function handleSubmit() {
+    if (!canSubmit || isEvaluating) return
+    setIsEvaluating(true)
+
+    let evaluation: EvaluationResult
+    try {
+      evaluation = await evaluateWritingAI(text, data)
+    } catch {
+      evaluation = evaluateWriting(text, data)
+    }
+
+    setIsEvaluating(false)
     setResult(evaluation)
 
-    // Record progress in stores
-    completeActivity(activity.id, evaluation.score)
-    addXP(activity.xpReward + evaluation.xpBonus)
-    addWritingRecord(temaId, {
-      activityId: activity.id,
-      score: evaluation.score,
-      wordCount: evaluation.wordCount,
-      completedAt: new Date().toISOString(),
-    })
+    // Notify parent of evaluation result (parent decides whether to persist)
+    onEvaluated?.(evaluation)
 
     setShowReport(true)
   }
@@ -205,7 +203,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
             </div>
 
             {/* Prompt callout */}
-            <div className="border-l-4 border-[#00d4ff] bg-[#00d4ff0d] rounded-r-xl px-5 py-4">
+            <div className="border-l-4 border-[#00d4ff] bg-[#00d4ff0d] rounded-r-xl px-4 py-3 sm:px-5 sm:py-4">
               <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold mb-1">
                 Misión de escritura
               </p>
@@ -214,7 +212,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
 
             {/* Key points (all scaffold levels) */}
             {data.keyPointsToAddress && data.keyPointsToAddress.length > 0 && (
-              <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-2">
+              <div className="bg-[#12152e] rounded-xl px-4 py-3 sm:px-5 sm:py-4 space-y-2">
                 <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                   Puntos clave a desarrollar
                 </p>
@@ -234,7 +232,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
               <div className="space-y-4">
                 {/* Sentence starters */}
                 {data.sentenceStarters && data.sentenceStarters.length > 0 && (
-                  <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-3">
+                  <div className="bg-[#12152e] rounded-xl px-4 py-3 sm:px-5 sm:py-4 space-y-3">
                     <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                       Iniciadores de frases
                     </p>
@@ -252,7 +250,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
 
                 {/* Vocabulary hints */}
                 {data.vocabularyHints && data.vocabularyHints.length > 0 && (
-                  <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-3">
+                  <div className="bg-[#12152e] rounded-xl px-4 py-3 sm:px-5 sm:py-4 space-y-3">
                     <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                       Vocabulario
                     </p>
@@ -270,7 +268,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
 
                 {/* Connectors */}
                 {data.connectors && data.connectors.length > 0 && (
-                  <div className="bg-[#12152e] rounded-xl px-5 py-4 space-y-3">
+                  <div className="bg-[#12152e] rounded-xl px-4 py-3 sm:px-5 sm:py-4 space-y-3">
                     <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
                       Conectores
                     </p>
@@ -294,7 +292,8 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                 ref={textareaRef}
                 value={text}
                 onChange={e => setText(e.target.value)}
-                rows={8}
+                readOnly={isEvaluating}
+                rows={5}
                 placeholder="Escribe aquí tu respuesta... Usa los iniciadores y el vocabulario para desarrollar tus ideas."
                 className="
                   w-full bg-[#1a1d3a] border border-[#00d4ff30]
@@ -306,7 +305,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
               />
               {/* Live word count overlay */}
               <div className="absolute bottom-3 right-4 pointer-events-none">
-                <span className={`text-xs font-semibold ${canSubmit ? 'text-[#00ff88]' : 'text-[#8b8fb0]'}`}>
+                <span className={`text-sm font-semibold ${canSubmit ? 'text-[#00ff88]' : 'text-[#8b8fb0]'}`}>
                   {wordCount} palabras
                 </span>
               </div>
@@ -314,7 +313,16 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
 
             {/* Submit button */}
             <div className="flex flex-col items-stretch gap-2">
-              {canSubmit ? (
+              {isEvaluating ? (
+                <div className="flex flex-col items-center gap-3 py-6">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+                    className="w-10 h-10 rounded-full border-4 border-[#00d4ff33] border-t-[#00d4ff]"
+                  />
+                  <p className="text-[#8b8fb0] text-sm">Evaluando tu misión...</p>
+                </div>
+              ) : canSubmit ? (
                 <motion.div
                   animate={{ boxShadow: ['0 0 0px #00d4ff00', '0 0 18px #00d4ff55', '0 0 0px #00d4ff00'] }}
                   transition={{ repeat: Infinity, duration: 2 }}
@@ -331,7 +339,7 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                   </Button>
                 </motion.div>
               ) : (
-                <div className="relative group">
+                <div>
                   <Button
                     onClick={undefined}
                     variant="secondary"
@@ -342,15 +350,9 @@ export function WritingMission({ activity, temaId, onComplete }: WritingMissionP
                     <Send size={18} />
                     Enviar Misión
                   </Button>
-                  <div className="
-                    absolute -top-10 left-1/2 -translate-x-1/2
-                    bg-[#12152e] border border-[#00d4ff33] text-[#8b8fb0]
-                    text-xs px-3 py-1.5 rounded-lg whitespace-nowrap
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none
-                    shadow-lg
-                  ">
+                  <p className="text-center text-sm text-[#8b8fb0] mt-2">
                     Necesitas {wordsNeeded} {wordsNeeded === 1 ? 'palabra' : 'palabras'} más
-                  </div>
+                  </p>
                 </div>
               )}
             </div>

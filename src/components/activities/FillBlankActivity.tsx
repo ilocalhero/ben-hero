@@ -112,7 +112,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
   return (
     <div className="space-y-6">
       {/* Activity card */}
-      <div className="bg-[#1a1d3a] rounded-2xl p-6 border border-[#ffffff10] space-y-6">
+      <div className="bg-[#1a1d3a] rounded-2xl p-4 sm:p-6 border border-[#ffffff10] space-y-6">
 
         {/* Paragraph with blanks */}
         <div>
@@ -212,7 +212,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
                   whileTap={!isUsed && checkState === 'unchecked' ? { scale: 0.95 } : {}}
                   layout
                   className={`
-                    px-4 py-1.5 rounded-full border text-base font-medium
+                    px-4 py-2.5 rounded-full border text-base font-medium
                     transition-all duration-200
                     ${isUsed
                       ? 'border-[#b24bff30] text-[#4a4e6a] bg-[#b24bff08] cursor-default opacity-40'
@@ -241,7 +241,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
                 px-6 py-2.5 rounded-xl font-bold text-base transition-colors
                 ${allFilled
                   ? 'bg-[#00d4ff] text-[#0a0b1a] hover:bg-[#00b8e6] cursor-pointer'
-                  : 'bg-[#1e2248] text-[#4a4e6a] cursor-not-allowed'
+                  : 'bg-[#1e2248] text-[#6b6f8a] cursor-not-allowed'
                 }
               `}
             >

@@ -32,7 +32,7 @@ export function Modal({ open, onClose, children, title, maxWidth = 'max-w-lg' }:
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-[#e8eaff]">{title}</h2>
                 {onClose && (
-                  <button onClick={onClose} className="text-[#8b8fb0] hover:text-[#e8eaff] transition-colors">
+                  <button onClick={onClose} className="p-2 -m-2 text-[#8b8fb0] hover:text-[#e8eaff] transition-colors">
                     <X size={20} />
                   </button>
                 )}

@@ -21,7 +21,7 @@ const DEFAULT_STATE: ProgressState = {
   activityScores: {},
   completedLessons: {},
   completedTemas: {},
-  dailyMissionCompleted: false,
+  dailyMissionsToday: 0,
   dailyMissionDate: null,
   lastDailyMissionTemaId: null,
   lastDailyMissionLessonIndex: 0,
@@ -35,12 +35,20 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
   ...DEFAULT_STATE,
 
   load: () => {
-    const saved = loadFromStorage<ProgressState>('progress')
+    const saved = loadFromStorage<Record<string, unknown>>('progress')
     if (saved) {
-      // Reset daily mission if it's a new day
       const today = todayStr()
-      const dailyMissionCompleted = saved.dailyMissionDate === today ? saved.dailyMissionCompleted : false
-      set({ ...saved, dailyMissionCompleted })
+      // Migrate old boolean dailyMissionCompleted → dailyMissionsToday count
+      let dailyMissionsToday: number
+      if ('dailyMissionsToday' in saved && typeof saved.dailyMissionsToday === 'number') {
+        dailyMissionsToday = saved.dailyMissionDate === today ? saved.dailyMissionsToday : 0
+      } else if ('dailyMissionCompleted' in saved) {
+        // Old format migration
+        dailyMissionsToday = (saved.dailyMissionDate === today && saved.dailyMissionCompleted) ? 1 : 0
+      } else {
+        dailyMissionsToday = 0
+      }
+      set({ ...DEFAULT_STATE, ...saved, dailyMissionsToday } as ProgressState)
     }
   },
 
@@ -77,7 +85,7 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
     const state = get()
     const today = todayStr()
     const update = {
-      dailyMissionCompleted: true,
+      dailyMissionsToday: state.dailyMissionsToday + 1,
       dailyMissionDate: today,
       lastDailyMissionTemaId: temaId,
       lastDailyMissionLessonIndex: lessonIndex,

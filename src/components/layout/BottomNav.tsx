@@ -45,7 +45,7 @@ export function BottomNav() {
                     style={isActive ? { background: 'rgba(0,212,255,0.12)' } : undefined}
                   >
                     <Icon
-                      size={22}
+                      size={24}
                       style={
                         isActive
                           ? { color: '#00d4ff', filter: 'drop-shadow(0 0 6px #00d4ff)' }
@@ -54,7 +54,7 @@ export function BottomNav() {
                     />
                   </div>
                   <span
-                    className="text-[11px] font-bold tracking-wide uppercase"
+                    className="text-xs font-bold tracking-wide uppercase"
                     style={
                       isActive
                         ? { color: '#00d4ff', textShadow: '0 0 8px #00d4ff66' }

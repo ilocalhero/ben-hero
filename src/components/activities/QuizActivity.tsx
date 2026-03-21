@@ -148,7 +148,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.3 }}
-          className="bg-[#1a1d3a] rounded-2xl p-6 border border-[#ffffff10] space-y-5"
+          className="bg-[#1a1d3a] rounded-2xl p-4 sm:p-6 border border-[#ffffff10] space-y-5"
         >
           {/* Optional question image */}
           {currentQuestion.image && (
@@ -176,7 +176,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                 animate={getOptionAnimateStyle(idx)}
                 transition={{ duration: 0.25 }}
                 className={`
-                  w-full text-left px-4 py-3 rounded-xl border
+                  w-full text-left px-4 py-3.5 rounded-xl border
                   border-[#ffffff15] bg-[#12152e]
                   text-[#e8eaff] text-base leading-snug
                   ${!answered

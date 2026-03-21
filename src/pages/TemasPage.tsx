@@ -16,7 +16,7 @@ export function TemasPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <NeonText as="h1" color="blue" className="text-4xl lg:text-5xl font-black tracking-tight mb-2">
+        <NeonText as="h1" color="blue" className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-2">
           Mis Temas
         </NeonText>
         <p className="text-text-secondary text-base lg:text-lg">{TEMAS.length} temas disponibles · Historia y Geografía</p>
