@@ -19,7 +19,7 @@ export const LEVELS: LevelData[] = Array.from({ length: 30 }, (_, i) => {
   if (level === 1) return { level: 1, title: 'Novato', xpRequired: 0 }
   let total = 0
   for (let n = 2; n <= level; n++) {
-    total += 100 + (n - 2) * 50
+    total += 500 + (n - 2) * 300
   }
   return { level, title: LEVEL_TITLES[level], xpRequired: total }
 })

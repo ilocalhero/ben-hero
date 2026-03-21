@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Home, BookOpen, User, Target } from 'lucide-react'
+import { Home, BookOpen, User, Target, Trophy } from 'lucide-react'
 
 interface NavItem {
   label: string
@@ -12,6 +12,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Inicio', path: '/', icon: Home },
   { label: 'Misiones', path: '/daily', icon: Target },
   { label: 'Temas', path: '/temas', icon: BookOpen },
+  { label: 'Premios', path: '/awards', icon: Trophy },
   { label: 'Perfil', path: '/perfil', icon: User },
 ]
 

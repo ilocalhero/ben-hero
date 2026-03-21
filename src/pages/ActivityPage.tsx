@@ -106,10 +106,6 @@ export function ActivityPage() {
 
   const completeActivity = useProgressStore((s) => s.completeActivity)
   const completeTema = useProgressStore((s) => s.completeTema)
-  const completedActivities = useProgressStore((s) => s.completedActivities)
-  const activityScores = useProgressStore((s) => s.activityScores)
-  const completedLessons = useProgressStore((s) => s.completedLessons)
-  const completedTemas = useProgressStore((s) => s.completedTemas)
   const addXP = usePlayerStore((s) => s.addXP)
   const addWritingRecord = usePlayerStore((s) => s.addWritingRecord)
   const addGain = useXPAnimation((s) => s.addGain)
@@ -142,17 +138,17 @@ export function ActivityPage() {
 
   // Check if completing this activity finishes the entire tema
   const checkTemaCompletion = (justCompletedId: string) => {
-    if (!tema || !temaId || completedTemas[temaId]) return
-    // After completeActivity, the store is updated — check if all activities are now done
+    if (!tema || !temaId) return
+    // Read fresh state directly from stores (not React snapshot)
+    const store = useProgressStore.getState()
+    if (store.completedTemas[temaId]) return
     const allDone = tema.activities.every(
-      a => a.id === justCompletedId || completedActivities[a.id]
+      a => a.id === justCompletedId || store.completedActivities[a.id]
     )
     if (allDone) {
       completeTema(temaId)
-      // Get fresh player state for the report
       const currentPlayer = usePlayerStore.getState()
-      const updatedScores = { ...activityScores, [justCompletedId]: useProgressStore.getState().activityScores[justCompletedId] }
-      sendTemaReport(tema, updatedScores, completedLessons, currentPlayer)
+      sendTemaReport(tema, store.activityScores, store.completedLessons, currentPlayer)
     }
   }
 

@@ -1,7 +1,7 @@
 import type React from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Home, BookOpen, User, Target, Zap, Flame } from 'lucide-react'
+import { Home, BookOpen, User, Target, Trophy, Zap, Flame } from 'lucide-react'
 import { usePlayerStore } from '../../stores/usePlayerStore'
 import { getXPProgress, getLevelTitle } from '../../lib/xpCalculator'
 import { ProgressBar } from '../ui'
@@ -16,6 +16,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Inicio', path: '/', icon: Home },
   { label: 'Misiones', path: '/daily', icon: Target },
   { label: 'Mis Temas', path: '/temas', icon: BookOpen },
+  { label: 'Premios', path: '/awards', icon: Trophy },
   { label: 'Perfil', path: '/perfil', icon: User },
 ]
 
