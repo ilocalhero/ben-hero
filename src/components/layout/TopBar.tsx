@@ -56,7 +56,10 @@ export function TopBar() {
       {/* XP Bar (center) */}
       <div className="flex-1 flex flex-col justify-center min-w-0 max-w-sm mx-auto">
         <div className="flex justify-between items-center mb-[5px]">
-          <span className="text-xs font-bold text-neon-blue tracking-wide">Nv. {level}</span>
+          <div className="flex items-center gap-1.5">
+            <span className="text-xs font-bold text-neon-blue tracking-wide">Nv. {level}</span>
+            <span className="text-xs font-semibold text-neon-purple">{levelTitle}</span>
+          </div>
           <span className="text-xs text-text-secondary">
             {xpProgress.current}<span className="text-text-muted"> / {xpProgress.needed} XP</span>
           </span>
