@@ -27,6 +27,11 @@ const ICON_MAP: Record<string, string> = {
   palace:    '🏯',
   flag:      '🚩',
   trade:     '⚖️',
+  calculator:'🧮',
+  numbers:   '🔢',
+  geometry:  '📐',
+  algebra:   '➗',
+  chart:     '📊',
 }
 
 export function getTemaEmoji(iconName: string): string {

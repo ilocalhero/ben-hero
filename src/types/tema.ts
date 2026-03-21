@@ -25,7 +25,7 @@ export interface KeyTerm {
 }
 
 export interface LessonSection {
-  type: 'text' | 'image' | 'map' | 'callout' | 'source' | 'timeline'
+  type: 'text' | 'image' | 'map' | 'callout' | 'source' | 'timeline' | 'math'
   title?: string
   content?: string
   imageUrl?: string
@@ -85,7 +85,8 @@ export interface Tema {
   number: number
   title: string
   subtitle: string
-  category: 'historia' | 'geografia'
+  subject: string
+  category: 'historia' | 'geografia' | 'numeros' | 'geometria' | 'algebra' | 'estadistica'
   color: string
   icon: string
   heroImage?: string

@@ -1,0 +1,312 @@
+{
+  "id": "mat01",
+  "subject": "matematicas",
+  "number": 1,
+  "title": "El espejo de los números",
+  "subtitle": "Números enteros, valor absoluto y operaciones",
+  "category": "numeros",
+  "color": "#00d4ff",
+  "icon": "numbers",
+  "heroImage": "/2ESO_Matematicas/1_1_El_espejo_de_los_nmeros/images/008_03.jpg",
+  "iconImage": "/2ESO_Matematicas/1_1_El_espejo_de_los_nmeros/images/008_01.png",
+  "description": "Aprenderás a representar, ordenar y operar con números enteros. Descubrirás el valor absoluto, el opuesto de un número, y dominarás las sumas, restas, multiplicaciones y divisiones con enteros. También explorarás múltiplos, divisores y los criterios de divisibilidad.",
+  "textbookPages": "Págs. 8–25",
+  "keyTerms": [
+    {
+      "term": "Número entero",
+      "definition": "Conjunto $\\mathbb{Z}$ formado por los negativos, el cero y los positivos: {..., −3, −2, −1, 0, 1, 2, 3, ...}",
+      "example": "−5, 0 y 7 son números enteros"
+    },
+    {
+      "term": "Valor absoluto",
+      "definition": "La distancia de un número al 0 en la recta numérica, siempre positiva. Se escribe |a|.",
+      "example": "|−6| = 6 y |4| = 4"
+    },
+    {
+      "term": "Opuesto",
+      "definition": "Número con el mismo valor absoluto pero signo contrario. op(a) = −a",
+      "example": "El opuesto de 8 es −8; el opuesto de −5 es 5"
+    },
+    {
+      "term": "Múltiplo",
+      "definition": "Un número es múltiplo de otro si se obtiene multiplicándolo por un entero.",
+      "example": "12 es múltiplo de 3 porque 3 × 4 = 12"
+    },
+    {
+      "term": "Divisor",
+      "definition": "Un número es divisor de otro si lo divide exactamente (resto 0).",
+      "example": "4 es divisor de 20 porque 20 ÷ 4 = 5"
+    },
+    {
+      "term": "Número primo",
+      "definition": "Número mayor que 1 que solo es divisible por 1 y por sí mismo.",
+      "example": "2, 3, 5, 7, 11, 13..."
+    },
+    {
+      "term": "m.c.d.",
+      "definition": "Máximo común divisor: el mayor número que divide a dos o más números a la vez.",
+      "example": "m.c.d.(12, 18) = 6"
+    },
+    {
+      "term": "m.c.m.",
+      "definition": "Mínimo común múltiplo: el menor múltiplo común (distinto de 0) de dos o más números.",
+      "example": "m.c.m.(4, 6) = 12"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat01-l1",
+      "order": 1,
+      "title": "Números enteros en la recta",
+      "subtitle": "Representación, valor absoluto y opuesto",
+      "sections": [
+        {
+          "type": "text",
+          "title": "El conjunto de los números enteros",
+          "content": "El conjunto de los números enteros se representa con la letra $\\mathbb{Z}$. Está formado por los números enteros negativos, el cero y los números enteros positivos (que corresponden a los números naturales $\\mathbb{N}$).\n\n$\\mathbb{Z}$ = {..., −3, −2, −1, 0, 1, 2, 3, ...}"
+        },
+        {
+          "type": "math",
+          "title": "Representación en la recta numérica",
+          "content": "Para representar números enteros en la recta numérica:\n\n**Paso 1:** Señalamos el 0 y a su derecha el 1, a una distancia cualquiera.\n**Paso 2:** Usamos esa distancia para situar los positivos a la derecha y los negativos a la izquierda.\n**Paso 3:** Representamos los enteros pedidos.\n\nEjemplo: Representamos −4, −2, 0, 1, 3 y 5 en la recta."
+        },
+        {
+          "type": "callout",
+          "title": "Valor absoluto",
+          "content": "El valor absoluto de un número entero $a$, escrito $|a|$, representa su distancia al 0. Siempre es positivo.",
+          "highlights": [
+            "$|4| = 4$ (está a 4 unidades del 0)",
+            "$|{-6}| = 6$ (está a 6 unidades del 0)",
+            "Por tanto, −6 y 4 están a 10 unidades de distancia entre sí"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "El opuesto de un número",
+          "content": "El opuesto de un entero $a$ es otro número con el mismo valor absoluto y signo contrario.\n\nSe representa como $\\text{op}(a)$, y en la recta es el punto simétrico respecto al 0, como un espejo.\n\n$\\text{op}(8) = -8$\n$\\text{op}(-5) = +5$\n$\\text{op}(\\text{op}(a)) = a$"
+        }
+      ]
+    },
+    {
+      "id": "mat01-l2",
+      "order": 2,
+      "title": "Ordenar y operar con enteros",
+      "subtitle": "Sumas, restas, multiplicaciones y divisiones",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Ordenación de números enteros",
+          "content": "Si representamos varios números en la recta numérica, el mayor es el que está más a la derecha.\n\n• Cualquier positivo es mayor que cualquier negativo.\n• El 0 es menor que los positivos y mayor que los negativos.\n• Dados dos positivos, es mayor el de mayor valor absoluto.\n• Dados dos negativos, es mayor el de menor valor absoluto."
+        },
+        {
+          "type": "math",
+          "title": "Suma de enteros",
+          "content": "**Mismo signo:** Sumamos valores absolutos y dejamos el mismo signo.\n$(-6) + (-3) = -9$\n\n**Distinto signo:** Restamos valores absolutos y dejamos el signo del mayor.\n$(-7) + 4 = -3$"
+        },
+        {
+          "type": "math",
+          "title": "Resta de enteros",
+          "content": "Para restar, sumamos al primero el opuesto del segundo.\n\n$3 - (-7) = 3 + 7 = 10$\n$(-5) - 4 = (-5) + (-4) = -9$\n\nRecuerda: restar es la operación inversa de sumar."
+        },
+        {
+          "type": "callout",
+          "title": "Regla de signos para multiplicar y dividir",
+          "content": "Cuando multiplicamos o dividimos dos números enteros:",
+          "highlights": [
+            "$(+) \\times (+) = +$ y $(-) \\times (-) = +$ → Signos iguales = positivo",
+            "$(+) \\times (-) = -$ y $(-) \\times (+) = -$ → Signos distintos = negativo",
+            "La misma regla se aplica a la división"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mat01-l3",
+      "order": 3,
+      "title": "Divisibilidad",
+      "subtitle": "Múltiplos, divisores, primos y m.c.d./m.c.m.",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Múltiplos y divisores",
+          "content": "Un número $a$ es múltiplo de $b$ si existe un número entero $k$ tal que $a = b \\times k$.\n\nSi $a$ es múltiplo de $b$, entonces $b$ es divisor de $a$.\n\nEjemplo: 12 es múltiplo de 3 (porque $3 \\times 4 = 12$), y 3 es divisor de 12."
+        },
+        {
+          "type": "callout",
+          "title": "Criterios de divisibilidad",
+          "content": "Reglas rápidas para saber si un número es divisible por otro:",
+          "highlights": [
+            "Por 2: termina en cifra par (0, 2, 4, 6, 8)",
+            "Por 3: la suma de sus cifras es múltiplo de 3",
+            "Por 5: termina en 0 o 5",
+            "Por 11: la diferencia entre la suma de cifras en posición par e impar es 0 o múltiplo de 11"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Números primos y compuestos",
+          "content": "Un número primo solo tiene dos divisores: 1 y él mismo. Ejemplos: 2, 3, 5, 7, 11, 13, 17, 19, 23...\n\nUn número compuesto tiene más de dos divisores.\n\nPara descomponer un número en factores primos, dividimos sucesivamente por los primos más pequeños:\n$60 = 2^2 \\times 3 \\times 5$"
+        },
+        {
+          "type": "math",
+          "title": "m.c.d. y m.c.m.",
+          "content": "**m.c.d. (Máximo Común Divisor):** Se toman los factores comunes con el menor exponente.\n$\\text{m.c.d.}(12, 18) = 2 \\times 3 = 6$\n\n**m.c.m. (Mínimo Común Múltiplo):** Se toman todos los factores con el mayor exponente.\n$\\text{m.c.m.}(12, 18) = 2^2 \\times 3^2 = 36$"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat01-quiz1",
+      "lessonId": "mat01-l1",
+      "type": "quiz",
+      "title": "Enteros, valor absoluto y opuesto",
+      "description": "Demuestra lo que sabes sobre números enteros",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Cuál es el valor absoluto de −8?",
+          "options": ["−8", "8", "0", "−(−8)"],
+          "correctIndex": 1,
+          "explanation": "El valor absoluto es la distancia al 0, siempre positiva. |−8| = 8"
+        },
+        {
+          "question": "¿Cuál es el opuesto de −5?",
+          "options": ["−5", "0", "5", "1/5"],
+          "correctIndex": 2,
+          "explanation": "El opuesto tiene el mismo valor absoluto pero signo contrario: op(−5) = 5"
+        },
+        {
+          "question": "Ordena de menor a mayor: 3, −2, 0, −4, 5",
+          "options": [
+            "−4, −2, 0, 3, 5",
+            "0, −2, −4, 3, 5",
+            "−2, −4, 0, 3, 5",
+            "5, 3, 0, −2, −4"
+          ],
+          "correctIndex": 0,
+          "explanation": "Los negativos van primero (mayor valor absoluto = más pequeño), luego 0, luego positivos."
+        },
+        {
+          "question": "¿A qué distancia están −6 y 4 en la recta numérica?",
+          "options": ["2", "6", "10", "4"],
+          "correctIndex": 2,
+          "explanation": "|−6| + |4| = 6 + 4 = 10 unidades de distancia."
+        },
+        {
+          "question": "¿Cuál de estos números NO es un entero?",
+          "options": ["−3", "0", "2.5", "100"],
+          "correctIndex": 2,
+          "explanation": "2.5 es un número decimal, no un entero. Los enteros no tienen decimales."
+        }
+      ]
+    },
+    {
+      "id": "mat01-quiz2",
+      "lessonId": "mat01-l2",
+      "type": "quiz",
+      "title": "Operaciones con enteros",
+      "description": "Practica sumas, restas, multiplicaciones y divisiones",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuánto es (−6) + (−3)?",
+          "options": ["−9", "9", "−3", "3"],
+          "correctIndex": 0,
+          "explanation": "Mismo signo: sumamos valores absolutos (6+3=9) y dejamos el signo negativo: −9"
+        },
+        {
+          "question": "¿Cuánto es (−7) + 4?",
+          "options": ["−11", "11", "−3", "3"],
+          "correctIndex": 2,
+          "explanation": "Distinto signo: restamos valores absolutos (7−4=3) y dejamos el signo del mayor (negativo): −3"
+        },
+        {
+          "question": "¿Cuánto es 3 − (−7)?",
+          "options": ["−4", "10", "−10", "4"],
+          "correctIndex": 1,
+          "explanation": "Restar el opuesto: 3 − (−7) = 3 + 7 = 10"
+        },
+        {
+          "question": "¿Cuál es el resultado de (−4) × (−5)?",
+          "options": ["−20", "20", "−9", "9"],
+          "correctIndex": 1,
+          "explanation": "Signos iguales (negativo × negativo) = positivo: (−4) × (−5) = +20"
+        },
+        {
+          "question": "¿Cuánto es (−24) ÷ 6?",
+          "options": ["4", "−4", "−18", "18"],
+          "correctIndex": 1,
+          "explanation": "Signos distintos (negativo ÷ positivo) = negativo: (−24) ÷ 6 = −4"
+        },
+        {
+          "question": "Resuelve: −(6 − 12) =",
+          "options": ["−6", "6", "−18", "18"],
+          "correctIndex": 1,
+          "explanation": "Primero el paréntesis: 6 − 12 = −6. Luego el signo negativo: −(−6) = 6"
+        }
+      ]
+    },
+    {
+      "id": "mat01-fill1",
+      "lessonId": "mat01-l3",
+      "type": "fill_blank",
+      "title": "Divisibilidad y criterios",
+      "description": "Completa las frases sobre divisibilidad",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "Un número es divisible por 2 si termina en cifra ___. Un número es divisible por 3 si la ___ de sus cifras es múltiplo de 3. Un número es ___ si solo tiene dos divisores: 1 y él mismo. El m.c.d. de 12 y 18 es ___ y el m.c.m. es ___.",
+        "blanks": ["par", "suma", "primo", "6", "36"],
+        "wordBank": ["par", "impar", "suma", "resta", "primo", "compuesto", "6", "36", "12", "18"]
+      }
+    },
+    {
+      "id": "mat01-quiz3",
+      "lessonId": "mat01-l3",
+      "type": "quiz",
+      "title": "Primos, m.c.d. y m.c.m.",
+      "description": "Pon a prueba tus conocimientos de divisibilidad",
+      "difficulty": 3,
+      "xpReward": 70,
+      "estimatedMinutes": 7,
+      "data": [
+        {
+          "question": "¿Cuál de estos números es primo?",
+          "options": ["9", "15", "17", "21"],
+          "correctIndex": 2,
+          "explanation": "17 solo es divisible por 1 y 17. Los demás: 9=3×3, 15=3×5, 21=3×7."
+        },
+        {
+          "question": "¿La descomposición en factores primos de 60 es...?",
+          "options": ["2 × 30", "2² × 3 × 5", "3 × 20", "4 × 15"],
+          "correctIndex": 1,
+          "explanation": "60 = 2 × 2 × 3 × 5 = 2² × 3 × 5"
+        },
+        {
+          "question": "¿Cuál es el m.c.d. de 24 y 36?",
+          "options": ["6", "12", "24", "72"],
+          "correctIndex": 1,
+          "explanation": "24 = 2³ × 3 y 36 = 2² × 3². m.c.d. = 2² × 3 = 12"
+        },
+        {
+          "question": "¿Cuál es el m.c.m. de 8 y 12?",
+          "options": ["4", "24", "48", "96"],
+          "correctIndex": 1,
+          "explanation": "8 = 2³ y 12 = 2² × 3. m.c.m. = 2³ × 3 = 24"
+        },
+        {
+          "question": "¿Es 231 divisible por 3?",
+          "options": ["Sí, porque 2+3+1=6 es múltiplo de 3", "No, porque es impar", "Sí, porque termina en 1", "No, porque 231÷3 tiene resto"],
+          "correctIndex": 0,
+          "explanation": "Criterio del 3: sumamos las cifras 2+3+1=6. Como 6 es múltiplo de 3, 231 es divisible por 3."
+        }
+      ]
+    }
+  ]
+}

@@ -227,7 +227,7 @@ export function ActivityPage() {
     const encouragingMessages = [
       'Casi lo logras! Repasa el material e intentalo de nuevo.',
       'No te rindas! Cada intento te acerca mas al exito.',
-      'Sigue practicando! La historia se aprende paso a paso.',
+      'Sigue practicando! Todo se aprende paso a paso.',
     ]
     const msg = encouragingMessages[activityKey % encouragingMessages.length]
 

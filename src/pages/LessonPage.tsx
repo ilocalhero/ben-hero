@@ -6,6 +6,7 @@ import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { useXPAnimation } from '../stores/useXPAnimation'
 import { NeonText, Button } from '../components/ui'
+import { MathRenderer } from '../components/ui/MathRenderer'
 import type { LessonSection } from '../types/tema'
 
 function renderSection(section: LessonSection, index: number) {
@@ -25,9 +26,29 @@ function renderSection(section: LessonSection, index: number) {
           {section.content && section.content.split('\n').map((para, i) =>
             para.trim() ? (
               <p key={i} className="text-[#c0c4e0] leading-relaxed text-base lg:text-lg">
-                {para.trim()}
+                <MathRenderer content={para.trim()} />
               </p>
             ) : null
+          )}
+        </motion.div>
+      )
+
+    case 'math':
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.05 }}
+          className="space-y-3"
+        >
+          {section.title && (
+            <h3 className="text-[#e8eaff] font-semibold text-xl">{section.title}</h3>
+          )}
+          {section.content && (
+            <div className="text-[#c0c4e0] leading-relaxed text-base lg:text-lg math-content">
+              <MathRenderer content={section.content} />
+            </div>
           )}
         </motion.div>
       )
@@ -45,14 +66,16 @@ function renderSection(section: LessonSection, index: number) {
             <p className="text-[#00d4ff] font-semibold text-base">{section.title}</p>
           )}
           {section.content && (
-            <p className="text-[#c0c4e0] text-base lg:text-lg leading-relaxed">{section.content}</p>
+            <p className="text-[#c0c4e0] text-base lg:text-lg leading-relaxed">
+              <MathRenderer content={section.content} />
+            </p>
           )}
           {section.highlights && section.highlights.length > 0 && (
             <ul className="space-y-1 mt-2">
               {section.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-2 text-base text-[#c0c4e0]">
                   <span className="text-[#00d4ff] mt-0.5 flex-shrink-0">•</span>
-                  {h}
+                  <MathRenderer content={h} />
                 </li>
               ))}
             </ul>

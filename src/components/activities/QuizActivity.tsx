@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Activity, QuizQuestion } from '../../types/tema'
+import { MathRenderer } from '../ui/MathRenderer'
 
 interface QuizActivityProps {
   activity: Activity
@@ -161,7 +162,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
 
           {/* Question text */}
           <p className="text-white text-2xl font-semibold leading-snug">
-            {currentQuestion.question}
+            <MathRenderer content={currentQuestion.question} />
           </p>
 
           {/* Answer options */}
@@ -193,7 +194,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                   >
                     {String.fromCharCode(65 + idx)}
                   </span>
-                  {option}
+                  <MathRenderer content={option} />
                 </span>
               </motion.button>
             ))}
@@ -214,7 +215,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                 </span>
               </p>
               <p className="text-[#8b8fb0] text-sm mt-2 italic">
-                {currentQuestion.explanation}
+                <MathRenderer content={currentQuestion.explanation} />
               </p>
             </motion.div>
           )}
@@ -245,7 +246,7 @@ export function QuizActivity({ activity, onComplete }: QuizActivityProps) {
                   : 'Incorrecto'}
               </p>
               <p className="text-[#c0c4e0] text-base leading-relaxed">
-                {currentQuestion.explanation}
+                <MathRenderer content={currentQuestion.explanation} />
               </p>
             </motion.div>
           )}

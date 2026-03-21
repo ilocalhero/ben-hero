@@ -6,6 +6,8 @@ import tema05 from './temas/tema05.json'
 import tema06 from './temas/tema06.json'
 import tema07 from './temas/tema07.json'
 import tema08 from './temas/tema08.json'
+import mat01 from './temas/mat01.json'
+import mat02 from './temas/mat02.json'
 import type { Tema } from '../types/tema'
 
 export const TEMAS: Tema[] = [
@@ -17,6 +19,8 @@ export const TEMAS: Tema[] = [
   tema06,
   tema07,
   tema08,
+  mat01,
+  mat02,
 ].sort((a, b) => (a as unknown as Tema).number - (b as unknown as Tema).number) as unknown as Tema[]
 
 export function getTema(id: string): Tema | undefined {
@@ -25,4 +29,8 @@ export function getTema(id: string): Tema | undefined {
 
 export function getTemaByNumber(num: number): Tema | undefined {
   return TEMAS.find(t => t.number === num)
+}
+
+export function getTemasForSubject(subjectId: string): Tema[] {
+  return TEMAS.filter(t => t.subject === subjectId)
 }

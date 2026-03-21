@@ -2,15 +2,14 @@ import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Zap, ChevronRight, BookOpen, Flame, Trophy, Target, Check, Clock, Star } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
-import { TEMAS } from '../data'
+import { TEMAS, getTemasForSubject } from '../data'
 import { NeonText, Badge, ProgressBar, StatCard } from '../components/ui'
 import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { getLevelTitle } from '../lib/xpCalculator'
 import { getTemaEmoji } from '../lib/temaIcons'
 import { isPassing } from '../lib/passingThresholds'
-
-const categoryColor = (cat: string) => cat === 'historia' ? 'orange' : 'green' as const
+import { SUBJECT_LIST, getCategoryLabel } from '../data/subjects'
 
 const springTransition = { type: 'spring' as const, stiffness: 300, damping: 22 }
 
@@ -98,7 +97,7 @@ export function HomePage() {
         <NeonText as="h1" color="blue" className="text-3xl lg:text-4xl mb-2 font-black tracking-tight">
           ¡Hola, {name}!
         </NeonText>
-        <p className="text-text-secondary text-sm lg:text-base">Listo para conquistar la historia de España</p>
+        <p className="text-text-secondary text-sm lg:text-base">Listo para seguir aprendiendo</p>
       </motion.div>
 
       {/* ── Hero Banner — Daily Mission ── */}
@@ -190,6 +189,67 @@ export function HomePage() {
           <StatCard icon={<Trophy size={22} />} label="Nivel" value={levelTitle} color="#b24bff" subtitle={`Nv. ${level}`} />
           <StatCard icon={<Flame size={22} />} label="Racha" value={`${streak}d`} color={streak > 0 ? '#ff6b35' : '#4a4e6e'} />
           <StatCard icon={<Target size={22} />} label="Completados" value={`${completedTemasCount}/${TEMAS.length}`} color="#00ff88" />
+        </div>
+      </motion.div>
+
+      {/* ── Subject Cards ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.17 }}
+      >
+        <div className="mb-5">
+          <SectionHeader icon={<BookOpen size={13} />} label="Tus Asignaturas" color="#b24bff" />
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          {SUBJECT_LIST.map(subject => {
+            const subjectTemas = getTemasForSubject(subject.id)
+            const done = subjectTemas.filter(t => completedTemas[t.id]).length
+            return (
+              <Link
+                key={subject.id}
+                to={`/temas?subject=${subject.id}`}
+                className="block group"
+              >
+                <div
+                  className="rounded-2xl p-5 transition-all duration-200 h-full"
+                  style={{
+                    background: `linear-gradient(135deg, ${subject.color}0c 0%, #141729 100%)`,
+                    border: `1px solid ${subject.color}30`,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = `${subject.color}60`
+                    e.currentTarget.style.boxShadow = `0 8px 32px rgba(0,0,0,0.5), 0 0 28px ${subject.color}18`
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = `${subject.color}30`
+                    e.currentTarget.style.boxShadow = ''
+                  }}
+                >
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-3"
+                    style={{
+                      background: `${subject.color}15`,
+                      border: `1px solid ${subject.color}35`,
+                      boxShadow: `0 0 20px ${subject.color}15`,
+                    }}
+                  >
+                    {getTemaEmoji(subject.icon)}
+                  </div>
+                  <p className="font-black text-text-primary text-base leading-snug">{subject.label}</p>
+                  <p className="text-xs text-text-secondary mt-1">{done}/{subjectTemas.length} temas</p>
+                  <div className="mt-3">
+                    <ProgressBar
+                      value={subjectTemas.length > 0 ? Math.round((done / subjectTemas.length) * 100) : 0}
+                      color="blue"
+                      height={4}
+                      animated
+                    />
+                  </div>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </motion.div>
 
@@ -300,8 +360,8 @@ export function HomePage() {
                     >
                       T{currentTema.tema.number}
                     </span>
-                    <Badge color={categoryColor(currentTema.tema.category)} size="sm">
-                      {currentTema.tema.category}
+                    <Badge color="blue" size="sm">
+                      {getCategoryLabel(currentTema.tema)}
                     </Badge>
                   </div>
                   <p className="font-black text-text-primary text-xl lg:text-2xl leading-snug">{currentTema.tema.title}</p>
@@ -376,7 +436,7 @@ export function HomePage() {
                           : getTemaEmoji(tema.icon)
                         }
                       </div>
-                      <Badge color={categoryColor(tema.category)} size="sm">{tema.category}</Badge>
+                      <Badge color="blue" size="sm">{getCategoryLabel(tema)}</Badge>
                     </div>
                     <p className="font-black text-text-primary text-lg leading-snug">{tema.title}</p>
                     <p className="text-xs text-text-secondary mt-1.5 line-clamp-2">{tema.subtitle}</p>

@@ -77,7 +77,7 @@ export function LoginPage() {
               BENHERO
             </span>
             <p className="text-text-secondary text-sm mt-2 text-center">
-              Aprende historia y geografía de España
+              Aprende historia, geografía y matemáticas
             </p>
           </div>
 

@@ -1,0 +1,232 @@
+{
+  "id": "mat02",
+  "subject": "matematicas",
+  "number": 2,
+  "title": "Entre dos enteros",
+  "subtitle": "Fracciones y números decimales",
+  "category": "numeros",
+  "color": "#b24bff",
+  "icon": "numbers",
+  "heroImage": "/2ESO_Matematicas/1_2_Entre_dos_enteros/images/empezamos.jpg",
+  "description": "Dominarás las fracciones: representación, equivalencia, comparación y operaciones (suma, resta, multiplicación, división). También aprenderás a convertir entre fracciones y decimales, y a resolver problemas de la vida real con ambos.",
+  "textbookPages": "Págs. 31–50",
+  "keyTerms": [
+    {
+      "term": "Fracción",
+      "definition": "Cociente de dos números enteros $\\frac{a}{b}$ donde $a$ es el numerador y $b$ el denominador ($b \\neq 0$).",
+      "example": "$\\frac{3}{4}$ significa 3 partes de 4"
+    },
+    {
+      "term": "Fracciones equivalentes",
+      "definition": "Dos fracciones que representan el mismo número. Se comprueba con productos cruzados: $\\frac{a}{b} = \\frac{c}{d}$ si $a \\cdot d = b \\cdot c$.",
+      "example": "$\\frac{4}{6} = \\frac{8}{12}$ porque $4 \\times 12 = 6 \\times 8 = 48$"
+    },
+    {
+      "term": "Fracción irreducible",
+      "definition": "Fracción cuyos términos no pueden simplificarse más (numerador y denominador son coprimos).",
+      "example": "$\\frac{1}{2}$ es la fracción irreducible de $\\frac{5}{10}$"
+    },
+    {
+      "term": "Fracción de una cantidad",
+      "definition": "Para calcular $\\frac{a}{b}$ de una cantidad $c$, multiplicamos: $\\frac{a}{b} \\cdot c = \\frac{a \\cdot c}{b}$.",
+      "example": "$\\frac{2}{9}$ de 54 = $\\frac{2 \\times 54}{9}$ = 12"
+    },
+    {
+      "term": "Decimal exacto",
+      "definition": "Número decimal con un número finito de cifras decimales.",
+      "example": "$\\frac{1}{4} = 0.25$"
+    },
+    {
+      "term": "Decimal periódico",
+      "definition": "Número decimal con cifras que se repiten infinitamente. Puede ser puro o mixto.",
+      "example": "$\\frac{1}{3} = 0.\\overline{3}$ (periódico puro)"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mat02-l1",
+      "order": 1,
+      "title": "Fracciones y equivalencia",
+      "subtitle": "Interpretación, equivalencia y simplificación",
+      "sections": [
+        {
+          "type": "math",
+          "title": "¿Qué es una fracción?",
+          "content": "Una fracción $\\frac{a}{b}$ es el cociente de dos números enteros, donde:\n- $a$ es el **numerador** (las partes que tomamos)\n- $b$ es el **denominador** (las partes totales), con $b \\neq 0$\n\nPodemos interpretar una fracción de tres formas:\n- **Parte de una unidad:** Queda $\\frac{1}{4}$ de tortilla\n- **Cociente:** 9 manzanas entre 6 niños = $\\frac{9}{6}$ = 1.5 cada uno\n- **Fracción de una cantidad:** $\\frac{2}{9}$ de 54 coches = 12 coches"
+        },
+        {
+          "type": "callout",
+          "title": "Fracciones equivalentes",
+          "content": "Dos fracciones son equivalentes si representan el mismo número.",
+          "highlights": [
+            "Comprobación por productos cruzados: $\\frac{a}{b} = \\frac{c}{d}$ si $a \\cdot d = b \\cdot c$",
+            "Para obtener equivalentes: multiplica o divide numerador y denominador por el mismo número",
+            "La fracción irreducible es la más simplificada posible"
+          ]
+        },
+        {
+          "type": "math",
+          "title": "Ejemplo resuelto",
+          "content": "¿Son equivalentes $\\frac{4}{6}$ y $\\frac{8}{12}$?\n\nComprobamos los productos cruzados:\n$4 \\times 12 = 48$\n$6 \\times 8 = 48$\n\nComo son iguales, **sí son equivalentes**."
+        }
+      ]
+    },
+    {
+      "id": "mat02-l2",
+      "order": 2,
+      "title": "Comparar y ordenar fracciones",
+      "subtitle": "Reducción a común denominador",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Comparación de fracciones",
+          "content": "Para comparar fracciones con distinto denominador:\n\n**Paso 1:** Calculamos el m.c.m. de los denominadores.\n**Paso 2:** Convertimos cada fracción a una equivalente con ese denominador común.\n**Paso 3:** Comparamos los numeradores."
+        },
+        {
+          "type": "math",
+          "title": "Ejemplo: Ordenar fracciones",
+          "content": "Ordenamos $\\frac{3}{8}$, $\\frac{5}{12}$ y $\\frac{3}{5}$ de menor a mayor.\n\nm.c.m.(8, 12, 5) = 120\n\n$\\frac{3}{8} = \\frac{45}{120}$\n$\\frac{5}{12} = \\frac{50}{120}$\n$\\frac{3}{5} = \\frac{72}{120}$\n\nOrden: $\\frac{3}{8} < \\frac{5}{12} < \\frac{3}{5}$"
+        }
+      ]
+    },
+    {
+      "id": "mat02-l3",
+      "order": 3,
+      "title": "Operaciones con fracciones",
+      "subtitle": "Suma, resta, multiplicación y división",
+      "sections": [
+        {
+          "type": "math",
+          "title": "Suma y resta de fracciones",
+          "content": "**Mismo denominador:** Sumamos o restamos los numeradores.\n$\\frac{3}{7} + \\frac{2}{7} = \\frac{5}{7}$\n\n**Distinto denominador:** Reducimos a común denominador primero.\n$\\frac{1}{3} + \\frac{1}{4} = \\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}$"
+        },
+        {
+          "type": "math",
+          "title": "Multiplicación y división",
+          "content": "**Multiplicación:** Multiplicamos numeradores entre sí y denominadores entre sí.\n$\\frac{2}{3} \\times \\frac{4}{5} = \\frac{8}{15}$\n\n**División:** Multiplicamos por la fracción inversa.\n$\\frac{2}{3} \\div \\frac{4}{5} = \\frac{2}{3} \\times \\frac{5}{4} = \\frac{10}{12} = \\frac{5}{6}$"
+        },
+        {
+          "type": "callout",
+          "title": "Fracciones y decimales",
+          "content": "Toda fracción se puede expresar como decimal dividiendo numerador entre denominador:",
+          "highlights": [
+            "Decimal exacto: $\\frac{1}{4} = 0.25$ (la división termina)",
+            "Decimal periódico puro: $\\frac{1}{3} = 0.\\overline{3}$ (se repite desde el principio)",
+            "Decimal periódico mixto: $\\frac{1}{6} = 0.1\\overline{6}$ (hay parte no repetida)"
+          ]
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "mat02-quiz1",
+      "lessonId": "mat02-l1",
+      "type": "quiz",
+      "title": "Fracciones y equivalencia",
+      "description": "Comprueba tu dominio de fracciones y equivalencia",
+      "difficulty": 1,
+      "xpReward": 50,
+      "estimatedMinutes": 5,
+      "data": [
+        {
+          "question": "¿Qué fracción de 54 coches son eléctricos si son 2/9 del total?",
+          "options": ["6", "12", "18", "27"],
+          "correctIndex": 1,
+          "explanation": "2/9 de 54 = (2 × 54) / 9 = 108/9 = 12 coches"
+        },
+        {
+          "question": "¿Son equivalentes 4/6 y 8/12?",
+          "options": [
+            "Sí, porque 4×12 = 6×8",
+            "No, porque tienen distinto numerador",
+            "Sí, porque 4+8 = 12",
+            "No, porque tienen distinto denominador"
+          ],
+          "correctIndex": 0,
+          "explanation": "Productos cruzados: 4×12 = 48 y 6×8 = 48. Son iguales, así que son equivalentes."
+        },
+        {
+          "question": "¿Cuál es la fracción irreducible de 10/15?",
+          "options": ["5/10", "2/3", "10/15", "1/5"],
+          "correctIndex": 1,
+          "explanation": "Dividimos numerador y denominador por 5: 10÷5 = 2, 15÷5 = 3. Irreducible = 2/3"
+        },
+        {
+          "question": "¿Qué fracción representa tres cuartos de un pastel?",
+          "options": ["3/4", "4/3", "3/8", "1/3"],
+          "correctIndex": 0,
+          "explanation": "Tres cuartos = 3 partes de 4 = 3/4"
+        },
+        {
+          "question": "Si x/12 = 28/42, ¿cuánto vale x?",
+          "options": ["4", "6", "8", "14"],
+          "correctIndex": 2,
+          "explanation": "Productos cruzados: 42×x = 12×28 = 336. Entonces x = 336/42 = 8"
+        }
+      ]
+    },
+    {
+      "id": "mat02-quiz2",
+      "lessonId": "mat02-l3",
+      "type": "quiz",
+      "title": "Operaciones con fracciones",
+      "description": "Practica operaciones con fracciones y decimales",
+      "difficulty": 2,
+      "xpReward": 60,
+      "estimatedMinutes": 6,
+      "data": [
+        {
+          "question": "¿Cuánto es 1/3 + 1/4?",
+          "options": ["2/7", "7/12", "1/7", "2/12"],
+          "correctIndex": 1,
+          "explanation": "Denominador común = 12. 4/12 + 3/12 = 7/12"
+        },
+        {
+          "question": "¿Cuánto es 2/3 × 4/5?",
+          "options": ["6/8", "8/15", "8/8", "6/15"],
+          "correctIndex": 1,
+          "explanation": "Multiplicamos: (2×4)/(3×5) = 8/15"
+        },
+        {
+          "question": "¿Cuánto es 2/3 ÷ 4/5?",
+          "options": ["8/15", "5/6", "10/12", "6/20"],
+          "correctIndex": 1,
+          "explanation": "Dividir = multiplicar por la inversa: 2/3 × 5/4 = 10/12 = 5/6"
+        },
+        {
+          "question": "¿Qué tipo de decimal es 1/3?",
+          "options": ["Decimal exacto", "Decimal periódico puro", "Decimal periódico mixto", "Número irracional"],
+          "correctIndex": 1,
+          "explanation": "1/3 = 0.333... = 0.3̄. Las cifras se repiten desde el principio: periódico puro."
+        },
+        {
+          "question": "Ordena de menor a mayor: 3/8, 5/12, 3/5",
+          "options": [
+            "3/8 < 5/12 < 3/5",
+            "5/12 < 3/8 < 3/5",
+            "3/5 < 3/8 < 5/12",
+            "3/8 < 3/5 < 5/12"
+          ],
+          "correctIndex": 0,
+          "explanation": "Con denominador 120: 45/120 < 50/120 < 72/120, es decir 3/8 < 5/12 < 3/5"
+        }
+      ]
+    },
+    {
+      "id": "mat02-fill1",
+      "lessonId": "mat02-l3",
+      "type": "fill_blank",
+      "title": "Completa sobre fracciones",
+      "description": "Rellena los huecos con los términos correctos",
+      "difficulty": 2,
+      "xpReward": 55,
+      "estimatedMinutes": 5,
+      "data": {
+        "paragraph": "En una fracción, el número de arriba es el ___ y el de abajo es el ___. Para comparar fracciones con distinto denominador, las reducimos a ___ denominador. Para dividir fracciones, multiplicamos por la fracción ___. Un decimal que se repite infinitamente es un decimal ___.",
+        "blanks": ["numerador", "denominador", "común", "inversa", "periódico"],
+        "wordBank": ["numerador", "denominador", "común", "inversa", "periódico", "exacto", "primo", "equivalente"]
+      }
+    }
+  ]
+}

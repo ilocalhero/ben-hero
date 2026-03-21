@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { Zap, BookOpen, PenLine, Star, ChevronRight, Flame, Trophy, RotateCcw } from 'lucide-react'
-import { TEMAS } from '../data'
+import { TEMAS, getTemasForSubject } from '../data'
+import { SUBJECT_LIST } from '../data/subjects'
+import { getTemaEmoji } from '../lib/temaIcons'
 import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { getLevelTitle } from '../lib/xpCalculator'
 import { QuizActivity, FillBlankActivity, WritingMission } from '../components/activities'
 import { isPassing, getThreshold } from '../lib/passingThresholds'
+import { MathRenderer } from '../components/ui/MathRenderer'
 import type { LessonSection } from '../types/tema'
 import type { EvaluationResult } from '../types/gamification'
 
-type DailyStep = 'intro' | 'warmup' | 'learn' | 'practice' | 'write' | 'victory'
+type DailyStep = 'subject_pick' | 'intro' | 'warmup' | 'learn' | 'practice' | 'write' | 'victory'
 
 // ---------------------------------------------------------------------------
 // XP count-up for the victory screen
@@ -145,7 +148,23 @@ function renderSection(section: LessonSection, index: number) {
             <h3 className="text-white font-bold text-xl">{section.title}</h3>
           )}
           {section.content && (
-            <p className="text-[#c8caeb] leading-relaxed text-base lg:text-lg">{section.content}</p>
+            <p className="text-[#c8caeb] leading-relaxed text-base lg:text-lg">
+              <MathRenderer content={section.content} />
+            </p>
+          )}
+        </div>
+      )
+
+    case 'math':
+      return (
+        <div key={index} className="space-y-2">
+          {section.title && (
+            <h3 className="text-white font-bold text-xl">{section.title}</h3>
+          )}
+          {section.content && (
+            <div className="text-[#c8caeb] leading-relaxed text-base lg:text-lg">
+              <MathRenderer content={section.content} />
+            </div>
           )}
         </div>
       )
@@ -255,7 +274,11 @@ export function DailyMissionPage() {
     useProgressStore()
   const { level, streak, addXP, incrementStreak, addWritingRecord } = usePlayerStore()
 
-  const tema = TEMAS[0]
+  const [selectedSubject, setSelectedSubject] = useState<string | null>(null)
+
+  // Pick tema from the selected subject (or fall back to first tema)
+  const subjectTemas = selectedSubject ? getTemasForSubject(selectedSubject) : TEMAS
+  const tema = subjectTemas[0] ?? TEMAS[0]
   const lessonIndex = getNextDailyLesson(tema.id)
   const lesson = tema.lessons[lessonIndex % tema.lessons.length]
 
@@ -263,7 +286,7 @@ export function DailyMissionPage() {
   const practiceActivity = tema.activities.find(a => a.type === 'fill_blank') ?? tema.activities[1]
   const writeActivity = tema.activities.find(a => a.type === 'writing_mission') ?? tema.activities[2]
 
-  const [step, setStep] = useState<DailyStep>('intro')
+  const [step, setStep] = useState<DailyStep>('subject_pick')
   const [missionXP, setMissionXP] = useState(0)
   const [lessonCompleted, setLessonCompleted] = useState(false)
   const [victoryTriggered, setVictoryTriggered] = useState(false)
@@ -298,7 +321,8 @@ export function DailyMissionPage() {
 
   function startAnotherMission() {
     // Reset state for a fresh mission
-    setStep('intro')
+    setStep('subject_pick')
+    setSelectedSubject(null)
     setMissionXP(0)
     setLessonCompleted(false)
     setVictoryTriggered(false)
@@ -325,6 +349,74 @@ export function DailyMissionPage() {
         </AnimatePresence>
 
         <AnimatePresence mode="wait">
+
+          {/* ============================================================
+              SUBJECT PICKER
+          ============================================================ */}
+          {step === 'subject_pick' && (
+            <motion.div
+              key="subject_pick"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.4 }}
+              className="space-y-6 pt-4"
+            >
+              <div className="text-center space-y-2">
+                <motion.div
+                  animate={{
+                    textShadow: [
+                      '0 0 10px #b24bff88',
+                      '0 0 30px #b24bffcc',
+                      '0 0 10px #b24bff88',
+                    ],
+                  }}
+                  transition={{ repeat: Infinity, duration: 2.5 }}
+                  className="text-3xl sm:text-5xl font-black uppercase tracking-widest"
+                  style={{ color: '#b24bff' }}
+                >
+                  MISION DEL DIA
+                </motion.div>
+                <p className="text-[#8b8fb0] text-lg mt-2">Elige tu asignatura</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {SUBJECT_LIST.map(subject => {
+                  const sTemas = getTemasForSubject(subject.id)
+                  if (sTemas.length === 0) return null
+                  return (
+                    <motion.button
+                      key={subject.id}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      onClick={() => {
+                        setSelectedSubject(subject.id)
+                        setStep('intro')
+                      }}
+                      className="rounded-2xl p-6 text-left transition-all duration-200"
+                      style={{
+                        background: `linear-gradient(135deg, ${subject.color}15 0%, #1a1d3a 100%)`,
+                        border: `1px solid ${subject.color}40`,
+                      }}
+                    >
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-4"
+                        style={{
+                          background: `${subject.color}18`,
+                          border: `1px solid ${subject.color}40`,
+                          boxShadow: `0 0 24px ${subject.color}20`,
+                        }}
+                      >
+                        {getTemaEmoji(subject.icon)}
+                      </div>
+                      <p className="font-black text-white text-xl">{subject.label}</p>
+                      <p className="text-[#8b8fb0] text-sm mt-1">{sTemas.length} temas disponibles</p>
+                    </motion.button>
+                  )
+                })}
+              </div>
+            </motion.div>
+          )}
 
           {/* ============================================================
               INTRO
@@ -861,7 +953,7 @@ export function DailyMissionPage() {
                 transition={{ delay: 1.2 }}
                 className="text-[#8b8fb0] text-base italic"
               >
-                Puedes hacer otra mision o volver manana. Sigue conquistando la historia!
+                Puedes hacer otra mision o volver manana. Sigue aprendiendo!
               </motion.p>
 
               {/* Action buttons */}

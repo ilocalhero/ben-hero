@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { Activity, FillBlankData } from '../../types/tema'
+import { MathRenderer } from '../ui/MathRenderer'
 
 interface FillBlankActivityProps {
   activity: Activity
@@ -122,7 +123,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
           <div className="text-[#e8eaff] text-xl leading-10 select-none">
             {segments.map((segment, segIdx) => (
               <span key={segIdx}>
-                {segment}
+                <MathRenderer content={segment} />
                 {segIdx < blankCount && (
                   <motion.button
                     onClick={() => handleBlankClick(segIdx)}
@@ -222,7 +223,7 @@ export function FillBlankActivity({ activity, onComplete }: FillBlankActivityPro
                     }
                   `}
                 >
-                  {word}
+                  <MathRenderer content={word} />
                 </motion.button>
               )
             })}

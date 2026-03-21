@@ -17,6 +17,7 @@ import { useProgressStore } from '../stores/useProgressStore'
 import { NeonText, Badge, ProgressBar } from '../components/ui'
 import type { ActivityType } from '../types/tema'
 import { getTemaEmoji } from '../lib/temaIcons'
+import { getCategoryLabel } from '../data/subjects'
 
 function activityIcon(type: ActivityType) {
   if (type === 'quiz') return <HelpCircle size={18} />
@@ -67,8 +68,8 @@ export function TemaPage() {
 
   const progress = getTemaProgress(tema.id, tema.activities.length)
 
-  const categoryLabel = tema.category === 'historia' ? 'Historia' : 'Geografía'
-  const categoryColor = tema.category === 'historia' ? 'purple' : 'blue'
+  const categoryLabel = getCategoryLabel(tema)
+  const categoryColor = 'blue' as const
 
   return (
     <motion.div
