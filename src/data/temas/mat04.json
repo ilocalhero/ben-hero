@@ -303,29 +303,43 @@
       ]
     },
     {
-      "id": "mat04-showwork",
+      "id": "mat04-eqbuild",
       "lessonId": "mat04-l2",
-      "type": "show_work",
-      "title": "Descuentos encadenados",
-      "description": "Calcula el precio final después de aplicar dos descuentos sucesivos",
+      "type": "equation_builder",
+      "title": "Paso a paso: proporcionalidad",
+      "description": "Resuelve un problema de porcentajes paso a paso",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "En una tienda hay un descuento del 25% sobre un precio de 80 €. Después, aplican un 10% adicional sobre el precio ya rebajado. ¿Cuál es el precio final? Explica por qué no se puede sumar directamente 25% + 10%.",
-        "expectedAnswer": "54 €",
-        "checklist": ["Calcula el primer descuento sobre el precio original", "Aplica el segundo descuento sobre el precio ya rebajado", "Explica por qué dos descuentos no se suman directamente"],
-        "hints": [
-          "Primero calcula el precio tras el descuento del 25%: multiplica 80 por el índice de variación 0,75.",
-          "Después aplica el segundo descuento del 10% sobre el precio ya rebajado, no sobre el original."
+        "problem": "Un artículo cuesta 80€. Tiene un 15\\% de descuento. ¿Cuál es el precio final?",
+        "steps": [
+          {
+            "prompt": "Calcular el 15\\% de 80",
+            "correctParts": ["\\frac{15}{100}", "\\times", "80"],
+            "distractors": ["\\frac{80}{15}", "\\frac{15}{80}", "+"],
+            "hint": "Para calcular un porcentaje: $\\frac{\\%}{100} \\times \\text{cantidad}$"
+          },
+          {
+            "prompt": "\\frac{15}{100} \\times 80",
+            "correctParts": ["0{,}15", "\\times", "80"],
+            "distractors": ["1{,}5", "15", "0{,}015"],
+            "hint": "Convierte el porcentaje a decimal: $15 \\div 100 = 0{,}15$"
+          },
+          {
+            "prompt": "0{,}15 \\times 80",
+            "correctParts": ["12"],
+            "distractors": ["10", "15", "8"],
+            "hint": "Multiplica: $15 \\times 8 = 120$, luego mueve la coma"
+          },
+          {
+            "prompt": "Precio final = 80 - 12",
+            "correctParts": ["68€"],
+            "distractors": ["72€", "92€", "65€"],
+            "hint": "Resta el descuento del precio original"
+          }
         ],
-        "solutionSteps": [
-          "Calculamos el primer descuento: 25% de 80 € = $80 \\times 0{,}25 = 20$ €. Precio intermedio: $80 - 20 = 60$ € (o directamente $80 \\times 0{,}75 = 60$ €).",
-          "Aplicamos el segundo descuento sobre 60 €: 10% de 60 € = $60 \\times 0{,}10 = 6$ €. Precio final: $60 - 6 = 54$ € (o directamente $60 \\times 0{,}90 = 54$ €).",
-          "No se puede sumar 25% + 10% = 35% porque el segundo descuento se aplica sobre el precio ya rebajado (60 €), no sobre el original (80 €). Si sumáramos: $80 \\times 0{,}65 = 52$ €, que es incorrecto."
-        ],
-        "rubricKeyTerms": ["porcentaje", "descuento", "índice de variación", "precio final"],
-        "minimumWords": 30
+        "finalAnswer": "68€"
       }
     }
   ]

@@ -323,29 +323,43 @@
       ]
     },
     {
-      "id": "mat10-showwork",
+      "id": "mat10-eqbuild",
       "lessonId": "mat10-l2",
-      "type": "show_work",
-      "title": "Analiza la función lineal",
-      "description": "Encuentra la pendiente, la ordenada y los puntos de corte de una recta",
+      "type": "equation_builder",
+      "title": "Paso a paso: ecuación de la recta",
+      "description": "Halla la ecuación de una recta que pasa por dos puntos",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "Dada la función $y = 2x - 3$, calcula: a) La pendiente y la ordenada en el origen. b) Los puntos donde corta a los ejes. c) Dibuja una tabla con 3 puntos. Explica qué significa cada valor.",
-        "expectedAnswer": "pendiente = 2, ordenada = -3, corta eje X en x = 1.5, corta eje Y en y = -3",
-        "checklist": ["Identifica la pendiente y la ordenada en el origen de la ecuación", "Calcula dónde la recta corta cada eje", "Construye una tabla con al menos 3 puntos"],
-        "hints": [
-          "Compara la ecuación $y = 2x - 3$ con la forma general $y = mx + n$ para identificar la pendiente y la ordenada en el origen",
-          "Para hallar el corte con el eje X, haz $y = 0$ y despeja $x$. Para el corte con el eje Y, haz $x = 0$"
+        "problem": "Halla la ecuación de la recta que pasa por A(1, 3) y B(4, 9)",
+        "steps": [
+          {
+            "prompt": "Calcula la pendiente m",
+            "correctParts": ["m = \\frac{9 - 3}{4 - 1}"],
+            "distractors": ["m = \\frac{4 - 1}{9 - 3}", "m = \\frac{9 + 3}{4 + 1}", "m = 9 - 3"],
+            "hint": "Pendiente: $m = \\frac{y_2 - y_1}{x_2 - x_1}$"
+          },
+          {
+            "prompt": "m = \\frac{9 - 3}{4 - 1}",
+            "correctParts": ["m = \\frac{6}{3}"],
+            "distractors": ["m = \\frac{3}{6}", "m = \\frac{12}{5}", "m = \\frac{6}{4}"],
+            "hint": "Resta: $9 - 3 = 6$ y $4 - 1 = 3$"
+          },
+          {
+            "prompt": "m = \\frac{6}{3} = 2",
+            "correctParts": ["y - 3", "=", "2(x - 1)"],
+            "distractors": ["y - 9 = 2(x - 4)", "y + 3 = 2(x + 1)", "y = 2x"],
+            "hint": "Usa punto-pendiente con A(1,3): $y - y_1 = m(x - x_1)$"
+          },
+          {
+            "prompt": "y - 3 = 2(x - 1)",
+            "correctParts": ["y", "=", "2x", "+", "1"],
+            "distractors": ["y = 2x + 3", "y = 2x - 1", "y = 2x - 3"],
+            "hint": "Distribuye y despeja: $y = 2x - 2 + 3 = 2x + 1$"
+          }
         ],
-        "solutionSteps": [
-          "Identificamos $m = 2$ (pendiente) y $n = -3$ (ordenada en el origen) comparando con $y = mx + n$",
-          "Corte con eje Y ($x = 0$): $y = 2 \\cdot 0 - 3 = -3$, punto $(0, -3)$. Corte con eje X ($y = 0$): $0 = 2x - 3 \\Rightarrow x = \\frac{3}{2} = 1{,}5$, punto $(1{,}5,\\ 0)$",
-          "Tabla de valores: $x = 0 \\Rightarrow y = -3$; $x = 1 \\Rightarrow y = -1$; $x = 2 \\Rightarrow y = 1$. La pendiente 2 significa que por cada unidad que avanza $x$, $y$ sube 2 unidades"
-        ],
-        "rubricKeyTerms": ["pendiente", "ordenada en el origen", "función lineal", "eje X", "eje Y", "punto de corte"],
-        "minimumWords": 30
+        "finalAnswer": "y = 2x + 1"
       }
     }
   ]

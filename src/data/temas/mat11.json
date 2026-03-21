@@ -401,29 +401,43 @@
       ]
     },
     {
-      "id": "mat11-showwork",
+      "id": "mat11-eqbuild",
       "lessonId": "mat11-l2",
-      "type": "show_work",
-      "title": "Calcula media, moda y mediana",
-      "description": "Analiza un conjunto de datos calculando sus medidas de centralización",
+      "type": "equation_builder",
+      "title": "Paso a paso: media y desviación",
+      "description": "Calcula la media aritmética y la desviación típica paso a paso",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "En un examen, las notas de 10 alumnos fueron: 5, 7, 8, 6, 5, 9, 7, 8, 7, 6. Calcula: a) La media aritmética. b) La moda. c) La mediana. Explica qué representa cada medida.",
-        "expectedAnswer": "media = 6.8, moda = 7, mediana = 7",
-        "checklist": ["Suma todos los valores y divide para obtener la media", "Identifica cuál es el valor que más se repite", "Ordena los datos y encuentra el valor central"],
-        "hints": [
-          "Para la media, suma todas las notas y divide entre el número total de alumnos (10)",
-          "Para la mediana, primero ordena los datos de menor a mayor y busca el valor central (o la media de los dos centrales si hay un número par de datos)"
+        "problem": "Calcula la media y desviación típica de: 4, 6, 8, 10, 12",
+        "steps": [
+          {
+            "prompt": "\\bar{x} = \\frac{\\sum x_i}{n}",
+            "correctParts": ["\\bar{x} = \\frac{4 + 6 + 8 + 10 + 12}{5}"],
+            "distractors": ["\\bar{x} = \\frac{4 \\times 6 \\times 8 \\times 10 \\times 12}{5}", "\\bar{x} = \\frac{4 + 6 + 8 + 10 + 12}{4}"],
+            "hint": "Suma todos los valores y divide entre el número de datos"
+          },
+          {
+            "prompt": "\\bar{x} = \\frac{40}{5}",
+            "correctParts": ["\\bar{x} = 8"],
+            "distractors": ["\\bar{x} = 10", "\\bar{x} = 7", "\\bar{x} = 6"],
+            "hint": "Divide: $40 \\div 5 = 8$"
+          },
+          {
+            "prompt": "\\sigma = \\sqrt{\\frac{\\sum(x_i - \\bar{x})^2}{n}}",
+            "correctParts": ["\\sqrt{\\frac{16+4+0+4+16}{5}}"],
+            "distractors": ["\\sqrt{\\frac{4+2+0+2+4}{5}}", "\\sqrt{\\frac{16+4+0+4+16}{4}}", "\\frac{16+4+0+4+16}{5}"],
+            "hint": "$(4-8)^2=16$, $(6-8)^2=4$, $(8-8)^2=0$, $(10-8)^2=4$, $(12-8)^2=16$"
+          },
+          {
+            "prompt": "\\sigma = \\sqrt{\\frac{40}{5}} = \\sqrt{8}",
+            "correctParts": ["\\sigma = 2\\sqrt{2}"],
+            "distractors": ["\\sigma = 4", "\\sigma = 2", "\\sigma = \\sqrt{5}"],
+            "hint": "$\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$"
+          }
         ],
-        "solutionSteps": [
-          "Media aritmética: $\\bar{x} = \\frac{5+7+8+6+5+9+7+8+7+6}{10} = \\frac{68}{10} = 6{,}8$. Representa el valor promedio de las notas",
-          "Moda: el valor que más se repite es el 7 (aparece 3 veces). Representa la nota más frecuente",
-          "Mediana: ordenamos los datos: 5, 5, 6, 6, 7, 7, 7, 8, 8, 9. Con 10 datos (par), la mediana es la media de los dos centrales (posiciones 5.ª y 6.ª): $M = \\frac{7+7}{2} = 7$. Representa el valor que divide los datos en dos mitades iguales"
-        ],
-        "rubricKeyTerms": ["media aritmética", "moda", "mediana", "frecuencia", "datos ordenados"],
-        "minimumWords": 30
+        "finalAnswer": "\\bar{x}=8,\\; \\sigma=2\\sqrt{2}"
       }
     }
   ]

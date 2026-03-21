@@ -9,7 +9,7 @@ export type ActivityType =
   | 'sentence_builder'
   | 'paragraph_template'
   | 'writing_mission'
-  | 'show_work'
+  | 'equation_builder'
   | 'source_analysis'
   | 'compare_contrast'
 
@@ -69,14 +69,17 @@ export interface WritingMissionData {
   rubricConnectors?: string[]
 }
 
-export interface ShowWorkData {
-  problem: string              // The problem to solve (supports LaTeX)
-  expectedAnswer: string       // Correct final answer (for fallback evaluator)
-  checklist: string[]          // What Ben must DEMONSTRATE (shown to user, no answers)
-  hints?: string[]             // Optional conceptual hints (rules, not solutions)
-  solutionSteps: string[]      // Full solution steps for AI evaluator ONLY (never shown)
-  rubricKeyTerms: string[]     // Math terms to look for in the response
-  minimumWords: number         // Minimum words required to submit
+export interface EquationBuilderStep {
+  prompt: string              // The expression at this step (supports LaTeX)
+  correctParts: string[]      // Parts that form the correct next step, in order
+  distractors: string[]       // Wrong parts mixed in
+  hint: string                // Hint about what operation to do
+}
+
+export interface EquationBuilderData {
+  problem: string              // The full starting expression (LaTeX)
+  steps: EquationBuilderStep[] // Each step to solve
+  finalAnswer: string          // The final numeric answer
 }
 
 export interface Activity {
@@ -88,7 +91,7 @@ export interface Activity {
   difficulty: 1 | 2 | 3
   xpReward: number
   estimatedMinutes: number
-  data: QuizQuestion[] | FillBlankData | WritingMissionData | ShowWorkData | Record<string, unknown>
+  data: QuizQuestion[] | FillBlankData | WritingMissionData | EquationBuilderData | Record<string, unknown>
 }
 
 export interface Tema {

@@ -308,30 +308,43 @@
       ]
     },
     {
-      "id": "mat06-showwork",
+      "id": "mat06-eqbuild",
       "lessonId": "mat06-l2",
-      "type": "show_work",
-      "title": "Distancia real en un mapa",
-      "description": "Usa la escala de un mapa para calcular la distancia real",
+      "type": "equation_builder",
+      "title": "Paso a paso: escalas y semejanza",
+      "description": "Calcula una longitud real usando la escala de un mapa",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "En un mapa a escala 1:50.000, la distancia entre dos ciudades es 8 cm. ¿Cuál es la distancia real en kilómetros? Explica qué es la escala y cómo la usas.",
-        "expectedAnswer": "4 km",
-        "checklist": ["Explica qué significa la escala del mapa", "Multiplica la distancia del mapa por el factor de escala", "Convierte el resultado a la unidad adecuada (km)"],
-        "hints": [
-          "La escala 1:50.000 significa que 1 cm en el mapa equivale a 50.000 cm en la realidad",
-          "Recuerda las conversiones: 100 cm = 1 m, 1000 m = 1 km"
+        "problem": "En un mapa a escala 1:50\\,000, la distancia entre dos ciudades mide 3{,}5 cm. ¿Cuál es la distancia real?",
+        "steps": [
+          {
+            "prompt": "\\text{Escala} = \\frac{\\text{mapa}}{\\text{real}}",
+            "correctParts": ["\\frac{1}{50\\,000}", "=", "\\frac{3{,}5}{x}"],
+            "distractors": ["\\frac{50\\,000}{1}", "\\frac{x}{3{,}5}", "\\frac{3{,}5}{50\\,000}"],
+            "hint": "Plantea la proporción: escala = distancia mapa / distancia real"
+          },
+          {
+            "prompt": "\\frac{1}{50\\,000} = \\frac{3{,}5}{x}",
+            "correctParts": ["x", "=", "3{,}5 \\times 50\\,000"],
+            "distractors": ["x = 50\\,000 \\div 3{,}5", "x = 3{,}5 + 50\\,000", "x = \\frac{50\\,000}{3{,}5}"],
+            "hint": "Multiplica en cruz: $x = 3{,}5 \\times 50\\,000$"
+          },
+          {
+            "prompt": "x = 3{,}5 \\times 50\\,000",
+            "correctParts": ["175\\,000 \\text{ cm}"],
+            "distractors": ["150\\,000 \\text{ cm}", "17\\,500 \\text{ cm}", "1\\,750 \\text{ cm}"],
+            "hint": "Multiplica: $3{,}5 \\times 50\\,000 = 175\\,000$"
+          },
+          {
+            "prompt": "175\\,000 \\text{ cm} = \\text{? km}",
+            "correctParts": ["1{,}75 \\text{ km}"],
+            "distractors": ["17{,}5 \\text{ km}", "0{,}175 \\text{ km}", "175 \\text{ km}"],
+            "hint": "Divide entre 100\\,000 para pasar de cm a km"
+          }
         ],
-        "solutionSteps": [
-          "Entender la escala: 1:50.000 significa que cada centímetro en el mapa representa 50.000 cm reales",
-          "Multiplicar la distancia del mapa por el factor de escala: $8 \\times 50.000 = 400.000$ cm",
-          "Convertir centímetros a metros: $\\frac{400.000}{100} = 4.000$ m",
-          "Convertir metros a kilómetros: $\\frac{4.000}{1.000} = 4$ km"
-        ],
-        "rubricKeyTerms": ["escala", "razón", "distancia real", "conversión"],
-        "minimumWords": 30
+        "finalAnswer": "1{,}75 \\text{ km}"
       }
     }
   ]

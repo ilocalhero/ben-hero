@@ -335,30 +335,43 @@
       ]
     },
     {
-      "id": "mat05-showwork",
+      "id": "mat05-eqbuild",
       "lessonId": "mat05-l2",
-      "type": "show_work",
-      "title": "Volumen de un cilindro",
-      "description": "Calcula el volumen de un cilindro y conviértelo a litros",
+      "type": "equation_builder",
+      "title": "Paso a paso: área de figuras",
+      "description": "Calcula el área de un trapecio paso a paso",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "Calcula el volumen total de un cilindro de radio 5 cm y altura 10 cm. Después, calcula cuántos litros de agua caben dentro. Muestra todos los pasos.",
-        "expectedAnswer": "785.4 cm³ ≈ 0.785 litros",
-        "checklist": ["Escribe la fórmula del volumen del cilindro", "Sustituye los valores y calcula paso a paso", "Convierte el resultado de cm³ a litros"],
-        "hints": [
-          "Recuerda la fórmula del volumen del cilindro: $V = \\pi r^2 \\cdot h$",
-          "Para convertir cm³ a litros, recuerda que 1 litro = 1000 cm³"
+        "problem": "Calcula el área de un trapecio con bases $B = 10$ cm y $b = 6$ cm, y altura $h = 4$ cm",
+        "steps": [
+          {
+            "prompt": "A = \\frac{(B + b) \\times h}{2}",
+            "correctParts": ["\\frac{(10 + 6)", "\\times", "4}{2}"],
+            "distractors": ["\\frac{(10 - 6)", "\\frac{10 \\times 6}{2}", "\\times 2}{4}"],
+            "hint": "Sustituye los valores en la fórmula del trapecio"
+          },
+          {
+            "prompt": "\\frac{(10 + 6) \\times 4}{2}",
+            "correctParts": ["\\frac{16 \\times 4}{2}"],
+            "distractors": ["\\frac{14 \\times 4}{2}", "\\frac{10 \\times 4}{2}", "\\frac{16 + 4}{2}"],
+            "hint": "Suma las bases: $10 + 6 = 16$"
+          },
+          {
+            "prompt": "\\frac{16 \\times 4}{2}",
+            "correctParts": ["\\frac{64}{2}"],
+            "distractors": ["\\frac{20}{2}", "\\frac{48}{2}", "\\frac{32}{2}"],
+            "hint": "Multiplica: $16 \\times 4 = 64$"
+          },
+          {
+            "prompt": "\\frac{64}{2}",
+            "correctParts": ["32 \\text{ cm}^2"],
+            "distractors": ["36 \\text{ cm}^2", "28 \\text{ cm}^2", "64 \\text{ cm}^2"],
+            "hint": "Divide: $64 \\div 2 = 32$"
+          }
         ],
-        "solutionSteps": [
-          "Escribir la fórmula del volumen del cilindro: $V = \\pi r^2 \\cdot h$",
-          "Sustituir los valores: $V = \\pi \\cdot 5^2 \\cdot 10 = \\pi \\cdot 25 \\cdot 10 = 250\\pi$",
-          "Calcular el resultado numérico: $V = 250 \\times 3{,}1416 \\approx 785{,}4$ cm³",
-          "Convertir a litros dividiendo entre 1000: $\\frac{785{,}4}{1000} \\approx 0{,}785$ litros"
-        ],
-        "rubricKeyTerms": ["volumen", "cilindro", "radio", "altura", "pi", "litro"],
-        "minimumWords": 30
+        "finalAnswer": "32 \\text{ cm}^2"
       }
     }
   ]

@@ -329,29 +329,49 @@
       ]
     },
     {
-      "id": "mat09-showwork",
+      "id": "mat09-eqbuild",
       "lessonId": "mat09-l2",
-      "type": "show_work",
-      "title": "Sistema por sustitución",
-      "description": "Resuelve un sistema de dos ecuaciones por el método de sustitución",
-      "difficulty": 2,
-      "xpReward": 65,
+      "type": "equation_builder",
+      "title": "Paso a paso: sistema de ecuaciones",
+      "description": "Resuelve un sistema de ecuaciones por sustitución",
+      "difficulty": 3,
+      "xpReward": 75,
       "estimatedMinutes": 8,
       "data": {
-        "problem": "Resuelve el siguiente sistema de ecuaciones por el método de sustitución: $\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}$. Explica cada paso del método.",
-        "expectedAnswer": "x = 3, y = 1",
-        "checklist": ["Despeja una variable de una de las ecuaciones", "Sustituye esa expresión en la otra ecuación", "Resuelve y encuentra el valor de ambas variables"],
-        "hints": [
-          "Empieza despejando una incógnita en la segunda ecuación, ya que $x$ tiene coeficiente 1",
-          "Una vez sustituyas en la primera ecuación, te quedará una ecuación con una sola incógnita"
+        "problem": "\\begin{cases} x + y = 5 \\\\ 2x - y = 1 \\end{cases}",
+        "steps": [
+          {
+            "prompt": "Despeja y de la primera ecuación: x + y = 5",
+            "correctParts": ["y", "=", "5 - x"],
+            "distractors": ["y = x - 5", "y = 5 + x", "x = 5 - y"],
+            "hint": "Pasa la x al otro lado: $y = 5 - x$"
+          },
+          {
+            "prompt": "Sustituye en la segunda: 2x - (5 - x) = 1",
+            "correctParts": ["2x", "-5", "+x", "=", "1"],
+            "distractors": ["2x - 5 - x", "2x + 5 - x", "-2x"],
+            "hint": "Distribuye el menos: $-(5-x) = -5 + x$"
+          },
+          {
+            "prompt": "3x - 5 = 1",
+            "correctParts": ["3x", "=", "6"],
+            "distractors": ["3x = -4", "3x = 4", "2x = 6"],
+            "hint": "Pasa el $-5$ al otro lado: $3x = 1 + 5 = 6$"
+          },
+          {
+            "prompt": "3x = 6",
+            "correctParts": ["x = 2"],
+            "distractors": ["x = 3", "x = 18", "x = 1"],
+            "hint": "Divide ambos lados entre 3"
+          },
+          {
+            "prompt": "y = 5 - x = 5 - 2",
+            "correctParts": ["y = 3"],
+            "distractors": ["y = 7", "y = 2", "y = -3"],
+            "hint": "Sustituye $x = 2$ en $y = 5 - x$"
+          }
         ],
-        "solutionSteps": [
-          "Despejamos $x$ en la segunda ecuación: $x = 2 + y$",
-          "Sustituimos en la primera ecuación: $2(2 + y) + y = 7 \\Rightarrow 4 + 2y + y = 7 \\Rightarrow 3y = 3 \\Rightarrow y = 1$",
-          "Calculamos $x$ sustituyendo $y = 1$: $x = 2 + 1 = 3$. La solución es $(3, 1)$"
-        ],
-        "rubricKeyTerms": ["sistema de ecuaciones", "sustitución", "incógnita", "solución", "despejar"],
-        "minimumWords": 30
+        "finalAnswer": "x = 2,\\; y = 3"
       }
     }
   ]

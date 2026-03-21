@@ -7,7 +7,7 @@ import { NeonText, Badge, Button } from '../components/ui'
 import { QuizActivity } from '../components/activities/QuizActivity'
 import { FillBlankActivity } from '../components/activities/FillBlankActivity'
 import { WritingMission } from '../components/activities/WritingMission'
-import { ShowWorkActivity } from '../components/activities/ShowWorkActivity'
+import { EquationBuilderActivity } from '../components/activities/EquationBuilderActivity'
 import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { useXPAnimation } from '../stores/useXPAnimation'
@@ -26,7 +26,7 @@ const activityTypeLabel: Record<string, string> = {
   sentence_builder: 'Construir frases',
   paragraph_template: 'Parrafo guiado',
   writing_mission: 'Mision escrita',
-  show_work: 'Muestra tu trabajo',
+  equation_builder: 'Construye la ecuacion',
   source_analysis: 'Analisis de fuente',
   compare_contrast: 'Comparar y contrastar',
 }
@@ -443,7 +443,7 @@ export function ActivityPage() {
         {(activity.type === 'quiz' ||
           activity.type === 'fill_blank' ||
           activity.type === 'writing_mission' ||
-          activity.type === 'show_work') ? (
+          activity.type === 'equation_builder') ? (
           <div className="flex justify-center">
             <Button
               onClick={() => setStarted(true)}
@@ -461,7 +461,7 @@ export function ActivityPage() {
         {activity.type !== 'quiz' &&
           activity.type !== 'fill_blank' &&
           activity.type !== 'writing_mission' &&
-          activity.type !== 'show_work' && (
+          activity.type !== 'equation_builder' && (
           <div className="flex justify-center">
             <Link to={`/temas/${temaId}`}>
               <Button variant="secondary">
@@ -530,20 +530,19 @@ export function ActivityPage() {
         />
       )}
 
-      {activity.type === 'show_work' && (
-        <ShowWorkActivity
+      {activity.type === 'equation_builder' && (
+        <EquationBuilderActivity
           key={activityKey}
           activity={activity}
           temaId={temaId!}
-          onComplete={handleWritingComplete}
-          onEvaluated={handleWritingEvaluated}
+          onComplete={handleComplete}
         />
       )}
 
       {activity.type !== 'quiz' &&
         activity.type !== 'fill_blank' &&
         activity.type !== 'writing_mission' &&
-        activity.type !== 'show_work' && (
+        activity.type !== 'equation_builder' && (
           <ComingSoon xpReward={activity.xpReward} />
         )}
     </motion.div>

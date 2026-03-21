@@ -341,30 +341,43 @@
       ]
     },
     {
-      "id": "mat07-showwork",
+      "id": "mat07-eqbuild",
       "lessonId": "mat07-l2",
-      "type": "show_work",
-      "title": "Desarrolla con identidades notables",
-      "description": "Desarrolla y simplifica una expresión usando identidades notables",
+      "type": "equation_builder",
+      "title": "Paso a paso: expresiones algebraicas",
+      "description": "Simplifica un polinomio paso a paso",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "Desarrolla y simplifica la expresión: $(2x + 3)^2 - (x + 1)(x - 1)$. Indica qué identidad notable usas en cada paso.",
-        "expectedAnswer": "$3x^2 + 12x + 10$",
-        "checklist": ["Identifica qué identidad notable aplica a cada parte", "Desarrolla cada identidad paso a paso", "Agrupa los monomios semejantes y simplifica"],
-        "hints": [
-          "$(2x + 3)^2$ es un cuadrado de una suma: $(a + b)^2 = a^2 + 2ab + b^2$",
-          "$(x + 1)(x - 1)$ es una suma por diferencia: $(a + b)(a - b) = a^2 - b^2$"
+        "problem": "(x + 3)^2 - (x - 1)(x + 1)",
+        "steps": [
+          {
+            "prompt": "(x + 3)^2",
+            "correctParts": ["x^2", "+", "6x", "+", "9"],
+            "distractors": ["x^2 + 9", "3x", "+3"],
+            "hint": "Identidad notable: $(a+b)^2 = a^2 + 2ab + b^2$"
+          },
+          {
+            "prompt": "(x - 1)(x + 1)",
+            "correctParts": ["x^2", "-", "1"],
+            "distractors": ["x^2 + 1", "x^2 - 2x + 1", "2x"],
+            "hint": "Identidad notable: $(a-b)(a+b) = a^2 - b^2$"
+          },
+          {
+            "prompt": "(x^2 + 6x + 9) - (x^2 - 1)",
+            "correctParts": ["x^2 + 6x + 9", "-x^2", "+1"],
+            "distractors": ["-x^2 - 1", "x^2 - 6x - 9", "-1"],
+            "hint": "Distribuye el signo menos: $-(x^2 - 1) = -x^2 + 1$"
+          },
+          {
+            "prompt": "x^2 + 6x + 9 - x^2 + 1",
+            "correctParts": ["6x", "+", "10"],
+            "distractors": ["2x^2 + 6x + 10", "6x + 8", "6x - 10"],
+            "hint": "Simplifica: $x^2 - x^2 = 0$ y $9 + 1 = 10$"
+          }
         ],
-        "solutionSteps": [
-          "Aplicar la identidad del cuadrado de una suma a $(2x + 3)^2$: $(2x)^2 + 2 \\cdot 2x \\cdot 3 + 3^2 = 4x^2 + 12x + 9$",
-          "Aplicar la identidad de suma por diferencia a $(x + 1)(x - 1)$: $x^2 - 1^2 = x^2 - 1$",
-          "Restar ambos resultados: $(4x^2 + 12x + 9) - (x^2 - 1) = 4x^2 + 12x + 9 - x^2 + 1$",
-          "Reducir monomios semejantes: $3x^2 + 12x + 10$"
-        ],
-        "rubricKeyTerms": ["identidad notable", "cuadrado de una suma", "diferencia de cuadrados", "monomios semejantes"],
-        "minimumWords": 30
+        "finalAnswer": "6x + 10"
       }
     }
   ]

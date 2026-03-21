@@ -312,29 +312,37 @@
       ]
     },
     {
-      "id": "mat03-showwork",
+      "id": "mat03-eqbuild",
       "lessonId": "mat03-l2",
-      "type": "show_work",
-      "title": "Simplifica potencias",
-      "description": "Simplifica una expresión con potencias usando sus propiedades",
+      "type": "equation_builder",
+      "title": "Paso a paso: potencias y raíces",
+      "description": "Simplifica una expresión con potencias eligiendo las piezas correctas",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "Simplifica usando las propiedades de las potencias: $\\frac{2^5 \\times 2^3}{2^4}$. Explica qué propiedad usas en cada paso y calcula el resultado final.",
-        "expectedAnswer": "16",
-        "checklist": ["Identifica qué propiedad de potencias aplicas en cada paso", "Muestra cómo simplificas los exponentes", "Calcula el valor numérico final"],
-        "hints": [
-          "Para multiplicar potencias de la misma base, se suman los exponentes: $a^m \\cdot a^n = a^{m+n}$.",
-          "Para dividir potencias de la misma base, se restan los exponentes: $a^m \\div a^n = a^{m-n}$."
+        "problem": "\\frac{2^5 \\times 2^3}{2^4}",
+        "steps": [
+          {
+            "prompt": "\\frac{2^5 \\times 2^3}{2^4}",
+            "correctParts": ["\\frac{2^{5+3}}{2^4}"],
+            "distractors": ["\\frac{2^{5 \\times 3}}{2^4}", "\\frac{2^{15}}{2^4}", "2^{5+3-4}"],
+            "hint": "Producto de potencias con la misma base: se suman los exponentes"
+          },
+          {
+            "prompt": "\\frac{2^8}{2^4}",
+            "correctParts": ["2^{8-4}"],
+            "distractors": ["2^{8 \\div 4}", "2^{8 \\times 4}", "2^{2}"],
+            "hint": "División de potencias con la misma base: se restan los exponentes"
+          },
+          {
+            "prompt": "2^4",
+            "correctParts": ["16"],
+            "distractors": ["8", "32", "12"],
+            "hint": "Calcula: $2 \\times 2 \\times 2 \\times 2$"
+          }
         ],
-        "solutionSteps": [
-          "En el numerador aplicamos la propiedad del producto de potencias de la misma base: $2^5 \\times 2^3 = 2^{5+3} = 2^8$.",
-          "Ahora dividimos: $\\frac{2^8}{2^4} = 2^{8-4} = 2^4$, aplicando la propiedad del cociente de potencias de la misma base.",
-          "Calculamos el resultado: $2^4 = 2 \\times 2 \\times 2 \\times 2 = 16$."
-        ],
-        "rubricKeyTerms": ["potencia", "base", "exponente", "propiedad"],
-        "minimumWords": 30
+        "finalAnswer": "16"
       }
     }
   ]

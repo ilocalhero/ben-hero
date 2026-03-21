@@ -309,29 +309,43 @@
       ]
     },
     {
-      "id": "mat01-showwork",
+      "id": "mat01-eqbuild",
       "lessonId": "mat01-l2",
-      "type": "show_work",
-      "title": "Operaciones con enteros",
-      "description": "Calcula una expresión con enteros aplicando el orden de operaciones",
+      "type": "equation_builder",
+      "title": "Paso a paso: operaciones con enteros",
+      "description": "Construye cada paso de una expresión con enteros seleccionando las piezas correctas",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 8,
+      "estimatedMinutes": 6,
       "data": {
-        "problem": "Calcula paso a paso: $(-8) + 5 \\times (-3) - (-12) \\div 4$. Explica el orden de operaciones y la regla de signos en cada paso.",
-        "expectedAnswer": "-11",
-        "checklist": ["Identifica qué operaciones hay y en qué orden se resuelven", "Aplica la regla de signos en cada multiplicación y división", "Muestra cada paso intermedio hasta el resultado final"],
-        "hints": [
-          "Recuerda: primero se hacen las multiplicaciones y divisiones, y después las sumas y restas.",
-          "Para la regla de signos: signos iguales dan positivo, signos distintos dan negativo."
+        "problem": "(-8) + 5 \\times (-3) - (-12) \\div 4",
+        "steps": [
+          {
+            "prompt": "(-8) + 5 \\times (-3) - (-12) \\div 4",
+            "correctParts": ["(-8)", "+", "(-15)", "-", "(-3)"],
+            "distractors": ["+15", "-(3)", "\\times(-3)"],
+            "hint": "Resuelve primero multiplicaciones y divisiones: $5 \\times (-3)$ y $(-12) \\div 4$"
+          },
+          {
+            "prompt": "(-8) + (-15) - (-3)",
+            "correctParts": ["-8", "-15", "+3"],
+            "distractors": ["+15", "-3", "+8"],
+            "hint": "Restar un negativo es sumar: $-(-3) = +3$"
+          },
+          {
+            "prompt": "-8 - 15 + 3",
+            "correctParts": ["-23", "+3"],
+            "distractors": ["-20", "+23", "-26"],
+            "hint": "Suma los negativos primero: $-8 + (-15) = -23$"
+          },
+          {
+            "prompt": "-23 + 3",
+            "correctParts": ["-20"],
+            "distractors": ["-26", "+20", "-17"],
+            "hint": "Resta: $23 - 3 = 20$, el signo mayor es negativo"
+          }
         ],
-        "solutionSteps": [
-          "Identificamos las operaciones y su orden de prioridad: primero $5 \\times (-3)$ y $(-12) \\div 4$, después las sumas y restas.",
-          "Calculamos $5 \\times (-3) = -15$ (positivo × negativo = negativo) y $(-12) \\div 4 = -3$ (negativo ÷ positivo = negativo).",
-          "Sustituimos en la expresión: $(-8) + (-15) - (-3) = -8 - 15 + 3 = -23 + 3 = -20$. ¡Ojo! Restar un negativo es sumar: $-(-3) = +3$. Resultado: $-20$."
-        ],
-        "rubricKeyTerms": ["orden de operaciones", "regla de signos", "valor absoluto", "entero"],
-        "minimumWords": 30
+        "finalAnswer": "-20"
       }
     }
   ]
