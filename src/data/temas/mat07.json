@@ -344,14 +344,15 @@
       "id": "mat07-showwork",
       "lessonId": "mat07-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Desarrolla con identidades notables",
+      "description": "Desarrolla y simplifica una expresión usando identidades notables",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Desarrolla y simplifica la expresión: $(2x + 3)^2 - (x + 1)(x - 1)$. Indica qué identidad notable usas en cada paso.",
         "expectedAnswer": "$3x^2 + 12x + 10$",
+        "checklist": ["Identifica qué identidad notable aplica a cada parte", "Desarrolla cada identidad paso a paso", "Agrupa los monomios semejantes y simplifica"],
         "hints": [
           "$(2x + 3)^2$ es un cuadrado de una suma: $(a + b)^2 = a^2 + 2ab + b^2$",
           "$(x + 1)(x - 1)$ es una suma por diferencia: $(a + b)(a - b) = a^2 - b^2$"

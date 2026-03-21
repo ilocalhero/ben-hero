@@ -315,14 +315,15 @@
       "id": "mat03-showwork",
       "lessonId": "mat03-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Simplifica potencias",
+      "description": "Simplifica una expresión con potencias usando sus propiedades",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Simplifica usando las propiedades de las potencias: $\\frac{2^5 \\times 2^3}{2^4}$. Explica qué propiedad usas en cada paso y calcula el resultado final.",
         "expectedAnswer": "16",
+        "checklist": ["Identifica qué propiedad de potencias aplicas en cada paso", "Muestra cómo simplificas los exponentes", "Calcula el valor numérico final"],
         "hints": [
           "Para multiplicar potencias de la misma base, se suman los exponentes: $a^m \\cdot a^n = a^{m+n}$.",
           "Para dividir potencias de la misma base, se restan los exponentes: $a^m \\div a^n = a^{m-n}$."

@@ -72,8 +72,9 @@ export interface WritingMissionData {
 export interface ShowWorkData {
   problem: string              // The problem to solve (supports LaTeX)
   expectedAnswer: string       // Correct final answer (for fallback evaluator)
-  hints?: string[]             // Optional hints shown to the student
-  solutionSteps: string[]      // Key steps the AI checks for (supports LaTeX)
+  checklist: string[]          // What Ben must DEMONSTRATE (shown to user, no answers)
+  hints?: string[]             // Optional conceptual hints (rules, not solutions)
+  solutionSteps: string[]      // Full solution steps for AI evaluator ONLY (never shown)
   rubricKeyTerms: string[]     // Math terms to look for in the response
   minimumWords: number         // Minimum words required to submit
 }

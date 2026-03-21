@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Star, CheckCircle, AlertCircle, Send, Calculator, Lightbulb } from 'lucide-react'
+import { Star, CheckCircle, AlertCircle, Send, Lightbulb, ClipboardCheck } from 'lucide-react'
 import { NeonText } from '../ui/NeonText'
 import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
@@ -128,45 +128,47 @@ export function ShowWorkActivity({ activity, onComplete, onEvaluated }: ShowWork
             exit="exit"
             className="px-0 py-6 space-y-5"
           >
-            {/* Top bar */}
-            <div className="flex items-center justify-between gap-3 flex-wrap">
-              <div className="flex items-center gap-2">
-                <Calculator size={20} className="text-[#b24bff]" />
-                <h1 className="text-2xl font-bold text-white leading-tight">{activity.title}</h1>
-              </div>
-              <div className="flex items-center gap-2">
-                <Badge color={canSubmit ? 'green' : 'purple'} size="md">
-                  {wordCount} palabras / min {data.minimumWords}
-                </Badge>
-              </div>
-            </div>
-
-            {/* Problem callout */}
-            <div className="border-l-4 border-[#b24bff] bg-[#b24bff0d] rounded-r-xl px-4 py-3 sm:px-5 sm:py-4">
-              <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold mb-2">
-                Problema
+            {/* Problem — the hero of the page */}
+            <div
+              className="rounded-2xl px-5 py-5 sm:px-6 sm:py-6"
+              style={{
+                background: 'linear-gradient(135deg, #1e1145 0%, #12152e 100%)',
+                border: '1px solid rgba(178,75,255,0.25)',
+                boxShadow: '0 8px 32px rgba(178,75,255,0.08)',
+              }}
+            >
+              <p className="text-xs text-[#b24bff] uppercase tracking-[0.2em] font-bold mb-3">
+                Resuelve
               </p>
-              <div className="text-white text-xl leading-relaxed">
+              <div className="text-white text-xl sm:text-2xl leading-relaxed font-medium">
                 <MathRenderer content={data.problem} />
               </div>
             </div>
 
-            {/* Solution steps to show */}
-            <div className="bg-[#12152e] rounded-xl px-4 py-3 sm:px-5 sm:py-4 space-y-2">
-              <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
-                Tu respuesta debe incluir
-              </p>
-              <ul className="space-y-1">
-                {data.solutionSteps.map((step, i) => (
-                  <li key={i} className="flex items-start gap-2 text-base text-[#c8caeb]">
-                    <span className="text-[#b24bff] mt-0.5 font-bold">{i + 1}.</span>
-                    <span><MathRenderer content={step} /></span>
+            {/* Checklist — what to DEMONSTRATE (no answers!) */}
+            <div className="bg-[#12152e] rounded-xl px-4 py-3 sm:px-5 sm:py-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <ClipboardCheck size={16} className="text-[#b24bff]" />
+                <p className="text-sm text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                  Demuestra que sabes
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {(data.checklist ?? data.solutionSteps).map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-base text-[#c8caeb]">
+                    <span
+                      className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                      style={{ background: 'rgba(178,75,255,0.15)', color: '#b24bff', border: '1px solid rgba(178,75,255,0.3)' }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span><MathRenderer content={item} /></span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Hints (collapsible) */}
+            {/* Hints (collapsible) — conceptual reminders, not solutions */}
             {data.hints && data.hints.length > 0 && (
               <div>
                 <button
@@ -175,7 +177,7 @@ export function ShowWorkActivity({ activity, onComplete, onEvaluated }: ShowWork
                   className="flex items-center gap-2 text-sm text-[#ffd700] font-semibold hover:text-[#ffe44d] transition-colors"
                 >
                   <Lightbulb size={16} />
-                  {showHints ? 'Ocultar pistas' : 'Mostrar pistas'}
+                  {showHints ? 'Ocultar pistas' : 'Necesito una pista'}
                 </button>
                 <AnimatePresence>
                   {showHints && (
@@ -185,10 +187,10 @@ export function ShowWorkActivity({ activity, onComplete, onEvaluated }: ShowWork
                       exit={{ opacity: 0, height: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="mt-2 bg-[#ffd70010] border border-[#ffd70025] rounded-xl px-4 py-3 space-y-1">
+                      <div className="mt-2 bg-[#ffd70008] border border-[#ffd70020] rounded-xl px-4 py-3 space-y-2">
                         {data.hints.map((hint, i) => (
-                          <p key={i} className="text-sm text-[#c8caeb]">
-                            <span className="text-[#ffd700]">Pista {i + 1}:</span>{' '}
+                          <p key={i} className="text-sm text-[#c8caeb] flex items-start gap-2">
+                            <Lightbulb size={14} className="text-[#ffd700] mt-0.5 flex-shrink-0" />
                             <MathRenderer content={hint} />
                           </p>
                         ))}
@@ -199,27 +201,32 @@ export function ShowWorkActivity({ activity, onComplete, onEvaluated }: ShowWork
               </div>
             )}
 
-            {/* Textarea */}
-            <div className="relative">
-              <textarea
-                ref={textareaRef}
-                value={text}
-                onChange={e => setText(e.target.value)}
-                readOnly={isEvaluating}
-                rows={6}
-                placeholder="Escribe aqui tu solucion paso a paso. Explica cada operacion que hagas y por que..."
-                className="
-                  w-full bg-[#1a1d3a] border border-[#b24bff30]
-                  focus:border-[#b24bff] focus:outline-none focus:ring-1 focus:ring-[#b24bff40]
-                  rounded-xl px-5 py-4 text-white placeholder-[#4a4e7a]
-                  text-lg leading-relaxed resize-y
-                  transition-colors duration-200
-                "
-              />
-              <div className="absolute bottom-3 right-4 pointer-events-none">
-                <span className={`text-sm font-semibold ${canSubmit ? 'text-[#00ff88]' : 'text-[#8b8fb0]'}`}>
-                  {wordCount} palabras
-                </span>
+            {/* Writing area */}
+            <div className="space-y-2">
+              <p className="text-xs text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                Tu solucion
+              </p>
+              <div className="relative">
+                <textarea
+                  ref={textareaRef}
+                  value={text}
+                  onChange={e => setText(e.target.value)}
+                  readOnly={isEvaluating}
+                  rows={7}
+                  placeholder={"Escribe tu solucion paso a paso.\nExplica cada operacion: que haces y por que.\nNo basta con el resultado — muestra el camino."}
+                  className="
+                    w-full bg-[#1a1d3a] border border-[#b24bff30]
+                    focus:border-[#b24bff] focus:outline-none focus:ring-1 focus:ring-[#b24bff40]
+                    rounded-xl px-5 py-4 text-white placeholder-[#4a4e7a]
+                    text-base leading-relaxed resize-y
+                    transition-colors duration-200
+                  "
+                />
+                <div className="absolute bottom-3 right-4 pointer-events-none">
+                  <span className={`text-sm font-semibold ${canSubmit ? 'text-[#00ff88]' : 'text-[#8b8fb0]'}`}>
+                    {wordCount}/{data.minimumWords}
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -252,7 +259,7 @@ export function ShowWorkActivity({ activity, onComplete, onEvaluated }: ShowWork
                     Enviar Solucion
                   </Button>
                   <p className="text-center text-sm text-[#8b8fb0] mt-2">
-                    Necesitas {wordsNeeded} {wordsNeeded === 1 ? 'palabra' : 'palabras'} mas
+                    Escribe al menos {data.minimumWords} palabras ({wordsNeeded} mas)
                   </p>
                 </div>
               )}

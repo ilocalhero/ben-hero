@@ -404,14 +404,15 @@
       "id": "mat11-showwork",
       "lessonId": "mat11-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Calcula media, moda y mediana",
+      "description": "Analiza un conjunto de datos calculando sus medidas de centralización",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "En un examen, las notas de 10 alumnos fueron: 5, 7, 8, 6, 5, 9, 7, 8, 7, 6. Calcula: a) La media aritmética. b) La moda. c) La mediana. Explica qué representa cada medida.",
         "expectedAnswer": "media = 6.8, moda = 7, mediana = 7",
+        "checklist": ["Suma todos los valores y divide para obtener la media", "Identifica cuál es el valor que más se repite", "Ordena los datos y encuentra el valor central"],
         "hints": [
           "Para la media, suma todas las notas y divide entre el número total de alumnos (10)",
           "Para la mediana, primero ordena los datos de menor a mayor y busca el valor central (o la media de los dos centrales si hay un número par de datos)"

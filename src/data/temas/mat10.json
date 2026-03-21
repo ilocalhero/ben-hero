@@ -326,14 +326,15 @@
       "id": "mat10-showwork",
       "lessonId": "mat10-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Analiza la función lineal",
+      "description": "Encuentra la pendiente, la ordenada y los puntos de corte de una recta",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Dada la función $y = 2x - 3$, calcula: a) La pendiente y la ordenada en el origen. b) Los puntos donde corta a los ejes. c) Dibuja una tabla con 3 puntos. Explica qué significa cada valor.",
         "expectedAnswer": "pendiente = 2, ordenada = -3, corta eje X en x = 1.5, corta eje Y en y = -3",
+        "checklist": ["Identifica la pendiente y la ordenada en el origen de la ecuación", "Calcula dónde la recta corta cada eje", "Construye una tabla con al menos 3 puntos"],
         "hints": [
           "Compara la ecuación $y = 2x - 3$ con la forma general $y = mx + n$ para identificar la pendiente y la ordenada en el origen",
           "Para hallar el corte con el eje X, haz $y = 0$ y despeja $x$. Para el corte con el eje Y, haz $x = 0$"

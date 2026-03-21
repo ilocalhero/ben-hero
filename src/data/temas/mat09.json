@@ -332,14 +332,15 @@
       "id": "mat09-showwork",
       "lessonId": "mat09-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Sistema por sustitución",
+      "description": "Resuelve un sistema de dos ecuaciones por el método de sustitución",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Resuelve el siguiente sistema de ecuaciones por el método de sustitución: $\\begin{cases} 2x + y = 7 \\\\ x - y = 2 \\end{cases}$. Explica cada paso del método.",
         "expectedAnswer": "x = 3, y = 1",
+        "checklist": ["Despeja una variable de una de las ecuaciones", "Sustituye esa expresión en la otra ecuación", "Resuelve y encuentra el valor de ambas variables"],
         "hints": [
           "Empieza despejando una incógnita en la segunda ecuación, ya que $x$ tiene coeficiente 1",
           "Una vez sustituyas en la primera ecuación, te quedará una ecuación con una sola incógnita"

@@ -306,14 +306,15 @@
       "id": "mat04-showwork",
       "lessonId": "mat04-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Descuentos encadenados",
+      "description": "Calcula el precio final después de aplicar dos descuentos sucesivos",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "En una tienda hay un descuento del 25% sobre un precio de 80 €. Después, aplican un 10% adicional sobre el precio ya rebajado. ¿Cuál es el precio final? Explica por qué no se puede sumar directamente 25% + 10%.",
         "expectedAnswer": "54 €",
+        "checklist": ["Calcula el primer descuento sobre el precio original", "Aplica el segundo descuento sobre el precio ya rebajado", "Explica por qué dos descuentos no se suman directamente"],
         "hints": [
           "Primero calcula el precio tras el descuento del 25%: multiplica 80 por el índice de variación 0,75.",
           "Después aplica el segundo descuento del 10% sobre el precio ya rebajado, no sobre el original."

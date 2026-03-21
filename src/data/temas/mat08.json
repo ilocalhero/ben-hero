@@ -343,14 +343,15 @@
       "id": "mat08-showwork",
       "lessonId": "mat08-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Resuelve la ecuación",
+      "description": "Resuelve una ecuación de primer grado mostrando cada paso",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Resuelve la ecuación: $3(x - 2) + 4 = 2(x + 1) - 3$. Muestra cada paso y nombra las reglas que aplicas.",
         "expectedAnswer": "x = 1",
+        "checklist": ["Elimina los paréntesis distribuyendo", "Agrupa los términos con x a un lado y los números al otro", "Despeja la incógnita y comprueba la solución"],
         "hints": [
           "Primero distribuye los paréntesis multiplicando cada término",
           "Después agrupa los términos con $x$ a un lado y los números al otro usando la regla de la suma"

@@ -312,14 +312,15 @@
       "id": "mat01-showwork",
       "lessonId": "mat01-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Operaciones con enteros",
+      "description": "Calcula una expresión con enteros aplicando el orden de operaciones",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Calcula paso a paso: $(-8) + 5 \\times (-3) - (-12) \\div 4$. Explica el orden de operaciones y la regla de signos en cada paso.",
         "expectedAnswer": "-11",
+        "checklist": ["Identifica qué operaciones hay y en qué orden se resuelven", "Aplica la regla de signos en cada multiplicación y división", "Muestra cada paso intermedio hasta el resultado final"],
         "hints": [
           "Recuerda: primero se hacen las multiplicaciones y divisiones, y después las sumas y restas.",
           "Para la regla de signos: signos iguales dan positivo, signos distintos dan negativo."

@@ -338,14 +338,15 @@
       "id": "mat05-showwork",
       "lessonId": "mat05-l2",
       "type": "show_work",
-      "title": "Muestra tu trabajo",
-      "description": "Resuelve el problema paso a paso y explica tu razonamiento",
+      "title": "Volumen de un cilindro",
+      "description": "Calcula el volumen de un cilindro y conviértelo a litros",
       "difficulty": 2,
       "xpReward": 65,
       "estimatedMinutes": 8,
       "data": {
         "problem": "Calcula el volumen total de un cilindro de radio 5 cm y altura 10 cm. Después, calcula cuántos litros de agua caben dentro. Muestra todos los pasos.",
         "expectedAnswer": "785.4 cm³ ≈ 0.785 litros",
+        "checklist": ["Escribe la fórmula del volumen del cilindro", "Sustituye los valores y calcula paso a paso", "Convierte el resultado de cm³ a litros"],
         "hints": [
           "Recuerda la fórmula del volumen del cilindro: $V = \\pi r^2 \\cdot h$",
           "Para convertir cm³ a litros, recuerda que 1 litro = 1000 cm³"
