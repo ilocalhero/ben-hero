@@ -344,35 +344,153 @@
       "xpReward": 65,
       "estimatedMinutes": 6,
       "data": {
-        "problem": "Calcula el área de un trapecio con bases $B = 10$ cm y $b = 6$ cm, y altura $h = 4$ cm",
-        "steps": [
+        "problems": [
           {
-            "prompt": "A = \\frac{(B + b) \\times h}{2}",
-            "correctParts": ["\\frac{(10 + 6)", "\\times", "4}{2}"],
-            "distractors": ["\\frac{(10 - 6)", "\\frac{10 \\times 6}{2}", "\\times 2}{4}"],
-            "hint": "Sustituye los valores en la fórmula del trapecio"
+            "problem": "Calcula el área de un trapecio con bases $B = 10$ cm y $b = 6$ cm, y altura $h = 4$ cm",
+            "steps": [
+              {
+                "prompt": "A = \\frac{(B + b) \\times h}{2}",
+                "correctParts": ["\\frac{(10 + 6)", "\\times", "4}{2}"],
+                "distractors": ["\\frac{(10 - 6)", "\\frac{10 \\times 6}{2}", "\\times 2}{4}"],
+                "hint": "Sustituye los valores en la fórmula del trapecio"
+              },
+              {
+                "prompt": "\\frac{(10 + 6) \\times 4}{2}",
+                "correctParts": ["\\frac{16 \\times 4}{2}"],
+                "distractors": ["\\frac{14 \\times 4}{2}", "\\frac{10 \\times 4}{2}", "\\frac{16 + 4}{2}"],
+                "hint": "Suma las bases: $10 + 6 = 16$"
+              },
+              {
+                "prompt": "\\frac{16 \\times 4}{2}",
+                "correctParts": ["\\frac{64}{2}"],
+                "distractors": ["\\frac{20}{2}", "\\frac{48}{2}", "\\frac{32}{2}"],
+                "hint": "Multiplica: $16 \\times 4 = 64$"
+              },
+              {
+                "prompt": "\\frac{64}{2}",
+                "correctParts": ["32 \\text{ cm}^2"],
+                "distractors": ["36 \\text{ cm}^2", "28 \\text{ cm}^2", "64 \\text{ cm}^2"],
+                "hint": "Divide: $64 \\div 2 = 32$"
+              }
+            ],
+            "finalAnswer": "32 \\text{ cm}^2"
           },
           {
-            "prompt": "\\frac{(10 + 6) \\times 4}{2}",
-            "correctParts": ["\\frac{16 \\times 4}{2}"],
-            "distractors": ["\\frac{14 \\times 4}{2}", "\\frac{10 \\times 4}{2}", "\\frac{16 + 4}{2}"],
-            "hint": "Suma las bases: $10 + 6 = 16$"
+            "problem": "Calcula el área de un círculo con radio $r = 5$ cm usando $A = \\pi r^2$",
+            "steps": [
+              {
+                "prompt": "A = \\pi r^2",
+                "correctParts": ["\\pi \\times 5^2"],
+                "distractors": ["\\pi \\times 5", "2\\pi \\times 5", "\\pi \\times 10^2"],
+                "hint": "Sustituye $r = 5$ en la fórmula: $A = \\pi \\times 5^2$"
+              },
+              {
+                "prompt": "\\pi \\times 5^2",
+                "correctParts": ["\\pi \\times 25"],
+                "distractors": ["\\pi \\times 10", "\\pi \\times 50", "\\pi \\times 15"],
+                "hint": "Calcula el cuadrado: $5^2 = 25$"
+              },
+              {
+                "prompt": "\\pi \\times 25",
+                "correctParts": ["25\\pi \\approx 78{,}54 \\text{ cm}^2"],
+                "distractors": ["50\\pi \\approx 157{,}08 \\text{ cm}^2", "10\\pi \\approx 31{,}42 \\text{ cm}^2", "5\\pi \\approx 15{,}71 \\text{ cm}^2"],
+                "hint": "Multiplica: $25 \\times 3{,}1416 \\approx 78{,}54$"
+              }
+            ],
+            "finalAnswer": "25\\pi \\text{ cm}^2"
           },
           {
-            "prompt": "\\frac{16 \\times 4}{2}",
-            "correctParts": ["\\frac{64}{2}"],
-            "distractors": ["\\frac{20}{2}", "\\frac{48}{2}", "\\frac{32}{2}"],
-            "hint": "Multiplica: $16 \\times 4 = 64$"
-          },
-          {
-            "prompt": "\\frac{64}{2}",
-            "correctParts": ["32 \\text{ cm}^2"],
-            "distractors": ["36 \\text{ cm}^2", "28 \\text{ cm}^2", "64 \\text{ cm}^2"],
-            "hint": "Divide: $64 \\div 2 = 32$"
+            "problem": "Calcula el volumen de un prisma rectangular con $l = 6$ cm, $w = 4$ cm y $h = 3$ cm",
+            "steps": [
+              {
+                "prompt": "V = l \\times w \\times h",
+                "correctParts": ["6 \\times 4 \\times 3"],
+                "distractors": ["6 + 4 + 3", "6 \\times 4 + 3", "2(6 \\times 4 \\times 3)"],
+                "hint": "Sustituye los valores: $V = 6 \\times 4 \\times 3$"
+              },
+              {
+                "prompt": "6 \\times 4 \\times 3",
+                "correctParts": ["72 \\text{ cm}^3"],
+                "distractors": ["48 \\text{ cm}^3", "96 \\text{ cm}^3", "24 \\text{ cm}^3"],
+                "hint": "Multiplica: $6 \\times 4 = 24$, luego $24 \\times 3 = 72$"
+              }
+            ],
+            "finalAnswer": "72 \\text{ cm}^3"
           }
-        ],
-        "finalAnswer": "32 \\text{ cm}^2"
+        ]
       }
+    },
+    {
+      "id": "mat05-exam",
+      "lessonId": "mat05-l3",
+      "type": "quiz",
+      "title": "Examen Final: Geometría completa",
+      "description": "10 preguntas difíciles sobre perímetros, áreas, volúmenes, Pitágoras y poliedros",
+      "difficulty": 3,
+      "xpReward": 200,
+      "estimatedMinutes": 12,
+      "data": [
+        {
+          "question": "Un triángulo rectángulo tiene catetos de 5 cm y 12 cm. ¿Cuánto mide la hipotenusa?",
+          "options": ["17 cm", "13 cm", "15 cm", "11 cm"],
+          "correctIndex": 1,
+          "explanation": "$h = \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13$ cm"
+        },
+        {
+          "question": "Calcula el área de un trapecio con bases 14 cm y 8 cm, y altura 5 cm.",
+          "options": ["55 cm²", "70 cm²", "45 cm²", "110 cm²"],
+          "correctIndex": 0,
+          "explanation": "$A = \\frac{(14 + 8) \\times 5}{2} = \\frac{110}{2} = 55$ cm²"
+        },
+        {
+          "question": "¿Cuál es el perímetro de un hexágono regular de lado 7 cm?",
+          "options": ["35 cm", "49 cm", "42 cm", "56 cm"],
+          "correctIndex": 2,
+          "explanation": "Un hexágono tiene 6 lados: $P = 6 \\times 7 = 42$ cm"
+        },
+        {
+          "question": "Calcula el volumen de un cilindro con radio 4 cm y altura 10 cm.",
+          "options": ["160π cm³", "80π cm³", "40π cm³", "320π cm³"],
+          "correctIndex": 0,
+          "explanation": "$V = \\pi r^2 h = \\pi \\times 16 \\times 10 = 160\\pi$ cm³"
+        },
+        {
+          "question": "¿Cuántas aristas tiene un icosaedro?",
+          "options": ["12", "20", "30", "60"],
+          "correctIndex": 2,
+          "explanation": "El icosaedro tiene 20 caras triangulares, 12 vértices y 30 aristas. Se cumple la fórmula de Euler: $V - A + C = 12 - 30 + 20 = 2$."
+        },
+        {
+          "question": "¿Cuál es el volumen de una pirámide cuadrangular con base de lado 6 cm y altura 9 cm?",
+          "options": ["108 cm³", "324 cm³", "162 cm³", "54 cm³"],
+          "correctIndex": 0,
+          "explanation": "$V = \\frac{A_{\\text{base}} \\cdot h}{3} = \\frac{36 \\cdot 9}{3} = 108$ cm³"
+        },
+        {
+          "question": "Una esfera tiene radio 3 cm. ¿Cuál es su volumen?",
+          "options": ["36π cm³", "27π cm³", "108π cm³", "12π cm³"],
+          "correctIndex": 0,
+          "explanation": "$V = \\frac{4\\pi r^3}{3} = \\frac{4\\pi \\cdot 27}{3} = 36\\pi$ cm³"
+        },
+        {
+          "question": "Un cono tiene radio 3 cm y altura 4 cm. ¿Cuánto mide su generatriz?",
+          "options": ["7 cm", "5 cm", "6 cm", "√7 cm"],
+          "correctIndex": 1,
+          "explanation": "$g = \\sqrt{h^2 + r^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5$ cm"
+        },
+        {
+          "question": "Calcula el área total de un cubo de arista 8 cm.",
+          "options": ["384 cm²", "512 cm²", "256 cm²", "192 cm²"],
+          "correctIndex": 0,
+          "explanation": "$A_T = 6 \\cdot l^2 = 6 \\cdot 64 = 384$ cm²"
+        },
+        {
+          "question": "¿Cuál es el área de un sector circular de radio 10 cm y ángulo central 90°?",
+          "options": ["25π cm²", "50π cm²", "100π cm²", "10π cm²"],
+          "correctIndex": 0,
+          "explanation": "$A = \\frac{\\pi r^2 \\cdot \\theta}{360} = \\frac{\\pi \\cdot 100 \\cdot 90}{360} = 25\\pi$ cm²"
+        }
+      ]
     }
   ]
 }

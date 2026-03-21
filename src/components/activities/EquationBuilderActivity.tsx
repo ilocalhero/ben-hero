@@ -5,7 +5,7 @@ import { NeonText } from '../ui/NeonText'
 import { Button } from '../ui/Button'
 import { Badge } from '../ui/Badge'
 import { MathRenderer } from '../ui/MathRenderer'
-import type { Activity, EquationBuilderData } from '../../types/tema'
+import type { Activity, EquationBuilderData, EquationBuilderProblem } from '../../types/tema'
 
 interface EquationBuilderActivityProps {
   activity: Activity
@@ -22,31 +22,46 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+// Support both old format (single problem) and new format (problems array)
+function getProblems(data: EquationBuilderData): EquationBuilderProblem[] {
+  if (data.problems && data.problems.length > 0) return data.problems
+  // Backwards compat: old format with top-level problem/steps/finalAnswer
+  const legacy = data as unknown as EquationBuilderProblem
+  if (legacy.steps) return [legacy]
+  return []
+}
+
 export function EquationBuilderActivity({ activity, onComplete }: EquationBuilderActivityProps) {
   const data = activity.data as EquationBuilderData
-  const totalSteps = data.steps.length
+  const problems = useMemo(() => getProblems(data), [data])
+  const totalProblems = problems.length
 
+  const [currentProblem, setCurrentProblem] = useState(0)
   const [currentStep, setCurrentStep] = useState(0)
   const [selected, setSelected] = useState<string[]>([])
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [showHint, setShowHint] = useState(false)
   const [mistakes, setMistakes] = useState(0)
-  const [stepsCompleted, setStepsCompleted] = useState(0)
+  const [totalStepsCompleted, setTotalStepsCompleted] = useState(0)
   const [finished, setFinished] = useState(false)
   const [hintsUsed, setHintsUsed] = useState(0)
+  const [showProblemTransition, setShowProblemTransition] = useState(false)
 
-  const step = data.steps[currentStep]
+  const problem = problems[currentProblem]
+  const step = problem?.steps[currentStep]
+  const totalStepsInProblem = problem?.steps.length ?? 0
+  const totalStepsAll = problems.reduce((sum, p) => sum + p.steps.length, 0)
 
-  // Shuffle parts once per step
+  // Shuffle parts once per step (keyed by problem + step)
   const shuffledParts = useMemo(() => {
     if (!step) return []
     return shuffle([...step.correctParts, ...step.distractors])
-  }, [currentStep, step])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentProblem, currentStep])
 
   const handleTapPart = useCallback((part: string) => {
-    if (feedback) return // locked during feedback
+    if (feedback) return
     setSelected(prev => {
-      // If already selected, remove it
       const idx = prev.indexOf(part)
       if (idx >= 0) {
         const next = [...prev]
@@ -66,10 +81,16 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
 
     if (isCorrect) {
       setFeedback('correct')
-      setStepsCompleted(prev => prev + 1)
+      setTotalStepsCompleted(prev => prev + 1)
       setTimeout(() => {
-        if (currentStep + 1 >= totalSteps) {
-          setFinished(true)
+        if (currentStep + 1 >= totalStepsInProblem) {
+          // Problem complete — move to next problem or finish
+          if (currentProblem + 1 >= totalProblems) {
+            setFinished(true)
+          } else {
+            // Show transition screen
+            setShowProblemTransition(true)
+          }
         } else {
           setCurrentStep(prev => prev + 1)
           setSelected([])
@@ -85,17 +106,80 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
         setSelected([])
       }, 1500)
     }
-  }, [step, selected, feedback, currentStep, totalSteps])
+  }, [step, selected, feedback, currentStep, totalStepsInProblem, currentProblem, totalProblems])
+
+  const handleNextProblem = useCallback(() => {
+    setCurrentProblem(prev => prev + 1)
+    setCurrentStep(0)
+    setSelected([])
+    setFeedback(null)
+    setShowHint(false)
+    setShowProblemTransition(false)
+  }, [])
 
   const handleShowHint = useCallback(() => {
     if (!showHint) setHintsUsed(prev => prev + 1)
     setShowHint(true)
   }, [showHint])
 
-  // Score: start at 100, lose 15 per mistake, lose 5 per hint, minimum 20
-  const score = Math.max(20, 100 - mistakes * 15 - hintsUsed * 5)
+  // Score: start at 100, lose 10 per mistake, lose 3 per hint, minimum 20
+  const score = Math.max(20, 100 - mistakes * 10 - hintsUsed * 3)
 
+  // Problem transition screen
+  if (showProblemTransition && problem) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="px-0 py-10 space-y-6 text-center"
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', stiffness: 200, damping: 14 }}
+        >
+          <Check size={56} className="mx-auto text-[#00ff88] drop-shadow-[0_0_12px_#00ff8888]" />
+        </motion.div>
+
+        <div className="space-y-2">
+          <NeonText color="green" as="h2" className="text-2xl font-black">
+            Problema {currentProblem + 1} resuelto!
+          </NeonText>
+          <p className="text-[#8b8fb0]">
+            Respuesta: <span className="text-[#00d4ff] font-bold">
+              <MathRenderer content={`$${problem.finalAnswer}$`} />
+            </span>
+          </p>
+        </div>
+
+        <div className="flex items-center justify-center gap-2">
+          {problems.map((_, i) => (
+            <div
+              key={i}
+              className="w-3 h-3 rounded-full transition-colors"
+              style={{
+                background: i <= currentProblem ? '#00ff88' : '#2a2d50',
+                boxShadow: i <= currentProblem ? '0 0 8px #00ff8844' : 'none',
+              }}
+            />
+          ))}
+        </div>
+
+        <p className="text-[#c0c4e0]">
+          Siguiente: problema {currentProblem + 2} de {totalProblems}
+        </p>
+
+        <Button onClick={handleNextProblem} variant="primary" size="lg">
+          <ArrowRight size={18} />
+          Siguiente problema
+        </Button>
+      </motion.div>
+    )
+  }
+
+  // Final completion screen
   if (finished) {
+    const lastProblem = problems[problems.length - 1]
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -111,7 +195,7 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
         </motion.div>
 
         <NeonText color="green" as="h2" className="text-3xl font-black">
-          Completado!
+          {totalProblems > 1 ? `${totalProblems} problemas completados!` : 'Completado!'}
         </NeonText>
 
         <div className="bg-[#12152e] rounded-2xl p-6 border border-[#ffffff10] space-y-4 max-w-sm mx-auto">
@@ -124,9 +208,15 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
               {score}%
             </span>
           </div>
+          {totalProblems > 1 && (
+            <div className="flex items-center justify-between">
+              <span className="text-[#8b8fb0]">Problemas</span>
+              <span className="text-white font-bold">{totalProblems}/{totalProblems}</span>
+            </div>
+          )}
           <div className="flex items-center justify-between">
             <span className="text-[#8b8fb0]">Pasos resueltos</span>
-            <span className="text-white font-bold">{stepsCompleted}/{totalSteps}</span>
+            <span className="text-white font-bold">{totalStepsCompleted}/{totalStepsAll}</span>
           </div>
           {mistakes > 0 && (
             <div className="flex items-center justify-between">
@@ -135,9 +225,9 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
             </div>
           )}
           <div className="flex items-center justify-between">
-            <span className="text-[#8b8fb0]">Respuesta final</span>
+            <span className="text-[#8b8fb0]">Ultima respuesta</span>
             <span className="text-[#00d4ff] font-bold text-lg">
-              <MathRenderer content={`$${data.finalAnswer}$`} />
+              <MathRenderer content={`$${lastProblem?.finalAnswer ?? ''}$`} />
             </span>
           </div>
         </div>
@@ -159,17 +249,28 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
     )
   }
 
-  if (!step) return null
+  if (!step || !problem) return null
 
   const isSelected = (part: string) => selected.includes(part)
   const canCheck = selected.length > 0
 
+  // Calculate global step progress
+  const stepsBeforeThisProblem = problems.slice(0, currentProblem).reduce((s, p) => s + p.steps.length, 0)
+  const globalStep = stepsBeforeThisProblem + currentStep
+
   return (
     <div className="text-white space-y-5 px-0 py-4">
-      {/* Progress bar */}
+      {/* Problem indicator + progress bar */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-[#8b8fb0]">Paso {currentStep + 1} de {totalSteps}</span>
+          <div className="flex items-center gap-2">
+            {totalProblems > 1 && (
+              <Badge color="purple" size="sm">
+                Problema {currentProblem + 1}/{totalProblems}
+              </Badge>
+            )}
+            <span className="text-[#8b8fb0]">Paso {currentStep + 1} de {totalStepsInProblem}</span>
+          </div>
           <Badge color="yellow" size="sm">
             {mistakes === 0 ? 'Sin errores' : `${mistakes} error${mistakes > 1 ? 'es' : ''}`}
           </Badge>
@@ -178,7 +279,7 @@ export function EquationBuilderActivity({ activity, onComplete }: EquationBuilde
           <motion.div
             className="h-full rounded-full"
             style={{ background: 'linear-gradient(90deg, #b24bff, #00d4ff)' }}
-            animate={{ width: `${((currentStep) / totalSteps) * 100}%` }}
+            animate={{ width: `${(globalStep / totalStepsAll) * 100}%` }}
             transition={{ duration: 0.4 }}
           />
         </div>

@@ -344,40 +344,180 @@
       "lessonId": "mat08-l2",
       "type": "equation_builder",
       "title": "Paso a paso: ecuaciones",
-      "description": "Resuelve una ecuación de primer grado paso a paso",
+      "description": "Resuelve ecuaciones de primer y segundo grado paso a paso",
       "difficulty": 2,
       "xpReward": 65,
-      "estimatedMinutes": 6,
+      "estimatedMinutes": 8,
       "data": {
-        "problem": "3(x - 2) + 5 = 2x + 7",
-        "steps": [
+        "problems": [
           {
-            "prompt": "3(x - 2) + 5 = 2x + 7",
-            "correctParts": ["3x", "-6", "+5", "=", "2x + 7"],
-            "distractors": ["3x - 2", "3x + 6", "x - 6"],
-            "hint": "Distribuye el 3: $3 \\times x = 3x$ y $3 \\times (-2) = -6$"
+            "problem": "3(x - 2) + 5 = 2x + 7",
+            "steps": [
+              {
+                "prompt": "3(x - 2) + 5 = 2x + 7",
+                "correctParts": ["3x", "-6", "+5", "=", "2x + 7"],
+                "distractors": ["3x - 2", "3x + 6", "x - 6"],
+                "hint": "Distribuye el 3: $3 \\times x = 3x$ y $3 \\times (-2) = -6$"
+              },
+              {
+                "prompt": "3x - 6 + 5 = 2x + 7",
+                "correctParts": ["3x", "-1", "=", "2x + 7"],
+                "distractors": ["3x + 11", "3x - 11", "3x + 1"],
+                "hint": "Simplifica el lado izquierdo: $-6 + 5 = -1$"
+              },
+              {
+                "prompt": "3x - 1 = 2x + 7",
+                "correctParts": ["3x - 2x", "=", "7 + 1"],
+                "distractors": ["3x + 2x = 7 - 1", "3x - 2x = 7 - 1", "x = 6"],
+                "hint": "Pasa las x a un lado y los números al otro (cambian de signo)"
+              },
+              {
+                "prompt": "x = 8",
+                "correctParts": ["x = 8"],
+                "distractors": ["x = 6", "x = -8", "x = 4"],
+                "hint": "Calcula: $7 + 1 = 8$ y $3x - 2x = x$"
+              }
+            ],
+            "finalAnswer": "x = 8"
           },
           {
-            "prompt": "3x - 6 + 5 = 2x + 7",
-            "correctParts": ["3x", "-1", "=", "2x + 7"],
-            "distractors": ["3x + 11", "3x - 11", "3x + 1"],
-            "hint": "Simplifica el lado izquierdo: $-6 + 5 = -1$"
+            "problem": "$\\frac{x+2}{3} - \\frac{x-1}{2} = 1$",
+            "steps": [
+              {
+                "prompt": "$\\frac{x+2}{3} - \\frac{x-1}{2} = 1$. Multiplica toda la ecuación por 6 (m.c.m. de 3 y 2).",
+                "correctParts": ["2(x+2)", "-", "3(x-1)", "=", "6"],
+                "distractors": ["3(x+2) - 2(x-1) = 6", "6(x+2) - 6(x-1) = 1", "2(x+2) + 3(x-1) = 6"],
+                "hint": "m.c.m.(3,2) = 6. Multiplica cada término: $6 \\cdot \\frac{x+2}{3} = 2(x+2)$ y $6 \\cdot \\frac{x-1}{2} = 3(x-1)$"
+              },
+              {
+                "prompt": "2(x+2) - 3(x-1) = 6. Distribuye los paréntesis.",
+                "correctParts": ["2x + 4", "-3x + 3", "=", "6"],
+                "distractors": ["2x + 2 - 3x - 3 = 6", "2x + 4 - 3x - 3 = 6", "2x - 4 - 3x + 3 = 6"],
+                "hint": "Distribuye: $2(x+2) = 2x+4$ y $-3(x-1) = -3x+3$ (ojo con el signo negativo)"
+              },
+              {
+                "prompt": "2x + 4 - 3x + 3 = 6. Simplifica los términos semejantes.",
+                "correctParts": ["-x + 7", "=", "6"],
+                "distractors": ["-x + 1 = 6", "x + 7 = 6", "-5x + 7 = 6"],
+                "hint": "$2x - 3x = -x$ y $4 + 3 = 7$"
+              },
+              {
+                "prompt": "-x + 7 = 6. Despeja x.",
+                "correctParts": ["x = 1"],
+                "distractors": ["x = -1", "x = 13", "x = 7"],
+                "hint": "$-x = 6 - 7 = -1 \\Rightarrow x = 1$"
+              }
+            ],
+            "finalAnswer": "x = 1"
           },
           {
-            "prompt": "3x - 1 = 2x + 7",
-            "correctParts": ["3x - 2x", "=", "7 + 1"],
-            "distractors": ["3x + 2x = 7 - 1", "3x - 2x = 7 - 1", "x = 6"],
-            "hint": "Pasa las x a un lado y los números al otro (cambian de signo)"
-          },
-          {
-            "prompt": "x = 8",
-            "correctParts": ["x = 8"],
-            "distractors": ["x = 6", "x = -8", "x = 4"],
-            "hint": "Calcula: $7 + 1 = 8$ y $3x - 2x = x$"
+            "problem": "$x^2 - 5x + 6 = 0$",
+            "steps": [
+              {
+                "prompt": "$x^2 - 5x + 6 = 0$. Identifica $a$, $b$, $c$ y calcula el discriminante $\\Delta = b^2 - 4ac$.",
+                "correctParts": ["a = 1", "b = -5", "c = 6", "Δ = 25 - 24 = 1"],
+                "distractors": ["a = 1, b = 5, c = 6", "Δ = 25 + 24 = 49", "Δ = -25 - 24 = -49"],
+                "hint": "$a = 1$, $b = -5$, $c = 6$. Discriminante: $(-5)^2 - 4(1)(6) = 25 - 24 = 1$"
+              },
+              {
+                "prompt": "Aplica la fórmula: $x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{5 \\pm \\sqrt{1}}{2}$",
+                "correctParts": ["$x = \\frac{5 \\pm 1}{2}$"],
+                "distractors": ["$x = \\frac{-5 \\pm 1}{2}$", "$x = \\frac{5 \\pm 1}{4}$", "$x = \\frac{5 \\pm 7}{2}$"],
+                "hint": "$-b = -(-5) = 5$, $\\sqrt{1} = 1$, y $2a = 2$"
+              },
+              {
+                "prompt": "Calcula las dos soluciones: $x_1 = \\frac{5+1}{2}$ y $x_2 = \\frac{5-1}{2}$",
+                "correctParts": ["$x_1 = 3$", "$x_2 = 2$"],
+                "distractors": ["$x_1 = 4$, $x_2 = 1$", "$x_1 = 6$, $x_2 = -1$", "$x_1 = 5$, $x_2 = 0$"],
+                "hint": "$\\frac{6}{2} = 3$ y $\\frac{4}{2} = 2$"
+              }
+            ],
+            "finalAnswer": "x = 2, x = 3"
           }
-        ],
-        "finalAnswer": "x = 8"
+        ]
       }
+    },
+    {
+      "id": "mat08-exam",
+      "lessonId": "mat08-l3",
+      "type": "quiz",
+      "title": "Examen Final: Ecuaciones",
+      "description": "10 preguntas difíciles sobre ecuaciones lineales, con fracciones, cuadráticas y análisis del discriminante",
+      "difficulty": 3,
+      "xpReward": 200,
+      "estimatedMinutes": 12,
+      "data": [
+        {
+          "question": "Resuelve: $\\frac{2x+1}{5} - \\frac{x-3}{4} = 2$",
+          "options": ["$x = 11$", "$x = 9$", "$x = \\frac{43}{3}$", "$x = 7$"],
+          "correctIndex": 3,
+          "explanation": "m.c.m.(5,4)=20. $4(2x+1) - 5(x-3) = 40 \\Rightarrow 8x+4-5x+15 = 40 \\Rightarrow 3x+19 = 40 \\Rightarrow 3x = 21 \\Rightarrow x = 7$."
+        },
+        {
+          "question": "Resuelve: $\\frac{3(x-1)}{2} + \\frac{x+4}{6} = 5$",
+          "options": ["$x = 3$", "$x = \\frac{7}{2}$", "$x = \\frac{19}{5}$", "$x = 2$"],
+          "correctIndex": 1,
+          "explanation": "m.c.m.(2,6)=6. $9(x-1) + (x+4) = 30 \\Rightarrow 9x-9+x+4 = 30 \\Rightarrow 10x-5 = 30 \\Rightarrow 10x = 35 \\Rightarrow x = \\frac{7}{2}$."
+        },
+        {
+          "question": "¿Cuántas soluciones reales tiene $x^2 + 6x + 9 = 0$?",
+          "options": ["Ninguna", "Una (doble)", "Dos distintas", "Infinitas"],
+          "correctIndex": 1,
+          "explanation": "$\\Delta = 36 - 36 = 0$. Cuando el discriminante es cero, hay exactamente una solución doble: $x = \\frac{-6}{2} = -3$."
+        },
+        {
+          "question": "¿Cuál es el valor del discriminante de $2x^2 - 3x + 5 = 0$?",
+          "options": ["$\\Delta = -31$", "$\\Delta = 49$", "$\\Delta = 31$", "$\\Delta = -49$"],
+          "correctIndex": 0,
+          "explanation": "$\\Delta = (-3)^2 - 4(2)(5) = 9 - 40 = -31 < 0$. No tiene soluciones reales."
+        },
+        {
+          "question": "Resuelve: $x^2 - 7x + 10 = 0$",
+          "options": ["$x = 1$ y $x = 10$", "$x = 2$ y $x = 5$", "$x = -2$ y $x = -5$", "$x = 7$ y $x = 10$"],
+          "correctIndex": 1,
+          "explanation": "$\\Delta = 49 - 40 = 9$. $x = \\frac{7 \\pm 3}{2}$. Soluciones: $x_1 = 5$ y $x_2 = 2$."
+        },
+        {
+          "question": "Una ecuación de segundo grado tiene $\\Delta = 0$. ¿Qué significa?",
+          "options": [
+            "No tiene soluciones reales",
+            "Tiene dos soluciones distintas",
+            "Tiene una única solución (raíz doble)",
+            "Tiene infinitas soluciones"
+          ],
+          "correctIndex": 2,
+          "explanation": "Cuando $\\Delta = b^2 - 4ac = 0$, la fórmula da una sola solución: $x = \\frac{-b}{2a}$."
+        },
+        {
+          "question": "Resuelve: $5x^2 - 20 = 0$",
+          "options": ["$x = \\pm 4$", "$x = \\pm 2$", "$x = 4$", "$x = 2$"],
+          "correctIndex": 1,
+          "explanation": "$5x^2 = 20 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$. Ecuación incompleta sin término en $x$."
+        },
+        {
+          "question": "Resuelve: $\\frac{x}{3} + \\frac{x}{4} = 7$",
+          "options": ["$x = 12$", "$x = 21$", "$x = 84$", "$x = \\frac{84}{7}$"],
+          "correctIndex": 0,
+          "explanation": "m.c.m.(3,4)=12. $4x + 3x = 84 \\Rightarrow 7x = 84 \\Rightarrow x = 12$."
+        },
+        {
+          "question": "¿Para qué valores de $k$ la ecuación $x^2 + 4x + k = 0$ NO tiene soluciones reales?",
+          "options": ["$k < 4$", "$k = 4$", "$k > 4$", "$k > 0$"],
+          "correctIndex": 2,
+          "explanation": "$\\Delta = 16 - 4k < 0 \\Rightarrow 4k > 16 \\Rightarrow k > 4$. Si $k > 4$, el discriminante es negativo."
+        },
+        {
+          "question": "Un número y su cuadrado suman 42. ¿Cuáles son las soluciones de la ecuación?",
+          "options": [
+            "$x = 6$ y $x = -7$",
+            "$x = 7$ y $x = 6$",
+            "$x = 6$ y $x = 7$",
+            "$x = -6$ y $x = 7$"
+          ],
+          "correctIndex": 0,
+          "explanation": "$x + x^2 = 42 \\Rightarrow x^2 + x - 42 = 0$. $\\Delta = 1 + 168 = 169$. $x = \\frac{-1 \\pm 13}{2}$. Soluciones: $x = 6$ y $x = -7$."
+        }
+      ]
     }
   ]
 }

@@ -76,10 +76,14 @@ export interface EquationBuilderStep {
   hint: string                // Hint about what operation to do
 }
 
-export interface EquationBuilderData {
+export interface EquationBuilderProblem {
   problem: string              // The full starting expression (LaTeX)
   steps: EquationBuilderStep[] // Each step to solve
   finalAnswer: string          // The final numeric answer
+}
+
+export interface EquationBuilderData {
+  problems: EquationBuilderProblem[]  // Multiple problems per activity
 }
 
 export interface Activity {

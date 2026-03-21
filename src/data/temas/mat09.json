@@ -338,41 +338,198 @@
       "xpReward": 75,
       "estimatedMinutes": 8,
       "data": {
-        "problem": "\\begin{cases} x + y = 5 \\\\ 2x - y = 1 \\end{cases}",
-        "steps": [
+        "problems": [
           {
-            "prompt": "Despeja y de la primera ecuación: x + y = 5",
-            "correctParts": ["y", "=", "5 - x"],
-            "distractors": ["y = x - 5", "y = 5 + x", "x = 5 - y"],
-            "hint": "Pasa la x al otro lado: $y = 5 - x$"
+            "problem": "\\begin{cases} x + y = 5 \\\\ 2x - y = 1 \\end{cases}",
+            "steps": [
+              {
+                "prompt": "Despeja y de la primera ecuación: x + y = 5",
+                "correctParts": ["y", "=", "5 - x"],
+                "distractors": ["y = x - 5", "y = 5 + x", "x = 5 - y"],
+                "hint": "Pasa la x al otro lado: $y = 5 - x$"
+              },
+              {
+                "prompt": "Sustituye en la segunda: 2x - (5 - x) = 1",
+                "correctParts": ["2x", "-5", "+x", "=", "1"],
+                "distractors": ["2x - 5 - x", "2x + 5 - x", "-2x"],
+                "hint": "Distribuye el menos: $-(5-x) = -5 + x$"
+              },
+              {
+                "prompt": "3x - 5 = 1",
+                "correctParts": ["3x", "=", "6"],
+                "distractors": ["3x = -4", "3x = 4", "2x = 6"],
+                "hint": "Pasa el $-5$ al otro lado: $3x = 1 + 5 = 6$"
+              },
+              {
+                "prompt": "3x = 6",
+                "correctParts": ["x = 2"],
+                "distractors": ["x = 3", "x = 18", "x = 1"],
+                "hint": "Divide ambos lados entre 3"
+              },
+              {
+                "prompt": "y = 5 - x = 5 - 2",
+                "correctParts": ["y = 3"],
+                "distractors": ["y = 7", "y = 2", "y = -3"],
+                "hint": "Sustituye $x = 2$ en $y = 5 - x$"
+              }
+            ],
+            "finalAnswer": "x = 2,\\; y = 3"
           },
           {
-            "prompt": "Sustituye en la segunda: 2x - (5 - x) = 1",
-            "correctParts": ["2x", "-5", "+x", "=", "1"],
-            "distractors": ["2x - 5 - x", "2x + 5 - x", "-2x"],
-            "hint": "Distribuye el menos: $-(5-x) = -5 + x$"
+            "problem": "\\begin{cases} 2x + 3y = 12 \\\\ 4x - 3y = 6 \\end{cases}",
+            "steps": [
+              {
+                "prompt": "Los coeficientes de $y$ ya son opuestos ($+3y$ y $-3y$). Suma las dos ecuaciones:",
+                "correctParts": ["6x", "=", "18"],
+                "distractors": ["6x = 6", "2x = 18", "6x = 12", "4x = 18"],
+                "hint": "$(2x + 4x) + (3y - 3y) = 12 + 6 \\Rightarrow 6x = 18$"
+              },
+              {
+                "prompt": "Resuelve $6x = 18$:",
+                "correctParts": ["x", "=", "3"],
+                "distractors": ["x = 6", "x = 2", "x = 12", "x = 18"],
+                "hint": "Divide ambos lados entre 6: $x = 18 \\div 6 = 3$"
+              },
+              {
+                "prompt": "Sustituye $x = 3$ en $2x + 3y = 12$: $2(3) + 3y = 12$",
+                "correctParts": ["6", "+", "3y", "=", "12"],
+                "distractors": ["3 + 3y = 12", "6 + 2y = 12", "9 + 3y = 12"],
+                "hint": "$2 \\cdot 3 = 6$, así que $6 + 3y = 12$"
+              },
+              {
+                "prompt": "Resuelve $3y = 6$:",
+                "correctParts": ["y", "=", "2"],
+                "distractors": ["y = 3", "y = 6", "y = -2", "y = 1"],
+                "hint": "$3y = 12 - 6 = 6 \\Rightarrow y = 2$"
+              }
+            ],
+            "finalAnswer": "x = 3,\\; y = 2"
           },
           {
-            "prompt": "3x - 5 = 1",
-            "correctParts": ["3x", "=", "6"],
-            "distractors": ["3x = -4", "3x = 4", "2x = 6"],
-            "hint": "Pasa el $-5$ al otro lado: $3x = 1 + 5 = 6$"
-          },
-          {
-            "prompt": "3x = 6",
-            "correctParts": ["x = 2"],
-            "distractors": ["x = 3", "x = 18", "x = 1"],
-            "hint": "Divide ambos lados entre 3"
-          },
-          {
-            "prompt": "y = 5 - x = 5 - 2",
-            "correctParts": ["y = 3"],
-            "distractors": ["y = 7", "y = 2", "y = -3"],
-            "hint": "Sustituye $x = 2$ en $y = 5 - x$"
+            "problem": "\\begin{cases} x - y = 2 \\\\ 3x + 2y = 16 \\end{cases}",
+            "steps": [
+              {
+                "prompt": "Despeja $x$ de la primera ecuación: $x - y = 2$",
+                "correctParts": ["x", "=", "y + 2"],
+                "distractors": ["x = y - 2", "x = 2 - y", "x = 2y", "y = x + 2"],
+                "hint": "Pasa la $y$ al otro lado: $x = y + 2$"
+              },
+              {
+                "prompt": "Sustituye $x = y + 2$ en la segunda ecuación: $3(y + 2) + 2y = 16$",
+                "correctParts": ["3y", "+", "6", "+", "2y", "=", "16"],
+                "distractors": ["3y + 2 + 2y = 16", "3y - 6 + 2y = 16", "y + 6 + 2y = 16"],
+                "hint": "Distribuye: $3(y+2) = 3y + 6$"
+              },
+              {
+                "prompt": "Simplifica: $5y + 6 = 16$",
+                "correctParts": ["5y", "=", "10"],
+                "distractors": ["5y = 16", "5y = 22", "3y = 10", "5y = 6"],
+                "hint": "Resta 6 de ambos lados: $5y = 16 - 6 = 10$"
+              },
+              {
+                "prompt": "Resuelve $5y = 10$:",
+                "correctParts": ["y", "=", "2"],
+                "distractors": ["y = 5", "y = 10", "y = -2", "y = 50"],
+                "hint": "$y = 10 \\div 5 = 2$"
+              },
+              {
+                "prompt": "Halla $x$: $x = y + 2 = 2 + 2$",
+                "correctParts": ["x", "=", "4"],
+                "distractors": ["x = 2", "x = 0", "x = 6", "x = 3"],
+                "hint": "$x = 2 + 2 = 4$"
+              }
+            ],
+            "finalAnswer": "x = 4,\\; y = 2"
           }
-        ],
-        "finalAnswer": "x = 2,\\; y = 3"
+        ]
       }
+    },
+    {
+      "id": "mat09-exam",
+      "lessonId": "mat09-l3",
+      "type": "quiz",
+      "title": "Examen Final: Sistemas de ecuaciones",
+      "description": "10 preguntas difíciles sobre sistemas por sustitución, reducción, interpretación gráfica y problemas contextualizados",
+      "difficulty": 3,
+      "xpReward": 200,
+      "estimatedMinutes": 15,
+      "data": [
+        {
+          "question": "Resuelve por sustitución: $\\left\\{\\begin{array}{l} 2x + y = 7 \\\\ x - 3y = -6 \\end{array}\\right.$ ¿Cuál es la solución?",
+          "options": ["$(3, 1)$", "$(3, 3)$", "$\\left(\\frac{15}{7},\\; \\frac{19}{7}\\right)$", "$(\\frac{9}{7},\\; \\frac{31}{7})$"],
+          "correctIndex": 2,
+          "explanation": "De la 2.ª: $x = 3y - 6$. Sustituimos en la 1.ª: $2(3y-6) + y = 7 \\Rightarrow 7y = 19 \\Rightarrow y = \\frac{19}{7}$, $x = \\frac{15}{7}$."
+        },
+        {
+          "question": "Resuelve por reducción: $\\left\\{\\begin{array}{l} 3x + 4y = 10 \\\\ 5x - 4y = 6 \\end{array}\\right.$ ¿Cuánto vale $x$?",
+          "options": ["$x = 1$", "$x = 2$", "$x = 3$", "$x = 4$"],
+          "correctIndex": 1,
+          "explanation": "Sumando ambas ecuaciones: $8x = 16 \\Rightarrow x = 2$. Los coeficientes de $y$ ya son opuestos."
+        },
+        {
+          "question": "Gráficamente, ¿qué significa que un sistema tenga solución única?",
+          "options": [
+            "Las dos rectas son paralelas",
+            "Las dos rectas coinciden",
+            "Las dos rectas se cortan en exactamente un punto",
+            "Las dos rectas son perpendiculares"
+          ],
+          "correctIndex": 2,
+          "explanation": "Solución única significa que las rectas son secantes: se cortan en un solo punto, que es la solución."
+        },
+        {
+          "question": "La suma de dos números es 48 y su diferencia es 12. ¿Cuáles son los números?",
+          "options": ["$30$ y $18$", "$36$ y $12$", "$24$ y $24$", "$28$ y $20$"],
+          "correctIndex": 0,
+          "explanation": "$\\left\\{\\begin{array}{l} x + y = 48 \\\\ x - y = 12 \\end{array}\\right.$ Sumando: $2x = 60 \\Rightarrow x = 30$, $y = 18$."
+        },
+        {
+          "question": "Un cine vende entradas de adulto a 8 € y de niño a 5 €. Se vendieron 120 entradas por un total de 810 €. ¿Cuántas entradas de adulto se vendieron?",
+          "options": ["$70$", "$50$", "$90$", "$60$"],
+          "correctIndex": 0,
+          "explanation": "$\\left\\{\\begin{array}{l} a + n = 120 \\\\ 8a + 5n = 810 \\end{array}\\right.$ De la 1.ª: $n = 120 - a$. Sustituimos: $8a + 5(120-a) = 810 \\Rightarrow 3a = 210 \\Rightarrow a = 70$. Comprobación: $8(70)+5(50) = 560+250 = 810$ ✓."
+        },
+        {
+          "question": "¿Qué método es más directo para resolver $\\left\\{\\begin{array}{l} y = 3x + 1 \\\\ 2x + y = 11 \\end{array}\\right.$?",
+          "options": ["Reducción", "Sustitución", "Igualación", "Gráfico"],
+          "correctIndex": 1,
+          "explanation": "La $y$ ya está despejada en la primera ecuación, así que basta sustituir directamente en la segunda: $2x + (3x+1) = 11$."
+        },
+        {
+          "question": "Resuelve por igualación: $\\left\\{\\begin{array}{l} 3x - y = 5 \\\\ x + y = 3 \\end{array}\\right.$ ¿Cuál es el valor de $y$?",
+          "options": ["$y = 1$", "$y = 2$", "$y = -1$", "$y = 0$"],
+          "correctIndex": 0,
+          "explanation": "Despejamos $y$: $y = 3x - 5$ y $y = 3 - x$. Igualamos: $3x - 5 = 3 - x \\Rightarrow 4x = 8 \\Rightarrow x = 2$, $y = 1$."
+        },
+        {
+          "question": "Si al resolver un sistema por reducción llegas a $0 = 0$, ¿qué tipo de sistema es?",
+          "options": [
+            "Compatible determinado (una solución)",
+            "Compatible indeterminado (infinitas soluciones)",
+            "Incompatible (sin solución)",
+            "Imposible de clasificar"
+          ],
+          "correctIndex": 1,
+          "explanation": "$0 = 0$ es una identidad, lo que indica que las ecuaciones son proporcionales (misma recta). Hay infinitas soluciones."
+        },
+        {
+          "question": "En una granja hay gallinas y conejos. Se cuentan 40 cabezas y 116 patas. ¿Cuántos conejos hay?",
+          "options": ["$18$", "$22$", "$20$", "$24$"],
+          "correctIndex": 0,
+          "explanation": "$\\left\\{\\begin{array}{l} g + c = 40 \\\\ 2g + 4c = 116 \\end{array}\\right.$ De la 1.ª: $g = 40 - c$. Sustituimos: $2(40-c) + 4c = 116 \\Rightarrow 80 + 2c = 116 \\Rightarrow c = 18$."
+        },
+        {
+          "question": "¿Cuál de estos sistemas NO tiene solución?",
+          "options": [
+            "$\\left\\{\\begin{array}{l} x + y = 5 \\\\ 2x + 2y = 10 \\end{array}\\right.$",
+            "$\\left\\{\\begin{array}{l} x + y = 5 \\\\ 2x + 2y = 8 \\end{array}\\right.$",
+            "$\\left\\{\\begin{array}{l} x + y = 5 \\\\ x - y = 1 \\end{array}\\right.$",
+            "$\\left\\{\\begin{array}{l} 3x + y = 7 \\\\ x - 2y = 0 \\end{array}\\right.$"
+          ],
+          "correctIndex": 1,
+          "explanation": "La 2.ª ecuación es el doble de $x + y = 4$, que contradice $x + y = 5$. Las rectas son paralelas ($x+y=5$ y $x+y=4$), así que no hay solución."
+        }
+      ]
     }
   ]
 }

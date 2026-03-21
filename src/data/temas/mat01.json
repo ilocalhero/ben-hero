@@ -318,35 +318,164 @@
       "xpReward": 65,
       "estimatedMinutes": 6,
       "data": {
-        "problem": "(-8) + 5 \\times (-3) - (-12) \\div 4",
-        "steps": [
+        "problems": [
           {
-            "prompt": "(-8) + 5 \\times (-3) - (-12) \\div 4",
-            "correctParts": ["(-8)", "+", "(-15)", "-", "(-3)"],
-            "distractors": ["+15", "-(3)", "\\times(-3)"],
-            "hint": "Resuelve primero multiplicaciones y divisiones: $5 \\times (-3)$ y $(-12) \\div 4$"
+            "problem": "(-8) + 5 \\times (-3) - (-12) \\div 4",
+            "steps": [
+              {
+                "prompt": "(-8) + 5 \\times (-3) - (-12) \\div 4",
+                "correctParts": ["(-8)", "+", "(-15)", "-", "(-3)"],
+                "distractors": ["+15", "-(3)", "\\times(-3)"],
+                "hint": "Resuelve primero multiplicaciones y divisiones: $5 \\times (-3)$ y $(-12) \\div 4$"
+              },
+              {
+                "prompt": "(-8) + (-15) - (-3)",
+                "correctParts": ["-8", "-15", "+3"],
+                "distractors": ["+15", "-3", "+8"],
+                "hint": "Restar un negativo es sumar: $-(-3) = +3$"
+              },
+              {
+                "prompt": "-8 - 15 + 3",
+                "correctParts": ["-23", "+3"],
+                "distractors": ["-20", "+23", "-26"],
+                "hint": "Suma los negativos primero: $-8 + (-15) = -23$"
+              },
+              {
+                "prompt": "-23 + 3",
+                "correctParts": ["-20"],
+                "distractors": ["-26", "+20", "-17"],
+                "hint": "Resta: $23 - 3 = 20$, el signo mayor es negativo"
+              }
+            ],
+            "finalAnswer": "-20"
           },
           {
-            "prompt": "(-8) + (-15) - (-3)",
-            "correctParts": ["-8", "-15", "+3"],
-            "distractors": ["+15", "-3", "+8"],
-            "hint": "Restar un negativo es sumar: $-(-3) = +3$"
+            "problem": "(-4) \\times (-6) + 18 \\div (-3) - 5",
+            "steps": [
+              {
+                "prompt": "(-4) \\times (-6) + 18 \\div (-3) - 5",
+                "correctParts": ["24", "+", "(-6)", "-", "5"],
+                "distractors": ["-24", "+6", "-18"],
+                "hint": "Resuelve primero multiplicaciones y divisiones: $(-4) \\times (-6) = 24$ y $18 \\div (-3) = -6$"
+              },
+              {
+                "prompt": "24 + (-6) - 5",
+                "correctParts": ["24", "-6", "-5"],
+                "distractors": ["30 - 5", "24 + 6 - 5", "18 + 5"],
+                "hint": "Sumar un negativo es restar: $24 + (-6) = 24 - 6$"
+              },
+              {
+                "prompt": "24 - 6 - 5",
+                "correctParts": ["13"],
+                "distractors": ["25", "7", "-13"],
+                "hint": "Opera de izquierda a derecha: $24 - 6 = 18$, luego $18 - 5 = 13$"
+              }
+            ],
+            "finalAnswer": "13"
           },
           {
-            "prompt": "-8 - 15 + 3",
-            "correctParts": ["-23", "+3"],
-            "distractors": ["-20", "+23", "-26"],
-            "hint": "Suma los negativos primero: $-8 + (-15) = -23$"
-          },
-          {
-            "prompt": "-23 + 3",
-            "correctParts": ["-20"],
-            "distractors": ["-26", "+20", "-17"],
-            "hint": "Resta: $23 - 3 = 20$, el signo mayor es negativo"
+            "problem": "|{-7}| - |{3}| + (-2) \\times |{-4}|",
+            "steps": [
+              {
+                "prompt": "|{-7}| - |{3}| + (-2) \\times |{-4}|",
+                "correctParts": ["7", "-", "3", "+", "(-2) \\times 4"],
+                "distractors": ["-7", "-3", "-4"],
+                "hint": "Calcula los valores absolutos: $|{-7}| = 7$, $|{3}| = 3$, $|{-4}| = 4$"
+              },
+              {
+                "prompt": "7 - 3 + (-2) \\times 4",
+                "correctParts": ["7", "-", "3", "+", "(-8)"],
+                "distractors": ["+8", "-2", "7 - 3 - 2"],
+                "hint": "Multiplica primero: $(-2) \\times 4 = -8$"
+              },
+              {
+                "prompt": "7 - 3 + (-8)",
+                "correctParts": ["7", "-3", "-8"],
+                "distractors": ["7 + 3 - 8", "-7 - 3 - 8"],
+                "hint": "Sumar un negativo es restar: $7 - 3 - 8$"
+              },
+              {
+                "prompt": "7 - 3 - 8",
+                "correctParts": ["-4"],
+                "distractors": ["4", "-14", "2"],
+                "hint": "Opera de izquierda a derecha: $7 - 3 = 4$, luego $4 - 8 = -4$"
+              }
+            ],
+            "finalAnswer": "-4"
           }
-        ],
-        "finalAnswer": "-20"
+        ]
       }
+    },
+    {
+      "id": "mat01-exam",
+      "type": "quiz",
+      "title": "Examen Final: Números enteros",
+      "description": "Demuestra todo lo que sabes sobre números enteros, valor absoluto, operaciones y divisibilidad",
+      "difficulty": 3,
+      "xpReward": 200,
+      "estimatedMinutes": 15,
+      "data": [
+        {
+          "question": "Calcula: $|{-15}| - |{-7}| + |{3 - 10}|$",
+          "options": ["1", "15", "22", "8"],
+          "correctIndex": 1,
+          "explanation": "$|{-15}| = 15$, $|{-7}| = 7$, $|{3-10}| = |{-7}| = 7$. Entonces $15 - 7 + 7 = 15$."
+        },
+        {
+          "question": "¿Cuál es el resultado de $(-3)^3$?",
+          "options": ["27", "−27", "9", "−9"],
+          "correctIndex": 1,
+          "explanation": "$(-3)^3 = (-3) \\times (-3) \\times (-3) = 9 \\times (-3) = -27$. Exponente impar conserva el signo negativo."
+        },
+        {
+          "question": "Simplifica: $(-2) \\times (-3) \\times (-4) \\times (-1)$",
+          "options": ["−24", "24", "−12", "12"],
+          "correctIndex": 1,
+          "explanation": "Hay 4 signos negativos (par), así que el resultado es positivo. $2 \\times 3 \\times 4 \\times 1 = 24$."
+        },
+        {
+          "question": "Calcula: $(-48) \\div (-8) + (-3) \\times 5 - (-7)$",
+          "options": ["−2", "−22", "−1", "1"],
+          "correctIndex": 0,
+          "explanation": "Primero $\\times$ y $\\div$: $(-48)\\div(-8) = 6$ y $(-3)\\times 5 = -15$. Luego $6 + (-15) - (-7) = 6 - 15 + 7 = -2$."
+        },
+        {
+          "question": "Si $\\text{op}(a) = 9$ y $|b| = 4$, ¿cuáles son los posibles valores de $a + b$?",
+          "options": ["−5 o −13", "−13 o 13", "13 o 5", "5 o −5"],
+          "correctIndex": 0,
+          "explanation": "$\\text{op}(a) = 9$ significa $a = -9$. $|b| = 4$ significa $b = 4$ o $b = -4$. Entonces $a+b = -9+4 = -5$ o $a+b = -9+(-4) = -13$."
+        },
+        {
+          "question": "¿Cuál es la descomposición en factores primos de 180?",
+          "options": ["$2^2 \\times 3^2 \\times 5$", "$2 \\times 3^2 \\times 10$", "$2^2 \\times 45$", "$4 \\times 9 \\times 5$"],
+          "correctIndex": 0,
+          "explanation": "$180 = 2 \\times 90 = 2 \\times 2 \\times 45 = 2^2 \\times 9 \\times 5 = 2^2 \\times 3^2 \\times 5$. Solo la primera opción usa factores primos."
+        },
+        {
+          "question": "Calcula el m.c.d. de 84 y 120.",
+          "options": ["6", "12", "24", "840"],
+          "correctIndex": 1,
+          "explanation": "$84 = 2^2 \\times 3 \\times 7$ y $120 = 2^3 \\times 3 \\times 5$. m.c.d. = factores comunes con menor exponente: $2^2 \\times 3 = 12$."
+        },
+        {
+          "question": "Calcula el m.c.m. de 15, 20 y 12.",
+          "options": ["60", "120", "180", "300"],
+          "correctIndex": 0,
+          "explanation": "$15 = 3 \\times 5$, $20 = 2^2 \\times 5$, $12 = 2^2 \\times 3$. m.c.m. = $2^2 \\times 3 \\times 5 = 60$."
+        },
+        {
+          "question": "¿Cuántos números primos hay entre 30 y 50?",
+          "options": ["3", "4", "5", "6"],
+          "correctIndex": 2,
+          "explanation": "Los primos entre 30 y 50 son: 31, 37, 41, 43, 47. Son 5 números primos."
+        },
+        {
+          "question": "Un grupo de 36 alumnos y otro de 48 se reparten en equipos iguales del mayor tamaño posible. ¿Cuántos alumnos tiene cada equipo y cuántos equipos hay en total?",
+          "options": ["12 por equipo, 7 equipos", "6 por equipo, 14 equipos", "4 por equipo, 21 equipos", "8 por equipo, 10 equipos"],
+          "correctIndex": 0,
+          "explanation": "m.c.d.(36, 48) = 12 alumnos por equipo. Equipos: $36 \\div 12 + 48 \\div 12 = 3 + 4 = 7$ equipos."
+        }
+      ]
     }
   ]
 }

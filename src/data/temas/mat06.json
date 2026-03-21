@@ -317,35 +317,159 @@
       "xpReward": 65,
       "estimatedMinutes": 6,
       "data": {
-        "problem": "En un mapa a escala 1:50\\,000, la distancia entre dos ciudades mide 3{,}5 cm. ¿Cuál es la distancia real?",
-        "steps": [
+        "problems": [
           {
-            "prompt": "\\text{Escala} = \\frac{\\text{mapa}}{\\text{real}}",
-            "correctParts": ["\\frac{1}{50\\,000}", "=", "\\frac{3{,}5}{x}"],
-            "distractors": ["\\frac{50\\,000}{1}", "\\frac{x}{3{,}5}", "\\frac{3{,}5}{50\\,000}"],
-            "hint": "Plantea la proporción: escala = distancia mapa / distancia real"
+            "problem": "En un mapa a escala 1:50\\,000, la distancia entre dos ciudades mide 3{,}5 cm. ¿Cuál es la distancia real?",
+            "steps": [
+              {
+                "prompt": "\\text{Escala} = \\frac{\\text{mapa}}{\\text{real}}",
+                "correctParts": ["\\frac{1}{50\\,000}", "=", "\\frac{3{,}5}{x}"],
+                "distractors": ["\\frac{50\\,000}{1}", "\\frac{x}{3{,}5}", "\\frac{3{,}5}{50\\,000}"],
+                "hint": "Plantea la proporción: escala = distancia mapa / distancia real"
+              },
+              {
+                "prompt": "\\frac{1}{50\\,000} = \\frac{3{,}5}{x}",
+                "correctParts": ["x", "=", "3{,}5 \\times 50\\,000"],
+                "distractors": ["x = 50\\,000 \\div 3{,}5", "x = 3{,}5 + 50\\,000", "x = \\frac{50\\,000}{3{,}5}"],
+                "hint": "Multiplica en cruz: $x = 3{,}5 \\times 50\\,000$"
+              },
+              {
+                "prompt": "x = 3{,}5 \\times 50\\,000",
+                "correctParts": ["175\\,000 \\text{ cm}"],
+                "distractors": ["150\\,000 \\text{ cm}", "17\\,500 \\text{ cm}", "1\\,750 \\text{ cm}"],
+                "hint": "Multiplica: $3{,}5 \\times 50\\,000 = 175\\,000$"
+              },
+              {
+                "prompt": "175\\,000 \\text{ cm} = \\text{? km}",
+                "correctParts": ["1{,}75 \\text{ km}"],
+                "distractors": ["17{,}5 \\text{ km}", "0{,}175 \\text{ km}", "175 \\text{ km}"],
+                "hint": "Divide entre 100\\,000 para pasar de cm a km"
+              }
+            ],
+            "finalAnswer": "1{,}75 \\text{ km}"
           },
           {
-            "prompt": "\\frac{1}{50\\,000} = \\frac{3{,}5}{x}",
-            "correctParts": ["x", "=", "3{,}5 \\times 50\\,000"],
-            "distractors": ["x = 50\\,000 \\div 3{,}5", "x = 3{,}5 + 50\\,000", "x = \\frac{50\\,000}{3{,}5}"],
-            "hint": "Multiplica en cruz: $x = 3{,}5 \\times 50\\,000$"
+            "problem": "Dos triángulos son semejantes. El primero tiene lados 3, 4 y 5. El lado más largo del segundo mide 15. ¿Cuánto miden los otros dos lados?",
+            "steps": [
+              {
+                "prompt": "\\text{Halla el factor de escala } k",
+                "correctParts": ["k", "=", "\\frac{15}{5}", "=", "3"],
+                "distractors": ["\\frac{5}{15}", "\\frac{15}{3}", "\\frac{15}{4}", "5"],
+                "hint": "Divide el lado más largo del segundo triángulo entre el correspondiente del primero: $k = 15 / 5$"
+              },
+              {
+                "prompt": "\\text{Aplica } k \\text{ a los otros lados}",
+                "correctParts": ["3 \\times 3 = 9", "4 \\times 3 = 12"],
+                "distractors": ["3 + 3 = 6", "4 + 3 = 7", "3 \\times 5 = 15", "4 \\times 5 = 20"],
+                "hint": "Multiplica cada lado del triángulo original por $k = 3$"
+              },
+              {
+                "prompt": "\\text{Los lados del segundo triángulo son:}",
+                "correctParts": ["9,\\; 12,\\; 15"],
+                "distractors": ["6,\\; 7,\\; 15", "6,\\; 12,\\; 15", "9,\\; 10,\\; 15"],
+                "hint": "Los tres lados son $3 \\times 3$, $4 \\times 3$ y 15"
+              }
+            ],
+            "finalAnswer": "9,\\; 12,\\; 15"
           },
           {
-            "prompt": "x = 3{,}5 \\times 50\\,000",
-            "correctParts": ["175\\,000 \\text{ cm}"],
-            "distractors": ["150\\,000 \\text{ cm}", "17\\,500 \\text{ cm}", "1\\,750 \\text{ cm}"],
-            "hint": "Multiplica: $3{,}5 \\times 50\\,000 = 175\\,000$"
-          },
-          {
-            "prompt": "175\\,000 \\text{ cm} = \\text{? km}",
-            "correctParts": ["1{,}75 \\text{ km}"],
-            "distractors": ["17{,}5 \\text{ km}", "0{,}175 \\text{ km}", "175 \\text{ km}"],
-            "hint": "Divide entre 100\\,000 para pasar de cm a km"
+            "problem": "Teorema de Tales: dos rectas secantes son cortadas por rectas paralelas. En una secante los segmentos miden 4 y 6. En la otra, el primer segmento mide 10. ¿Cuánto mide el segundo segmento?",
+            "steps": [
+              {
+                "prompt": "\\text{Plantea la proporción (Tales)}",
+                "correctParts": ["\\frac{4}{6}", "=", "\\frac{10}{x}"],
+                "distractors": ["\\frac{6}{4} = \\frac{10}{x}", "\\frac{4}{10} = \\frac{6}{x}", "\\frac{4}{6} = \\frac{x}{10}"],
+                "hint": "Los segmentos correspondientes son proporcionales: $\\frac{4}{6} = \\frac{10}{x}$"
+              },
+              {
+                "prompt": "\\text{Multiplica en cruz}",
+                "correctParts": ["4x", "=", "6 \\times 10", "=", "60"],
+                "distractors": ["6x = 40", "4x = 16", "10x = 24"],
+                "hint": "Al multiplicar en cruz: $4 \\cdot x = 6 \\cdot 10 = 60$"
+              },
+              {
+                "prompt": "\\text{Despeja } x",
+                "correctParts": ["x", "=", "\\frac{60}{4}", "=", "15"],
+                "distractors": ["x = \\frac{60}{6} = 10", "x = \\frac{60}{10} = 6", "x = \\frac{40}{6}"],
+                "hint": "Divide ambos lados entre 4: $x = 60 / 4 = 15$"
+              }
+            ],
+            "finalAnswer": "15"
           }
-        ],
-        "finalAnswer": "1{,}75 \\text{ km}"
+        ]
       }
+    },
+    {
+      "id": "mat06-exam",
+      "lessonId": "mat06-l3",
+      "type": "quiz",
+      "title": "Examen Final: A escala",
+      "description": "10 preguntas difíciles sobre escalas, semejanza, teorema de Tales y segmentos proporcionales",
+      "difficulty": 3,
+      "xpReward": 200,
+      "estimatedMinutes": 12,
+      "data": [
+        {
+          "question": "Dos triángulos semejantes tienen razón de semejanza k = 5/3. Si el perímetro del menor es 27 cm, ¿cuál es el perímetro del mayor?",
+          "options": ["16,2 cm", "32 cm", "45 cm", "75 cm"],
+          "correctIndex": 2,
+          "explanation": "La razón de perímetros es igual a k. Perímetro mayor = 27 × 5/3 = 45 cm."
+        },
+        {
+          "question": "En un mapa de escala 1:25 000, la distancia entre dos puntos mide 6,4 cm. ¿Cuál es la distancia real en metros?",
+          "options": ["160 m", "640 m", "1600 m", "6400 m"],
+          "correctIndex": 2,
+          "explanation": "Distancia real = 6,4 × 25 000 = 160 000 cm = 1600 m."
+        },
+        {
+          "question": "Dos figuras semejantes tienen razón de semejanza k = 4. Si el área de la figura pequeña es 12 cm², ¿cuánto vale el área de la grande?",
+          "options": ["48 cm²", "96 cm²", "144 cm²", "192 cm²"],
+          "correctIndex": 3,
+          "explanation": "Razón de áreas = k² = 16. Área grande = 12 × 16 = 192 cm²."
+        },
+        {
+          "question": "Rectas paralelas cortan dos secantes. En una, los segmentos miden 5 y 8. En la otra, el primer segmento mide 15. ¿Cuánto mide el segundo?",
+          "options": ["9,375", "18", "24", "40"],
+          "correctIndex": 2,
+          "explanation": "Por Tales: 5/8 = 15/x → 5x = 120 → x = 24."
+        },
+        {
+          "question": "Una maqueta de un edificio se ha construido a escala 1:200. Si la maqueta mide 15 cm de alto, ¿cuántos metros mide el edificio real?",
+          "options": ["15 m", "30 m", "300 m", "3000 m"],
+          "correctIndex": 1,
+          "explanation": "Altura real = 15 × 200 = 3000 cm = 30 m."
+        },
+        {
+          "question": "Un triángulo de lados 6, 8 y 10 cm es semejante a otro cuyo lado menor mide 9 cm. ¿Cuánto mide el lado mayor del segundo?",
+          "options": ["12 cm", "13,5 cm", "15 cm", "18 cm"],
+          "correctIndex": 2,
+          "explanation": "k = 9/6 = 1,5. Lado mayor = 10 × 1,5 = 15 cm."
+        },
+        {
+          "question": "Dos cubos semejantes tienen razón de semejanza k = 3. Si el volumen del pequeño es 8 cm³, ¿cuál es el volumen del grande?",
+          "options": ["24 cm³", "72 cm³", "192 cm³", "216 cm³"],
+          "correctIndex": 3,
+          "explanation": "Razón de volúmenes = k³ = 27. Volumen grande = 8 × 27 = 216 cm³."
+        },
+        {
+          "question": "En un plano a escala 1:500, una habitación mide 1,2 cm × 0,8 cm. ¿Cuál es el área real de la habitación en m²?",
+          "options": ["2,4 m²", "4,8 m²", "24 m²", "48 m²"],
+          "correctIndex": 2,
+          "explanation": "Largo real = 1,2 × 500 = 600 cm = 6 m. Ancho real = 0,8 × 500 = 400 cm = 4 m. Área = 6 × 4 = 24 m²."
+        },
+        {
+          "question": "Un poste de 2 m proyecta una sombra de 3 m. Un árbol cercano proyecta una sombra de 10,5 m. ¿Cuánto mide el árbol?",
+          "options": ["5,25 m", "7 m", "15,75 m", "21 m"],
+          "correctIndex": 1,
+          "explanation": "Triángulos semejantes: h/2 = 10,5/3 → h = 2 × 3,5 = 7 m."
+        },
+        {
+          "question": "Dos triángulos están en posición de Tales con bases paralelas. Los lados de uno miden 4, 5 y 7. Si la base del mayor mide 14, ¿cuánto suman los otros dos lados del mayor?",
+          "options": ["9", "14", "18", "28"],
+          "correctIndex": 2,
+          "explanation": "k = 14/7 = 2. Los otros lados miden 4 × 2 = 8 y 5 × 2 = 10. Suma = 8 + 10 = 18."
+        }
+      ]
     }
   ]
 }

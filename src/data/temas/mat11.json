@@ -410,35 +410,159 @@
       "xpReward": 65,
       "estimatedMinutes": 6,
       "data": {
-        "problem": "Calcula la media y desviación típica de: 4, 6, 8, 10, 12",
-        "steps": [
+        "problems": [
           {
-            "prompt": "\\bar{x} = \\frac{\\sum x_i}{n}",
-            "correctParts": ["\\bar{x} = \\frac{4 + 6 + 8 + 10 + 12}{5}"],
-            "distractors": ["\\bar{x} = \\frac{4 \\times 6 \\times 8 \\times 10 \\times 12}{5}", "\\bar{x} = \\frac{4 + 6 + 8 + 10 + 12}{4}"],
-            "hint": "Suma todos los valores y divide entre el número de datos"
+            "problem": "Calcula la media y desviación típica de: 4, 6, 8, 10, 12",
+            "steps": [
+              {
+                "prompt": "\\bar{x} = \\frac{\\sum x_i}{n}",
+                "correctParts": ["\\bar{x} = \\frac{4 + 6 + 8 + 10 + 12}{5}"],
+                "distractors": ["\\bar{x} = \\frac{4 \\times 6 \\times 8 \\times 10 \\times 12}{5}", "\\bar{x} = \\frac{4 + 6 + 8 + 10 + 12}{4}"],
+                "hint": "Suma todos los valores y divide entre el número de datos"
+              },
+              {
+                "prompt": "\\bar{x} = \\frac{40}{5}",
+                "correctParts": ["\\bar{x} = 8"],
+                "distractors": ["\\bar{x} = 10", "\\bar{x} = 7", "\\bar{x} = 6"],
+                "hint": "Divide: $40 \\div 5 = 8$"
+              },
+              {
+                "prompt": "\\sigma = \\sqrt{\\frac{\\sum(x_i - \\bar{x})^2}{n}}",
+                "correctParts": ["\\sqrt{\\frac{16+4+0+4+16}{5}}"],
+                "distractors": ["\\sqrt{\\frac{4+2+0+2+4}{5}}", "\\sqrt{\\frac{16+4+0+4+16}{4}}", "\\frac{16+4+0+4+16}{5}"],
+                "hint": "$(4-8)^2=16$, $(6-8)^2=4$, $(8-8)^2=0$, $(10-8)^2=4$, $(12-8)^2=16$"
+              },
+              {
+                "prompt": "\\sigma = \\sqrt{\\frac{40}{5}} = \\sqrt{8}",
+                "correctParts": ["\\sigma = 2\\sqrt{2}"],
+                "distractors": ["\\sigma = 4", "\\sigma = 2", "\\sigma = \\sqrt{5}"],
+                "hint": "$\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$"
+              }
+            ],
+            "finalAnswer": "\\bar{x}=8,\\; \\sigma=2\\sqrt{2}"
           },
           {
-            "prompt": "\\bar{x} = \\frac{40}{5}",
-            "correctParts": ["\\bar{x} = 8"],
-            "distractors": ["\\bar{x} = 10", "\\bar{x} = 7", "\\bar{x} = 6"],
-            "hint": "Divide: $40 \\div 5 = 8$"
+            "problem": "Calcula la media ponderada de la siguiente tabla: valor 2 (frecuencia 3), valor 5 (frecuencia 4), valor 8 (frecuencia 3)",
+            "steps": [
+              {
+                "prompt": "\\bar{x} = \\frac{\\sum x_i \\cdot f_i}{\\sum f_i}",
+                "correctParts": ["\\bar{x} = \\frac{2 \\times 3 + 5 \\times 4 + 8 \\times 3}{3 + 4 + 3}"],
+                "distractors": ["\\bar{x} = \\frac{2 + 5 + 8}{3}", "\\bar{x} = \\frac{2 \\times 3 + 5 \\times 4 + 8 \\times 3}{3}", "\\bar{x} = \\frac{3 + 4 + 3}{2 + 5 + 8}"],
+                "hint": "Multiplica cada valor por su frecuencia, suma todo y divide entre el total de frecuencias"
+              },
+              {
+                "prompt": "\\bar{x} = \\frac{6 + 20 + 24}{10}",
+                "correctParts": ["\\bar{x} = \\frac{50}{10}"],
+                "distractors": ["\\bar{x} = \\frac{40}{10}", "\\bar{x} = \\frac{50}{7}", "\\bar{x} = \\frac{30}{10}"],
+                "hint": "$2 \\times 3 = 6$, $5 \\times 4 = 20$, $8 \\times 3 = 24$; suma = 50, total frecuencias = 10"
+              },
+              {
+                "prompt": "\\bar{x} = \\frac{50}{10}",
+                "correctParts": ["\\bar{x} = 5"],
+                "distractors": ["\\bar{x} = 4", "\\bar{x} = 5{,}5", "\\bar{x} = 6"],
+                "hint": "Divide: $50 \\div 10 = 5$"
+              }
+            ],
+            "finalAnswer": "5"
           },
           {
-            "prompt": "\\sigma = \\sqrt{\\frac{\\sum(x_i - \\bar{x})^2}{n}}",
-            "correctParts": ["\\sqrt{\\frac{16+4+0+4+16}{5}}"],
-            "distractors": ["\\sqrt{\\frac{4+2+0+2+4}{5}}", "\\sqrt{\\frac{16+4+0+4+16}{4}}", "\\frac{16+4+0+4+16}{5}"],
-            "hint": "$(4-8)^2=16$, $(6-8)^2=4$, $(8-8)^2=0$, $(10-8)^2=4$, $(12-8)^2=16$"
-          },
-          {
-            "prompt": "\\sigma = \\sqrt{\\frac{40}{5}} = \\sqrt{8}",
-            "correctParts": ["\\sigma = 2\\sqrt{2}"],
-            "distractors": ["\\sigma = 4", "\\sigma = 2", "\\sigma = \\sqrt{5}"],
-            "hint": "$\\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2}$"
+            "problem": "Una bolsa contiene 3 bolas rojas, 5 azules y 2 verdes. ¿Cuál es la probabilidad de NO sacar una bola roja?",
+            "steps": [
+              {
+                "prompt": "\\text{Total de bolas}",
+                "correctParts": ["3 + 5 + 2 = 10"],
+                "distractors": ["3 + 5 = 8", "5 + 2 = 7", "3 \\times 5 \\times 2 = 30"],
+                "hint": "Suma todas las bolas: rojas + azules + verdes"
+              },
+              {
+                "prompt": "\\text{Bolas que NO son rojas}",
+                "correctParts": ["5 + 2 = 7"],
+                "distractors": ["3 + 2 = 5", "3 + 5 = 8", "10 - 5 = 5"],
+                "hint": "Las bolas que no son rojas son las azules (5) más las verdes (2)"
+              },
+              {
+                "prompt": "P(\\text{no roja}) = \\frac{\\text{casos favorables}}{\\text{casos posibles}}",
+                "correctParts": ["P = \\frac{7}{10} = 0{,}7"],
+                "distractors": ["P = \\frac{3}{10} = 0{,}3", "P = \\frac{7}{3}", "P = \\frac{5}{10} = 0{,}5"],
+                "hint": "Aplica Laplace: $P = \\frac{7}{10}$"
+              }
+            ],
+            "finalAnswer": "\\frac{7}{10}"
           }
-        ],
-        "finalAnswer": "\\bar{x}=8,\\; \\sigma=2\\sqrt{2}"
+        ]
       }
+    },
+    {
+      "id": "mat11-exam",
+      "lessonId": "mat11-l3",
+      "type": "quiz",
+      "title": "Examen Final: Estadística y probabilidad",
+      "description": "10 preguntas avanzadas sobre media, mediana, moda, desviación típica, tablas de frecuencias, probabilidad y sucesos complementarios",
+      "difficulty": 3,
+      "xpReward": 200,
+      "estimatedMinutes": 12,
+      "data": [
+        {
+          "question": "Los datos 3, 5, 5, 7, 7, 7, 9 tienen media $\\bar{x} \\approx 6{,}14$. ¿Cuál es la mediana?",
+          "options": ["5", "6,14", "7", "6"],
+          "correctIndex": 2,
+          "explanation": "Hay 7 datos (impar). El dato central es el 4.º valor ordenado: 7."
+        },
+        {
+          "question": "En la tabla de frecuencias: valor 1 ($f=4$), valor 2 ($f=6$), valor 3 ($f=5$), valor 4 ($f=5$). ¿Cuál es la moda?",
+          "options": ["1", "2", "3", "4"],
+          "correctIndex": 1,
+          "explanation": "La moda es el valor con mayor frecuencia absoluta. El valor 2 aparece 6 veces, más que cualquier otro."
+        },
+        {
+          "question": "Calcula la media ponderada: valor 10 (peso 2), valor 20 (peso 3), valor 30 (peso 5).",
+          "options": ["20", "23", "25", "18"],
+          "correctIndex": 1,
+          "explanation": "$\\bar{x}_p = \\frac{10 \\cdot 2 + 20 \\cdot 3 + 30 \\cdot 5}{2+3+5} = \\frac{20+60+150}{10} = \\frac{230}{10} = 23$."
+        },
+        {
+          "question": "Los datos 2, 4, 6, 8 tienen media $\\bar{x} = 5$. ¿Cuál es la varianza?",
+          "options": ["5", "4", "3", "2,5"],
+          "correctIndex": 0,
+          "explanation": "$s^2 = \\frac{(2-5)^2+(4-5)^2+(6-5)^2+(8-5)^2}{4} = \\frac{9+1+1+9}{4} = \\frac{20}{4} = 5$."
+        },
+        {
+          "question": "Si la desviación típica de un conjunto de datos es $s = 3$, ¿cuál es la varianza?",
+          "options": ["3", "6", "9", "$\\sqrt{3}$"],
+          "correctIndex": 2,
+          "explanation": "La varianza es el cuadrado de la desviación típica: $s^2 = 3^2 = 9$."
+        },
+        {
+          "question": "En una tabla de frecuencias con $N = 40$ datos, el valor $x_3$ tiene frecuencia absoluta acumulada $F_3 = 25$. ¿Cuál es la frecuencia relativa acumulada $H_3$?",
+          "options": ["0,375", "0,500", "0,625", "0,750"],
+          "correctIndex": 2,
+          "explanation": "$H_3 = \\frac{F_3}{N} = \\frac{25}{40} = 0{,}625$."
+        },
+        {
+          "question": "Se lanza un dado. ¿Cuál es la probabilidad de obtener un número mayor que 4?",
+          "options": ["$\\frac{1}{6}$", "$\\frac{2}{6}$", "$\\frac{3}{6}$", "$\\frac{4}{6}$"],
+          "correctIndex": 1,
+          "explanation": "Los números mayores que 4 son {5, 6} → 2 casos favorables de 6 posibles. $P = \\frac{2}{6} = \\frac{1}{3}$."
+        },
+        {
+          "question": "La probabilidad de que llueva mañana es $P(A) = 0{,}35$. ¿Cuál es la probabilidad del suceso complementario (que NO llueva)?",
+          "options": ["0,35", "0,50", "0,65", "1,35"],
+          "correctIndex": 2,
+          "explanation": "El suceso complementario tiene probabilidad $P(\\bar{A}) = 1 - P(A) = 1 - 0{,}35 = 0{,}65$."
+        },
+        {
+          "question": "Se extraen bolas de una urna con 4 blancas, 3 negras y 3 rojas. ¿Cuál es la probabilidad de sacar una bola que NO sea negra?",
+          "options": ["$\\frac{3}{10}$", "$\\frac{4}{10}$", "$\\frac{7}{10}$", "$\\frac{6}{10}$"],
+          "correctIndex": 2,
+          "explanation": "Bolas no negras = 4 blancas + 3 rojas = 7. Total = 10. $P = \\frac{7}{10}$."
+        },
+        {
+          "question": "Los datos 10, 10, 12, 14, 14, 14, 16 tienen mediana 14 y moda 14. ¿Cuál es el rango?",
+          "options": ["4", "6", "10", "14"],
+          "correctIndex": 1,
+          "explanation": "Rango = valor máximo − valor mínimo = 16 − 10 = 6."
+        }
+      ]
     }
   ]
 }
