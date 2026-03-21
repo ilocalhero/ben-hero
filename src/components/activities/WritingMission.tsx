@@ -8,6 +8,8 @@ import { evaluateWriting } from '../../lib/writingEvaluator'
 import { evaluateWritingAI } from '../../lib/aiWritingEvaluator'
 import type { EvaluationResult } from '../../types/gamification'
 import type { Activity, WritingMissionData } from '../../types/tema'
+import { isPassing, getThreshold } from '../../lib/passingThresholds'
+
 interface WritingMissionProps {
   activity: Activity
   temaId?: string
@@ -453,39 +455,69 @@ export function WritingMission({ activity, onComplete, onEvaluated }: WritingMis
               </motion.div>
             )}
 
-            {/* XP earned */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-col items-center gap-1 py-4"
-            >
-              <p className="text-base text-[#8b8fb0] uppercase tracking-wider font-semibold">
-                XP Ganados
-              </p>
-              <XPCountUp target={activity.xpReward + result.xpBonus} />
-              {result.xpBonus > 0 && (
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1 }}
-                  className="text-xs text-[#ffd700] font-semibold"
+            {/* XP / pass-fail section */}
+            {isPassing('writing_mission', result.score) ? (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex flex-col items-center gap-1 py-4"
                 >
-                  ({activity.xpReward} base + {result.xpBonus} bonus por puntuacion alta)
-                </motion.span>
-              )}
-            </motion.div>
+                  <p className="text-base text-[#8b8fb0] uppercase tracking-wider font-semibold">
+                    XP Ganados
+                  </p>
+                  <XPCountUp target={activity.xpReward + result.xpBonus} />
+                  {result.xpBonus > 0 && (
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 1 }}
+                      className="text-xs text-[#ffd700] font-semibold"
+                    >
+                      ({activity.xpReward} base + {result.xpBonus} bonus por puntuacion alta)
+                    </motion.span>
+                  )}
+                </motion.div>
 
-            {/* Continue button */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.75 }}
-            >
-              <Button onClick={handleContinue} variant="success" size="lg" fullWidth>
-                Continuar
-              </Button>
-            </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.75 }}
+                >
+                  <Button onClick={handleContinue} variant="success" size="lg" fullWidth>
+                    Continuar
+                  </Button>
+                </motion.div>
+              </>
+            ) : (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="rounded-2xl p-5 text-center space-y-2"
+                  style={{ background: '#ff6b3515', border: '1px solid #ff6b3540' }}
+                >
+                  <p className="text-[#ff6b35] font-bold text-lg">
+                    Necesitas {getThreshold('writing_mission')}% para aprobar
+                  </p>
+                  <p className="text-[#8b8fb0] text-sm">
+                    Lee las areas de mejora y vuelve a intentarlo. Tu puedes!
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.75 }}
+                >
+                  <Button onClick={handleContinue} variant="primary" size="lg" fullWidth>
+                    Continuar
+                  </Button>
+                </motion.div>
+              </>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
