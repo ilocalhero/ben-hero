@@ -143,7 +143,8 @@ export function ActivityPage() {
     const store = useProgressStore.getState()
     if (store.completedTemas[temaId]) return
     const allDone = tema.activities.every(
-      a => a.id === justCompletedId || store.completedActivities[a.id]
+      a => a.id === justCompletedId ||
+        (store.completedActivities[a.id] && isPassing(a.type, store.activityScores[a.id] ?? 0))
     )
     if (allDone) {
       completeTema(temaId)

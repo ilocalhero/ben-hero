@@ -5,6 +5,8 @@ import { useProgressStore } from '../../stores/useProgressStore'
 import { useAuthStore } from '../../stores/useAuthStore'
 import { TEMAS } from '../../data'
 import { sendTemaReport } from '../../lib/sendTemaReport'
+import { isPassing } from '../../lib/passingThresholds'
+import { saveToStorage } from '../../lib/storage'
 import { TopBar } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { BottomNav } from './BottomNav'
@@ -30,12 +32,34 @@ export function AppShell() {
     const timer = setTimeout(() => {
       const progress = useProgressStore.getState()
       const player = usePlayerStore.getState()
+
+      // First pass: un-complete any activities with failing scores
       for (const tema of TEMAS) {
-        if (progress.completedTemas[tema.id]) continue
-        const allDone = tema.activities.every(a => progress.completedActivities[a.id])
-        if (allDone && tema.activities.length > 0) {
+        for (const a of tema.activities) {
+          if (
+            progress.completedActivities[a.id] &&
+            !isPassing(a.type, progress.activityScores[a.id] ?? 0)
+          ) {
+            useProgressStore.getState().uncompleteActivity(a.id)
+          }
+        }
+      }
+
+      // Second pass: un-complete any wrongly completed temas, or complete new ones
+      const freshProgress = useProgressStore.getState()
+      for (const tema of TEMAS) {
+        const allDone = tema.activities.length > 0 && tema.activities.every(a =>
+          freshProgress.completedActivities[a.id] &&
+          isPassing(a.type, freshProgress.activityScores[a.id] ?? 0)
+        )
+        if (freshProgress.completedTemas[tema.id] && !allDone) {
+          // Wrongly marked complete — un-mark it
+          const { [tema.id]: _, ...rest } = freshProgress.completedTemas
+          useProgressStore.setState({ completedTemas: rest })
+          saveToStorage('progress', { ...useProgressStore.getState(), completedTemas: rest })
+        } else if (!freshProgress.completedTemas[tema.id] && allDone) {
           useProgressStore.getState().completeTema(tema.id)
-          sendTemaReport(tema, progress.activityScores, progress.completedLessons, player)
+          sendTemaReport(tema, freshProgress.activityScores, freshProgress.completedLessons, player)
         }
       }
     }, 2000)

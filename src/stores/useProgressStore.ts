@@ -4,6 +4,7 @@ import { saveToStorage, loadFromStorage } from '../lib/storage'
 
 interface ProgressActions {
   completeActivity: (activityId: string, score: number) => void
+  uncompleteActivity: (activityId: string) => void
   completeLesson: (lessonId: string) => void
   completeTema: (temaId: string) => void
   completeDailyMission: (temaId: string, lessonIndex: number) => void
@@ -62,6 +63,18 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
     const update = {
       completedActivities: { ...state.completedActivities, [activityId]: true },
       activityScores: { ...state.activityScores, [activityId]: score },
+    }
+    set(update)
+    saveToStorage('progress', { ...state, ...update })
+  },
+
+  uncompleteActivity: (activityId: string) => {
+    const state = get()
+    const { [activityId]: _done, ...restActivities } = state.completedActivities
+    const { [activityId]: _score, ...restScores } = state.activityScores
+    const update = {
+      completedActivities: restActivities,
+      activityScores: restScores,
     }
     set(update)
     saveToStorage('progress', { ...state, ...update })
