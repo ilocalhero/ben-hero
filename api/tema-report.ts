@@ -335,7 +335,7 @@ export async function sendTemaReportHandler(req: Request, res: Response) {
   try {
     const resend = new Resend(apiKey)
     await resend.emails.send({
-      from: 'BenHero <onboarding@resend.dev>',
+      from: 'BenHero <noreply@ilocalhero.com>',
       to: RECIPIENTS,
       subject: `${emoji} ${data.playerName} completo Tema ${data.temaNumber}: ${data.temaTitle} (${avgScore}%)`,
       html,
