@@ -20,11 +20,12 @@
     "@dnd-kit/utilities": "^3.2.2",
     "express": "^5.2.1",
     "framer-motion": "^12.35.1",
-    "tsx": "^4.21.0",
     "lucide-react": "^0.577.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1",
+    "resend": "^6.9.4",
+    "tsx": "^4.21.0",
     "vite-plugin-pwa": "^1.2.0",
     "workbox-window": "^7.4.0",
     "zustand": "^5.0.11"
