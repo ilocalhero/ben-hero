@@ -19,6 +19,9 @@ import mat10 from './temas/mat10.json'
 import mat11 from './temas/mat11.json'
 import type { Tema } from '../types/tema'
 
+export { MATE_SEASON_2 } from './seasons/mate-season-2'
+export type { Season, SeasonItem } from './seasons/mate-season-2'
+
 export const TEMAS: Tema[] = [
   temaRuptura,
   tema01,

@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { Zap, ChevronRight, BookOpen, Flame, Trophy, Target, Check, Clock, Star } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
-import { TEMAS, getTemasForSubject } from '../data'
+import { TEMAS, getTemasForSubject, MATE_SEASON_2 } from '../data'
 import { NeonText, Badge, ProgressBar, StatCard } from '../components/ui'
 import { useProgressStore } from '../stores/useProgressStore'
 import { usePlayerStore } from '../stores/usePlayerStore'
@@ -27,7 +27,7 @@ function SectionHeader({ icon, label, color }: { icon: React.ReactNode; label: s
 
 export function HomePage() {
   const navigate = useNavigate()
-  const { dailyMissionsToday, completedActivities, activityScores, completedTemas, temaBonuses, getTemaProgress } = useProgressStore()
+  const { dailyMissionsToday, completedActivities, activityScores, completedTemas, temaBonuses, getTemaProgress, completedSeasonItems, getSeasonProgress } = useProgressStore()
   const { name, streak, level, totalXP } = usePlayerStore()
   const levelTitle = getLevelTitle(level)
 
@@ -176,6 +176,57 @@ export function HomePage() {
             </div>
           </div>
         </button>
+      </motion.div>
+
+      {/* ── Mate Mania Season Banner ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.12 }}
+      >
+        <Link
+          to={`/season/${MATE_SEASON_2.id}`}
+          className="block group"
+        >
+          <div
+            className="rounded-3xl relative overflow-hidden transition-transform duration-200 hover:scale-[1.005] active:scale-[0.995]"
+            style={{
+              border: '1px solid rgba(255,107,53,0.3)',
+              boxShadow: '0 16px 80px rgba(0,0,0,0.7), 0 0 60px rgba(255,107,53,0.1)',
+            }}
+          >
+            {/* Banner image */}
+            <img
+              src={MATE_SEASON_2.bannerImage}
+              alt={MATE_SEASON_2.title}
+              className="w-full object-cover"
+              style={{ maxHeight: '320px' }}
+            />
+
+            {/* Progress overlay at bottom */}
+            <div
+              className="p-4 lg:p-5"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,107,53,0.08) 0%, #111425 100%)',
+              }}
+            >
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-black uppercase tracking-widest" style={{ color: '#ff6b35' }}>
+                  Temporada 2
+                </span>
+                <span className="text-xs text-text-secondary">
+                  {Object.keys(completedSeasonItems).filter(k => k.startsWith(`${MATE_SEASON_2.id}:`)).length}/{MATE_SEASON_2.items.length} completados
+                </span>
+              </div>
+              <ProgressBar
+                value={getSeasonProgress(MATE_SEASON_2.id, MATE_SEASON_2.items.length)}
+                color="orange"
+                height={6}
+                animated
+              />
+            </div>
+          </div>
+        </Link>
       </motion.div>
 
       {/* ── Stats Row ── */}

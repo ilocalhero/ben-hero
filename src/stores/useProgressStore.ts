@@ -9,10 +9,12 @@ interface ProgressActions {
   completeTema: (temaId: string) => void
   awardTemaBonus: (temaId: string) => void
   completeDailyMission: (temaId: string, lessonIndex: number) => void
+  toggleSeasonItem: (seasonId: string, itemId: string) => void
   isActivityDone: (activityId: string) => boolean
   isLessonDone: (lessonId: string) => boolean
   getActivityScore: (activityId: string) => number
   getTemaProgress: (temaId: string, totalActivities: number) => number
+  getSeasonProgress: (seasonId: string, totalItems: number) => number
   getNextDailyLesson: (temaId: string) => number
   load: () => void
   reset: () => void
@@ -24,6 +26,7 @@ const DEFAULT_STATE: ProgressState = {
   completedLessons: {},
   completedTemas: {},
   temaBonuses: {},
+  completedSeasonItems: {},
   dailyMissionsToday: 0,
   dailyMissionDate: null,
   lastDailyMissionTemaId: null,
@@ -117,6 +120,17 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
     saveToStorage('progress', { ...state, ...update })
   },
 
+  toggleSeasonItem: (seasonId: string, itemId: string) => {
+    const state = get()
+    const key = `${seasonId}:${itemId}`
+    const { [key]: existing, ...rest } = state.completedSeasonItems
+    const update = {
+      completedSeasonItems: existing ? rest : { ...state.completedSeasonItems, [key]: true },
+    }
+    set(update)
+    saveToStorage('progress', { ...state, ...update })
+  },
+
   isActivityDone: (activityId: string) => get().completedActivities[activityId] === true,
   isLessonDone: (lessonId: string) => get().completedLessons[lessonId] === true,
   getActivityScore: (activityId: string) => get().activityScores[activityId] ?? 0,
@@ -125,6 +139,13 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
     if (totalActivities === 0) return 0
     const done = Object.keys(get().completedActivities).filter(id => id.startsWith(temaId)).length
     return Math.round((done / totalActivities) * 100)
+  },
+
+  getSeasonProgress: (seasonId: string, totalItems: number) => {
+    if (totalItems === 0) return 0
+    const prefix = `${seasonId}:`
+    const done = Object.keys(get().completedSeasonItems).filter(k => k.startsWith(prefix)).length
+    return Math.round((done / totalItems) * 100)
   },
 
   getNextDailyLesson: (temaId: string) => {
