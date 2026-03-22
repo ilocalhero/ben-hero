@@ -200,7 +200,7 @@ export function HomePage() {
               src={MATE_SEASON_2.bannerImage}
               alt={MATE_SEASON_2.title}
               className="w-full object-cover"
-              style={{ maxHeight: '320px' }}
+              style={{ maxHeight: '570px' }}
             />
 
             {/* Progress overlay at bottom */}
