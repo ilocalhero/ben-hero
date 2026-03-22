@@ -7,6 +7,7 @@ import { TEMAS } from '../../data'
 import { sendTemaReport } from '../../lib/sendTemaReport'
 import { isPassing } from '../../lib/passingThresholds'
 import { saveToStorage } from '../../lib/storage'
+import { pullAndMerge, initStoreSync } from '../../lib/syncClient'
 import { TopBar } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { BottomNav } from './BottomNav'
@@ -17,12 +18,21 @@ export function AppShell() {
   const { load: loadAuth } = useAuthStore()
   const checkedRef = useRef(false)
 
+  const email = useAuthStore(s => s.email)
+
   useEffect(() => {
     loadAuth()
     loadPlayer()
     loadProgress()
     resetStreakIfNeeded()
   }, [loadAuth, loadPlayer, loadProgress, resetStreakIfNeeded])
+
+  // Sync with server after local stores are loaded
+  useEffect(() => {
+    if (!email) return
+    pullAndMerge(email)
+    initStoreSync(email)
+  }, [email])
 
   // Retroactive: detect temas where all activities are done but completedTemas wasn't set
   useEffect(() => {
