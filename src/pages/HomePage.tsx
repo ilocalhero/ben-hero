@@ -199,8 +199,7 @@ export function HomePage() {
             <img
               src={MATE_SEASON_2.bannerImage}
               alt={MATE_SEASON_2.title}
-              className="w-full object-cover"
-              style={{ maxHeight: '570px' }}
+              className="w-full object-cover max-h-[570px] lg:max-h-[820px]"
             />
 
             {/* Progress overlay at bottom */}
