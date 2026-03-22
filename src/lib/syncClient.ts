@@ -11,7 +11,9 @@ async function pullFromServer(email: string): Promise<{
   progressData: ProgressState | null
 } | null> {
   try {
-    const res = await fetch(`/api/sync?email=${encodeURIComponent(email)}`)
+    const res = await fetch(`/api/sync?email=${encodeURIComponent(email)}`, {
+      cache: 'no-store',
+    })
     if (!res.ok) return null
     return await res.json()
   } catch {
@@ -193,11 +195,46 @@ function scheduleSyncToServer(email: string) {
   }, 2000)
 }
 
+function flushPendingSync(email: string) {
+  if (syncTimer) {
+    clearTimeout(syncTimer)
+    syncTimer = null
+    const data = JSON.stringify({
+      email,
+      playerData: extractPlayerData(),
+      progressData: extractProgressData(),
+    })
+    // Use sendBeacon for reliability when page is closing
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon('/api/sync', new Blob([data], { type: 'application/json' }))
+    }
+  }
+}
+
+let visibilityHandler: (() => void) | null = null
+let beforeUnloadHandler: (() => void) | null = null
+
 export function initStoreSync(email: string): void {
   // Clean up any previous subscriptions
   unsubPlayer?.()
   unsubProgress?.()
+  if (visibilityHandler) document.removeEventListener('visibilitychange', visibilityHandler)
+  if (beforeUnloadHandler) window.removeEventListener('beforeunload', beforeUnloadHandler)
 
   unsubPlayer = usePlayerStore.subscribe(() => scheduleSyncToServer(email))
   unsubProgress = useProgressStore.subscribe(() => scheduleSyncToServer(email))
+
+  // Re-pull from server when app regains focus (switching back to tab/app)
+  visibilityHandler = () => {
+    if (document.visibilityState === 'visible') {
+      pullAndMerge(email)
+    } else {
+      flushPendingSync(email)
+    }
+  }
+  document.addEventListener('visibilitychange', visibilityHandler)
+
+  // Flush any pending sync when page is about to close
+  beforeUnloadHandler = () => flushPendingSync(email)
+  window.addEventListener('beforeunload', beforeUnloadHandler)
 }
