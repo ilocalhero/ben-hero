@@ -1,8 +1,7 @@
-import type { PlayerState, ProgressState, WritingRecord } from '../types/player'
+import type { PlayerState, ProgressState } from '../types/player'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { useProgressStore } from '../stores/useProgressStore'
 import { saveToStorage, loadFromStorage } from './storage'
-import { getLevelFromXP } from './xpCalculator'
 
 // --- Fetch helpers ---
 
@@ -36,90 +35,6 @@ async function pushToServer(
     return res.ok
   } catch {
     return false
-  }
-}
-
-// --- Merge logic ---
-
-function mergePlayerData(local: PlayerState, remote: PlayerState): PlayerState {
-  // Take higher XP
-  const totalXP = Math.max(local.totalXP, remote.totalXP)
-
-  // Take higher streak, using more recent lastPlayedDate to break ties
-  let streak = local.streak
-  let lastPlayedDate = local.lastPlayedDate
-  if (remote.lastPlayedDate && (!local.lastPlayedDate || remote.lastPlayedDate > local.lastPlayedDate)) {
-    streak = remote.streak
-    lastPlayedDate = remote.lastPlayedDate
-  } else if (local.lastPlayedDate === remote.lastPlayedDate) {
-    streak = Math.max(local.streak, remote.streak)
-  }
-
-  // Merge writing history: union entries per tema, dedupe by completedAt
-  const writingHistory: Record<string, WritingRecord[]> = { ...local.writingHistory }
-  for (const [temaId, records] of Object.entries(remote.writingHistory ?? {})) {
-    const existing = writingHistory[temaId] ?? []
-    const existingKeys = new Set(existing.map(r => r.completedAt))
-    const newRecords = records.filter(r => !existingKeys.has(r.completedAt))
-    writingHistory[temaId] = [...existing, ...newRecords]
-  }
-
-  return {
-    name: local.name || remote.name,
-    handle: local.handle ?? remote.handle,
-    onboarded: local.onboarded || remote.onboarded,
-    totalXP,
-    level: getLevelFromXP(totalXP),
-    streak,
-    lastPlayedDate,
-    writingHistory,
-  }
-}
-
-function mergeProgressData(local: ProgressState, remote: ProgressState): ProgressState {
-  // Union boolean maps (true wins)
-  const unionBool = (a: Record<string, boolean>, b: Record<string, boolean>) => {
-    const result = { ...a }
-    for (const [k, v] of Object.entries(b)) {
-      if (v) result[k] = true
-    }
-    return result
-  }
-
-  // Higher score wins
-  const mergeScores = (a: Record<string, number>, b: Record<string, number>) => {
-    const result = { ...a }
-    for (const [k, v] of Object.entries(b)) {
-      result[k] = Math.max(result[k] ?? 0, v)
-    }
-    return result
-  }
-
-  // Daily mission: take whichever has more recent date
-  let dailyMissionsToday = local.dailyMissionsToday
-  let dailyMissionDate = local.dailyMissionDate
-  let lastDailyMissionTemaId = local.lastDailyMissionTemaId
-  let lastDailyMissionLessonIndex = local.lastDailyMissionLessonIndex
-
-  if (remote.dailyMissionDate && (!local.dailyMissionDate || remote.dailyMissionDate > local.dailyMissionDate)) {
-    dailyMissionsToday = remote.dailyMissionsToday
-    dailyMissionDate = remote.dailyMissionDate
-    lastDailyMissionTemaId = remote.lastDailyMissionTemaId
-    lastDailyMissionLessonIndex = remote.lastDailyMissionLessonIndex
-  } else if (local.dailyMissionDate === remote.dailyMissionDate) {
-    dailyMissionsToday = Math.max(local.dailyMissionsToday, remote.dailyMissionsToday)
-  }
-
-  return {
-    completedActivities: unionBool(local.completedActivities, remote.completedActivities),
-    activityScores: mergeScores(local.activityScores, remote.activityScores),
-    completedLessons: unionBool(local.completedLessons, remote.completedLessons),
-    completedTemas: unionBool(local.completedTemas, remote.completedTemas),
-    temaBonuses: unionBool(local.temaBonuses, remote.temaBonuses),
-    dailyMissionsToday,
-    dailyMissionDate,
-    lastDailyMissionTemaId,
-    lastDailyMissionLessonIndex,
   }
 }
 
