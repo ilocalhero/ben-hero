@@ -62,6 +62,7 @@ function extractProgressData(): ProgressState {
     completedLessons: s.completedLessons,
     completedTemas: s.completedTemas,
     temaBonuses: s.temaBonuses,
+    completedSeasonItems: s.completedSeasonItems,
     dailyMissionsToday: s.dailyMissionsToday,
     dailyMissionDate: s.dailyMissionDate,
     lastDailyMissionTemaId: s.lastDailyMissionTemaId,

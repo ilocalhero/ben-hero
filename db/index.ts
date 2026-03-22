@@ -46,6 +46,7 @@ const DEFAULT_PROGRESS: ProgressState = {
   completedLessons: {},
   completedTemas: {},
   temaBonuses: {},
+  completedSeasonItems: {},
   dailyMissionsToday: 0,
   dailyMissionDate: null,
   lastDailyMissionTemaId: null,
