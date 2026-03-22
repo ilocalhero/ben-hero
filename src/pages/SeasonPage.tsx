@@ -67,8 +67,7 @@ export function SeasonPage() {
           <img
             src={season.bannerImage}
             alt={season.title}
-            className="w-full object-cover"
-            style={{ maxHeight: '380px' }}
+            className="w-full object-cover max-h-[380px] lg:max-h-[780px]"
           />
         </div>
       </motion.div>
