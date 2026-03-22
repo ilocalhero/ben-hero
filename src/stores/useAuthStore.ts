@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { setUserPrefix, loadFromStorage } from '../lib/storage'
+import { setUserPrefix, loadFromStorage, clearUserStorage } from '../lib/storage'
 import { usePlayerStore } from './usePlayerStore'
 import type { PlayerState } from '../types/player'
 
@@ -77,6 +77,8 @@ export const useAuthStore = create<AuthState>((set) => ({
     if (!prefix) return false
     const normalised = email.toLowerCase().trim()
     setUserPrefix(prefix)
+    // Clear stale local data so server pull is the source of truth
+    clearUserStorage()
     localStorage.setItem(AUTH_KEY, JSON.stringify({ email: normalised }))
     set({ email: normalised })
     seedPlayerIfNeeded(normalised)
