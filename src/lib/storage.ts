@@ -34,3 +34,12 @@ export function clearStorage(): void {
     .filter(k => k.startsWith('benhero_'))
     .forEach(k => localStorage.removeItem(k))
 }
+
+/** Clear only the current user's prefixed storage keys (player, progress, resetVersion). */
+export function clearUserStorage(): void {
+  if (!_userPrefix) return
+  const prefix = `benhero_${_userPrefix}_`
+  Object.keys(localStorage)
+    .filter(k => k.startsWith(prefix))
+    .forEach(k => localStorage.removeItem(k))
+}

@@ -178,8 +178,17 @@ export async function pullAndMerge(email: string): Promise<void> {
       finalProgress = remote.progressData
       saveToStorage('resetVersion', serverResetVersion)
     } else {
-      finalPlayer = mergePlayerData(localPlayer, remote.playerData)
-      finalProgress = mergeProgressData(localProgress, remote.progressData)
+      // Server is the source of truth on initial load.
+      // Local changes from the current session are pushed via debounced sync,
+      // so on page reload the server already has the latest data.
+      // Use server data to avoid stale localStorage resurrecting old progress.
+      finalPlayer = {
+        ...remote.playerData,
+        // Preserve local profile fields (name/handle) in case they were changed offline
+        name: localPlayer.name || remote.playerData.name,
+        handle: localPlayer.handle ?? remote.playerData.handle,
+      }
+      finalProgress = remote.progressData
     }
 
     // Update stores
