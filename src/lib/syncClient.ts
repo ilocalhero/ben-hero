@@ -1,7 +1,7 @@
 import type { PlayerState, ProgressState, WritingRecord } from '../types/player'
 import { usePlayerStore } from '../stores/usePlayerStore'
 import { useProgressStore } from '../stores/useProgressStore'
-import { saveToStorage } from './storage'
+import { saveToStorage, loadFromStorage } from './storage'
 import { getLevelFromXP } from './xpCalculator'
 
 // --- Fetch helpers ---
@@ -9,9 +9,12 @@ import { getLevelFromXP } from './xpCalculator'
 async function pullFromServer(email: string): Promise<{
   playerData: PlayerState | null
   progressData: ProgressState | null
+  resetVersion: number
 } | null> {
   try {
-    const res = await fetch(`/api/sync?email=${encodeURIComponent(email)}`)
+    const res = await fetch(`/api/sync?email=${encodeURIComponent(email)}`, {
+      cache: 'no-store',
+    })
     if (!res.ok) return null
     return await res.json()
   } catch {
@@ -160,20 +163,35 @@ export async function pullAndMerge(email: string): Promise<void> {
   const localPlayer = extractPlayerData()
   const localProgress = extractProgressData()
 
+  // Check if the server triggered a reset since we last synced
+  const localResetVersion = loadFromStorage<number>('resetVersion') ?? 0
+  const serverResetVersion = remote.resetVersion ?? 0
+  const wasReset = serverResetVersion > localResetVersion
+
   if (remote.playerData && remote.progressData) {
-    const mergedPlayer = mergePlayerData(localPlayer, remote.playerData)
-    const mergedProgress = mergeProgressData(localProgress, remote.progressData)
+    let finalPlayer: PlayerState
+    let finalProgress: ProgressState
+
+    if (wasReset) {
+      // Server was reset — accept server data as-is instead of merging
+      finalPlayer = remote.playerData
+      finalProgress = remote.progressData
+      saveToStorage('resetVersion', serverResetVersion)
+    } else {
+      finalPlayer = mergePlayerData(localPlayer, remote.playerData)
+      finalProgress = mergeProgressData(localProgress, remote.progressData)
+    }
 
     // Update stores
-    usePlayerStore.setState(mergedPlayer)
-    useProgressStore.setState(mergedProgress)
+    usePlayerStore.setState(finalPlayer)
+    useProgressStore.setState(finalProgress)
 
-    // Persist merged data to localStorage
-    saveToStorage('player', mergedPlayer)
-    saveToStorage('progress', mergedProgress)
+    // Persist to localStorage
+    saveToStorage('player', finalPlayer)
+    saveToStorage('progress', finalProgress)
 
-    // Push merged result back so server has canonical state
-    await pushToServer(email, mergedPlayer, mergedProgress)
+    // Push result back so server has canonical state
+    await pushToServer(email, finalPlayer, finalProgress)
   } else {
     // Server has no data yet — push local data to seed it
     await pushToServer(email, localPlayer, localProgress)
@@ -193,11 +211,46 @@ function scheduleSyncToServer(email: string) {
   }, 2000)
 }
 
+function flushPendingSync(email: string) {
+  if (syncTimer) {
+    clearTimeout(syncTimer)
+    syncTimer = null
+    const data = JSON.stringify({
+      email,
+      playerData: extractPlayerData(),
+      progressData: extractProgressData(),
+    })
+    // Use sendBeacon for reliability when page is closing
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon('/api/sync', new Blob([data], { type: 'application/json' }))
+    }
+  }
+}
+
+let visibilityHandler: (() => void) | null = null
+let beforeUnloadHandler: (() => void) | null = null
+
 export function initStoreSync(email: string): void {
   // Clean up any previous subscriptions
   unsubPlayer?.()
   unsubProgress?.()
+  if (visibilityHandler) document.removeEventListener('visibilitychange', visibilityHandler)
+  if (beforeUnloadHandler) window.removeEventListener('beforeunload', beforeUnloadHandler)
 
   unsubPlayer = usePlayerStore.subscribe(() => scheduleSyncToServer(email))
   unsubProgress = useProgressStore.subscribe(() => scheduleSyncToServer(email))
+
+  // Re-pull from server when app regains focus (switching back to tab/app)
+  visibilityHandler = () => {
+    if (document.visibilityState === 'visible') {
+      pullAndMerge(email)
+    } else {
+      flushPendingSync(email)
+    }
+  }
+  document.addEventListener('visibilitychange', visibilityHandler)
+
+  // Flush any pending sync when page is about to close
+  beforeUnloadHandler = () => flushPendingSync(email)
+  window.addEventListener('beforeunload', beforeUnloadHandler)
 }
